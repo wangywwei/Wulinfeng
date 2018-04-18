@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+    android:background="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_52dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/home3saishi_img"
+            android:layout_width="@dimen/wlf_16dp"
+            android:layout_height="@dimen/wlf_16dp"
+            android:src="@drawable/bofangbiaoqian1"/>
+
+
+
+        <TextView
+            android:id="@+id/home3saishi_name"
+            android:layout_marginLeft="@dimen/wlf_6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/zixunbiaoqian1"
+            android:text="aaaa"
+            android:textSize="@dimen/text_10sp"
+            android:padding="@dimen/wlf_3dp"/>
+
+
+        <TextView
+            android:id="@+id/home3saishi_name1"
+            android:layout_marginLeft="@dimen/wlf_6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/zixunbiaoqian2"
+            android:text="aaa"
+            android:textSize="@dimen/text_10sp"
+            android:padding="@dimen/wlf_3dp"  />
+
+
+
+        <TextView
+            android:id="@+id/home3saishi_content"
+            android:layout_marginLeft="@dimen/wlf_6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/baibian"
+            android:text="aa"
+            android:textSize="@dimen/text_14sp"
+            android:textColor="#444444"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

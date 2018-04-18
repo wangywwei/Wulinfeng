@@ -37,6 +37,7 @@ public class Home3Fragment extends BaseFragment {
     private Home3Adapter home3Adapter;
     private ArrayList<Home3Bean.DataBean.SchedulesBean> datalist=new ArrayList<>();
 
+    private Home3Bean bean;
 
     private RecommendBanner recommendBanner;
     private RemenHotLayout remenHotLayout;
@@ -70,6 +71,9 @@ public class Home3Fragment extends BaseFragment {
                 .addParams("token", MakerApplication.instance.getToken())
                 .build()
                 .execute(new StringCallback() {
+
+
+
                     @Override
                     public void onError(Call call, Exception e, int id) {
                         UIUtils.showToast("服务器异常");
@@ -80,7 +84,14 @@ public class Home3Fragment extends BaseFragment {
                         JsonValidator jsonValidator = new JsonValidator();
                         if (jsonValidator.validate(response)) {
                             Gson gson = new Gson();
-                            Home3Bean bean=gson.fromJson(response,Home3Bean.class);
+
+                            try {
+                                bean = gson.fromJson(response,Home3Bean.class);
+                            }catch (Exception e){
+                                Log.e("TTTAAADD","====="+e);
+                            }
+
+
                             try {
                                 if (bean.getCode().equals("1000")){
                                     try {

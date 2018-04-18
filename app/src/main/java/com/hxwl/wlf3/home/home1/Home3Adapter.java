@@ -157,6 +157,8 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
         }catch (Exception e){
         }
 
+
+
         try {
             holder.home_saishi_yuyue.setOnClickListener(new View.OnClickListener() {
                 @Override

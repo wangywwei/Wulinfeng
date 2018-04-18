@@ -247,10 +247,6 @@ public class Home3Bean {
              * timelineState : 0
              */
 
-
-
-
-
             private int hasSubscribed;
             private String scheduleName;
             private String publicityImg;
@@ -258,12 +254,8 @@ public class Home3Bean {
             private int id;
             private int state;
             private EventBean event;
-            private Object activityList;
+            private ActivityListBean activityList;
             private int timelineState;
-
-
-
-
 
 
             public int getHasSubscribed() {
@@ -322,11 +314,11 @@ public class Home3Bean {
                 this.event = event;
             }
 
-            public Object getActivityList() {
+            public ActivityListBean getActivityList() {
                 return activityList;
             }
 
-            public void setActivityList(Object activityList) {
+            public void setActivityList(ActivityListBean activityList) {
                 this.activityList = activityList;
             }
 
@@ -457,12 +449,50 @@ public class Home3Bean {
                      */
 
                     private String redClub;
+                    private int result;
+                    private String winner;
+                    private String winWay;
+                    private String againstName;
+
+
 
                     private String redName;
                     private String blueName;
                     private int id;
                     private String redHeadImg;
                     private String blueHeadImg;
+
+                    public void setResult(int result) {
+                        this.result = result;
+                    }
+
+                    public void setWinner(String winner) {
+                        this.winner = winner;
+                    }
+
+                    public void setWinWay(String winWay) {
+                        this.winWay = winWay;
+                    }
+
+                    public void setAgainstName(String againstName) {
+                        this.againstName = againstName;
+                    }
+
+                    public int getResult() {
+                        return result;
+                    }
+
+                    public String getWinner() {
+                        return winner;
+                    }
+
+                    public String getWinWay() {
+                        return winWay;
+                    }
+
+                    public String getAgainstName() {
+                        return againstName;
+                    }
 
                     public void setRedClub(String redClub) {
                         this.redClub = redClub;
@@ -513,6 +543,41 @@ public class Home3Bean {
                     }
                 }
             }
+
+
+            public static class ActivityListBean{
+
+
+                private String name;
+
+                public String getName() {
+                    return name;
+                }
+
+                public void setName(String name) {
+                    this.name = name;
+                }
+             /*
+*
+* "id":4,
+                        "name":"方法1",
+                        "startTime":1523638800000,
+                        "endTime":1524848400000,
+                        "scheduleId":25,
+                        "url":"https://www.baidu.com/",
+                        "image":"2018040916464491251328.jpg",
+                        "createTime":1523263655000,
+                        "updateTime":1523959516000,
+                        "isRecommend":1,
+                        "isShow":1,
+                        "state":1
+* */
+
+
+
+            }
+
+
         }
 
         public static class BannersBean {

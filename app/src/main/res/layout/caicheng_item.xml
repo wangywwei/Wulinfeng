@@ -101,13 +101,26 @@
     </LinearLayout>
 
     <View
-
-        android:layout_marginLeft="@dimen/wlf_16dp"
-        android:layout_marginRight="@dimen/wlf_16dp"
         android:layout_marginTop="@dimen/wlf_16dp"
+        android:layout_marginBottom="@dimen/wlf_6dp"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/wlf_1dp"
         android:background="#EFEFEF"/>
+
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/saicheng_xrecycler"
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+
+
 
 
 
