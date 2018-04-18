@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/list_back"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <FrameLayout
+            android:id="@+id/fl_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+        </FrameLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#33585858"
+            />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            >
+
+            <RadioGroup
+                android:id="@+id/main_radio"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center_vertical"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp">
+
+                <RadioButton
+                    android:visibility="gone"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/tab_shouye"
+                    style="@style/main_tab_bottom"
+                    android:textSize="@dimen/px_30"
+                    android:drawableTop="@drawable/icon_shouye"
+                    android:text="@string/home_tab_1" />
+
+                <RadioButton
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/tab_saicheng"
+                    style="@style/main_tab_bottom"
+                    android:textSize="@dimen/px_30"
+                    android:drawableTop="@drawable/icon_saicheng"
+                    android:text="@string/home_tab_2" />
+                <RadioButton
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/tab_wulin"
+                    style="@style/main_tab_bottom"
+                    android:textSize="@dimen/px_30"
+                    android:drawableTop="@drawable/icon_wulin"
+                    android:text="拳手" />
+                <RadioButton
+                    android:visibility="gone"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/tab_faxian"
+                    style="@style/main_tab_bottom"
+                    android:textSize="@dimen/px_30"
+                    android:drawableTop="@drawable/icon_faxian"
+                    android:text="@string/home_tab_4" />
+                <RadioButton
+                    android:id="@+id/tab_wo"
+                    style="@style/main_tab_bottom"
+                    android:layout_marginTop="5dp"
+                    android:textSize="@dimen/px_30"
+                    android:drawableTop="@drawable/icon_wo"
+                    android:text="@string/home_tab_5" />
+            </RadioGroup>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#00000000"
+            android:numColumns="5"
+            android:orientation="horizontal"
+            android:rating="1">
+
+            <Button
+                android:id="@+id/btn_shouye"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:clickable="false"
+                android:visibility="invisible"/>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/iv_live"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/live_icon"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:visibility="invisible"
+                    />
+                <Button
+                    android:layout_width="match_parent"
+                    android:id="@+id/btn_saicheng"
+                    android:layout_height="match_parent"
+                    android:clickable="false"
+                    android:visibility="invisible"
+                    />
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="0dp"
+                android:id="@+id/btn_wuli"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:background="#00000000"
+                android:visibility="invisible"/>
+
+            <Button
+                android:id="@+id/btn_faxian"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:visibility="invisible"/>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/iv_point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/y"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:visibility="invisible"
+                    />
+                <Button
+                    android:id="@+id/btn_wo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="false"
+                    android:visibility="invisible"/>
+            </RelativeLayout>
+        </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,157 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="man_10dp">10dp</dimen>
+    <dimen name="man_11dp">11dp</dimen>
+    <dimen name="man_12dp">12dp</dimen>
+    <dimen name="man_13dp">13dp</dimen>
+    <dimen name="man_14dp">14dp</dimen>
+    <dimen name="man_15dp">15dp</dimen>
+    <dimen name="man_16dp">16dp</dimen>
+    <dimen name="man_18dp">18dp</dimen>
+    <dimen name="man_17dp">17dp</dimen>
+    <dimen name="man_19dp">19dp</dimen>
+    <dimen name="man_2dp">2dp</dimen>
+    <dimen name="man_20dp">20dp</dimen>
+    <dimen name="man_21dp">21dp</dimen>
+    <dimen name="man_22dp">22dp</dimen>
+    <dimen name="man_23dp">23dp</dimen>
+    <dimen name="man_24dp">24dp</dimen>
+    <dimen name="man_25dp">25dp</dimen>
+    <dimen name="man_26dp">26dp</dimen>
+    <dimen name="man_27dp">27dp</dimen>
+    <dimen name="man_29dp">29dp</dimen>
+    <dimen name="man_28dp">28dp</dimen>
+    <dimen name="man_140dp">140dp</dimen>
+
+    <dimen name="text_9sp">9sp</dimen>
+    <dimen name="text_8sp">8sp</dimen>
+    <dimen name="text_10sp">10sp</dimen>
+    <dimen name="text_11sp">11sp</dimen>
+    <dimen name="text_12sp">12sp</dimen>
+    <dimen name="text_13sp">13sp</dimen>
+    <dimen name="text_14sp">14sp</dimen>
+    <dimen name="text_15sp">15sp</dimen>
+    <dimen name="text_16sp">16sp</dimen>
+    <dimen name="text_18sp">18sp</dimen>
+    <dimen name="text_20sp">20sp</dimen>
+    <dimen name="text_24sp">24sp</dimen>
+    <dimen name="text_26sp">26sp</dimen>
+    <dimen name="text_30sp">30sp</dimen>
+
+
+    <dimen name="wlf_1dp">1dp</dimen>
+    <dimen name="wlf_2dp">2dp</dimen>
+    <dimen name="wlf_3dp">3dp</dimen>
+    <dimen name="wlf_4dp">4dp</dimen>
+    <dimen name="wlf_5dp">5dp</dimen>
+    <dimen name="wlf_6dp">6dp</dimen>
+    <dimen name="wlf_7dp">7dp</dimen>
+    <dimen name="wlf_8dp">8dp</dimen>
+    <dimen name="wlf_9dp">9dp</dimen>
+    <dimen name="wlf_10dp">10dp</dimen>
+    <dimen name="wlf_11dp">11dp</dimen>
+    <dimen name="wlf_12dp">12dp</dimen>
+    <dimen name="wlf_13dp">13dp</dimen>
+    <dimen name="wlf_14dp">14dp</dimen>
+    <dimen name="wlf_15dp">15dp</dimen>
+    <dimen name="wlf_16dp">16dp</dimen>
+    <dimen name="wlf_17dp">17dp</dimen>
+    <dimen name="wlf_18dp">18dp</dimen>
+    <dimen name="wlf_20dp">20dp</dimen>
+    <dimen name="wlf_22dp">22dp</dimen>
+    <dimen name="wlf_23dp">23dp</dimen>
+    <dimen name="wlf_24dp">24dp</dimen>
+    <dimen name="wlf_25dp">25dp</dimen>
+    <dimen name="wlf_26dp">26dp</dimen>
+    <dimen name="wlf_28dp">28dp</dimen>
+    <dimen name="wlf_30dp">30dp</dimen>
+    <dimen name="wlf_32dp">32dp</dimen>
+    <dimen name="wlf_36dp">36dp</dimen>
+    <dimen name="wlf_38dp">38dp</dimen>
+    <dimen name="wlf_40dp">40dp</dimen>
+    <dimen name="wlf_42dp">42dp</dimen>
+    <dimen name="wlf_43dp">43dp</dimen>
+    <dimen name="wlf_44dp">44dp</dimen>
+    <dimen name="wlf_45dp">45dp</dimen>
+    <dimen name="wlf_48dp">48dp</dimen>
+    <dimen name="wlf_50dp">50dp</dimen>
+    <dimen name="wlf_52dp">52dp</dimen>
+    <dimen name="wlf_59dp">59dp</dimen>
+    <dimen name="wlf_60dp">60dp</dimen>
+    <dimen name="wlf_62dp">62dp</dimen>
+    <dimen name="wlf_64dp">64dp</dimen>
+    <dimen name="wlf_65dp">65dp</dimen>
+    <dimen name="wlf_70dp">70dp</dimen>
+    <dimen name="wlf_74dp">74dp</dimen>
+    <dimen name="wlf_75dp">75dp</dimen>
+    <dimen name="wlf_76dp">76dp</dimen>
+    <dimen name="wlf_77dp">77dp</dimen>
+    <dimen name="wlf_78dp">78dp</dimen>
+    <dimen name="wlf_80dp">80dp</dimen>
+    <dimen name="wlf_87dp">87dp</dimen>
+    <dimen name="wlf_94dp">94dp</dimen>
+    <dimen name="wlf_95dp">95dp</dimen>
+    <dimen name="wlf_100dp">100dp</dimen>
+    <dimen name="wlf_107dp">107dp</dimen>
+    <dimen name="wlf_109dp">109dp</dimen>
+    <dimen name="wlf_101dp">101dp</dimen>
+    <dimen name="wlf_113dp">113dp</dimen>
+    <dimen name="wlf_115dp">115dp</dimen>
+    <dimen name="wlf_125dp">125dp</dimen>
+    <dimen name="wlf_136dp">136dp</dimen>
+    <dimen name="wlf_140dp">140dp</dimen>
+    <dimen name="wlf_150dp">150dp</dimen>
+    <dimen name="wlf_165dp">165dp</dimen>
+    <dimen name="wlf_178dp">178dp</dimen>
+    <dimen name="wlf_207dp">207dp</dimen>
+    <dimen name="wlf_227dp">227dp</dimen>
+    <dimen name="wlf_238dp">238dp</dimen>
+    <dimen name="wlf_300dp">300dp</dimen>
+    <dimen name="wlf_343dp">343dp</dimen>
+
+
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="bottom_tab_font_size">11.0sp</dimen>
+    <dimen name="bottom_tab_padding_up">2.0dip</dimen>
+    <dimen name="bottom_tab_padding_drawable">2.0dip</dimen>
+    <dimen name="parent_expandable_list_height">80dp</dimen>
+
+    <!--黑熊 - 字体尺寸设置-->
+    <dimen name="textSize_most_big_32sp">32sp</dimen>
+    <dimen name="textSize_more_big_26sp">26sp</dimen>
+    <dimen name="textSize_big_20sp">20sp</dimen>
+    <dimen name="textSize_default_18sp">18sp</dimen>
+    <dimen name="textSize_little_16sp">16sp</dimen>
+    <dimen name="textSize_more_little_14sp">14sp</dimen>
+    <dimen name="textSize_most_little_12sp">12sp</dimen>
+    <dimen name="textSize_most_little_10sp">10sp</dimen>
+    <!---->
+    <dimen name="item_margin">5dp</dimen>
+    <!--乐视皮肤-->
+    <dimen name="letv_skin_v4_ratetype_item_width">55dp</dimen>
+    <dimen name="letv_skin_v4_ratetype_item_height">30dp</dimen>
+    <dimen name="letv_skin_v4_volume_seekbar_width">35dp</dimen>
+    <dimen name="letv_skin_v4_volume_seekbar_height">130dp</dimen>
+    <!--行间距-->
+    <dimen name="space">8dp</dimen>
+    <!--自定义的视频的高度-->
+    <dimen name="image_h">160dp</dimen>
+    <dimen name="image_item">80dp</dimen>
+    //TX 播放器
+    <dimen name="jc_start_button_w_h_normal">45dp</dimen>
+    <dimen name="jc_start_button_w_h_fullscreen">62dp</dimen>
+    <!--h11-->
+    <dimen name="h11">19sp</dimen>
+    <!--h6-->
+    <dimen name="h6">14sp</dimen>
+
+    <dimen name="h12">20sp</dimen>
+
+    <dimen name="qav_multi_video_friend_item_width">60dp</dimen>
+    <dimen name="ugc_item_thumb_height">65dp</dimen>
+    <dimen name="qav_grid_view_item_width_audio">75dp</dimen>
+
+</resources>

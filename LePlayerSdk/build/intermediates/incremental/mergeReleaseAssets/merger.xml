@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="E:\Downloads\Wulinfeng\LePlayerSdk\assets"><file name="arkapsconf.json" path="E:\Downloads\Wulinfeng\LePlayerSdk\assets\arkapsconf.json"/><file name="sdkconfig.xml" path="E:\Downloads\Wulinfeng\LePlayerSdk\assets\sdkconfig.xml"/></source><source path="E:\Downloads\Wulinfeng\LePlayerSdk\build\generated\assets\shaders\release"/></dataSet><dataSet config="release"><source path="E:\Downloads\Wulinfeng\LePlayerSdk\build-types\release\assets"/></dataSet></merger>

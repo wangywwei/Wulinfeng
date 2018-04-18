@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hxwl.wlf3.home.saicheng.SCDetailsActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            style="@style/title_style"
+            android:textColor="@color/white"
+            android:text="武林风-龙王者挑战赛" />
+
+        <ImageView
+            android:id="@+id/scdetails_icon"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:layout_centerVertical="true"
+            android:src="@drawable/backup_icon"
+            />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_238dp"
+        android:orientation="vertical">
+
+
+
+<LinearLayout
+    android:layout_weight="1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/wlf_40dp"
+            android:gravity="center_vertical">
+
+
+        <TextView
+            android:paddingLeft="@dimen/wlf_28dp"
+            android:id="@+id/scdetails_zhinan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="赛事指南"
+           android:textSize="@dimen/text_18sp"
+            android:textColor="#C52720"/>
+
+
+            <TextView
+                android:paddingLeft="@dimen/wlf_20dp"
+                android:paddingRight="@dimen/wlf_20dp"
+                android:layout_weight="1"
+                android:id="@+id/scdetails_dongtai"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="赛事动态"
+                android:textSize="@dimen/text_18sp"
+                android:textColor="#646464"/>
+
+
+            <TextView
+
+                android:paddingRight="@dimen/wlf_28dp"
+                android:id="@+id/scdetails_pinglun"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="讨论区"
+                android:textSize="@dimen/text_18sp"
+                android:textColor="#646464"/>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/scdetails_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</LinearLayout>

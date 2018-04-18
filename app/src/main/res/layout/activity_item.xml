@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/Activity_layout1"
+        android:layout_marginTop="@dimen/wlf_18dp"
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+
+
+        <TextView
+            android:layout_width="@dimen/wlf_32dp"
+            android:layout_height="@dimen/man_24dp"
+            android:text="活动"
+            android:background="@drawable/biaoqian1"
+            android:textSize="@dimen/text_10sp"
+            android:textColor="#FFF"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/wlf_16dp" />
+        <!--android:background="@drawable/preparation"-->
+
+
+        <TextView
+            android:id="@+id/Activity_layout1_name"
+            android:layout_marginLeft="@dimen/wlf_8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="粉丝陪练，深度互动猜猜猜"
+            android:textSize="@dimen/text_12sp"
+            android:textColor="#666666"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/Activity_layout2"
+        android:layout_marginTop="@dimen/wlf_18dp"
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+
+
+        <ImageView
+            android:layout_width="@dimen/wlf_16dp"
+            android:layout_height="@dimen/wlf_16dp"
+            android:text="活动"
+            android:background="@drawable/bofangbiaoqian1"/>
+        <!--android:background="@drawable/preparation"-->
+
+        <TextView
+            android:id="@+id/Activity_layout2_name1"
+            android:layout_marginLeft="@dimen/wlf_6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="粉丝团"
+            android:textSize="@dimen/text_10sp"
+            android:textColor="#0074FF"
+            android:background="@drawable/zixunbiaoqian2"
+          android:paddingLeft="@dimen/wlf_4dp"
+            android:paddingRight="@dimen/wlf_4dp"
+            android:paddingTop="@dimen/wlf_1dp"
+            android:paddingBottom="@dimen/wlf_1dp"/>
+        <!--android:padding="@dimen/wlf_1dp"-->
+
+        <TextView
+            android:id="@+id/Activity_layout2_name2"
+            android:layout_marginLeft="@dimen/wlf_6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="粉丝"
+            android:textSize="@dimen/text_10sp"
+            android:textColor="#0074FF"
+            android:background="@drawable/zixunbiaoqian2"
+            android:paddingLeft="@dimen/wlf_4dp"
+            android:paddingRight="@dimen/wlf_4dp"
+            android:paddingTop="@dimen/wlf_1dp"
+            android:paddingBottom="@dimen/wlf_1dp"  />
+
+
+
+
+        <TextView
+            android:id="@+id/Activity_layout2_content"
+            android:layout_marginLeft="@dimen/wlf_6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="粉丝陪练，深度互动猜猜猜"
+            android:textSize="@dimen/text_14sp"
+            android:textColor="#444444"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

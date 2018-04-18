@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hxwl.newwlf.wulin.arts.HuatiXQActivity">
+    <RelativeLayout
+        android:id="@+id/rl_layout"
+        android:background="@drawable/huatixiangqingbei"
+        android:layout_width="match_parent"
+        android:layout_height="220dp">
+            <ImageView
+                android:layout_marginTop="@dimen/wlf_10dp"
+                android:id="@+id/huati_back"
+                android:layout_marginLeft="@dimen/wlf_16dp"
+                android:src="@drawable/backup_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_marginRight="@dimen/wlf_16dp"
+                android:layout_marginLeft="@dimen/wlf_16dp"
+                android:layout_marginTop="@dimen/wlf_60dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/wlf_78dp">
+                <ImageView
+                    android:id="@+id/huati_img"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/wlf_deimg"
+                    android:layout_width="@dimen/wlf_115dp"
+                    android:layout_height="@dimen/wlf_78dp" />
+                <RelativeLayout
+                    android:layout_marginLeft="@dimen/wlf_16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/huati_title"
+                        android:textSize="@dimen/text_18sp"
+                        android:textColor="@color/white"
+                        android:text="#中加对抗赛中加对抗赛中加对抗赛中加对抗"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/huati_number"
+                        android:layout_alignParentBottom="true"
+                        android:textSize="@dimen/text_14sp"
+                        android:textColor="@color/rgb_FF6566"
+                        android:text="#1256次参与"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    <TextView
+        android:id="@+id/huati_title2"
+        android:paddingLeft="@dimen/wlf_36dp"
+        android:paddingRight="@dimen/wlf_36dp"
+        android:paddingTop="@dimen/wlf_20dp"
+        android:paddingBottom="@dimen/wlf_20dp"
+        android:textColor="@color/rgb_444444"
+        android:text="呜呜泱泱一大堆，MMA的主流趋势这么明显不提散打早就没落了。"
+        android:layout_marginTop="-40dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/xiangqingdi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

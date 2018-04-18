@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_play_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="onClick"
+    tools:ignore="contentDescription">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true" />
+
+    <FrameLayout
+        android:id="@+id/mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+
+            android:background="@drawable/record_mask_top" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/record_mask_buttom" />
+    </FrameLayout>
+
+    <!--录制-->
+    <RelativeLayout
+        android:id="@+id/record_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/record_progress"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/record_progress" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_weight="11" />
+
+            <FrameLayout
+                android:layout_width="5dp"
+                android:layout_height="2dp"
+                android:background="#FF0ACBAB" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/record_progress">
+
+            <ImageView
+                android:id="@+id/record"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/start_record"
+                android:onClick="onClick" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/record"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <CheckedTextView
+                    android:id="@+id/record_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dip"
+                    android:background="@drawable/dp_vodeo_upload"
+                    android:button="@null"
+                    android:visibility="visible" />
+
+                <!--<ImageView-->
+                <!--android:id="@+id/btn_switch_camera"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="24dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:onClick="onClick"-->
+                <!--android:src="@drawable/icon_record_camera"/>-->
+
+                <!--<ImageView-->
+                <!--android:id="@+id/btn_beauty"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="25dp"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_weight="1"-->
+                <!--android:onClick="onClick"-->
+                <!--android:src="@drawable/record_beautiful"/>-->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/record"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/btn_music_pannel"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:src="@drawable/video_music"
+                    android:visibility="gone" />
+
+                <CheckedTextView
+                    android:id="@+id/next_done"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/record_next_done_selector"
+                    android:button="@null"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/progress_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/record_layout"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:text="00:00"
+        android:textColor="#fff" />
+
+    <LinearLayout
+        android:id="@+id/llyt_beauty_pannel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#ee101116"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.hxwl.common.tencentplay.widget.BeautySettingPannel
+            android:id="@+id/beauty_pannel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent">
+
+            <RelativeLayout
+                android:id="@+id/rlyt_close"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/dp_guanbi" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/rlyt_close"
+                android:layout_marginRight="10dp">
+
+                <LinearLayout
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:orientation="vertical">
+
+                    <CheckedTextView
+                        android:id="@+id/flash_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/record_flash_selector"
+                        android:button="@null"
+                        android:visibility="visible" />
+
+                    <CheckedTextView
+                        android:id="@+id/djs_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/record_djs_selector"
+                        android:button="@null"
+                        android:visibility="gone" />
+
+                    <CheckedTextView
+                        android:id="@+id/switch_camera_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/record_camera_switch_selector"
+                        android:button="@null"
+                        android:visibility="visible" />
+
+                    <CheckedTextView
+                        android:id="@+id/beaut_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/record_beautiful_selector"
+                        android:button="@null"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+    <com.hxwl.common.tencentplay.widget.TCAudioControl
+        android:id="@+id/layoutAudioControl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

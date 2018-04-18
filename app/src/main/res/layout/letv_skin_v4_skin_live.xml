@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <master.flame.danmaku.ui.widget.DanmakuView
+    android:id="@+id/danmakuview"
+    android:layout_marginTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--横屏上布局-->
+    <include
+    android:id="@+id/v4_letv_skin_v4_top_layout"
+    layout="@layout/letv_skin_v4_top_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+    <!--横屏下布局-->
+    <include
+    android:id="@+id/v4_large_media_controller"
+    layout="@layout/letv_skin_v4_controller_large_live_layout_new"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true" />
+
+    <!--互动的布局-->
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/rl_hudong"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:paddingBottom="40dp"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_above="@+id/v4_large_media_controller">-->
+    <!--<include-->
+    <!--android:visibility="gone"-->
+    <!--android:id="@+id/v4_letv_skin_v4_hudong_layout"-->
+    <!--layout="@layout/hudong_layout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content" />-->
+    <!--</RelativeLayout>-->
+    <!--<com.yasic.bubbleview.BubbleView-->
+    <!--android:visibility="gone"-->
+    <!--android:id="@+id/heart_layout1"-->
+    <!--android:layout_width="150dp"-->
+    <!--android:layout_marginBottom="50dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentStart="true"-->
+       <!--android:gravity="left"-->
+    <!--android:layout_marginTop="10dp"/>-->
+    <!--<com.yasic.bubbleview.BubbleView-->
+    <!--android:visibility="gone"-->
+    <!--android:id="@+id/heart_layout2"-->
+    <!--android:layout_width="150dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_marginBottom="50dp"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_marginTop="10dp"/>-->
+    <!--小屏的下布局-->
+    <include
+    android:id="@+id/v4_small_media_controller"
+    layout="@layout/letv_skin_v4_controller_live_layout_new"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true" />
+
+    <ImageView
+    android:id="@+id/iv_video_lock"
+    android:layout_width="45dp"
+    android:layout_height="45dp"
+    android:layout_alignParentLeft="true"
+    android:layout_centerVertical="true"
+    android:padding="5dp"
+    android:src="@drawable/screen_unlock_drawable"
+    android:clickable="true"
+    android:visibility="gone" />
+    <include
+    android:visibility="gone"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    layout="@layout/letv_skin_v4_controller_layout" />
+    </RelativeLayout>
+
+    </FrameLayout>

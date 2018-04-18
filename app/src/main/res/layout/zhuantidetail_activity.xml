@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#C62721"
+        >
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:layout_centerVertical="true"
+            android:src="@drawable/backup_icon"
+            />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="专题"
+            android:layout_toRightOf="@+id/user_icon"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textSize="@dimen/px_48"
+            android:singleLine="true"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <com.hxwl.common.swiperefresh.CommonSwipeRefreshLayout
+        android:id="@+id/common_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/list_back"
+        >
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/iv_back"
+            android:background="@color/list_back"
+            />
+    </com.hxwl.common.swiperefresh.CommonSwipeRefreshLayout>
+</LinearLayout>

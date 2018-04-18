@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <View
+        android:background="@color/rgb_EFEFEF"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_10dp"/>
+
+
+   <RelativeLayout
+       android:layout_marginLeft="@dimen/wlf_16dp"
+       android:layout_marginTop="@dimen/wlf_16dp"
+       android:layout_marginRight="@dimen/wlf_16dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <ImageView
+           android:id="@+id/caicheng_img"
+           android:layout_width="@dimen/wlf_343dp"
+           android:layout_height="@dimen/wlf_178dp"
+           android:layout_alignParentTop="true"
+           android:layout_centerHorizontal="true"
+           android:scaleType="fitXY"
+           android:src="@drawable/wlf_deimg"
+         />
+
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentTop="true"
+           android:layout_centerHorizontal="true"
+           android:layout_marginTop="@dimen/wlf_24dp"
+           android:text="武林风之环球拳王争霸赛昆明赛"
+           android:textColor="#FFFFFF"
+           android:textSize="@dimen/text_20sp"
+           android:id="@+id/caicheng_name" />
+
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/caicheng_name"
+           android:layout_centerHorizontal="true"
+           android:layout_marginTop="@dimen/wlf_2dp"
+           android:text="2018.3.3/21:15"
+           android:textColor="#FFFFFF"
+           android:textSize="@dimen/text_14sp"
+           android:id="@+id/caicheng_time" />
+
+
+       <ImageView
+           android:layout_marginTop="@dimen/wlf_24dp"
+           android:layout_width="@dimen/wlf_94dp"
+           android:layout_height="@dimen/wlf_42dp"
+           android:layout_alignEnd="@+id/caicheng_time"
+           android:layout_alignRight="@+id/caicheng_time"
+           android:layout_below="@+id/caicheng_time"
+           android:src="@drawable/yuyue3"
+           android:layout_marginBottom="@dimen/wlf_11dp"
+           android:id="@+id/imageView5" />
+
+       <!--android:layout_marginTop="@dimen/wlf_140dp"-->
+       <ImageView
+           android:id="@+id/caicheng_shijianzhou"
+           android:layout_width="@dimen/wlf_343dp"
+           android:layout_height="@dimen/wlf_87dp"
+            android:layout_marginTop="140dp"
+           android:layout_centerHorizontal="true"
+           android:src="@drawable/shijianzhou"
+           />
+
+
+
+
+
+   </RelativeLayout>
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.jcodecraeer.xrecyclerview.XRecyclerView>
+
+</LinearLayout>

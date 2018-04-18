@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/home3_img"
+            android:layout_marginLeft="@dimen/wlf_16dp"
+            android:layout_width="@dimen/wlf_113dp"
+            android:layout_height="@dimen/wlf_74dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/wlf_deimg"/>
+
+
+        <LinearLayout
+            android:layout_marginLeft="@dimen/wlf_8dp"
+            android:layout_marginTop="@dimen/wlf_2dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/wlf_74dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/home3_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="一龙王者挑战总决赛"
+                android:textSize="@dimen/text_16sp"
+                android:textColor="#4F5866"/>
+
+            <TextView
+                android:id="@+id/home3_address"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="昆明体育馆"
+                android:textSize="@dimen/text_12sp"
+                android:textColor="#4F5866"/>
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/home3_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2/8周五"
+                    android:textSize="@dimen/text_14sp"
+                    android:textColor="#A4AAB3"/>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/wlf_1dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/home3_beisai"
+                    android:layout_width="@dimen/wlf_32dp"
+                    android:layout_height="@dimen/man_24dp"
+                    android:text="备赛"
+                    android:background="@drawable/preparation"
+                    android:textSize="@dimen/text_10sp"
+                    android:textColor="#BB2B2D"
+                    android:gravity="center"
+                    android:layout_marginRight="@dimen/wlf_16dp" />
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+<ListView
+    android:id="@+id/shichneg1_listview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"></ListView>
+
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/home3_huodong"
+        android:layout_marginTop="@dimen/wlf_18dp"
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+
+
+        <TextView
+            android:id="@+id/home3_huodong_name0"
+            android:layout_width="@dimen/wlf_32dp"
+            android:layout_height="@dimen/man_24dp"
+            android:text="活动"
+            android:background="@drawable/preparation"
+            android:textSize="@dimen/text_10sp"
+            android:textColor="#BB2B2D"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/wlf_16dp" />
+
+
+
+        <TextView
+            android:id="@+id/home3_huodong_name"
+            android:layout_marginLeft="@dimen/wlf_8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="粉丝陪练，深度互动猜猜猜"
+            android:textSize="@dimen/text_12sp"
+            android:textColor="#666666"/>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 进度指示对话框的布局 -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp" >
+
+    <ProgressBar
+        android:id="@+id/dialog_pg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:indeterminate="false"
+        android:layout_centerHorizontal="true"
+        android:indeterminateDrawable="@drawable/dialog_style_xml_icon" />
+
+    <TextView
+        android:id="@+id/progress_dialog_msgTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_below="@id/dialog_pg"
+        android:textSize="14sp"
+        android:layout_centerHorizontal="true"
+        android:text="sssss"
+        android:textStyle="bold" />
+
+</RelativeLayout>

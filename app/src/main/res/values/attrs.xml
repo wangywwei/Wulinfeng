@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SwipeBackLayout">
+        <attr name="edge_size" format="dimension"/>
+        <attr name="edge_flag">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+            <enum name="bottom" value="2" />
+            <enum name="all" value="3" />
+        </attr>
+        <attr name="shadow_left" format="reference"/>
+        <attr name="shadow_right" format="reference"/>
+        <attr name="shadow_bottom" format="reference"/>
+    </declare-styleable>
+
+    <attr name="SwipeBackLayoutStyle" format="reference"/>
+
+    <declare-styleable name="RoundAngleImageView">
+        <attr name="roundWidth" format="dimension" />
+        <attr name="roundHeight" format="dimension" />
+    </declare-styleable>
+
+    <!--页面指示器属性-->
+    <declare-styleable name="FlycoPageIndicator">
+        <!-- indicator width, unit dp,default 6dp -->
+        <attr name="fpi_width" format="dimension"/>
+        <!-- indicator height,unit dp,default 6dp -->
+        <attr name="fpi_height" format="dimension"/>
+        <!-- indicator space between two indicators,unit dp,default 6dp -->
+        <attr name="fpi_gap" format="dimension"/>
+        <!-- width of the stroke used to draw the indicators,default 0dp -->
+        <attr name="fpi_strokeWidth" format="dimension"/>
+        <!-- color of the stroke used to draw the indicators,default "#ffffff" -->
+        <attr name="fpi_strokeColor" format="color"/>
+        <!-- Whether or not the selected indicator snaps to the indicators,default false -->
+        <attr name="fpi_isSnap" format="boolean"/>
+        <!-- indicator select color ,default "#ffffff" -->
+        <attr name="fpi_selectColor" format="color"/>
+        <!-- indicator unselect color ,default "#88ffffff"  -->
+        <attr name="fpi_unselectColor" format="color"/>
+        <!-- indicator corner raduis ,unit dp,default 3dp -->
+        <attr name="fpi_cornerRadius" format="dimension"/>
+        <!-- indicator select drawable resource -->
+        <attr name="fpi_selectRes" format="reference"/>
+        <!-- indicator unselect drawable resource -->
+        <attr name="fpi_unselectRes" format="reference"/>
+    </declare-styleable>
+    <!--乐视皮肤属性-->
+    <declare-styleable name="V4PageSeekBar">
+        <attr name="v4PageSeekBar_minValue" format="integer"/>
+        <attr name="v4PageSeekBar_maxValue" format="integer"/>
+        <attr name="v4PageSeekBar_currentValue" format="integer"/>
+        <attr name="v4PageSeekBar_perPageValue" format="integer"/>
+        <attr name="v4PageSeekBar_leftPageIndicatorValue" format="integer"/>
+        <attr name="v4PageSeekBar_rightPageIndicatorValue" format="integer"/>
+        <attr name="v4PageSeekBar_progressBackgroundDrawable" format="reference"/>
+        <attr name="v4PageSeekBar_currentThumb" format="reference"/>
+        <attr name="v4PageSeekBar_progressDrawable" format="reference"/>
+        <attr name="v4PageSeekBar_secondaryProgressDrawable" format="reference"/>
+        <attr name="v4PageSeekBar_leftPageIndicatorDrawable" format="reference"/>
+        <attr name="v4PageSeekBar_rightPageIndicatorDrawable" format="reference"/>
+        <attr name="v4PageSeekBar_text" format="string"/>
+        <attr name="v4PageSeekBar_textColor" format="color"/>
+        <attr name="v4PageSeekBar_textSize" format="dimension"/>
+        <attr name="v4PageSeekBar_textPaddingTop" format="dimension"/>
+    </declare-styleable>
+
+        <declare-styleable name="CircleImageView">
+            <attr name="border_width" format="dimension" />
+            <attr name="border_color" format="color" />
+            <attr name="border_overlay" format="boolean" />
+        </declare-styleable>
+
+    <!--饼状图-->
+    <declare-styleable name="CircleProgressBar">
+        <attr name="line_count" format="integer"/>
+        <attr name="draw_progress_text" format="boolean"/>
+        <attr name="line_width" format="dimension|reference"/>
+        <attr name="background_color" format="color|reference"/>
+        <attr name="progress_start_color" format="color|reference"/>
+        <attr name="progress_end_color" format="color|reference"/>
+        <attr name="progress_text_color" format="color|reference"/>
+        <attr name="progress_text_size" format="dimension|reference"/>
+        <attr name="progress_stroke_width" format="dimension|reference"/>
+        <attr name="progress_background_color" format="color|reference"/>
+        <attr name="progress_text_format_pattern" format="string|reference"/>
+
+        <attr name="style">
+            <enum name="line" value="0"/>
+            <enum name="solid" value="1"/>
+            <enum name="solid_line" value="2"/>
+        </attr>
+
+        <attr name="progress_shader">
+            <enum name="linear" value="0"/>
+            <enum name="radial" value="1"/>
+            <enum name="sweep" value="2"/>
+        </attr>
+
+        <attr name="progress_stroke_cap">
+            <enum name="butt" value="0"/>
+            <enum name="round" value="1"/>
+            <enum name="square" value="2"/>
+        </attr>
+
+    </declare-styleable>
+    <declare-styleable name="FlowLayout">
+        <attr name="orientation" format="enum">
+            <enum name="horizontal" value="2"/>
+            <enum name="vertical" value="3"/>
+        </attr>
+
+        <attr name="gravity" format="enum">
+            <enum name="left" value="1"/>
+            <enum name="center" value="2"/>
+            <enum name="right" value="3"/>
+            <enum name="top" value="4"/>
+            <enum name="bottom" value="5"/>
+        </attr>
+
+        <attr name="horizontalSpacing" format="dimension"/>
+        <attr name="verticalSpacing" format="dimension"/>
+        <attr name="childHorizontalSpacing" format="dimension"/>
+        <attr name="childVerticalSpacing" format="dimension"/>
+        <attr name="weight" format="integer"/>
+        <attr name="lineNum" format="integer"/>
+        <attr name="flow_efficient_mode" format="boolean"/>
+
+    </declare-styleable>
+    <!--垂直跑马灯样式-->
+    <declare-styleable name="MarqueeViewStyle">
+        <attr name="mvInterval" format="integer|reference" />
+        <attr name="mvAnimDuration" format="integer|reference" />
+        <attr name="mvTextSize" format="dimension|reference" />
+        <attr name="mvTextColor" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="NumberProgressBar">
+        <attr name="progress_current" format="integer"/>
+        <attr name="progress_max" format="integer"/>
+
+        <attr name="progress_unreached_color" format="color"/>
+        <attr name="progress_reached_color" format="color"/>
+
+        <attr name="progress_reached_bar_height" format="dimension"/>
+        <attr name="progress_unreached_bar_height" format="dimension"/>
+
+        <attr name="progress_text_size_number" format="dimension"/>
+        <attr name="progress_text_color_number" format="color"/>
+
+        <attr name="progress_text_offset" format="dimension"/>
+
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SwipeMenuLayout">
+        <attr name="leftViewId" format="reference" />
+        <attr name="rightViewId" format="reference" />
+        <attr name="contentViewId" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ReadMoreTextView">
+        <attr name="trimExpandedText" format="string" />
+        <attr name="trimCollapsedText" format="string" />
+        <attr name="trimLength" format="integer" />
+        <attr name="showTrimExpandedText" format="boolean" />
+        <attr name="colorClickableText" format="color" />
+        <attr name="trimLines" format="integer" />
+        <attr name="trimMode">
+            <enum name="trimModeLine" value="0"/>
+            <enum name="trimModeLength" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <!-- 标题模板自定义属性 -->
+    <declare-styleable name="TCActivityTitle">
+        <!-- 标题文案 -->
+        <attr name="titleText" format="string"/>
+        <!-- 是否有back按钮 -->
+        <attr name="canBack" format="boolean"/>
+        <!-- back按钮文案 -->
+        <attr name="backText" format="string"/>
+        <!-- 右侧更多功能按钮文字 -->
+        <attr name="moreText" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="CollapsedTextView">
+        <attr name="collapsedLines" format="integer" />
+        <attr name="expandedText" format="string" />
+        <attr name="collapsedText" format="string" />
+        <attr name="expandedDrawable" format="reference" />
+        <attr name="collapsedDrawable" format="reference" />
+        <attr name="tipsGravity">
+            <flag name="end" value="0" />
+            <flag name="bottom" value="1" />
+        </attr>
+        <attr name="tipsColor" format="reference|color" />
+        <attr name="tipsUnderline" format="boolean" />
+        <attr name="tipsClickable" format="boolean" />
+    </declare-styleable>
+</resources>

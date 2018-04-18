@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.hxwl.newwlf.schedule.cooperation.AgentActivity">
+
+    <LinearLayout
+        android:id="@+id/hezuoheader"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:paddingTop="@dimen/wlf_20dp"
+        android:id="@+id/rl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/backgrougimg">
+        <RelativeLayout
+            android:id="@+id/title_back"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/wlf_44dp"
+            >
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:layout_centerVertical="true"
+                android:src="@drawable/backup_icon"
+                />
+            <TextView
+                android:textSize="@dimen/text_16sp"
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上海传媒公司"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/wlf_60dp"
+            android:id="@+id/iv_usericon"
+            android:layout_width="@dimen/wlf_78dp"
+            android:layout_height="@dimen/wlf_78dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/player_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_usericon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="上海市"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
+        <com.hxwl.wulinfeng.view.ExpandableTextView
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/player_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/wlf_20dp"
+            android:layout_marginRight="@dimen/wlf_30dp"
+            android:layout_marginLeft="@dimen/wlf_30dp"
+            android:id="@+id/tv_jianjietext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/px_39"
+            android:textColor="@color/white"
+            app:etv_ToExpandHintColor="@color/shouye_tab"
+            app:etv_ToShrinkHintColor="@color/shouye_tab"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/agent_relative"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_44dp">
+        <ImageView
+            android:src="@drawable/shengdai_location"
+            android:id="@+id/agent_img"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/wlf_16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/address"
+            android:layout_marginLeft="@dimen/wlf_40dp"
+            android:text="上海长宁区长宁路200号"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@drawable/more_right"
+            android:layout_marginRight="@dimen/wlf_16dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="233dp"
+            android:background="@drawable/share_icon"
+            android:visibility="gone" />
+    </RelativeLayout>
+    <View
+        android:background="@color/rgb_EFEFEF"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_1dp"/>
+    <RelativeLayout
+        android:id="@+id/agent_relative2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_44dp">
+        <ImageView
+            android:src="@drawable/shengdai_tel"
+            android:id="@+id/agent_img2"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/wlf_16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tet"
+            android:layout_marginLeft="@dimen/wlf_40dp"
+            android:text="021-55555555"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@drawable/more_right"
+            android:layout_marginRight="@dimen/wlf_16dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <View
+        android:background="@color/rgb_EFEFEF"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl_chat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_chat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="资讯"
+                    android:textColor="@color/shouye_tab"
+                    android:textSize="14sp" />
+
+                <View
+                    android:id="@+id/chat_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/shouye_tab"
+                    android:visibility="visible"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_guess"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_guess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="拳手"
+                    android:textColor="@color/rgb_888888"
+                    android:textSize="14sp" />
+
+                <View
+                    android:id="@+id/guess_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/shouye_tab"
+                    android:visibility="gone"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_huigu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_huigu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:text="比赛"
+                    android:textColor="@color/rgb_888888"
+                    android:textSize="14sp" />
+
+                <View
+                    android:visibility="gone"
+                    android:id="@+id/huigu_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/shouye_tab"
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+        <com.hxwl.newwlf.sousuo.CustomViewPager
+            android:layout_marginTop="@dimen/wlf_2dp"
+            android:id="@+id/agent_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</ScrollView>

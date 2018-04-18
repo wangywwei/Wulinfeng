@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginLeft="@dimen/wlf_16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="公布对阵信息"
+            android:textSize="@dimen/text_14sp"
+            android:textColor="#222222"/>
+
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/wlf_1dp"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="03.16/周五"
+            android:textColor="#A4AAB3"
+            android:textSize="@dimen/text_12sp"
+            android:layout_marginRight="@dimen/wlf_16dp"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_136dp"
+        android:gravity="center_vertical">
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+
+            <ImageView
+                android:layout_width="@dimen/wlf_45dp"
+                android:layout_height="@dimen/wlf_45dp"
+                android:src="@drawable/xie_player"/>
+
+
+            <TextView
+                android:layout_marginTop="@dimen/wlf_4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="方便"
+                android:textSize="@dimen/text_12sp"
+                android:textColor="#444444"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上海搏击俱乐部"
+                android:textSize="@dimen/text_10sp"
+                android:textColor="#888888"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+
+            <ImageView
+                android:layout_width="@dimen/wlf_23dp"
+                android:layout_height="@dimen/wlf_12dp"
+                android:src="@drawable/vs"
+                android:scaleType="fitXY"/>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+
+            <ImageView
+                android:layout_width="@dimen/wlf_40dp"
+                android:layout_height="@dimen/wlf_40dp"
+                android:src="@drawable/xie_player"/>
+
+
+            <TextView
+                android:layout_marginTop="@dimen/wlf_4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="方便"
+                android:textSize="@dimen/text_12sp"
+                android:textColor="#444444"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上海搏击俱乐部"
+                android:textSize="@dimen/text_10sp"
+                android:textColor="#888888"/>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

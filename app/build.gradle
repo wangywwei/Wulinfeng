@@ -1,0 +1,274 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "23.0.3"
+    defaultConfig {
+        applicationId "com.hxwl.wulinfeng"
+        minSdkVersion 16
+        targetSdkVersion 21
+        versionCode 2
+        versionName "2.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+        ndk {
+            abiFilters "arm64_v8a", "armeabi", "armeabi-v7a", "mips", "mips64", "x86", "x86_64"
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "490cec9c6fb5c46c702e610b", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+                XG_ACCESS_ID : "2100277959",
+                XG_ACCESS_KEY: "AU714FRL5E6M",
+        ]
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+    }
+    productFlavors {
+        wulinfengtest {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "test"]
+        }
+        //官网
+        guanwang {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "guanwang"]
+        }
+        //华为应用商店
+        huawei {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "huawei"]
+        }
+        //小米应用商店
+        xiaomi {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "xiaomi"]
+        }
+        //360手机助手
+        qihu360 {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "qihu360"]
+        }
+        //百度手机助手
+        baiduzhushou {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "baiduzhushou"]
+        }
+        //vivo 应用商店
+        vivo {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "vivo"]
+        }
+        //阿里
+        ali {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "ali"]
+        }
+        //应用宝
+        yingyongbao {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "yingyongbao"]
+        }
+        //今日头条推广
+        tuiguangjinritoutiao {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "tg_jrtt"]
+        }
+        //百度推广
+        tuiguangbaidu {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "tg_baidu"]
+        }
+        //360 推广
+        tuiguang360 {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "tg_360"]
+        }
+        //应用汇
+        yingyonghui {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "yingyonghui"]
+        }
+        //联想
+        lenovo {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "lenovo"]
+        }
+        //三星应用商店
+        samsung {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "samsung"]
+        }
+        //酷安 市场
+        kuan {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "kuan"]
+        }
+        //金立
+        jinli {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "jinli"]
+        }
+        //安智市场
+        anzhishichang {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "anzhishichang"]
+        }
+        //oppo 应用商店
+        oppo {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "oppo"]
+        }
+        //魅族应用商店
+        menzu {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "menzu"]
+        }
+        // 头条媒体 头条下载
+        toutiaomeiti {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "toutiaomeiti"]
+        }
+        // 搜狐媒体
+        souhumeiti {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "souhumeiti"]
+        }
+        // 微信下载
+        weixinxiazai {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "weixinxiazai"]
+        }
+        // 百度贴吧
+        baidutieba {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "baidutieba"]
+        }
+        // 网易媒体
+        wangyimeiti {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "wangyimeiti"]
+        }
+        // 社群1
+        shequn1 {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "shequn1"]
+        }
+        // 社群2
+        shequn2 {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "shequn2"]
+        }
+        // 社群3
+        shequn3 {
+            manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: "shequn3"]
+        }
+        productFlavors.all {
+            flavor -> flavor.manifestPlaceholders = [MTJ_DATA_CHANNEL_VALUE: name]
+        }
+    }
+
+
+    greendao {
+        schemaVersion 1
+        daoPackage 'com.hxwl.wulinfeng.db'
+        targetGenDir 'src/main/java'
+    }
+}
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.0'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+
+    //超过方法数
+    compile 'com.android.support:multidex:1.0.0'
+
+    //数据库操做框架
+    compile 'org.greenrobot:greendao:3.2.0'
+    compile 'q.rorbin:badgeview:1.0.0'
+
+    //badgeview可拖拽
+
+    /*tab标题栏*/
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.0@aar'
+
+    //标签控件
+    compile 'com.flyco.labelview:FlycoLabelView_Lib:1.0.2@aar'
+
+    /* 对话框*/
+    compile 'com.flyco.dialog:FlycoDialog_Lib:1.2.6@aar'
+    compile 'com.yanzhenjie:permission:1.0.1'
+
+    //混合布局的recycleview 框架
+    compile('com.alibaba.android:vlayout:1.0.4@aar') {
+        transitive = true
+    }
+
+    //titleBar
+    compile 'com.jaeger.statusbarutil:library:1.4.0'
+
+    //注解jar
+    compile 'com.jakewharton:butterknife:7.0.1'
+
+    //无广告
+
+    //    compile files('libs/tbs_sdk_thirdapp_v3.1.0.1034_43100_sharewithdownload_obfs_20170301_182143.jar')
+    compile files('libs/pinyin4j-2.5.0.jar')
+
+    //广告使用
+    compile files('libs/nineoldandroids-2.4.0.jar')
+
+    //标签控件 显示角标
+    compile 'com.flyco.labelview:FlycoLabelView_Lib:1.0.2@aar'
+
+    /*Android 6.0的运行时权限*/
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
+    compile 'io.reactivex:rxjava:1.1.5'
+    compile 'com.github.bumptech.glide:glide:3.3.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.github.dongjunkun:DropDownMenu:1.0.3'
+
+    //三方框架 引入jar工程
+    compile project(':banner')
+    compile project(':LePlayerSdk')
+    compile project(':PhotoPicker')
+
+    //弹出互动动画
+    compile project(':bubbleview')
+
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    //弹幕库c
+    compile 'com.github.ctiao:DanmakuFlameMaster:0.6.2'
+    compile 'com.github.ctiao:ndkbitmap-armv7a:0.6.2'
+    compile 'com.github.ctiao:ndkbitmap-armv5:0.6.2'
+    compile 'com.github.ctiao:ndkbitmap-x86:0.6.2'
+
+    //腾讯云点播，视频，短拍
+    compile files('libs/sha1utils.jar')
+    compile files('libs/liteavsdk.jar')
+    compile files('libs/cos-sdk-android.1.4.3.11.jar')
+
+    //内存溢出
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    compile 'com.jcodecraeer:xrecyclerview:1.3.2'
+    compile 'com.zhy:okhttputils:2.6.2'
+    compile 'com.github.1002326270xc:LayoutManager-FlowLayout:v1.6'
+    compile 'com.aliyun.dpa:oss-android-sdk:2.4.5'
+    compile 'commons-lang:commons-lang:2.6'
+    compile files('libs/imsdk.jar')
+    compile files('libs/imsdk_sns_ext.jar')
+    compile files('libs/imsdk_msg_ext.jar')
+    compile files('libs/imsdk_group_ext.jar')
+    compile files('libs/bugly_2.4.0_imsdk_release.jar')
+    compile files('libs/mobilepb.jar')
+    compile files('libs/qalsdk.jar')
+    compile files('libs/soload.jar')
+    compile files('libs/tls_sdk.jar')
+    compile files('libs/wup-1.0.0-SNAPSHOT.jar')
+
+    //信鸽jar
+    compile 'com.tencent.xinge:xinge:3.2.2-release'
+
+    //mid包
+    compile 'com.tencent.mid:mid:4.0.6-release'
+}

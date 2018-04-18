@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFEFEF"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFF"
+            android:orientation="vertical">
+
+            <!--头像  用户名-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_363"
+                android:background="@color/rgb_BA2B2C">
+
+                <!-- android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"-->
+                <ImageView
+                    android:id="@+id/iv_head_img"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/denglu"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="57dp"/>
+
+
+
+
+<!--     android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/iv_head_img"-->
+                <TextView
+                    android:id="@+id/tv_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_head_img"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="19dp"
+                    android:text="登录"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/list_line"
+                android:visibility="gone"/>
+
+            <!--赛事预约-->
+            <RelativeLayout
+                android:id="@+id/rl_lay1"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/iv_img1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/myevent_icon" />
+
+                <TextView
+                    android:id="@+id/tv_text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/iv_img1"
+                    android:text="赛事预约"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/px_42" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignLeft="@+id/tv_text1"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/list_line"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/img1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/more_right" />
+            </RelativeLayout>
+
+            <!--系统消息-->
+            <RelativeLayout
+
+                android:id="@+id/rl_lay2"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/iv_img2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/mymessage_icon" />
+
+                <TextView
+                    android:id="@+id/tv_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/iv_img2"
+                    android:text="系统消息"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/px_42" />
+
+                <ImageView
+                    android:id="@+id/img_point2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tv_text2"
+                    android:layout_toRightOf="@+id/tv_text2"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/y"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignLeft="@+id/tv_text2"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/list_line"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/img2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/more_right" />
+            </RelativeLayout>
+
+            <!--我的武林    隐藏-->
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_lay3"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/img2"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/iv_img3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/myrelease_icon" />
+
+                <TextView
+                    android:id="@+id/tv_text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/iv_img3"
+                    android:text="我的武林"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/px_42" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/list_line"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/img3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/more_right" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/list_line"
+                android:visibility="gone"/>
+
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/shouchangdehuodong3"/>-->
+
+            <!--收藏的活动-->
+            <RelativeLayout
+                android:id="@+id/rl_shoucang"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/iv_shoucang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/haixuanbaoming" />
+
+                <TextView
+                    android:id="@+id/tv_shoucang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/iv_shoucang"
+                    android:text="收藏的活动"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/px_42" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignLeft="@+id/tv_shoucang"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/list_line"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/img_shoucang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/more_right" />
+            </RelativeLayout>
+
+
+            <!--海选赛报名-->
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_haixuan"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/iv_haixuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/haixuanbaoming" />
+
+                <TextView
+                    android:id="@+id/tv_haixuang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/iv_haixuan"
+                    android:text="海选赛报名"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/px_42" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignLeft="@+id/tv_haixuang"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/list_line"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/img_haixuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/more_right" />
+            </RelativeLayout>
+
+            <!--我的热评    隐藏-->
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_reping"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/iv_reping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/wodeerping" />
+
+                <TextView
+                    android:id="@+id/tv_reping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/iv_reping"
+                    android:text="我的热评"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/px_42" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignLeft="@+id/tv_reping"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/list_line" />
+
+                <ImageView
+                    android:id="@+id/img_reping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/more_right" />
+            </RelativeLayout>
+
+
+
+
+            <!--商城-->
+            <RelativeLayout
+                android:id="@+id/rl_shangcheng"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/iv_shengcheng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/shangcheng" />
+
+                <TextView
+                    android:id="@+id/tv_shangcheng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/iv_shengcheng"
+                    android:text="商城"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/px_42" />
+
+
+                <ImageView
+                    android:id="@+id/img_shangcheng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/more_right" />
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/list_line"
+                android:visibility="gone"/>
+
+            <!--帮助与反馈-->
+            <RelativeLayout
+                android:id="@+id/rl_lay4"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/iv_img4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/myhelp_icon" />
+
+                <TextView
+                    android:id="@+id/tv_text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/iv_img4"
+                    android:text="帮助与反馈"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/px_42" />
+
+
+
+                <ImageView
+                    android:id="@+id/img_point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tv_text4"
+                    android:layout_toRightOf="@+id/tv_text4"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    android:src="@drawable/y" />
+                <ImageView
+                    android:id="@+id/img4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/more_right" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignLeft="@+id/tv_text4"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/list_line"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <!--关于武林风-->
+            <RelativeLayout
+                android:id="@+id/rl_lay5"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/iv_img5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/myabout_icon" />
+
+                <TextView
+                    android:id="@+id/tv_text5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/iv_img5"
+                    android:text="关于武林风"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/px_42" />
+
+
+
+                <ImageView
+                    android:id="@+id/img5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/more_right" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/list_line"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <!--退出登录-->
+            <RelativeLayout
+                android:id="@+id/rl_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="31dp"
+                android:visibility="visible"
+                >
+
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/list_line"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/tv_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:layout_below="@+id/line1"
+                    android:textColor="@color/shouye_tab"
+                    android:text="退出登录"
+                   android:textSize="@dimen/text_18sp" />
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_below="@+id/tv_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/list_line"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

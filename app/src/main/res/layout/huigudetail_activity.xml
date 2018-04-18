@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hxwl.wulinfeng.activity.HuiGuDetailActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--w未开始显示的图片-->
+        <RelativeLayout
+            android:id="@+id/rl_nostart_pic"
+            android:layout_width="match_parent"
+            android:layout_height="215dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_picture"
+                android:layout_width="match_parent"
+                android:layout_height="215dp"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/iv_tioaozhuan"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/tiaozhuan" />
+        </RelativeLayout>
+
+        <!--视频加载的webview-->
+        <LinearLayout
+            android:id="@+id/llyt_webview_container"
+            android:layout_width="match_parent"
+            android:layout_height="215dp"
+            android:orientation="vertical">
+
+        </LinearLayout>
+        <include
+            android:id="@+id/ic_net_warn"
+            layout="@layout/layout_vedio_play_warn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            />
+        <RelativeLayout
+            android:id="@+id/videoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"></RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_empty"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="center"
+            android:background="#202020"
+            android:visibility="gone"
+            >
+
+            <ImageView
+                android:id="@+id/iv_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                />
+            <TextView
+                android:id="@+id/tv_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                android:layout_below="@+id/iv_empty"
+                android:layout_marginTop="@dimen/px_30"
+                android:textSize="@dimen/px_42"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rlyt_top"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/transparent"
+            >
+
+            <RelativeLayout
+                android:id="@+id/title_back"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scaleType="center"
+                    android:src="@drawable/backup_icon" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="50dp"
+                android:layout_toRightOf="@+id/title_back"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text=""
+                android:visibility="gone"
+                android:textColor="@color/title_color_bg"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <RelativeLayout
+                android:id="@+id/rl_chat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_chat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="热聊"
+                    android:textColor="#7e7e7e"
+                    android:textSize="14sp" />
+
+                <View
+                    android:id="@+id/chat_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="13dp"
+                    android:background="@color/shouye_tab"
+                    android:visibility="gone"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_guess"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_guess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="对阵"
+                    android:textColor="@color/shouye_tab"
+                    android:textSize="14sp" />
+
+                <View
+                    android:id="@+id/guess_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@color/shouye_tab"
+                    android:visibility="visible"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_huigu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_huigu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:text="往期"
+                    android:textColor="@color/shouye_tab"
+                    android:textSize="14sp" />
+
+                <View
+                    android:id="@+id/huigu_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:background="@color/shouye_tab"
+                     />
+
+            </RelativeLayout>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#e2e2e2"
+            android:layout_below="@+id/ll_layout"
+            />
+
+        <FrameLayout
+            android:id="@+id/fl_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"/>
+    </LinearLayout>
+</LinearLayout>

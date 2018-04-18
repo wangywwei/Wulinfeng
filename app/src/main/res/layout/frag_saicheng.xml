@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                style="@style/title_style"
+                android:text="赛程"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/user_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/top_wlf"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/img_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/search_icon" />
+        </RelativeLayout>
+
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/tl_SlidingTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/white"
+            tl:tl_tab_padding="0dp"
+            tl:tl_tab_space_equal="true"
+            tl:tl_textsize="15sp"
+            tl:tl_textUnselectColor="@color/rgb_222222"
+            tl:tl_underline_color="@color/rgb_BA2B2C" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <RelativeLayout
+                android:id="@+id/rl_empty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:background="@color/list_back"
+                android:paddingTop="10dp"
+                android:visibility="gone"
+                >
+
+                <ImageView
+                    android:id="@+id/dialog_pg"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/yichang"
+                    android:layout_centerHorizontal="true"
+                    />
+                <TextView
+                    android:id="@+id/progress_dialog_msgTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#585858"
+                    android:layout_below="@id/dialog_pg"
+                    android:textSize="18sp"
+                    android:layout_centerHorizontal="true"
+                    android:text="网络异常，请刷新重试"
+                    />
+                <TextView
+                    android:id="@+id/tv_reconnection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="重新连接"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/progress_dialog_msgTextView"
+                    android:textSize="@dimen/px_42"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/send_red"
+                    android:paddingTop="@dimen/px_36"
+                    android:paddingBottom="@dimen/px_36"
+                    android:paddingLeft="@dimen/px_87"
+                    android:paddingRight="@dimen/px_87"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

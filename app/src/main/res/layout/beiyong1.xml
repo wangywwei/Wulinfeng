@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF">
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/vll_img"
+                android:layout_width="@dimen/wlf_101dp"
+                android:layout_height="@dimen/wlf_75dp"
+                android:src="@drawable/wlf_deimg"
+                android:scaleType="fitXY" />
+
+
+            <ImageView
+                android:id="@+id/vll_bofang"
+                android:visibility="gone"
+                android:layout_width="@dimen/wlf_25dp"
+                android:layout_height="@dimen/wlf_25dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/bofang" />
+
+
+            <!--android:textStyle="bold"-->
+            <TextView
+                android:id="@+id/vll_text"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7"
+                android:textSize="@dimen/text_30sp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_marginLeft="@dimen/wlf_12dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/wlf_75dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/vll_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2018巴塞尔艺术展香港展会 2018.9.1"
+                android:textSize="@dimen/text_13sp"
+                android:textColor="#000000"/>
+
+
+            <TextView
+                android:id="@+id/vll_content"
+                android:layout_marginTop="@dimen/wlf_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/wlf_28dp"
+                android:text="当金融广告撞上马卡龙色，，"
+                android:textSize="@dimen/text_10sp"
+                android:textColor="#666666"/>
+
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/wlf_7dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:id="@+id/cll_position1"
+                        android:visibility="gone"
+                        android:layout_width="@dimen/wlf_11dp"
+                        android:layout_height="@dimen/wlf_13dp"
+                        android:src="@drawable/weizhi"/>
+
+                    <TextView
+                        android:id="@+id/vll_position"
+                        android:visibility="gone"
+                        android:layout_marginLeft="@dimen/wlf_6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="北京一龙奥宇俱乐部"
+                        android:textColor="#007AFF"
+                        android:textSize="@dimen/text_10sp"
+                        android:layout_marginRight="@dimen/wlf_16dp"/>
+
+
+                    <TextView
+                        android:id="@+id/vll_bujidashuju"
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="我是作者"
+                        android:textSize="@dimen/text_10sp"
+                        android:textColor="#000000"/>
+
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_marginTop="@dimen/wlf_16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/wlf_1dp"
+        android:background="#EFEFEF"/>
+
+
+    <!--<com.jcodecraeer.xrecyclerview.XRecyclerView-->
+        <!--android:visibility="gone"-->
+        <!--android:id="@+id/duizhen_xrecycler"-->
+        <!--android:layout_marginLeft="@dimen/wlf_16dp"-->
+        <!--android:layout_marginRight="@dimen/wlf_16dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"></com.jcodecraeer.xrecyclerview.XRecyclerView>-->
+
+
+
+
+
+
+</LinearLayout>

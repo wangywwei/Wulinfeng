@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="115dp">
+        <ImageView
+            android:scaleType="fitXY"
+            android:src="@drawable/wlf_deimg"
+            android:id="@+id/grid_image"
+            android:layout_width="match_parent"
+            android:layout_height="115dp" />
+        <ImageView
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bofang"
+            android:id="@+id/grid_image3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/grid_image2"
+            android:textSize="@dimen/text_30sp"
+            android:textColor="@color/white"
+            android:text="7"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_marginBottom="@dimen/wlf_10dp"
+        android:layout_marginTop="@dimen/wlf_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="6dp"
+            android:visibility="gone"
+            android:gravity="center"
+            android:id="@+id/grid_title1"
+            android:textSize="@dimen/text_10sp"
+            android:padding="2dp"
+            android:text="专题"
+            android:textColor="@color/white"
+            android:background="@drawable/biaoqian1"
+            android:layout_width="@dimen/wlf_32dp"
+            android:layout_height="17dp" />
+        <TextView
+            android:lineSpacingExtra="@dimen/wlf_6dp"
+            android:textColor="@color/rgb_444444"
+            android:id="@+id/grid_title"
+            android:text="王者归来"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</LinearLayout>

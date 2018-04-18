@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_marginLeft="@dimen/wlf_16dp"
+    android:layout_marginRight="@dimen/wlf_16dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/saicheng_img"
+                android:layout_width="@dimen/wlf_101dp"
+                android:layout_height="@dimen/wlf_75dp"
+                android:src="@drawable/wlf_deimg"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/saicheng_bofang"
+                android:layout_width="@dimen/wlf_25dp"
+                android:layout_height="@dimen/wlf_25dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/bofang" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/wlf_75dp"
+            android:layout_marginLeft="@dimen/wlf_12dp"
+            android:orientation="vertical">
+
+
+
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:layout_alignParentStart="true">-->
+
+
+                <TextView
+                    android:id="@+id/saicheng_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2018巴塞尔艺术展香港展会 2018.9.1"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/text_13sp" />
+
+
+
+                <LinearLayout
+                    android:id="@+id/saicheng_ditu"
+                    android:layout_alignParentBottom ="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:id="@+id/saicheng_position1"
+                        android:layout_width="@dimen/wlf_11dp"
+                        android:layout_height="@dimen/wlf_13dp"
+                        android:src="@drawable/weizhi" />
+
+                    <TextView
+                        android:id="@+id/saicheng_position"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/wlf_6dp"
+                        android:layout_marginRight="@dimen/wlf_16dp"
+                        android:text="北京一龙奥宇俱乐部"
+                        android:textColor="#007AFF"
+                        android:textSize="@dimen/text_10sp" />
+
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/saicheng_yuyuetupian"
+                    android:layout_alignParentBottom ="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="@dimen/wlf_70dp"
+                    android:layout_height="@dimen/wlf_32dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/yiyuyue3" />
+
+
+            <!--</RelativeLayout>-->
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_marginTop="@dimen/wlf_16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/wlf_1dp"
+        android:background="#EFEFEF"/>
+
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_margin="@dimen/wlf_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/live_title"
+            android:textColor="@color/rgb_000000"
+            android:text="武林风-河南赛"
+            android:textSize="@dimen/text_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/live_time"
+            android:layout_marginLeft="@dimen/wlf_16dp"
+            android:textColor="@color/rgb_888888"
+            android:text="4月14日 14：00"
+            android:textSize="@dimen/text_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/man_20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/live_touxiang"
+                android:layout_width="@dimen/wlf_45dp"
+                android:layout_height="@dimen/wlf_45dp" />
+            <TextView
+                android:id="@+id/live_name"
+                android:layout_marginTop="@dimen/wlf_11dp"
+                android:textSize="@dimen/text_13sp"
+                android:textColor="@color/rgb_444444"
+                android:text="方便"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/live_julebu"
+                android:layout_marginTop="@dimen/wlf_3dp"
+                android:textColor="@color/rgb_888888"
+                android:textSize="@dimen/text_11sp"
+                android:text="上海青浦拳击俱乐部"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="@dimen/wlf_52dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:gravity="center"
+                android:textSize="@dimen/text_18sp"
+                android:textColor="@color/rgb_222222"
+                android:text="VS"
+                android:layout_marginTop="@dimen/man_13dp"
+                android:src="@drawable/vs"
+                android:layout_width="@dimen/wlf_24dp"
+                android:layout_height="@dimen/wlf_25dp" />
+            <ImageView
+                android:src="@drawable/zhibozhong1"
+                android:id="@+id/live_boolean"
+                android:layout_marginTop="@dimen/man_10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/live_touxiang2"
+                android:layout_width="@dimen/wlf_45dp"
+                android:layout_height="@dimen/wlf_45dp" />
+            <TextView
+                android:id="@+id/live_name2"
+                android:layout_marginTop="@dimen/wlf_11dp"
+                android:textSize="@dimen/text_13sp"
+                android:textColor="@color/rgb_444444"
+                android:text="一龙"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/live_julebu2"
+                android:layout_marginTop="@dimen/wlf_3dp"
+                android:textColor="@color/rgb_888888"
+                android:textSize="@dimen/text_11sp"
+                android:text="北京一龙奥宇俱乐部"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

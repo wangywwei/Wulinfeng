@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:drawable="@drawable/faxian_icon_red"></item>
+    <item android:drawable="@drawable/faxian_icon_red" android:state_checked="true"></item>
+    <item android:drawable="@drawable/faxian_icon_grey"></item>
+</selector>

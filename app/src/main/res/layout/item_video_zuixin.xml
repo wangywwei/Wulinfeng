@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llyt_toutiao_vedio"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#282828"
+    android:orientation="vertical">
+
+
+    <View
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#222">
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#282828"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_coutent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="5dp"
+            android:paddingBottom="10dp"
+            android:text="六十年前的今天，1956年10月8日，中国第一个导弹研究机构——国防部第五研究院成立，标志着中国航天事业的创建"
+            android:textColor="#cfcfcf"
+            android:textSize="15sp" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+            <RelativeLayout
+                android:id="@+id/ll_picbg"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:orientation="horizontal"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/pic_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:id="@+id/iv_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/video_icon" />
+            </RelativeLayout>
+            <!--网络提醒-->
+            <include
+                android:id="@+id/ic_net_warn"
+                layout="@layout/layout_vedio_play_warn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:visibility="gone"
+                />
+            <!--视频播放 -->
+
+            <RelativeLayout
+                android:id="@+id/videoContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                >
+
+            </RelativeLayout>
+        </FrameLayout>
+
+
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            >
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:id="@+id/user_icon"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:background="@drawable/jingcai_icon2"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0天前"
+                android:layout_marginLeft="10dp"
+                android:textColor="#666"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"></View>
+            <RelativeLayout
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:minWidth="40dp"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:id="@+id/tv_pinglun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:drawableLeft="@drawable/jingcai_icon2"
+                    android:drawablePadding="4dp"
+                    android:text="1"
+                    android:textColor="#666"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:minWidth="40dp"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:id="@+id/tv_dianzan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:drawableLeft="@drawable/jingcai_icon2"
+                    android:drawablePadding="4dp"
+                    android:text="1234"
+                    android:textColor="#666"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#222">
+    </View>
+</LinearLayout>

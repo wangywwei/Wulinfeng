@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            style="@style/title_style"
+            android:textColor="@color/white"
+            android:text="我的反馈" />
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:layout_centerVertical="true"
+            android:src="@drawable/backup_icon"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fankuinull_icon"
+            android:scaleType="center"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:id="@+id/tv_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_img"
+            android:text="您还没有提交反馈~"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            />
+
+    </RelativeLayout>
+    <com.hxwl.common.swiperefresh.CommonSwipeRefreshLayout
+        android:id="@+id/common_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ListView
+            android:id="@+id/lv_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:dividerHeight="3dp"
+            android:background="#EFEFEF"
+            />
+    </com.hxwl.common.swiperefresh.CommonSwipeRefreshLayout>
+</LinearLayout>

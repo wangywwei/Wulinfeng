@@ -1,0 +1,46 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.hxwl.newwlf.wulin.arts.HuatiFragment">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/huati_title"
+        android:gravity="center"
+        android:textSize="@dimen/text_18sp"
+        android:textColor="@color/rgb_222222"
+        android:text="#热门话题#"
+        android:layout_width="match_parent"
+        android:layout_height="55dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/huati_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    
+    <View
+        android:layout_marginTop="@dimen/wlf_16dp"
+        android:background="@color/rgb_EFEFEF"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_12dp"/>
+    <TextView
+        android:id="@+id/huati_title2"
+        android:gravity="center"
+        android:textSize="@dimen/text_18sp"
+        android:textColor="@color/rgb_222222"
+        android:text="#其它话题#"
+        android:layout_width="match_parent"
+        android:layout_height="55dp" />
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/huati_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_300dp"/>
+
+    </LinearLayout>
+</ScrollView>

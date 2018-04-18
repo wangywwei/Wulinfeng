@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/home3_xrecycler"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:background="@color/rgb_EFEFEF"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_10dp"/>
+
+    <RelativeLayout
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_marginTop="@dimen/wlf_16dp"
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/home_saishi_img"
+            android:layout_width="@dimen/wlf_343dp"
+            android:layout_height="@dimen/wlf_178dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/wlf_deimg" />
+
+        <TextView
+            android:id="@+id/home_saishi_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/wlf_24dp"
+            android:text="武林风之环球拳王争霸赛昆明赛"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_20sp" />
+
+        <TextView
+            android:id="@+id/home_saishi_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/home_saishi_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/wlf_2dp"
+            android:text="2018.3.3/21:15"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_14sp"/>
+
+        <ImageView
+            android:id="@+id/home_saishi_yuyue"
+            android:layout_marginTop="@dimen/wlf_24dp"
+            android:layout_width="@dimen/wlf_94dp"
+            android:layout_height="@dimen/wlf_42dp"
+            android:layout_alignEnd="@+id/home_saishi_item"
+            android:layout_alignRight="@+id/home_saishi_item"
+            android:layout_below="@+id/home_saishi_item"
+            android:src="@drawable/yuyue3"
+            android:layout_marginBottom="@dimen/wlf_11dp" />
+
+        <ImageView
+            android:id="@+id/home_saishi_shijianzhou"
+            android:layout_width="@dimen/wlf_343dp"
+            android:layout_height="@dimen/wlf_87dp"
+            android:layout_alignEnd="@+id/home_saishi_img"
+            android:layout_alignRight="@+id/home_saishi_img"
+            android:layout_alignTop="@+id/home_saishi_yuyue"
+            android:layout_marginTop="@dimen/wlf_43dp"
+            android:src="@drawable/shijianzhou" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/home_saishi_xrecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

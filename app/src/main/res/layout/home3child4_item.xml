@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF">
+
+
+
+
+
+    <View
+        android:background="@color/rgb_EFEFEF"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_10dp"/>
+
+
+    <RelativeLayout
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_marginTop="@dimen/wlf_16dp"
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="@dimen/wlf_343dp"
+            android:layout_height="@dimen/wlf_178dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/wlf_deimg"
+            android:id="@+id/imageView3" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/wlf_24dp"
+            android:text="武林风之环球拳王争霸赛昆明赛"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_20sp"
+            android:id="@+id/textView2" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/wlf_2dp"
+            android:text="2018.3.3/21:15"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_14sp"
+            android:id="@+id/textView3" />
+
+
+        <ImageView
+            android:layout_marginTop="@dimen/wlf_24dp"
+            android:layout_width="@dimen/wlf_94dp"
+            android:layout_height="@dimen/wlf_42dp"
+            android:layout_alignEnd="@+id/textView3"
+            android:layout_alignRight="@+id/textView3"
+            android:layout_below="@+id/textView3"
+            android:src="@drawable/yuyue3"
+            android:layout_marginBottom="@dimen/wlf_11dp"
+            android:id="@+id/imageView5" />
+
+
+        <ImageView
+
+            android:layout_width="@dimen/wlf_343dp"
+            android:layout_height="@dimen/wlf_87dp"
+            android:layout_alignEnd="@+id/imageView3"
+            android:layout_alignRight="@+id/imageView3"
+            android:layout_alignTop="@+id/imageView5"
+            android:layout_marginTop="@dimen/wlf_43dp"
+            android:src="@drawable/shijianzhou" />
+
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="@dimen/wlf_101dp"
+                android:layout_height="@dimen/wlf_75dp"
+                android:src="@drawable/wlf_deimg"
+                android:scaleType="fitXY" />
+
+
+            <ImageView
+                android:visibility="gone"
+                android:layout_width="@dimen/wlf_25dp"
+                android:layout_height="@dimen/wlf_25dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/bofang" />
+
+
+
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:layout_marginLeft="@dimen/wlf_12dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/wlf_75dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2018巴塞尔艺术展香港展会 2018.9.1"
+                android:textSize="@dimen/text_13sp"
+                android:textColor="#000000"/>
+
+
+            <TextView
+                android:layout_marginTop="@dimen/wlf_8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="当金融广告撞上马卡龙色，可视化这件事儿都当金融广告撞上马卡龙色，"
+                android:textSize="@dimen/text_10sp"
+                android:textColor="#666666"/>
+
+
+
+
+
+                <TextView
+                    android:layout_marginTop="@dimen/wlf_8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我是作者"
+                    android:textSize="@dimen/text_10sp"
+                    android:textColor="#000000"/>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_marginTop="@dimen/wlf_16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/wlf_1dp"
+        android:background="#EFEFEF"/>
+
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.jcodecraeer.xrecyclerview.XRecyclerView>
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

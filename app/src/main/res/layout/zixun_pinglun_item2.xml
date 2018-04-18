@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/wlf_16dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/touxiang_img" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignTop="@+id/user_icon"
+            android:layout_alignBottom="@+id/user_icon"
+            android:layout_toRightOf="@+id/user_icon"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="炸药桶杨茁"
+                android:textColor="@color/rgb_888888"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_marginRight="@dimen/man_17dp"
+                android:layout_alignParentRight="true"
+                android:id="@+id/fatie_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10月24日 15：30"
+                android:layout_marginTop="5dp"
+                android:textColor="#999999"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/pinglun_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/wlf_16dp"
+            android:layout_marginRight="10dp"
+            android:paddingBottom="6dp"
+            android:text="呜呜泱泱一大堆，但是怎么就是没有提到现如"
+            android:textColor="#222"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginBottom="@dimen/wlf_10dp"
+        android:layout_marginTop="@dimen/wlf_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingRight="10dp"
+        android:layout_alignBottom="@+id/user_icon"
+        >
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/wlf_22dp">
+            <ImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/iv_zan"
+                android:layout_width="@dimen/wlf_22dp"
+                android:layout_height="@dimen/wlf_22dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/zan_icon" />
+            <TextView
+                android:layout_marginLeft="6dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/iv_zan"
+                android:id="@+id/tv_zancount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" -- "
+                android:textColor="@color/rgb_888888" />
+        </RelativeLayout>
+
+
+       <RelativeLayout
+           android:layout_weight="1"
+           android:layout_width="match_parent"
+           android:layout_height="@dimen/wlf_22dp">
+           <ImageView
+               android:layout_centerInParent="true"
+               android:id="@+id/btn_comment_reply"
+               android:layout_width="@dimen/wlf_22dp"
+               android:layout_height="@dimen/wlf_22dp"
+               android:layout_marginLeft="15dp"
+               android:layout_marginTop="@dimen/px_9"
+               android:background="@drawable/pinglun_icon" />
+           <TextView
+               android:layout_marginLeft="6dp"
+               android:layout_centerVertical="true"
+               android:layout_toRightOf="@id/btn_comment_reply"
+               android:id="@+id/tv_zancount2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text=" -- "
+               android:textColor="@color/rgb_888888" />
+       </RelativeLayout>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rl_relayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8sp"
+        android:paddingLeft="@dimen/wlf_16dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/iv_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/zanblue_icon" />
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/iv_img"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_zan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text=" -- "
+                android:textColor="#1c65a9"
+                android:textSize="@dimen/px_33" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="8dp"
+        android:visibility="gone"
+        >
+    </RelativeLayout>
+
+
+</LinearLayout>

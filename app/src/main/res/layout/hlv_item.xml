@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_hor_pic"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_219"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/wlf_deimg" />
+            <ImageView
+                android:id="@+id/iv_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_centerInParent="true"
+                android:src="@drawable/video_icon"
+                />
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_hor_pic"
+            android:layout_alignRight="@+id/iv_hor_pic"
+            android:background="@color/red"
+            android:padding="3dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:visibility="gone"
+            android:text="05:36" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_hor_pic"
+            android:layout_centerInParent="true"
+            android:gravity="left"
+            android:maxLines="2"
+            android:layout_marginTop="11dp"
+            android:paddingLeft="3dp"
+            android:textColor="@color/black"
+            android:paddingRight="3dp"
+            android:text=" -- " />
+    </LinearLayout>
+</LinearLayout>

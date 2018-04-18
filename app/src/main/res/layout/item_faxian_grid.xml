@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:background="@color/black"
+    >
+<ImageView
+    android:id="@+id/iv_img"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:src="@drawable/wlf_deimg"
+    android:scaleType="fitXY"
+    android:background="@color/white"
+
+    />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/white"
+        android:layout_below="@+id/iv_img"
+        />
+    <!--<com.hxwl.common.utils.CircleImageView-->
+        <!--android:id="@+id/iv_icon"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:src="@drawable/below"-->
+        <!--/>-->
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/faxian_img"
+        />
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_centerInParent="true"
+        />
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#202020"
+        android:text="选手"
+        android:padding="15dp"
+        android:textSize="13sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        />
+</RelativeLayout>

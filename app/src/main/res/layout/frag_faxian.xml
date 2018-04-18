@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/list_back"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/list_back"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    style="@style/title_style"
+                    android:text="发现"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_jump"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/iv_titleimg"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/wlf_deimg" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/iv_titleimg">
+
+                    <ImageView
+                        android:id="@+id/icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/faxian_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/icon"
+                        android:text="比赛视频"
+                        android:textColor="#202020"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:id="@+id/moreright"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:src="@drawable/more_right" />
+
+                    <ImageView
+                        android:id="@+id/iv_dian"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_toLeftOf="@+id/moreright"
+                        android:src="@drawable/red_point"
+                        android:visibility="gone"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/iv_dian"
+                        android:layout_marginRight="5dp"
+                        android:gravity="right"
+                        android:text=" --   "
+                        android:textColor="#787878" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <com.hxwl.wulinfeng.view.MyGrideview
+                android:id="@+id/gv_list"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:columnWidth="80dp"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:horizontalSpacing="5dp"
+                android:numColumns="2"
+                android:scrollbars="none"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:listSelector="@null"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="5dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

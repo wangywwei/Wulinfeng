@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#C62721">
+
+            <RelativeLayout
+                android:id="@+id/rlyt_type"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="WLF全部"
+                    android:textSize="@dimen/textSize_default_18sp"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/iv_choose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="3dp"
+                    android:layout_toRightOf="@+id/tv_title"
+                    android:src="@drawable/triangle_down" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/user_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:visibility="gone"
+                android:src="@drawable/top_wlf" />
+
+            <ImageView
+                android:id="@+id/img_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/search_icon" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/ll_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:orientation="vertical"
+                    >
+
+                <com.flyco.tablayout.SlidingTabLayout
+                    android:id="@+id/tl_SlidingTabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/white"
+                    tl:tl_tab_padding="0dp"
+                    tl:tl_tab_space_equal="true"
+                    tl:tl_textsize="15sp"
+                    tl:tl_underline_color="@color/rgb_BA2B2C" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/white"
+                    android:layout_below="@+id/tl_SlidingTabLayout"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/list_back"
+                    android:layout_below="@+id/tl_SlidingTabLayout"
+                    />
+                </LinearLayout>
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp"
+                    android:layout_below="@+id/ll_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                >
+
+                <GridView
+                    android:id="@+id/rv_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:numColumns="4"
+                    android:horizontalSpacing="@dimen/px_36"
+                    android:scrollbars="none"
+                    android:paddingLeft="@dimen/px_30"
+                    android:paddingRight="@dimen/px_30"
+                    android:stretchMode="columnWidth"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rv_type"
+                    android:clickable="true"
+                    android:background="#66000000"
+                    />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <!--首次登录弹框
+    <RelativeLayout
+        android:id="@+id/login_dialog_view"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:background="#90000000">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+            <RelativeLayout
+                android:id="@+id/rl_dialog"
+                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/iv_dialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="59dp"
+                    android:layout_marginRight="59dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_jinbi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+50金币"
+                    android:layout_marginTop="132dp"
+                    android:textSize="18sp"
+                    android:textColor="#ffffff"
+                    android:layout_centerHorizontal="true"
+                    />
+                <ImageView
+                    android:id="@+id/iv_close"
+                    android:layout_alignRight="@+id/iv_dialog"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="#959595"
+                    android:text="首次登录成功 ! 奖励您"/>
+                <TextView
+                    android:id="@+id/tv_jinbi2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text=""/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_goGuess"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="去竞猜"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:textColor="#fff"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>-->
+</RelativeLayout>

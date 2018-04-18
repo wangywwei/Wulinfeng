@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/rl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            style="@style/title_style"
+            android:text="用户名"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:layout_centerVertical="true"
+            android:src="@drawable/backup_icon"
+            />
+        <TextView
+            android:id="@+id/tv_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保存"
+            android:textColor="@color/white"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:textSize="15sp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/iv_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/closename_icon"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1.5px"
+            android:background="@color/list_line"
+            android:layout_below="@+id/et_name"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignLeft="@+id/et_name"
+            />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@null"
+            android:padding="5dp"
+            android:textSize="@dimen/textSize_more_little_14sp"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/iv_clear"
+            android:layout_toStartOf="@+id/iv_clear" />
+
+    </RelativeLayout>
+</LinearLayout>

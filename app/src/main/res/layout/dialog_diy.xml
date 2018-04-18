@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent_firth"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+    <LinearLayout
+        android:layout_width="@dimen/px_990"
+        android:layout_height="@dimen/px_324"
+        android:orientation="vertical"
+        android:background="@drawable/dialog_whith_bg"
+        >
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#202020"
+            android:layout_marginTop="@dimen/px_75"
+            android:layout_marginLeft="@dimen/px_63"
+            android:text="确认退出登录吗 ？"
+            android:textSize="@dimen/px_48" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_marginTop="@dimen/px_54"
+            >
+
+            <TextView
+                android:id="@+id/quxiao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:textColor="#585858"
+                android:padding="5dp"
+                android:text="取消"
+                android:layout_marginRight="@dimen/px_151"
+                android:textSize="@dimen/px_42" />
+
+            <TextView
+                android:id="@+id/queding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_marginRight="@dimen/px_126"
+                android:textColor="#585858"
+                android:text="确定"
+                android:textSize="@dimen/px_42" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

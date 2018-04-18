@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:id="@+id/ll_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        >
+            <ImageView
+                android:id="@+id/user_head"
+                android:layout_width="@dimen/px_135"
+                android:layout_height="@dimen/px_135"
+                android:layout_marginLeft="@dimen/px_30"
+                android:layout_marginTop="@dimen/px_30"
+                android:src="@drawable/wlf_deimg" />
+            <RelativeLayout
+                android:id="@+id/rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/user_head"
+                android:layout_marginLeft="@dimen/px_30"
+                android:layout_alignBottom="@id/user_head"
+                android:layout_alignTop="@+id/user_head"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/rl_layout"
+                >
+                <TextView
+                    android:id="@+id/txt_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jeff Lee"
+                    android:textSize="@dimen/px_42"
+                    android:textColor="#191919"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_user_name"
+                    android:singleLine="true"
+                    android:layout_marginTop="@dimen/px_30"
+                    android:textSize="@dimen/px_36"
+                    android:textColor="#8c8c8c"
+                    android:text=" -- "
+                    />
+            </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" -- "
+            android:layout_marginTop="@dimen/px_33"
+            android:layout_toRightOf="@+id/user_head"
+            android:layout_below="@+id/rl"
+            android:textColor="#8c8c8c"
+            android:layout_marginLeft="@dimen/px_30"
+            android:textSize="@dimen/px_33"
+            />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/px_30"
+            android:background="#EFEFEF"
+            android:layout_below="@+id/tv_time"
+            android:layout_marginLeft="12dp"
+            />
+        <RelativeLayout
+            android:id="@+id/rl_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/user_head"
+            android:layout_alignBottom="@+id/tv_time"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            >
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="@dimen/px_195"
+                android:layout_height="@dimen/px_195"
+                android:src="@drawable/wlf_deimg"
+                android:layout_marginRight="10dp"
+                android:scaleType="center"
+                />
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="@dimen/px_195"
+                android:layout_height="@dimen/px_195"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text=" -- "
+                android:maxLines="3"
+                android:textSize="@dimen/px_36"
+                />
+        </RelativeLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>

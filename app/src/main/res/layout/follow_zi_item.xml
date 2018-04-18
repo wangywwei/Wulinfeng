@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/wlf_20dp"
+        android:layout_gravity="center"
+        android:layout_width="@dimen/wlf_45dp"
+        android:layout_height="@dimen/wlf_45dp">
+        <ImageView
+            android:id="@+id/follow_touxiang"
+            android:layout_width="@dimen/wlf_44dp"
+            android:layout_height="@dimen/wlf_44dp" />
+        <ImageView
+            android:id="@+id/follow_touxiang1"
+            android:src="@drawable/waiquan"
+            android:layout_width="@dimen/wlf_45dp"
+            android:layout_height="@dimen/wlf_45dp" />
+        <ImageView
+            android:id="@+id/follow_touxiang2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/dui"
+            android:layout_width="@dimen/wlf_17dp"
+            android:layout_height="@dimen/wlf_17dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:maxEms="6"
+        android:singleLine="true"
+        android:id="@+id/follow_zi_name"
+        android:textColor="@color/rgb_444444"
+        android:textSize="@dimen/text_12sp"
+        android:layout_gravity="center"
+        android:text="最多最多六字"
+        android:layout_marginTop="@dimen/wlf_10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/white">
+
+
+    <RelativeLayout
+        android:id="@+id/ll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginTop="@dimen/wlf_12dp"
+            android:gravity="center"
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="-----"
+            android:textColor="#aaaaaa"
+            android:textSize="@dimen/px_39" />
+        <com.hxwl.wulinfeng.view.MyListView
+            android:id="@+id/lv_duizhen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/time"
+            />
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="暂无数据..."
+            android:textSize="@dimen/px_42"
+            android:layout_centerInParent="true"
+            android:textColor="#787878"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
+
+</ScrollView>

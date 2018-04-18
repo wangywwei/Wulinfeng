@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:id="@+id/sv_tiezi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/sendmsg"
+        android:fillViewport="true"
+        android:background="#ffffff">
+    <com.hxwl.common.swiperefresh.CommonSwipeRefreshLayout
+        android:id="@+id/common_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EFEFEF"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            >
+        <com.hxwl.wulinfeng.view.MyListView
+            android:id="@+id/lv_zuixin"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:divider="@null"
+            android:dividerHeight="3dp"
+            android:background="#EFEFEF"
+            />
+        </RelativeLayout>
+
+    </com.hxwl.common.swiperefresh.CommonSwipeRefreshLayout>
+    </ScrollView>
+        <LinearLayout
+            android:id="@+id/sendmsg"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e7"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#ffffff"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edt_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="#EFEFEF"
+                    android:hint="我也说两句..."
+                    android:paddingLeft="10dp"
+                    android:textColor="#666666"
+                    android:textColorHint="#666666"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/red"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="发送"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <!--加载框-->
+        <RelativeLayout
+            android:id="@+id/ll_pb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#ffffff"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/head_progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/head_progressBar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="正在加载中..."
+                android:textColor="#999999" />
+        </RelativeLayout>
+</LinearLayout>

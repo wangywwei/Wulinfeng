@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/recent_tiem"
+            android:textSize="@dimen/text_12sp"
+            android:textColor="#D9222222"
+            android:text="2017年11月23日 周三 21:15"
+            android:layout_margin="@dimen/wlf_16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/recent_title"
+            android:layout_gravity="center_vertical"
+            android:textSize="@dimen/text_12sp"
+            android:textColor="@color/rgb_888888"
+            android:text=" [武林风] "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/huigu_linear"
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_78dp">
+        <ImageView
+            android:id="@+id/recent_img"
+            android:scaleType="fitXY"
+            android:src="@drawable/wlf_deimg"
+            android:layout_width="@dimen/wlf_113dp"
+            android:layout_height="@dimen/wlf_74dp" />
+        <RelativeLayout
+            android:layout_marginRight="@dimen/wlf_16dp"
+            android:layout_marginLeft="@dimen/wlf_16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/recent_content"
+                android:textColor="@color/rgb_222222"
+                android:textSize="@dimen/text_16sp"
+                android:text="武林风一龙王者挑战赛总决赛一龙vs西提猜"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginBottom="4dp"
+                android:id="@+id/recent_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="昆明体育中心体育馆"
+                android:textColor="#59000000"
+                android:textSize="@dimen/text_12sp" />
+            <ImageView
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/wlf_4dp"
+                android:src="@drawable/yiyuyue"
+                android:id="@+id/recent_zhuangtai3"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:src="@drawable/zhibozhong1"
+                android:id="@+id/recent_zhuangtai"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:visibility="gone"
+                android:src="@drawable/quanchenghuigu1"
+                android:id="@+id/recent_zhuangtai2"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:visibility="gone"
+        android:id="@+id/recent_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:background="@color/rgb_E3E3E3"
+        android:layout_marginTop="@dimen/wlf_16dp"
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+
+
+</LinearLayout>

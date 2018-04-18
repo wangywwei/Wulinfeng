@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/rl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_44dp">
+        <TextView
+            style="@style/title_style"
+            android:textColor="@color/white"
+            android:text="我的武林" />
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:layout_centerVertical="true"
+            android:src="@drawable/backup_icon"
+            />
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:layout_below="@id/rl_layout"
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <com.hxwl.wulinfeng.wulin.CusListView
+            android:id="@+id/cusListView1"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:divider="@null"
+            android:drawSelectorOnTop="false"
+            android:groupIndicator="@null" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_sendmsg"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_msg"
+            android:text="我也说两句..."
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/text_col2"
+            android:textSize="13sp"
+            android:background="@color/list_back"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            />
+        <TextView
+            android:id="@+id/tv_send"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textSize="12sp"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:background="@drawable/send_red"
+            android:text="发送"/>
+    </LinearLayout>
+
+</RelativeLayout>

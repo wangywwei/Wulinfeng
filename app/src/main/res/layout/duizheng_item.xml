@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/duizhen_xinxi"
+            android:layout_marginLeft="@dimen/wlf_16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="公布对阵信息"
+            android:textSize="@dimen/text_14sp"
+            android:textColor="#222222"/>
+
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/wlf_1dp"/>
+
+
+
+        <TextView
+            android:id="@+id/duizhen_shijian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="03.16/周五"
+            android:textColor="#A4AAB3"
+            android:textSize="@dimen/text_12sp"
+            android:layout_marginRight="@dimen/wlf_16dp"/>
+
+    </LinearLayout>
+
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/duizhen_xrecycler"
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+
+</LinearLayout>

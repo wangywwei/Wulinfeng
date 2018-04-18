@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+   >
+    <RelativeLayout
+        android:layout_marginRight="@dimen/wlf_16dp"
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:layout_marginTop="@dimen/wlf_16dp"
+        android:layout_width="@dimen/wlf_300dp"
+        android:layout_height="165dp">
+        <ImageView
+            android:src="@drawable/kapiandibu1"
+            android:layout_width="@dimen/wlf_300dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
+        <ImageView
+            android:src="@drawable/wlf_deimg"
+            android:id="@+id/id_index_gallery_item_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop" />
+        <ImageView
+            android:src="@drawable/bofang"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginBottom="@dimen/wlf_10dp"
+        android:layout_marginLeft="@dimen/wlf_16dp"
+        android:id="@+id/id_index_gallery_item_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/rgb_444444"
+        android:text="旷世之战重头戏"
+        android:textSize="12dp" />
+</LinearLayout>

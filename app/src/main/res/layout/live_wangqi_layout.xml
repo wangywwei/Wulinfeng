@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#F0F0F0"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_111"
+        android:background="@color/list_back"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#aaaaaa"
+            android:text="本月最新回放"
+            android:textSize="@dimen/px_39"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+    <com.hxwl.common.swiperefresh.CommonSwipeRefreshLayout
+        android:id="@+id/common_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ListView
+            android:id="@+id/lv_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:dividerHeight="5dp"
+            />
+    </com.hxwl.common.swiperefresh.CommonSwipeRefreshLayout>
+</LinearLayout>

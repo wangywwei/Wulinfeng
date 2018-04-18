@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hxwl.newwlf.wulin.ArtsFragment">
+
+    <RelativeLayout
+        android:background="@color/rgb_BA2B2C"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_44dp">
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/arts_xiaoxi"
+            android:layout_marginLeft="@dimen/wlf_16dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/xiaoxi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:padding="@dimen/wlf_1dp"
+            android:background="@drawable/baibian"
+            android:layout_centerInParent="true"
+            android:layout_width="148dp"
+            android:layout_height="@dimen/man_28dp">
+            <TextView
+                android:id="@+id/arts_wulin"
+                android:textColor="@color/rgb_BA2B2C"
+                android:gravity="center"
+                android:text="武林"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/man_26dp" />
+
+            <TextView
+                android:background="@drawable/shap_huati"
+                android:id="@+id/arts_huati"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:text="话题"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/man_26dp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/arts_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#202020"
+    android:id="@+id/rl_layout"
+    >
+
+    <com.hxwl.wulinfeng.photoView.PhotoView
+        android:id="@+id/mTouchImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:background="#202020"
+        android:layout_centerVertical="true"
+        />
+    <ImageView
+        android:id="@+id/iv_downpic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:padding="@dimen/px_30"
+        android:layout_margin="@dimen/px_30"
+        android:src="@drawable/baocun"
+        />
+</RelativeLayout>

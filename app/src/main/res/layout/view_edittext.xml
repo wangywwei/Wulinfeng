@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_send"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#c0000000"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="7dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_keywored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:imeOptions="flagNoExtractUi"
+            android:maxLines="1"
+            android:background="@drawable/send_danmu_corners"
+            android:paddingBottom="7dp"
+            android:paddingLeft="14dp"
+            android:paddingTop="7dp"
+            android:textColor="@color/rgb_202020"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_textcount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="40"
+            android:textColor="#898989"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_send"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:background="@drawable/send_red"
+        android:text="发送"/>
+
+</LinearLayout>
+

@@ -1,0 +1,141 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+      >
+    <RelativeLayout
+        android:id="@+id/rl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            style="@style/title_style"
+            android:textColor="@color/white"
+            android:text="我的武林" />
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:layout_centerVertical="true"
+            android:src="@drawable/backup_icon"
+            />
+    </RelativeLayout>
+
+     <com.hxwl.wulinfeng.wulin.CusListView
+        android:id="@+id/cusListView1"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:groupIndicator="@null"
+         android:divider="@null"
+         android:background="@color/white"
+         android:layout_below="@+id/rl_layout"
+        android:drawSelectorOnTop="false"  />
+
+    <RelativeLayout
+        android:id="@+id/frame_msg_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:paddingBottom="5dp">
+
+        <ImageView
+            android:id="@+id/iv_line_view"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/list_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_line_view"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/chat_btn_create_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/chat_et_create_context"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/chat_et_create_context"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/send_red"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="发送"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/chat_et_create_context"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toLeftOf="@+id/chat_btn_create_card"
+                android:layout_toRightOf="@+id/ib_choiceimage"
+                android:background="#EFEFEF"
+                android:clickable="true"
+                android:focusableInTouchMode="false"
+                android:hint="我也说两句..."
+                android:maxLines="3"
+                android:padding="5dp" />
+
+            <ImageView
+                android:id="@+id/ib_choiceimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_layout"
+        >
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/wulinnull_icon"
+            android:scaleType="center"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:id="@+id/tv_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_img"
+            android:text="你还没有发布任何动态"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:id="@+id/tv_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_text1"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/backlogin"
+            android:text="去看看武林发生了什么~ "
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

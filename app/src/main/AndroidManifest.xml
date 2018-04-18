@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hxwl.wulinfeng">
+
+    <!-- Required -->
+    <permission
+        android:name="com.hxwl.wulinfeng.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 乐视云权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.LOCATION_HARDWARE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- Required 一些系统要求的权限，如访问网络等 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <!-- IM -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:name=".MakerApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:resizeableActivity="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- android:theme="@style/AppTheme"您从百度网站获取的APP KEY，根据实际您的APP申请的APP_KEY进行修改 -->
+        <meta-data
+            android:name="BaiduMobAd_STAT_ID"
+            android:value="640810de95" />
+        <!-- abcd1234 -->
+        <!-- 渠道商编号 -->
+        <meta-data
+            android:name="BaiduMobAd_CHANNEL"
+            android:value="${MTJ_DATA_CHANNEL_VALUE}" />
+
+        <!-- 是否开启错误日志统计，默认为false -->
+        <meta-data
+            android:name="BaiduMobAd_EXCEPTION_LOG"
+            android:value="true" />
+        <!-- 日志发送策略，可选值：APP_START、ONCE_A_DAY、SET_TIME_INTERVAL，默认为APP_START -->
+        <meta-data
+            android:name="BaiduMobAd_SEND_STRATEGY"
+            android:value="APP_START" />
+        <!-- 日志发送策略 为SET_TIME_INTERVAL时，需设定时间间隔(取消下行注释)。取值为1-24的整数，默认为1 -->
+        <!-- <meta-data android:name="BaiduMobAd_TIME_INTERVAL" android:value="2" /> -->
+        <!-- 日志仅在wifi网络下发送，默认为false -->
+        <meta-data
+            android:name="BaiduMobAd_ONLY_WIFI"
+            android:value="false" />
+        <!-- 是否获取基站位置信息 ,默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_CELL_LOCATION"
+            android:value="true" />
+        <!-- 是否获取GPS位置信息，默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_GPS_LOCATION"
+            android:value="true" />
+        <!-- 是否获取WIFI位置信息，默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_WIFI_LOCATION"
+            android:value="true" />
+
+        <!-- <activity android:name=".MainActivity"> -->
+
+        <activity
+            android:name=".entrance.LoadingActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- activity -->
+        <!-- 引导页 -->
+
+        <activity
+            android:name=".entrance.GuideActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <activity
+            android:name=".activity.HomeActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:hardwareAccelerated="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <!-- 乐视播放 -->
+        <activity
+            android:name="com.lecloud.skin.activity.FeedBackActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <!-- 发帖子 -->
+        <activity
+            android:name=".activity.PostedActivity"
+            android:theme="@style/customTheme" />
+        <!-- 多张图片 -->
+        <activity
+            android:name=".wulin.ImageViewPageActivity"
+            android:theme="@style/customTheme" />
+        <!-- 单张图片显示高清 -->
+        <activity
+            android:name=".wulin.SeeHighDefinitionPictureActivity"
+            android:theme="@style/customTheme" />
+        <!-- 发帖子 选择图片 -->
+        <activity
+            android:name="me.iwf.photopicker.PhotoPickerActivity"
+            android:theme="@style/customTheme" />
+        <!-- 武林右上角左边的我的消息 -->
+        <activity
+            android:name=".activity.MessageActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 武林发送视频界面 -->
+        <activity
+            android:name=".activity.SendVideoActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 发布视频剪切界面 -->
+        <activity
+            android:name="com.hxwl.common.tencentplay.ui.TCVideoEditerActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 选择视频图片界面 -->
+        <activity
+            android:name="com.hxwl.common.tencentplay.ui.PictureSelectorActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 发布视频发布预览界面 -->
+        <activity
+            android:name=".activity.VideoShareActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- UGC小视频录制界面 -->
+        <activity
+            android:name="com.hxwl.common.tencentplay.ui.TCVideoRecordActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme3" />
+        <!-- 武林帖子详情 -->
+        <activity
+            android:name=".activity.TieZiDetailsActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 发现 == 选手 -->
+        <activity
+            android:name=".activity.PlayerActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 发现 == 选手  == 详情 -->
+        <activity
+            android:name=".activity.PlayDetailsActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 常见问题界面 -->
+        <activity
+            android:name=".activity.ChangJianQuestActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 我==赛事预约 -->
+        <activity
+            android:name=".activity.SaiShiYuYueActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 我==系统消息 -->
+        <activity
+            android:name=".activity.SystemMessageActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 发现==武战联盟 -->
+        <activity
+            android:name=".activity.WuZhanLMActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 发现==比赛视频 -->
+        <activity
+            android:name=".activity.BiSaiShiPinActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 我==我的武林 -->
+        <activity
+            android:name=".activity.MyMartialActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 我==登陆界面验证码登陆 -->
+        <activity
+            android:name=".activity.LoginforCodeActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 我==登陆界面密码登陆 -->
+        <activity
+            android:name=".activity.LoginforPwdActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 我==注册界面 -->
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 我==忘记密码界面 -->
+        <activity
+            android:name=".activity.ForgetPwdActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 我==z注册登录协议界面 -->
+        <activity
+            android:name=".activity.AgreementActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 我==修改密码界面 -->
+        <activity
+            android:name=".activity.ChangePwdActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 我==关于武林风界面 -->
+        <activity
+            android:name=".activity.AboutWLFActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 我==帮助与反馈 -->
+        <activity
+            android:name=".activity.HelpAndReturnActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 我==提交反馈 -->
+        <activity
+            android:name=".activity.SubmitProposalActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 我==我的反馈详情页 -->
+        <activity
+            android:name=".activity.MyFanKuiActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 我==个人资料界面 -->
+        <activity
+            android:name=".activity.PersonalDataActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 我==修改用户名 -->
+        <activity
+            android:name=".activity.ChangeNameActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 我==修改手机号 -->
+        <activity
+            android:name=".activity.ChangePhoneActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 俱乐部详情界面 -->
+        <activity
+            android:name=".activity.ClubDetailsActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 资讯详情 -->
+        <activity
+            android:name=".activity.ZiXunDetailsActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 更多回复界面 -->
+        <activity
+            android:name=".activity.HuiFuDetailsActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 往期比赛视频界面 -->
+        <activity
+            android:name=".activity.WangQiShipinActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 图集详情界面 -->
+        <activity
+            android:name=".activity.TuJiDetailsActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 图集更多回复详情界面 -->
+        <activity
+            android:name=".activity.TuJiHuiFuDetailsActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 搜索界面 -->
+        <activity
+            android:name=".activity.SearchActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 专题详情界面 -->
+        <activity
+            android:name=".activity.ZhuanTiDetailActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 设置密码界面 -->
+        <activity
+            android:name=".activity.SetPwdActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 搜索结果界面 -->
+        <activity
+            android:name=".activity.SearchResultActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 视频详情界面 -->
+        <activity
+            android:name=".activity.VideoDetailActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 视频更多回复界面 -->
+        <activity
+            android:name=".activity.VideoHuiFuDetailsActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 视频更多回复界面 -->
+        <activity
+            android:name=".activity.HuiGuDetailActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme2"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 比赛视频花絮AND集锦界面 -->
+        <activity
+            android:name=".activity.BiSaiShiPinTypeActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme2" />
+        <!-- 主要是直播 其次是回放 界面 -->
+        <activity
+            android:name=".activity.LiveDetailActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme2" />
+        <!-- 售票界面 -->
+        <activity
+            android:name=".activity.TicketActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme2" />
+        <!-- 跳转Webview界面 -->
+        <activity
+            android:name=".activity.NormalWebviewActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme2" />
+        <!-- 通用H5 界面 -->
+        <activity
+            android:name=".activity.WebViewCurrencyActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme2" />
+
+        <!-- 【必须】消息收发service -->
+        <service
+            android:name="com.tencent.qalsdk.service.QalService"
+            android:exported="true"
+            android:process=":QALSERVICE" />
+        <service
+            android:name="com.tencent.qalsdk.service.QalAssistService"
+            android:exported="false"
+            android:process=":QALSERVICE" />
+
+        <!-- 【必须】 离线消息广播接收器 -->
+        <receiver
+            android:name="com.tencent.qalsdk.QALBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.tencent.qalsdk.broadcast.qal" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.tencent.qalsdk.core.NetConnInfoCenter"
+            android:process=":QALSERVICE">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+
+            <!-- ImSDK 3.0.2 后添加 -->
+            <intent-filter>
+                <action android:name="com.tencent.qalsdk.service.TASK_REMOVED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 分享SDK 用到 点击邀请 -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <data android:scheme="tencent1105140768" /> <!-- 注意修改 后边数字是腾讯qq的appid -->
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- 调用新浪原生SDK，需要注册的回调activity -->
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- 微信回调 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <service
+            android:name="com.letvcloud.cmf.MediaService"
+            android:process=":cmf" />
+        <!-- 版本升级服务 -->
+        <service android:name="com.hxwl.common.downloadapk.UpdateAPKServer" />
+        <!-- 乐视云皮肤 -->
+        <activity
+            android:name="com.lecloud.skin.activity.FeedBackActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+
+        <!-- Talking 统计 -->
+        <service
+            android:name="com.talkingdata.sdk.TDAntiCheatingService"
+            android:process="com.talkingdata.sdk.TDAntiCheatingService"> <!-- 用户质量评估Service可以配置在主进程或者单独进程 -->
+            <intent-filter>
+                <action android:name="com.talkingdata.sdk.TDAntiCheatingService" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="TD_APP_ID"
+            android:value="4958E2C37A1248B49CBE7D61615CA18A" />
+        <meta-data
+            android:name="TD_CHANNEL_ID"
+            android:value="123123123" />
+
+        <!-- receiver -->
+        <!-- 开源 -->
+        <activity
+            android:name="com.hxwl.newwlf.home.home.follow.FollowPlayerActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 更多神评 -->
+        <activity
+            android:name="com.hxwl.newwlf.home.home.intent.GodsActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 省代详情页 -->
+        <activity
+            android:name="com.hxwl.newwlf.schedule.cooperation.AgentActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 话题详情页 -->
+        <activity
+            android:name="com.hxwl.newwlf.wulin.arts.HuatiXQActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 资讯 -->
+        <activity
+            android:name="com.hxwl.newwlf.home.home.Recommend.ZixunActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 视频发布 -->
+        <activity
+            android:name="com.hxwl.newwlf.wulin.ViewFabuActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 登录页面 -->
+        <activity
+            android:name="com.hxwl.newwlf.login.LoginActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <!-- 视频详情页 -->
+        <activity
+            android:name="com.hxwl.newwlf.home.home.zixun.ZixunVideoActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- 对阵视频详情 -->
+        <activity
+            android:name="com.hxwl.newwlf.home.home.intent.DuizhengVideoActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name="com.hxwl.newwlf.sousuo.SousuoActivity" />
+        <!-- 专题 -->
+        <activity
+            android:name="com.hxwl.newwlf.home.home.Recommend.ZhuanTiActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <activity
+            android:name="com.hxwl.wlf3.home.remenhot.GenDuoActivity"
+            android:configChanges="keyboard|screenSize|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/customTheme" />
+        <activity android:name=".activity.ShouCangActivity" />
+        <activity android:name="com.hxwl.wlf3.home.saicheng.SCDetailsActivity"></activity>
+    </application>
+
+</manifest>

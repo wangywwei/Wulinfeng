@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#C62721"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/tv_title"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="全部选手"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white" />
+            <ImageView
+                android:id="@+id/jiantou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/triangle_down"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/tv_title"
+                />
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:scaleType="center"
+            android:src="@drawable/backup_icon" />
+
+        <ImageView
+            android:id="@+id/icon_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/search_icon"
+            android:scaleType="centerCrop" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="@color/white"
+        android:id="@+id/tv_title2"
+        android:padding="@dimen/wlf_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/quanbu"
+            android:textSize="@dimen/text_18sp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全部选手"
+            android:layout_centerVertical="true"
+            android:textColor="@color/rgb_222222" />
+        <ImageView
+            android:src="@drawable/more_right"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rl_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:visibility="gone"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="全部选手"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/rl_layout"
+            android:background="#DADADA"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rl_layout"
+            android:background="#EFEFEF">
+
+            <com.hxwl.wulinfeng.widget.SideBar
+                android:id="@+id/sild_bar"
+                android:layout_width="30.0dip"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:visibility="gone" />
+
+            <FrameLayout
+                android:id="@+id/parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.hxwl.common.swiperefresh.CommonSwipeRefreshLayout
+                    android:id="@+id/common_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@id/sild_bar">
+
+                    <ListView
+                        android:id="@+id/listview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:divider="@null"
+                        android:scrollbars="none"></ListView>
+                </com.hxwl.common.swiperefresh.CommonSwipeRefreshLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txt_dialog"
+                android:layout_width="80.0dip"
+                android:layout_height="80.0dip"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="#F2F2F2"
+                android:gravity="center"
+                android:textColor="#464f62"
+                android:textSize="30.0dip"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_click"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tv_title2"
+            android:background="@color/transparent_firth"
+            android:visibility="gone">
+
+            <ListView
+                android:id="@+id/lv_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

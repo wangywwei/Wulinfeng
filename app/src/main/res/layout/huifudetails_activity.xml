@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            style="@style/title_style"
+            android:text="更多回复"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:layout_centerVertical="true"
+            android:src="@drawable/backup_icon"
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        >
+
+        <com.hxwl.common.swiperefresh.CommonSwipeRefreshLayout
+            android:id="@+id/common_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/frame_msg_ll"
+            >
+
+            <ListView
+                android:divider="@null"
+                android:id="@+id/lv_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white" />
+        </com.hxwl.common.swiperefresh.CommonSwipeRefreshLayout>
+
+        <RelativeLayout
+            android:id="@+id/frame_msg_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:id="@+id/chat_btn_create_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="发送"
+                android:layout_alignTop="@+id/chat_et_create_context"
+                android:layout_alignBottom="@+id/chat_et_create_context"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:background="@drawable/send_red"
+                android:textColor="@color/white"
+                />
+
+            <EditText
+                android:id="@+id/chat_et_create_context"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:background="#EFEFEF"
+                android:clickable="true"
+                android:focusableInTouchMode="false"
+                android:padding="5dp"
+                android:layout_toLeftOf="@+id/chat_btn_create_card"
+                android:layout_toRightOf="@+id/ib_choiceimage"
+                android:hint="我也说两句..."
+                android:maxLines="3" />
+
+            <ImageView
+                android:id="@+id/ib_choiceimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

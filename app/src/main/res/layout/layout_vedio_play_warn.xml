@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9a000000"
+    >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="温馨提示:您正在使用流量观看视频"
+            android:textSize="@dimen/textSize_little_16sp"
+            android:textColor="@color/textColor_white_ffffff"
+            />
+        <Button
+            android:id="@+id/btn1"
+            android:layout_below="@+id/tv1"
+            android:layout_width="96dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:text="继续播放"
+            android:textColor="#e6ae11"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/textSize_little_16sp"
+            android:gravity="center"
+            android:background="@drawable/shape_orange_border_btn_45radius"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

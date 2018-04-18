@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_marginLeft="@dimen/wlf_16dp"
+    android:layout_marginRight="@dimen/wlf_16dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+<TextView
+    android:id="@+id/chun_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="当金融广告撞上马卡金融广告撞上马卡龙色，龙色，可视化这件事儿"
+    android:textColor="#000000"
+    android:textSize="@dimen/text_15sp"
+ />
+
+
+
+    <!--   android:maxLines="1"
+    android:ellipsize="end"
+    只显示一行
+    -->
+
+
+
+    <TextView
+        android:id="@+id/chun_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="当金融广告撞上马卡龙色，可视化这件事儿"
+        android:textSize="@dimen/text_12sp"
+        android:textColor="#666666"/>
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/chun_ditu"
+        android:layout_marginTop="@dimen/wlf_7dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/chun_position1"
+            android:layout_width="@dimen/wlf_11dp"
+            android:layout_height="@dimen/wlf_13dp"
+            android:src="@drawable/weizhi"/>
+
+        <TextView
+            android:id="@+id/chun_position"
+            android:layout_marginLeft="@dimen/wlf_6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="北京一龙奥宇俱乐部"
+            android:textColor="#007AFF"
+            android:textSize="@dimen/text_10sp"
+            android:layout_marginRight="@dimen/wlf_16dp"/>
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

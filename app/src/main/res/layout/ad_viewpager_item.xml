@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/frame_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <ImageView
+        android:id="@+id/iv_ad_pic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/icon_pic_default"
+        />
+    <!-- 加载进度条-->
+    <RelativeLayout
+        android:id="@+id/ll_pb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:background="#99000000"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/head_progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/head_progressBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="正在加载中..."
+            android:textColor="#999999" />
+    </RelativeLayout>
+</FrameLayout>

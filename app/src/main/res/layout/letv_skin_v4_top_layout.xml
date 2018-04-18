@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lecloud.skin.ui.view.V4TopTitleView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="40dp"
+    android:minHeight="40dp"
+    android:background="#9a000000"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/full_back"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:paddingLeft="9dip"
+        android:paddingRight="9dip"
+        android:scaleType="centerInside"
+        android:src="@drawable/letv_skin_v4_back_btn_selecter" />
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="start">
+
+        <TextView
+            android:id="@+id/full_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:focusableInTouchMode="true"
+            android:gravity="start"
+            android:scrollHorizontally="true"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <!--添加弹幕、互动、分享按钮-->
+
+    <LinearLayout
+        android:id="@+id/ll_danmu"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="8dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_hudong"
+            android:layout_width="35dp"
+            android:layout_height="21dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="14dp"
+            android:background="@drawable/selector_hudong_btn"></ImageView>
+
+        <ImageView
+            android:id="@+id/iv_danmu_btn"
+            android:layout_width="35dp"
+            android:layout_height="21dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="14dp"
+            android:background="@drawable/danmu_on"
+            />
+        <ImageView
+            android:id="@+id/iv_share"
+            android:layout_width="34dp"
+            android:layout_height="21dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/live_share" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dip"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/full_net"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:src="@drawable/letv_skin_v4_wifi_selecter" />
+
+        <ImageView
+            android:id="@+id/full_battery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/letv_skin_v4_battery_selecter" />
+
+        <TextView
+            android:id="@+id/full_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text=""
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</com.lecloud.skin.ui.view.V4TopTitleView>

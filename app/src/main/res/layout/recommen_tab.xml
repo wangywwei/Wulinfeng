@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+    <LinearLayout
+        android:id="@+id/huifang"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <View
+        android:background="@color/rgb_EFEFEF"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_12dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginRight="@dimen/wlf_30dp"
+            android:paddingTop="@dimen/wlf_20dp"
+            android:id="@+id/bisaihuifang"
+            android:textColor="@color/rgb_BA2B2C"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:text="比赛回放"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_marginTop="@dimen/wlf_20dp"
+            android:src="@drawable/shuxian"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginLeft="@dimen/wlf_30dp"
+            android:paddingTop="@dimen/wlf_20dp"
+            android:id="@+id/jingcaiduizheng"
+            android:textColor="@color/rgb_888888"
+            android:gravity="left"
+            android:layout_weight="1"
+            android:text="精彩对阵"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/tab_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,119 @@
+package com.hxwl.wlf3.home.linearfenlei;
+
+import android.content.Context;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.EdgeEffect;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.hxwl.newwlf.URLS;
+import com.hxwl.wlf3.bean.Home3Bean;
+import com.hxwl.wulinfeng.R;
+
+import java.util.ArrayList;
+
+/**
+ * Created by Administrator on 2018/4/16.
+ */
+
+
+/*
+*视频
+*
+* 图集
+*
+* 图片
+* */
+
+public class VideoListlayout extends LinearLayout {
+
+    private Context context;
+    private View view;
+    private Home3Bean.DataBean.SchedulesBean dataBean;
+
+    private ImageView vll_img;
+    private ImageView vll_bofang;
+    private TextView vll_text;
+    private TextView vll_name;
+    private TextView vll_content;
+    private ImageView cll_position1;
+    private TextView vll_position;
+    private TextView vll_bujidashuju;
+
+    public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
+        this.dataBean = bean;
+        dataBean.getEvent().getId();
+
+
+/*VIDEO(1,"视频"),RICH(2,"图文"),GATHER(3,"图集"),WORD(4,"纯文本"),SCHEDULE(5,"赛程"),AGAINST(6,"对阵"); */
+        try {
+            int showType1 = dataBean.getEvent().getShowType();
+            if (showType1==1){
+                try {//视频
+                    vll_bofang.setVisibility(View.VISIBLE);
+                    vll_position.setVisibility(View.VISIBLE);
+                    cll_position1.setVisibility(View.VISIBLE);
+                    vll_bujidashuju.setVisibility(View.VISIBLE);
+                    Glide.with(context).load(URLS.IMG+dataBean.getEvent().getCoverImage() ).into(vll_img);
+                    vll_position.setText(dataBean.getEvent().getEventAddress());//地址
+                    vll_name.setText(dataBean.getEvent().getTitle());//名称
+                    vll_bujidashuju.setText(dataBean.getEvent().getAuthor());
+                    vll_content.setText(dataBean.getEvent().getIntro());
+                }catch (Exception e){
+                }
+            }else if (showType1==2){
+                try {//图文
+                    vll_position.setVisibility(View.VISIBLE);
+                    cll_position1.setVisibility(View.VISIBLE);
+                    Glide.with(context).load(URLS.IMG+dataBean.getEvent().getCoverImage() ).into(vll_img);
+                    vll_position.setText(dataBean.getEvent().getEventAddress());//地址
+                    vll_name.setText(dataBean.getEvent().getTitle());//名称
+                    vll_content.setText(dataBean.getEvent().getIntro());
+                }catch (Exception e){
+                }
+            }else if (showType1==3){
+                try {//图文
+                    vll_bujidashuju.setVisibility(View.VISIBLE);
+                    vll_text.setVisibility(View.VISIBLE);
+                    Glide.with(context).load(URLS.IMG+dataBean.getEvent().getCoverImage() ).into(vll_img);
+                    vll_position.setText(dataBean.getEvent().getEventAddress());//地址
+                    vll_name.setText(dataBean.getEvent().getTitle());//名称
+                    vll_content.setText(dataBean.getEvent().getIntro());//内容
+                    vll_text.setText(dataBean.getEvent().getImageNumber());//imageNumber
+                }catch (Exception e){
+                }
+
+            }
+
+        }catch (Exception e){
+
+        }
+
+    }
+
+    public VideoListlayout(Context context) {
+        super(context);
+        initView(context);
+    }
+
+    private void initView(Context context) {
+
+        this.context = context;
+        view = LayoutInflater.from(context).inflate(R.layout.beiyong1, this);
+        vll_img= (ImageView) view.findViewById(R.id.vll_img);
+        vll_bofang= (ImageView) view.findViewById(R.id.vll_bofang);
+        vll_text= (TextView) view.findViewById(R.id.vll_text);
+        vll_name= (TextView) view.findViewById(R.id.vll_name);
+        vll_content= (TextView) view.findViewById(R.id.vll_content);
+        cll_position1= (ImageView) view.findViewById(R.id.cll_position1);
+        vll_position= (TextView) view.findViewById(R.id.vll_position);
+        vll_bujidashuju= (TextView) view.findViewById(R.id.vll_bujidashuju);
+
+
+    }
+
+}

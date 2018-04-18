@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:id="@+id/zhibo_linearlayout"
+    android:layout_marginTop="@dimen/wlf_10dp"
+    android:layout_marginBottom="@dimen/wlf_10dp"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/wlf_40dp"
+    android:gravity="center_vertical">
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/zhibozhongbiaoqian"
+        />
+
+
+
+
+    <TextView
+        android:id="@+id/zhibo_name"
+        android:layout_marginLeft="@dimen/wlf_9dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2018巴塞尔艺术展香港展会 2018 ART BASAA…"
+        android:textColor="#C52720"
+        android:textSize="@dimen/text_14sp"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+
+
+</LinearLayout>
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/wlf_1dp"
+    android:background="#EFEFEF"/>
+
+</LinearLayout>

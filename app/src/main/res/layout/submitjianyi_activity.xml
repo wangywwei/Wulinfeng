@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/list_back"
+    >
+    <RelativeLayout
+        android:id="@+id/rl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            style="@style/title_style"
+            android:textColor="@color/white"
+            android:text="反馈意见" />
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:layout_centerVertical="true"
+            android:src="@drawable/backup_icon"
+            />
+    </RelativeLayout>
+     <EditText
+         android:id="@+id/et_text"
+         android:layout_width="match_parent"
+         android:layout_height="200dp"
+         android:layout_margin="10dp"
+         android:background="@color/white"
+         android:hint="请说说您的想法"
+         android:padding="5dp"
+         android:gravity="top"
+         android:textSize="14sp"
+         />
+     <EditText
+         android:inputType="number"
+         android:digits="1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+         android:id="@+id/et_lianxi"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_margin="10dp"
+         android:background="@color/white"
+         android:hint="手机号"
+         android:padding="5dp"
+         android:textSize="14sp"
+         android:gravity="top"
+         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_margin="10dp"
+        android:textSize="14sp"
+        android:text="客服电话 ：0371 - 60922250"
+        />
+    <TextView
+        android:id="@+id/tv_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:padding="12dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/eventmore_btn"
+        android:gravity="center"
+        />
+</LinearLayout>

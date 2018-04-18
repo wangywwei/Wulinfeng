@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/list_back"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_layout_left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/px_30"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/send_white2">
+
+                <ImageView
+                    android:id="@+id/user_icon1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="@dimen/px_30"
+                    android:layout_marginLeft="@dimen/px_28"
+                    android:background="@drawable/touxiang_img"
+                    android:scaleType="centerCrop" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/user_icon1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_marginRight="@dimen/wlf_20dp"
+                        android:id="@+id/name_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="姓名"
+                        android:layout_marginTop="@dimen/wlf_10dp"
+                        android:layout_marginLeft="@dimen/wlf_10dp"
+                        android:textColor="@color/rgb_FF0000"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical" />
+
+                        <TextView
+                            android:textSize="@dimen/text_13sp"
+                            android:layout_marginLeft="@dimen/wlf_10dp"
+                            android:id="@+id/content_left"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="@dimen/man_13dp"
+                            android:layout_marginRight="@dimen/wlf_20dp"
+                            android:text="q00000000 00000"
+                            android:textColor="#3E3E3E" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_layout_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="@dimen/px_30"
+            android:layout_marginTop="8dp"
+            >
+
+            <LinearLayout
+                android:id="@+id/rl_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/send_white2"
+                android:gravity="right"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_marginLeft="@dimen/wlf_20dp"
+                        android:id="@+id/name_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/wlf_10dp"
+                        android:layout_marginRight="@dimen/wlf_10dp"
+                        android:singleLine="true"
+                        android:text="姓名"
+                        android:textColor="@color/rgb_FF0000"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_marginRight="@dimen/wlf_10dp"
+                        android:id="@+id/content_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/name_right"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="@dimen/man_13dp"
+                        android:layout_marginLeft="@dimen/wlf_20dp"
+                        android:text="0000000000"
+                        android:textColor="@color/rgb_3E3E3E"
+                        android:textSize="@dimen/text_13sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/user_icon2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="@dimen/px_30"
+                    android:layout_marginRight="@dimen/px_28"
+                    android:background="@drawable/touxiang_img"
+                    android:scaleType="centerCrop" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<TextView
+    android:id="@+id/text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="武林风"
+    android:gravity="center"
+    android:singleLine="true"
+    android:textSize="@dimen/px_39"
+    android:background="@drawable/saishitype_select"
+    android:layout_marginTop="@dimen/px_60"
+    android:layout_marginBottom="@dimen/px_60"
+    android:textColor="#e20807"
+    />
+</LinearLayout>

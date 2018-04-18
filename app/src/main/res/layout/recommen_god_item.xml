@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_marginLeft="@dimen/man_15dp"
+        android:orientation="vertical"
+        android:background="@drawable/shenpingtouying"
+        android:layout_width="@dimen/wlf_300dp"
+        android:layout_height="@dimen/wlf_165dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/god_touxiang"
+                android:layout_margin="@dimen/wlf_20dp"
+                android:layout_width="@dimen/wlf_40dp"
+                android:layout_height="@dimen/wlf_40dp" />
+            <TextView
+                android:id="@+id/god_name"
+                android:textColor="@color/rgb_888888"
+                android:layout_gravity="center_vertical"
+                android:text="饭岛团团子"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RelativeLayout
+                android:layout_marginRight="@dimen/wlf_20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/zhang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/god_title"
+            android:textColor="@color/rgb_444444"
+            android:text="呜呜泱泱一大堆，但是怎么就是没有提到现如"
+            android:layout_marginBottom="@dimen/wlf_20dp"
+            android:layout_marginLeft="@dimen/wlf_20dp"
+            android:layout_marginRight="@dimen/wlf_20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

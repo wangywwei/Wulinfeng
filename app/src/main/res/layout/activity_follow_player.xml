@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.hxwl.newwlf.home.home.follow.FollowPlayerActivity">
+    <RelativeLayout
+        android:id="@+id/rl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_44dp">
+        <TextView
+            style="@style/title_style"
+            android:textColor="@color/white"
+            android:text="关注" />
+        <TextView
+            android:id="@+id/quxiao"
+            android:layout_marginLeft="@dimen/wlf_16dp"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/text_16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="取消" />
+        <TextView
+            android:id="@+id/wanchen"
+            android:layout_marginRight="@dimen/wlf_16dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:textSize="@dimen/text_16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="完成" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/follow_fu1"
+        android:layout_below="@id/rl_layout"
+        android:background="@color/rgb_EFEFEF"
+        android:layout_width="@dimen/wlf_95dp"
+        android:layout_height="match_parent">
+        <ListView
+            android:scrollbars="none"
+            android:id="@+id/follow_fu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/follow_zi"
+        android:layout_toRightOf="@id/follow_fu1"
+        android:layout_below="@id/rl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.hxwl.newwlf.home.home.FollowFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:background="@color/white"
+        android:id="@+id/nofollow_no"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/nofollow"
+        android:padding="@dimen/wlf_10dp"
+        android:gravity="center_horizontal"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/guanzhu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="@dimen/wlf_12dp"
+            android:text="还没有关注的拳手"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="去关注"
+            android:background="@drawable/send_red"
+            android:layout_marginTop="@dimen/wlf_12dp"
+            android:layout_width="89dp"
+            android:layout_height="43dp" />
+    </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_77dp">
+        <android.support.v7.widget.RecyclerView
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/wlf_77dp"
+            android:id="@+id/follow_yes"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/wlf_45dp"/>
+        <ImageView
+            android:background="@color/white_tr"
+            android:id="@+id/follow_bianji"
+            android:layout_marginRight="@dimen/wlf_16dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/bianji"
+            android:layout_width="@dimen/wlf_45dp"
+            android:layout_height="@dimen/wlf_45dp" />
+    </RelativeLayout>
+    <View
+        android:background="@color/rgb_EFEFEF"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_8dp"/>
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/tl_SlidingTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_50dp"
+        android:background="@color/white"
+        tl:tl_tab_padding="0dp"
+        tl:tl_tab_space_equal="true"
+        tl:tl_textsize="16sp"
+        tl:tl_textSelectColor="@color/rgb_BA2B2C"
+        tl:tl_textUnselectColor="@color/rgb_222222"
+        tl:tl_underline_color="@color/white" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/follow_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</LinearLayout>

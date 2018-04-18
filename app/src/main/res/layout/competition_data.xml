@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <!-- 百分比-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.hxwl.wulinfeng.view.CircleProgressBar
+                android:id="@+id/solid_progress1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:progress_end_color="#00A0E9"
+                app:progress_start_color="#00A0E9"
+                app:progress_stroke_width="6dp"
+                app:progress_text_color="#202020"
+                app:style="solid_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="胜率"
+                android:textColor="#898989"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.hxwl.wulinfeng.view.CircleProgressBar
+                android:id="@+id/solid_progress2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                app:progress_end_color="#ebef79"
+                app:progress_start_color="#ebef79"
+                app:progress_stroke_width="6dp"
+                app:progress_text_color="#202020"
+                app:style="solid_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="KO率"
+                android:textColor="#898989"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.hxwl.wulinfeng.view.CircleProgressBar
+                android:id="@+id/solid_progress3"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:progress_end_color="#e56368"
+                app:progress_start_color="#e56368"
+                app:progress_stroke_width="6dp"
+                app:progress_text_color="#202020"
+                app:style="solid_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="输率"
+                android:textColor="#898989"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_zongjitext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="#202020"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_zongji"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_zongjitext"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="总计"
+                android:textColor="#8c8c8c"
+                android:textSize="12sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+
+            <TextView
+                android:id="@+id/tv_wintext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="4dp"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="#202020"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_win"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_wintext"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="胜"
+                android:textColor="#8c8c8c"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+
+            <TextView
+                android:id="@+id/tv_kotext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="#202020"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_ko"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_kotext"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="KO"
+                android:textColor="#8c8c8c"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_losetext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="#202020"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_lose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_losetext"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="负"
+                android:textColor="#8c8c8c"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/list_back" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="比赛"
+            android:textColor="#202020"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="时间"
+            android:textColor="#202020"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="对手"
+            android:textColor="#202020"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="胜负"
+            android:textColor="#202020"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/list_line" />
+
+    <com.hxwl.wulinfeng.view.MyListView
+        android:id="@+id/lv_cansia_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/list_back"
+        android:divider="@null"
+        android:overScrollMode="never"></com.hxwl.wulinfeng.view.MyListView>
+
+</LinearLayout>

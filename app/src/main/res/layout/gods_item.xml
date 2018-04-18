@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/gods_time"
+        android:layout_marginLeft="@dimen/man_17dp"
+        android:layout_marginTop="@dimen/man_20dp"
+        android:textColor="@color/rgb_222222"
+        android:textSize="@dimen/text_18sp"
+        android:text="2017-11-23 星期四"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_marginBottom="@dimen/man_10dp"
+        android:layout_marginLeft="@dimen/man_17dp"
+        android:layout_marginTop="@dimen/man_20dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_42dp">
+        <ImageView
+            android:id="@+id/gods_touxiang"
+            android:layout_width="@dimen/wlf_42dp"
+            android:layout_height="@dimen/wlf_42dp" />
+        <TextView
+            android:layout_marginLeft="@dimen/wlf_10dp"
+            android:id="@+id/gods_name"
+            android:textColor="@color/rgb_888888"
+            android:textSize="@dimen/text_16sp"
+            android:text="饭岛团团子"
+            android:layout_toRightOf="@id/gods_touxiang"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/gods_time2"
+            android:textColor="@color/rgb_888888"
+            android:textSize="@dimen/text_12sp"
+            android:text="22：30"
+            android:layout_marginRight="@dimen/wlf_32dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+        <TextView
+            android:textColor="@color/rgb_222222"
+            android:text="自由搏击，即踢拳，是站立式格斗，指一方倒地便不允许另一方击打，同时不能使用反关节技、肘、膝等，对摔法也有一定程度的禁止。自由搏击又称国际自由搏击，欧美全接触自由空手道等。"
+            android:layout_marginRight="@dimen/wlf_32dp"
+            android:layout_marginLeft="@dimen/wlf_65dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="@color/rgb_888888"
+            android:text="武林风拳新一代全国海选阵容已定，精彩决战进入倒计时！"
+            android:layout_marginTop="@dimen/man_10dp"
+            android:padding="@dimen/wlf_12dp"
+            android:background="@color/rgb_EFEFEF"
+            android:layout_marginRight="@dimen/wlf_32dp"
+            android:layout_marginLeft="@dimen/wlf_65dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_marginBottom="@dimen/man_20dp"
+        android:layout_marginTop="@dimen/man_17dp"
+        android:layout_marginRight="@dimen/wlf_32dp"
+        android:layout_marginLeft="@dimen/wlf_65dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center_vertical"
+            android:layout_centerHorizontal="true"
+            android:drawableLeft="@drawable/zan"
+            android:id="@+id/gods_zan"
+            android:layout_centerVertical="true"
+            android:text="168"
+            android:layout_marginLeft="@dimen/wlf_6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/pinglun"
+            android:id="@+id/gods_pinglun"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="168"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+        <com.hxwl.wulinfeng.view.MyListView
+            android:id="@+id/gods_list"
+            android:layout_marginRight="@dimen/wlf_32dp"
+            android:layout_marginLeft="@dimen/wlf_65dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/rlyt_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/title_style"
+            android:textColor="@color/white"
+            android:text="" />
+
+        <RelativeLayout
+            android:id="@+id/title_back"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:src="@drawable/backup_icon"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.hxwl.wulinfeng.util.TopProgressWebView
+            android:id="@+id/webVi_message_details"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+        </com.hxwl.wulinfeng.util.TopProgressWebView>
+    </LinearLayout>
+</LinearLayout>

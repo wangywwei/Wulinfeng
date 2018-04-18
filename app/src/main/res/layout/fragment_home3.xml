@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.hxwl.wlf3.home.home1.Home3Fragment">
+    <TextView
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="赛程"
+        android:background="@color/rgb_BB2B2D"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_44dp" />
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/home3_xrecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</LinearLayout>

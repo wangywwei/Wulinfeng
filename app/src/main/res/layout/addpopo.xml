@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#4D000000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/wlf_50dp">
+            <ImageView
+                android:id="@+id/add_guan"
+                android:layout_marginRight="@dimen/wlf_10dp"
+                android:layout_marginTop="@dimen/wlf_10dp"
+                android:src="@drawable/cha"
+                android:layout_alignParentRight="true"
+                android:layout_width="@dimen/wlf_32dp"
+                android:layout_height="@dimen/wlf_32dp" />
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/text_18sp"
+                android:textColor="@color/rgb_222222"
+                android:text="更多话题"
+                android:layout_marginTop="@dimen/wlf_20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/rgb_222222"
+                android:layout_marginTop="@dimen/wlf_5dp"
+                android:layout_gravity="center"
+                android:layout_width="31dp"
+                android:layout_height="@dimen/wlf_4dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_marginTop="@dimen/wlf_20dp"
+            android:textColor="@color/rgb_888888"
+            android:textSize="@dimen/text_12sp"
+            android:layout_marginLeft="@dimen/wlf_16dp"
+            android:text="添加话题更容易上热门哦~"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/addrecyclerview"
+            android:layout_marginTop="@dimen/wlf_4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

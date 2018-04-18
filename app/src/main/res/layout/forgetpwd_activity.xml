@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/rl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/title_style"
+            android:textColor="@color/white"
+            android:text="修改密码" />
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:layout_centerVertical="true"
+            android:src="@drawable/backup_icon"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:background="@drawable/aboutwlflogo"
+            android:layout_centerInParent="true"
+            android:id="@+id/imageView2" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="48dp">
+        <EditText
+            android:id="@+id/phoneNum"
+            android:inputType="number"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入手机号"
+            android:textColor="#3c3c3c"
+            android:textSize="13sp"
+            android:textColorHint="#9a9a9a"
+            android:background="@null"/>
+
+        <TextView
+            android:id="@+id/tv_send"
+            android:layout_marginTop="9dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:background="@drawable/send_red"
+            android:text="发送验证码"/>
+
+    </RelativeLayout>
+    <View
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#cccccc" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <EditText
+            android:id="@+id/code_sms"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入验证码"
+            android:textColor="#3c3c3c"
+            android:textSize="13sp"
+            android:inputType="number"
+            android:textColorHint="#9a9a9a"
+            android:background="@null"/>
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/iv_clear"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/closename_icon"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#cccccc" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <EditText
+            android:id="@+id/tv_setpwd"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="设置新密码"
+            android:textColor="#3c3c3c"
+            android:textSize="13sp"
+            android:inputType="textPassword"
+            android:textColorHint="#9a9a9a"
+            android:background="@null"/>
+        <ImageView
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:id="@+id/iv_seepwd1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/invisible_icon"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#cccccc" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <EditText
+            android:id="@+id/tv_setpwd2"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="确认新密码"
+            android:textColor="#3c3c3c"
+            android:textSize="13sp"
+            android:inputType="textPassword"
+            android:textColorHint="#9a9a9a"
+            android:background="@null"/>
+        <ImageView
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:id="@+id/iv_seepwd2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/invisible_icon"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#cccccc" />
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_marginTop="9dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:background="@drawable/eventmore_btn"
+        android:text="确认"/>
+</LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    >
+
+  <!--<ScrollView -->
+  <!--android:orientation="vertical"-->
+  <!--android:gravity="center"-->
+  <!--android:layout_width="match_parent"-->
+  <!--android:layout_height="wrap_content"-->
+  <!--android:fillViewport="true"-->
+  <!--&gt;-->
+
+  <me.iwf.photopicker.widget.TouchImageView
+      android:layout_centerInParent="true"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:src="@drawable/__picker_ic_photo_black_48dp"
+      android:id="@+id/iv_pager"
+      />
+  <ImageView
+
+      android:layout_margin="5dp"
+      android:clickable="true"
+      android:padding="5dip"
+      android:id="@+id/v_selected"
+      android:src="@drawable/__picker_checkbox_bg"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true" />
+</RelativeLayout>
+    <!--</ScrollView>-->
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--&lt;!&ndash;<ScrollView &ndash;&gt;-->
+    <!--&lt;!&ndash;android:orientation="vertical"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:gravity="center"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:fillViewport="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;&gt;&ndash;&gt;-->
+
+    <!--<me.iwf.photopicker.widget.TouchImageView-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:gravity="center"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:src="@drawable/__picker_ic_photo_black_48dp"-->
+    <!--android:id="@+id/iv_pager"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash;</ScrollView>&ndash;&gt;-->

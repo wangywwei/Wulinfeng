@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:background="@drawable/shape_yuanjiao"
+        android:id="@+id/huodong_img"
+        android:src="@drawable/wlf_deimg"
+        android:layout_width="wrap_content"
+        android:layout_height="105dp" />
+    <TextView
+        android:id="@+id/huodong_title"
+        android:text="王者归来！昔日散打王…"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:layout_marginTop="9dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

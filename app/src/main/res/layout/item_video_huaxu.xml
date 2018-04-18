@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    >
+    <RelativeLayout
+        android:id="@+id/rl_img"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_h"
+        android:layout_margin="5dp"
+        >
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/wlf_deimg"
+            android:scaleType="fitXY"
+            />
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/video_icon"
+                />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="世界功夫王者金腰带争夺战武林风"
+            android:singleLine="true"
+            android:layout_alignParentBottom="true"
+            android:padding="5dp"
+            android:textSize="@dimen/textSize_most_little_12sp"
+            android:textColor="@color/white"
+            />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/rl_img"
+        android:text="05-21"
+        android:textColor="#AEAEAE"
+        android:layout_alignLeft="@+id/rl_img"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_seecount"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/rl_img"
+        android:text="2653看过"
+        android:layout_alignParentRight="true"
+        android:textColor="#AEAEAE"
+        android:layout_marginRight="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>

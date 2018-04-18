@@ -1,0 +1,433 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    tools:context="com.hxwl.newwlf.home.home.follow.DataFragment">
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/wlf_20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            >
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="名 字："
+                android:textSize="@dimen/px_45"
+                android:textColor="#202020"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:id="@+id/tv_nametext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="--"
+                android:layout_toRightOf="@+id/tv_name"
+                android:textSize="@dimen/px_39"
+                android:textColor="@color/text_color"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/wlf_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            >
+            <TextView
+                android:id="@+id/tv_guoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="国 籍："
+                android:textSize="@dimen/px_45"
+                android:textColor="#202020"
+                android:layout_centerVertical="true"
+                />
+            <ImageView
+                android:id="@+id/iv_guoqi"
+                android:layout_width="@dimen/px_56"
+                android:layout_height="@dimen/px_35"
+                android:layout_toRightOf="@+id/tv_guoji"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:id="@+id/tv_guojitext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="--"
+                android:layout_toRightOf="@+id/tv_guoji"
+                android:textSize="@dimen/px_39"
+                android:textColor="@color/text_color"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            >
+            <TextView
+                android:id="@+id/tv_shengao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="身 高："
+                android:textSize="@dimen/px_45"
+                android:textColor="#202020"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:id="@+id/tv_shengaotext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="--"
+                android:layout_toRightOf="@+id/tv_shengao"
+                android:textSize="@dimen/px_39"
+                android:textColor="@color/text_color"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/wlf_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            >
+            <TextView
+                android:id="@+id/tv_nianling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="年 龄："
+                android:textSize="@dimen/px_45"
+                android:textColor="#202020"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:id="@+id/tv_nianlingtv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv_nianling"
+                android:textSize="@dimen/px_39"
+                android:textColor="@color/text_color"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            >
+            <TextView
+                android:id="@+id/tv_jibie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="级 别："
+                android:textSize="@dimen/px_45"
+                android:textColor="#202020"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:id="@+id/tv_jibietext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv_jibie"
+                android:textSize="@dimen/px_39"
+                android:textColor="@color/text_color"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/wlf_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            >
+            <TextView
+                android:id="@+id/tv_tizhong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="体 重："
+                android:textSize="@dimen/px_45"
+                android:textColor="#202020"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:id="@+id/tv_tizhongtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="--"
+                android:layout_toRightOf="@+id/tv_tizhong"
+                android:textSize="@dimen/px_39"
+                android:textColor="@color/text_color"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            >
+            <TextView
+                android:id="@+id/tv_julebu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="俱乐部："
+                android:textSize="@dimen/px_45"
+                android:textColor="#202020"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:id="@+id/tv_julebutext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="--"
+                android:singleLine="true"
+                android:layout_toRightOf="@+id/tv_julebu"
+                android:textSize="@dimen/px_39"
+                android:textColor="@color/text_color"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/wlf_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        >
+        <TextView
+            android:id="@+id/tv_jianjie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="简 介："
+            android:textSize="@dimen/px_45"
+            android:textColor="#202020"
+            />
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_jianjie"
+            >
+            <com.hxwl.wulinfeng.view.ExpandableTextView
+                android:id="@+id/tv_jianjietext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="@dimen/px_39"
+                android:textColor="@color/text_color"
+                app:etv_ToExpandHintColor="@color/shouye_tab"
+                app:etv_ToShrinkHintColor="@color/shouye_tab"
+                />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/wlf_30dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.hxwl.wulinfeng.view.CircleProgressBar
+                android:id="@+id/solid_progress1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:progress_end_color="#00A0E9"
+                app:progress_start_color="#00A0E9"
+                app:progress_stroke_width="6dp"
+                app:progress_text_color="#202020"
+                app:style="solid_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="胜率"
+                android:textColor="#898989"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.hxwl.wulinfeng.view.CircleProgressBar
+                android:id="@+id/solid_progress2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                app:progress_end_color="#ebef79"
+                app:progress_start_color="#ebef79"
+                app:progress_stroke_width="6dp"
+                app:progress_text_color="#202020"
+                app:style="solid_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="KO率"
+                android:textColor="#898989"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.hxwl.wulinfeng.view.CircleProgressBar
+                android:id="@+id/solid_progress3"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:progress_end_color="#e56368"
+                app:progress_start_color="#e56368"
+                app:progress_stroke_width="6dp"
+                app:progress_text_color="#202020"
+                app:style="solid_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="输率"
+                android:textColor="#898989"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="1"
+                android:background="@drawable/yuanjiao_hui"
+                android:id="@+id/tv_zongjitext"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/wlf_38dp"
+                android:layout_marginLeft="@dimen/wlf_16dp"
+                android:gravity="center"
+                android:text="总计 999"
+                android:textColor="@color/rgb_888888"
+                android:textSize="@dimen/text_14sp" />
+
+        <TextView
+            android:layout_weight="1"
+            android:background="@drawable/yuanjiao_hui"
+            android:id="@+id/tv_shengtext"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/wlf_38dp"
+            android:layout_marginLeft="@dimen/wlf_16dp"
+            android:gravity="center"
+            android:text="胜 999"
+            android:textColor="@color/rgb_888888"
+            android:textSize="@dimen/text_14sp" />
+
+        <TextView
+            android:layout_weight="1"
+            android:background="@drawable/yuanjiao_hui"
+            android:id="@+id/tv_zkotext"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/wlf_38dp"
+            android:layout_marginLeft="@dimen/wlf_16dp"
+            android:gravity="center"
+            android:text="KO 999"
+            android:textColor="@color/rgb_888888"
+            android:textSize="@dimen/text_14sp" />
+
+        <TextView
+            android:layout_weight="1"
+            android:background="@drawable/yuanjiao_hui"
+            android:id="@+id/tv_futext"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/wlf_38dp"
+            android:layout_marginLeft="@dimen/wlf_16dp"
+            android:layout_marginRight="@dimen/wlf_16dp"
+            android:gravity="center"
+            android:text="负 999"
+            android:textColor="@color/rgb_888888"
+            android:textSize="@dimen/text_14sp" />
+
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>

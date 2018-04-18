@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/px_6"
+        >
+
+        <FrameLayout
+            android:id="@+id/frmQueue"
+            android:layout_width="@dimen/px_351"
+            android:layout_height="@dimen/px_351"
+            android:background="@color/black">
+
+            <ImageView
+                android:id="@+id/iv_thumb"
+                android:layout_width="@dimen/px_351"
+                android:layout_height="@dimen/px_351"
+                android:scaleType="centerCrop" />
+
+            <RelativeLayout
+                android:id="@+id/rl_paishe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/paishe" />
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/iv_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|top"
+            android:layout_marginRight="@dimen/px_24"
+            android:layout_marginTop="@dimen/px_24"
+            android:gravity="center"
+            android:scaleType="center"
+            android:src="@drawable/ic_check"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>
