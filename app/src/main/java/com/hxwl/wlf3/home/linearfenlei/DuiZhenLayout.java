@@ -38,26 +38,18 @@ public class DuiZhenLayout extends LinearLayout {
 
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
         this.dataBean = bean;
-
-
         try {
             String eventTime = dataBean.getEvent().getEventTime();
             duizhen_shijian.setText(eventTime);
         }catch (Exception e){
         }
-
-
         try {
             String title = dataBean.getEvent().getTitle();
             duizhen_xinxi.setText(title);
         }catch (Exception e){
         }
-
-
         arrayList.clear();
         arrayList.addAll(dataBean.getEvent().getAgainstList());
-//        Log.e("TTTT", "=======" + dataBean.getClass());
-
         beiyongadapter.notifyDataSetChanged();
 
     }
@@ -78,14 +70,11 @@ public class DuiZhenLayout extends LinearLayout {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         duizhen_xrecycler.setLayoutManager(layoutManager);
         duizhen_xrecycler.setNestedScrollingEnabled(false);
-
         try {
             beiyongadapter = new DuiZhenAdapter(context, arrayList);//对阵的适配器
             duizhen_xrecycler.setAdapter(beiyongadapter);
         }catch (Exception e){
-
         }
-
 
     }
 

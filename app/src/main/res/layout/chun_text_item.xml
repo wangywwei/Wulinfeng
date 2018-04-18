@@ -3,13 +3,14 @@
     android:layout_marginLeft="@dimen/wlf_16dp"
     android:layout_marginRight="@dimen/wlf_16dp"
     android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
 <TextView
     android:id="@+id/chun_name"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="当金融广告撞上马卡金融广告撞上马卡龙色，龙色，可视化这件事儿"
     android:textColor="#000000"
@@ -27,7 +28,7 @@
 
     <TextView
         android:id="@+id/chun_content"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="当金融广告撞上马卡龙色，可视化这件事儿"
         android:textSize="@dimen/text_12sp"

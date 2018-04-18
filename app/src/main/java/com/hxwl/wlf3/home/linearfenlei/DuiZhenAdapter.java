@@ -76,19 +76,6 @@ public class DuiZhenAdapter extends RecyclerView.Adapter<DuiZhenAdapter.ViewHold
             holder.duizhen_address2.setText(list.get(position).getRedClub());
         }catch (Exception e){
         }
-
-//        GlidUtils.setGrid(context, URLS.IMG + list.get(position).getImage(), holder.huodong_img);
-//        holder.zhibo_name.setText(list.get(position).getName());
-
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent=new Intent(context, NormalWebviewActivity.class);
-//                intent.putExtra("url",list.get(position).getUrl());
-//                intent.putExtra("title","活动");
-//                context.startActivity(intent);
-//            }
-//        });
     }
 
     @Override

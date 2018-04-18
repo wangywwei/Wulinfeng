@@ -32,8 +32,6 @@ public class SaichengLayout extends LinearLayout {
     private ImageView saicheng_yuyuetupian;
     private TextView saicheng_name;
 
-
-
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
         this.dataBean = bean;
 

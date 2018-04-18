@@ -17,17 +17,14 @@ import com.hxwl.wulinfeng.R;
 import java.util.ArrayList;
 
 /**
+ *
+ * *视频
+ *
+ * 图集
+ *
+ * 图片
  * Created by Administrator on 2018/4/16.
  */
-
-
-/*
-*视频
-*
-* 图集
-*
-* 图片
-* */
 
 public class VideoListlayout extends LinearLayout {
 
@@ -57,33 +54,99 @@ public class VideoListlayout extends LinearLayout {
                     vll_bofang.setVisibility(View.VISIBLE);
                     vll_position.setVisibility(View.VISIBLE);
                     cll_position1.setVisibility(View.VISIBLE);
-                    vll_bujidashuju.setVisibility(View.VISIBLE);
-                    Glide.with(context).load(URLS.IMG+dataBean.getEvent().getCoverImage() ).into(vll_img);
-                    vll_position.setText(dataBean.getEvent().getEventAddress());//地址
-                    vll_name.setText(dataBean.getEvent().getTitle());//名称
-                    vll_bujidashuju.setText(dataBean.getEvent().getAuthor());
-                    vll_content.setText(dataBean.getEvent().getIntro());
+
+
+                    try {
+                        Glide.with(context).load(URLS.IMG+dataBean.getEvent().getCoverImage() ).into(vll_img);
+                    }catch (Exception e){
+                    }
+
+                    try {
+                        vll_position.setText(dataBean.getEvent().getEventAddress());//地址
+                    }catch (Exception e){
+                    }
+
+                    try {
+                        vll_name.setText(dataBean.getEvent().getTitle());//名称
+                    }catch (Exception e){
+                    }
+
+                    try {
+                        vll_bujidashuju.setVisibility(View.VISIBLE);
+                        vll_bujidashuju.setText(dataBean.getEvent().getAuthor());
+                    }catch (Exception e){
+                    }
+
+                    try {
+                        vll_content.setText(dataBean.getEvent().getIntro());
+                    }catch (Exception e){
+                    }
+
                 }catch (Exception e){
                 }
             }else if (showType1==2){
                 try {//图文
-                    vll_position.setVisibility(View.VISIBLE);
+
                     cll_position1.setVisibility(View.VISIBLE);
-                    Glide.with(context).load(URLS.IMG+dataBean.getEvent().getCoverImage() ).into(vll_img);
-                    vll_position.setText(dataBean.getEvent().getEventAddress());//地址
-                    vll_name.setText(dataBean.getEvent().getTitle());//名称
-                    vll_content.setText(dataBean.getEvent().getIntro());
+                    try {
+                        Glide.with(context).load(URLS.IMG+dataBean.getEvent().getCoverImage() ).into(vll_img);
+                    }catch (Exception e){
+                    }
+
+                    try {
+                        vll_position.setVisibility(View.VISIBLE);
+                        vll_position.setText(dataBean.getEvent().getEventAddress());//地址
+                    }catch (Exception e){
+                    }
+
+                    try {
+                        vll_name.setText(dataBean.getEvent().getTitle());//名称
+                    }catch (Exception e){
+                    }
+
+                    try {
+                        vll_content.setText(dataBean.getEvent().getIntro());
+                    }catch (Exception e){
+                    }
+
+                    try {
+                        vll_content.setText(dataBean.getEvent().getIntro());
+                    }catch (Exception e){
+                    }
                 }catch (Exception e){
                 }
             }else if (showType1==3){
                 try {//图文
+
                     vll_bujidashuju.setVisibility(View.VISIBLE);
-                    vll_text.setVisibility(View.VISIBLE);
-                    Glide.with(context).load(URLS.IMG+dataBean.getEvent().getCoverImage() ).into(vll_img);
-                    vll_position.setText(dataBean.getEvent().getEventAddress());//地址
-                    vll_name.setText(dataBean.getEvent().getTitle());//名称
-                    vll_content.setText(dataBean.getEvent().getIntro());//内容
-                    vll_text.setText(dataBean.getEvent().getImageNumber());//imageNumber
+
+
+                    try {
+                        Glide.with(context).load(URLS.IMG+dataBean.getEvent().getCoverImage() ).into(vll_img);
+                    }catch (Exception e){
+                    }
+
+                    try {
+                        vll_position.setText(dataBean.getEvent().getEventAddress());//地址
+                    }catch (Exception e){
+                    }
+
+                    try {
+                        vll_name.setText(dataBean.getEvent().getTitle());//名称
+                    }catch (Exception e){
+                    }
+
+                    try {
+                        vll_content.setText(dataBean.getEvent().getIntro());//内容
+                    }catch (Exception e){
+                    }
+
+                    try {
+                        vll_text.setVisibility(View.VISIBLE);
+                        vll_text.setText(dataBean.getEvent().getImageNumber());//imageNumber
+                    }catch (Exception e){
+                    }
+
                 }catch (Exception e){
                 }
 
@@ -112,8 +175,6 @@ public class VideoListlayout extends LinearLayout {
         cll_position1= (ImageView) view.findViewById(R.id.cll_position1);
         vll_position= (TextView) view.findViewById(R.id.vll_position);
         vll_bujidashuju= (TextView) view.findViewById(R.id.vll_bujidashuju);
-
-
     }
 
 }

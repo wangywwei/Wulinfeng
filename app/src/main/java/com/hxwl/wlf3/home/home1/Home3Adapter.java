@@ -26,18 +26,10 @@ import java.util.ArrayList;
 public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> {
     private Context context;
     private ArrayList<Home3Bean.DataBean.SchedulesBean> list6;
-
-
     private DuiZhenLayout duiZhenLayout;
     private VideoListlayout videoListlayout;
     private PureTextLayout pureTextLayout;
     private SaichengLayout saicheng1Layout;
-
-
-//    private Beiyong2 beiyong2;
-//    private VideoListlayout beiyong1;
-
-
 
     public Home3Adapter(Context context, ArrayList<Home3Bean.DataBean.SchedulesBean> list) {
         this.context = context;
@@ -92,7 +84,6 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
 
         try {
             int timelineState = list6.get(position).getTimelineState();
-
             if (timelineState==0){
                 holder.home_saishi_shijianzhou.setImageResource(R.drawable.shijianzhou);
             }else if (timelineState==1){
@@ -109,67 +100,58 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
         }catch (Exception e){
         }
 
-
-
 /*VIDEO(1,"视频"),RICH(2,"图文"),GATHER(3,"图集"),WORD(4,"纯文本"),SCHEDULE(5,"赛程"),AGAINST(6,"对阵"); */
         try {
             int showType = list6.get(position).getEvent().getShowType();
             if (showType==1){
                 try {
+                    holder.home_saishi_xrecycler.removeAllViews();//清空布局
                     videoListlayout = new VideoListlayout(context);
                     holder.home_saishi_xrecycler.addView(videoListlayout);
                     videoListlayout.setBean(list6.get(position));
                 }catch (Exception e){
-                    Toast.makeText(context, "报错了"+e, Toast.LENGTH_SHORT).show();
-                    Log.e("TTT","================="+e);
                 }
 
             }else if (showType==2){
                 try {
+                    holder.home_saishi_xrecycler.removeAllViews();//清空布局
                     videoListlayout = new VideoListlayout(context);
                     holder.home_saishi_xrecycler.addView(videoListlayout);
                     videoListlayout.setBean(list6.get(position));
                 }catch (Exception e){
-                    Toast.makeText(context, "报错了"+e, Toast.LENGTH_SHORT).show();
-                    Log.e("TTT","================="+e);
                 }
             }else if (showType==3){
                 try {
+                    holder.home_saishi_xrecycler.removeAllViews();//清空布局
                     videoListlayout = new VideoListlayout(context);
                     holder.home_saishi_xrecycler.addView(videoListlayout);
                     videoListlayout.setBean(list6.get(position));
                 }catch (Exception e){
-                    Toast.makeText(context, "报错了"+e, Toast.LENGTH_SHORT).show();
-                    Log.e("TTT","================="+e);
                 }
 
             }else if (showType==4){
                 try {
+                    holder.home_saishi_xrecycler.removeAllViews();//清空布局
                     pureTextLayout = new PureTextLayout(context);
                     holder.home_saishi_xrecycler.addView(pureTextLayout);
                     pureTextLayout.setBean(list6.get(position));
                 }catch (Exception e){
-                    Toast.makeText(context, "报错了"+e, Toast.LENGTH_SHORT).show();
-                    Log.e("TTT","================="+e);
                 }
 
             }else if (showType==5){
                 try {
+                    holder.home_saishi_xrecycler.removeAllViews();//清空布局
                     saicheng1Layout = new SaichengLayout(context);
                     holder.home_saishi_xrecycler.addView(saicheng1Layout);
                     saicheng1Layout.setBean(list6.get(position));
                 }catch (Exception e){
-                    Toast.makeText(context, "报错了"+e, Toast.LENGTH_SHORT).show();
-                    Log.e("TTT","================="+e);
                 }
             }else if (showType==6){
-                    try {
+                    try {holder.home_saishi_xrecycler.removeAllViews();//清空布局
                     duiZhenLayout=new DuiZhenLayout(context);
                     holder.home_saishi_xrecycler.addView(duiZhenLayout);
                     duiZhenLayout.setBean(list6.get(position));
                 }catch (Exception e){
-                    Toast.makeText(context, "报错了"+e, Toast.LENGTH_SHORT).show();
-                    Log.e("TTT","================="+e);
                 }
             }
         }catch (Exception e){
@@ -184,27 +166,6 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
             });
         }catch (Exception e){
         }
-
-      /*  holder.saicheng_time.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "点击了第"+position+"个里的按钮", Toast.LENGTH_SHORT).show();
-
-
-//                context.startActivity(HuiGuDetailActivity.getIntent(context,dataBean.getTargetId()+"",2));
-
-                Intent intent1=new Intent(context, SCDetailsActivity.class);
-                context.startActivities(new Intent[]{intent1});
-
-            }
-        });*/
-//        Glide.with(this).load(url).into(imageView);   publicityImg
-
-//        Glide.with(context).load(URLS.IMG+list6.get(position).getBeginTime()).into(holder.saicheng_img);
-
-//        RemenHotLayout layout=new R(context);
-//        id.addview(layout)
-//        layout.set
     }
 
     @Override
