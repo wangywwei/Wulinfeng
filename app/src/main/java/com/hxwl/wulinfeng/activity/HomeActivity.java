@@ -39,6 +39,7 @@ import com.hxwl.common.utils.FileUtils;
 import com.hxwl.common.utils.StringUtils;
 import com.hxwl.common.utils.ThreadPoolUtils;
 import com.hxwl.newwlf.URLS;
+import com.hxwl.newwlf.home.home.FollowFragment;
 import com.hxwl.newwlf.login.LoginActivity;
 import com.hxwl.newwlf.modlebean.CheckVersionBean;
 import com.hxwl.newwlf.modlebean.HomeRedBean;
@@ -123,9 +124,9 @@ public class HomeActivity extends BaseFragmentActivity {
 
                 }else if (position.equals("wulin")){
                     if (artsFragment == null) {
-                        artsFragment = new ArtsFragment();
+                        artsFragment = new FollowFragment();
                     }
-                    artsFragment.setTopic(false);
+//                    artsFragment.setTopic(false);
                     main_radio.check(R.id.tab_wulin);
                 }
             }
@@ -139,12 +140,12 @@ public class HomeActivity extends BaseFragmentActivity {
             main_radio.check(R.id.tab_wulin);
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
             if (artsFragment == null) {
-                artsFragment = new ArtsFragment();
+                artsFragment = new FollowFragment();
                 fragmentTransaction.add(R.id.fl_content, artsFragment);
             } else {
                 fragmentTransaction.show(artsFragment);
             }
-            artsFragment.setTopic(true);
+//            artsFragment.setTopic(true);
             if(TXMediaManager.instance(HomeActivity.this).mLivePlayer != null || TXCloudPlayerManager.getCurrentJcvd() != null)
             { TXMediaManager.instance(HomeActivity.this).videoDestroy();}
             fragmentTransaction.commit();
@@ -550,7 +551,7 @@ public class HomeActivity extends BaseFragmentActivity {
     }
     private Home3Fragment homeFragment;
     private ScheduleFragment scheduleFragment;
-    private ArtsFragment artsFragment;
+    private FollowFragment artsFragment;
     private void hide(FragmentTransaction transaction) {
         if (homeFragment != null) {
             transaction.hide(homeFragment);
@@ -599,7 +600,7 @@ public class HomeActivity extends BaseFragmentActivity {
                     break;
                 case R.id.tab_wulin:
                     if (artsFragment == null) {
-                        artsFragment = new ArtsFragment();
+                        artsFragment = new FollowFragment();
                         fragmentTransaction.add(R.id.fl_content, artsFragment);
                     } else {
                         fragmentTransaction.show(artsFragment);
