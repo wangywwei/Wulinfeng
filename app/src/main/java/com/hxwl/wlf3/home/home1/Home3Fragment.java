@@ -30,7 +30,7 @@ import java.util.List;
 
 import okhttp3.Call;
 
-//EventFragment
+//CommentFragment
 public class Home3Fragment extends BaseFragment {
     private View view;
     private XRecyclerView home3_xrecyclerview;

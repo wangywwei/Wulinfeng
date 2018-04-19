@@ -7,10 +7,10 @@ import com.tencent.qalsdk.im_open.http;
  */
 
 public class URLS {
-    //
-//    public static final String URL="http://192.168.16.101:8081/";
+
+
     public static final String URL="http://api.heixiongboji.top/";
-//    public static final String URL="http://lilisong.cn/";
+
     //登录
     public static final String LOGIN=URL+"user/pwdLogin";
     //首页 / 首页菜单列表
@@ -25,10 +25,10 @@ public class URLS {
     public static final String HOME_USERPLAYERATTENTIONLIST=URL+"player/userPlayerAttentionList";
     //首页 / 获取资讯列表根据选手id
     public static final String HOME_GETNEWSLISTBYPLAYERID=URL+"player/getNewsListByPlayerId";
-
-
-
-
+    //首页详情页--赛事指南
+    public static final String SCHEDULE_EVENTS=URL+"schedule/2";
+    //首页详情页--赛事动态
+    public static final String SCHEDULE_DYNAMIC=URL+"schedule/events/2";
 
 
     //赛程 / 直播中,未开始,回放列表

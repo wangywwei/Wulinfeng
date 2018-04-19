@@ -180,6 +180,8 @@ public class FollowFragment extends BaseFragment implements View.OnClickListener
             }
         }
 
+
+
         OkHttpUtils.post()
                 .url(URLS.HOME_USERPLAYERATTENTIONLIST)
                 .addParams("userId", MakerApplication.instance.getUid())

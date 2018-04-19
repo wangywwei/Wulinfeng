@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.hxwl.common.tencentplay.utils.TCUtils;
 import com.hxwl.newwlf.URLS;
 import com.hxwl.wlf3.bean.Home3Bean;
+import com.hxwl.wlf3.home.home2.EventActivity;
 import com.hxwl.wlf3.home.linearfenlei.HuoDongLayout;
 import com.hxwl.wlf3.home.linearfenlei.SaichengLayout;
 import com.hxwl.wlf3.home.linearfenlei.PureTextLayout;
@@ -176,13 +177,8 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
             holder.home_saishi_img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    context.startActivity(EventActivity.getIntent(context));
                     Toast.makeText(context, "点击图片，进入赛事", Toast.LENGTH_SHORT).show();
-
-
-//                    context.startActivity(GenDuoActivity.getIntent(context));
-
-
-
                 }
             });
 

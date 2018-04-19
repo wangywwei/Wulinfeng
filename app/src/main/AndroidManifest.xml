@@ -592,7 +592,8 @@
             android:screenOrientation="portrait"
             android:theme="@style/customTheme" />
         <activity android:name=".activity.ShouCangActivity" />
-        <activity android:name="com.hxwl.wlf3.home.saicheng.SCDetailsActivity"></activity>
+        <activity android:name="com.hxwl.wlf3.home.saicheng.SCDetailsActivity" />
+        <activity android:name="com.hxwl.wlf3.home.home2.EventActivity"></activity>
     </application>
 
 </manifest>
