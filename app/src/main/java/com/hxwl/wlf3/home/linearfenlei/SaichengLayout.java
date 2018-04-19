@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.hxwl.wulinfeng.adapter.SaiChengAdapter;
@@ -18,6 +19,7 @@ import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wulinfeng.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2018/4/13.
@@ -41,6 +43,8 @@ public class SaichengLayout extends LinearLayout {
     private TextView saicheng_name;
     private XRecyclerView saicheng_xrecycler;
     private Home3SaiChengAdapter beiyongadapter;
+    private RelativeLayout saicheng_relative;
+    private HuoDongLayout huoDongLayout;
 
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
         this.dataBean = bean;
@@ -92,6 +96,31 @@ public class SaichengLayout extends LinearLayout {
 
 
 
+/*
+* 活动
+* */
+
+        try {
+
+//            private Home3Bean.DataBean.SchedulesBean dataBean;
+
+            List<Home3Bean.DataBean.SchedulesBean.ActivityListBean> activityList = dataBean.getActivityList();
+            if(null == activityList || activityList.size() ==0 ){
+                //为空的情况
+                return;
+            }else{
+                saicheng_relative.removeAllViews();//清空布局
+                huoDongLayout = new HuoDongLayout(context);
+                saicheng_relative.addView(huoDongLayout);
+                huoDongLayout.setBean(dataBean.getActivityList().get(0));
+            }
+        }catch (Exception e){
+
+        }
+
+
+
+
 
     }
 
@@ -109,6 +138,15 @@ public class SaichengLayout extends LinearLayout {
         saicheng_position = (TextView) view.findViewById(R.id.saicheng_position);
         saicheng_yuyuetupian = (ImageView) view.findViewById(R.id.saicheng_yuyuetupian);
         saicheng_xrecycler = (XRecyclerView) view.findViewById(R.id.saicheng_xrecycler);
+
+        saicheng_relative = (RelativeLayout) view.findViewById(R.id.saicheng_relative);
+
+
+
+        /*
+        *  <RelativeLayout
+        android:id="@+id/saicheng_relative"
+        * */
 
 
     }

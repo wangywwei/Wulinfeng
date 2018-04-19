@@ -20,6 +20,7 @@ import com.hxwl.wlf3.home.linearfenlei.SaichengLayout;
 import com.hxwl.wlf3.home.linearfenlei.PureTextLayout;
 import com.hxwl.wlf3.home.linearfenlei.VideoListlayout;
 import com.hxwl.wlf3.home.linearfenlei.DuiZhenLayout;
+import com.hxwl.wlf3.home.remenhot.GenDuoActivity;
 import com.hxwl.wulinfeng.R;
 
 import java.util.ArrayList;
@@ -165,11 +166,32 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
             holder.home_saishi_yuyue.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "系统繁忙，请稍后重试", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "点击了预约", Toast.LENGTH_SHORT).show();
                 }
             });
-        }catch (Exception e){
-        }
+        }catch (Exception e){}
+
+
+        try {
+            holder.home_saishi_img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "点击图片，进入赛事", Toast.LENGTH_SHORT).show();
+
+
+//                    context.startActivity(GenDuoActivity.getIntent(context));
+
+
+
+                }
+            });
+
+        }catch (Exception e){}
+
+
+
+
+
     }
 
     @Override

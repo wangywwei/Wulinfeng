@@ -121,10 +121,7 @@ public class VideoListlayout extends LinearLayout {
                 }
             }else if (showType1==3){
                 try {//图文
-
                     vll_bujidashuju.setVisibility(View.VISIBLE);
-
-
                     try {
                         Glide.with(context).load(URLS.IMG+dataBean.getEvent().getCoverImage() ).into(vll_img);
                     }catch (Exception e){
@@ -134,42 +131,27 @@ public class VideoListlayout extends LinearLayout {
                         vll_position.setText(dataBean.getEvent().getEventAddress());//地址
                     }catch (Exception e){
                     }
-
                     try {
                         vll_name.setText(dataBean.getEvent().getTitle());//名称
                     }catch (Exception e){
                     }
-
                     try {
                         vll_content.setText(dataBean.getEvent().getIntro());//内容
                     }catch (Exception e){
                     }
-
                     try {
                         vll_text.setVisibility(View.VISIBLE);
                         vll_text.setText(dataBean.getEvent().getImageNumber());//imageNumber
                     }catch (Exception e){
                     }
-
                 }catch (Exception e){
                 }
-
             }
-
         }catch (Exception e){
-
         }
 
-
-
-/*
-* 活动
-* */
-
+        // 活动
         try {
-
-//            private Home3Bean.DataBean.SchedulesBean dataBean;
-
             List<Home3Bean.DataBean.SchedulesBean.ActivityListBean> activityList = dataBean.getActivityList();
             if(null == activityList || activityList.size() ==0 ){
                 //为空的情况
@@ -178,22 +160,10 @@ public class VideoListlayout extends LinearLayout {
                 video_relative.removeAllViews();//清空布局
                 huoDongLayout = new HuoDongLayout(context);
                 video_relative.addView(huoDongLayout);
-//                huoDongLayout.setBean(list6.get(position).getActivityList().get(position));
-
-
                 huoDongLayout.setBean(dataBean.getActivityList().get(0));
-
-
-
             }
         }catch (Exception e){
-
         }
-
-
-
-
-
 
     }
 

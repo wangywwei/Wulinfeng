@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -15,6 +16,7 @@ import com.hxwl.wlf3.home.home1.LiveAdapter;
 import com.hxwl.wulinfeng.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 纯文本
@@ -31,13 +33,65 @@ public class PureTextLayout extends LinearLayout {
     private TextView chun_content;
     private LinearLayout chun_ditu1;
     private ImageView chun_position1;
+    private RelativeLayout chun_relative;
+    private HuoDongLayout huoDongLayout;
 
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
         this.dataBean = bean;
-        dataBean.getEvent().getId();
-        chun_name.setText(dataBean.getEvent().getTitle());
-        chun_content.setText(dataBean.getEvent().getIntro());
-        chun_position.setText(dataBean.getEvent().getEventAddress());
+
+        try {
+            dataBean.getEvent().getId();
+        }catch (Exception e){
+        }
+
+        try {
+            chun_name.setText(dataBean.getEvent().getTitle());
+        }catch (Exception e){
+        }
+
+        try {
+            chun_content.setText(dataBean.getEvent().getIntro());
+
+        }catch (Exception e){
+        }
+
+        try {
+            chun_position.setText(dataBean.getEvent().getEventAddress());
+        }catch (Exception e){
+        }
+
+
+
+
+
+
+/*
+* 活动
+* */
+
+        try {
+
+//            private Home3Bean.DataBean.SchedulesBean dataBean;
+
+            List<Home3Bean.DataBean.SchedulesBean.ActivityListBean> activityList = dataBean.getActivityList();
+            if(null == activityList || activityList.size() ==0 ){
+                //为空的情况
+                return;
+            }else{
+                chun_relative.removeAllViews();//清空布局
+                huoDongLayout = new HuoDongLayout(context);
+                chun_relative.addView(huoDongLayout);
+                huoDongLayout.setBean(dataBean.getActivityList().get(0));
+
+
+
+            }
+        }catch (Exception e){
+
+        }
+
+
+
     }
 
     public PureTextLayout(Context context) {
@@ -53,5 +107,9 @@ public class PureTextLayout extends LinearLayout {
         chun_ditu1 = (LinearLayout) view.findViewById(R.id.chun_ditu);
         chun_position = (TextView) view.findViewById(R.id.chun_position);
         chun_position1 = (ImageView) view.findViewById(R.id.chun_position1);
+
+        chun_relative = (RelativeLayout) view.findViewById(R.id.chun_relative);
+
+
     }
 }

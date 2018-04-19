@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +37,8 @@ public class DuiZhenLayout extends LinearLayout {
     private TextView duizhen_xinxi;
     private TextView duizhen_shijian;
     private ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean> arrayList = new ArrayList();
+    private RelativeLayout duizhen_relative;
+    private HuoDongLayout huoDongLayout;
 
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
         this.dataBean = bean;
@@ -53,6 +56,31 @@ public class DuiZhenLayout extends LinearLayout {
         arrayList.add(dataBean.getEvent().getAgainstListBean());
         beiyongadapter.notifyDataSetChanged();
 
+
+
+
+
+/*
+* 活动
+* */
+
+        try {
+            List<Home3Bean.DataBean.SchedulesBean.ActivityListBean> activityList = dataBean.getActivityList();
+            if(null == activityList || activityList.size() ==0 ){
+                //为空的情况
+                return;
+            }else{
+                duizhen_relative.removeAllViews();//清空布局
+                huoDongLayout = new HuoDongLayout(context);
+                duizhen_relative.addView(huoDongLayout);
+                huoDongLayout.setBean(dataBean.getActivityList().get(0));
+            }
+        }catch (Exception e){
+
+        }
+
+
+
     }
 
     public DuiZhenLayout(Context context) {
@@ -67,6 +95,8 @@ public class DuiZhenLayout extends LinearLayout {
         duizhen_xrecycler = (XRecyclerView) view.findViewById(R.id.duizhen_xrecycler);
         duizhen_shijian = (TextView) view.findViewById(R.id.duizhen_shijian);
         duizhen_xinxi = (TextView) view.findViewById(R.id.duizhen_xinxi);
+
+        duizhen_relative = (RelativeLayout) view.findViewById(R.id.duizhen_relative);
         LinearLayoutManager layoutManager = new LinearLayoutManager(context);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         duizhen_xrecycler.setLayoutManager(layoutManager);
