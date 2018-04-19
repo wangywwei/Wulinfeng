@@ -37,7 +37,7 @@ public class Home3Fragment extends BaseFragment {
     private Home3Adapter home3Adapter;
     private ArrayList<Home3Bean.DataBean.SchedulesBean> datalist=new ArrayList<>();
 
-    private Home3Bean bean;
+
 
     private RecommendBanner recommendBanner;
     private RemenHotLayout remenHotLayout;
@@ -86,44 +86,49 @@ public class Home3Fragment extends BaseFragment {
                             Gson gson = new Gson();
 
                             try {
-                                bean = gson.fromJson(response,Home3Bean.class);
-                            }catch (Exception e){
-                                Log.e("TTTAAADD","====="+e);
-                            }
+                                Home3Bean  bean = gson.fromJson(response,Home3Bean.class);
+
+                                try {
+                                    if (bean.getCode().equals("1000")){
+                                        try {
+                                            recommendBanner.setBean(bean.getData());
+                                        }catch (Exception o){
+                                        }
+                                        try {
+                                            remenHotLayout.setBean(bean.getData());
+                                        }catch (Exception o){
+
+                                        }
+                                        try {
+                                            liveLayout.setBean(bean.getData());
+                                        }catch (Exception o){
+
+                                        }
+                                        datalist.clear();
+                                        datalist.addAll(bean.getData().getSchedules());
+                                        List<Home3Bean.DataBean.SchedulesBean> schedules = bean.getData().getSchedules();
 
 
-                            try {
-                                if (bean.getCode().equals("1000")){
-                                    try {
-                                        recommendBanner.setBean(bean.getData());
-                                    }catch (Exception o){
+                                        home3Adapter.notifyDataSetChanged();
+                                    }else if (bean.getCode().equals("2002")||bean.getCode().equals("2003")){
+                                        UIUtils.showToast(bean.getMessage());
+                                        startActivity(LoginActivity.getIntent(getActivity()));
+                                        getActivity().finish();
                                     }
-                                    try {
-                                        remenHotLayout.setBean(bean.getData());
-                                    }catch (Exception o){
-
-                                    }
-                                    try {
-                                        liveLayout.setBean(bean.getData());
-                                    }catch (Exception o){
-
-                                    }
-                                    datalist.clear();
-                                    datalist.addAll(bean.getData().getSchedules());
-                                    List<Home3Bean.DataBean.SchedulesBean> schedules = bean.getData().getSchedules();
 
 
-                                    home3Adapter.notifyDataSetChanged();
-                                }else if (bean.getCode().equals("2002")||bean.getCode().equals("2003")){
-                                    UIUtils.showToast(bean.getMessage());
-                                    startActivity(LoginActivity.getIntent(getActivity()));
-                                    getActivity().finish();
+                                }catch (Exception e){
+                                    e.printStackTrace();
                                 }
 
 
+
                             }catch (Exception e){
-                                e.printStackTrace();
+                                Log.e("TTTAAADD","");
                             }
+
+
+
 
                         }
                     }

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EdgeEffect;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -15,6 +16,7 @@ import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wulinfeng.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -40,6 +42,8 @@ public class VideoListlayout extends LinearLayout {
     private ImageView cll_position1;
     private TextView vll_position;
     private TextView vll_bujidashuju;
+    private HuoDongLayout huoDongLayout;
+    private RelativeLayout video_relative;
 
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
         this.dataBean = bean;
@@ -156,6 +160,41 @@ public class VideoListlayout extends LinearLayout {
 
         }
 
+
+
+/*
+* 活动
+* */
+
+        try {
+
+//            private Home3Bean.DataBean.SchedulesBean dataBean;
+
+            List<Home3Bean.DataBean.SchedulesBean.ActivityListBean> activityList = dataBean.getActivityList();
+            if(null == activityList || activityList.size() ==0 ){
+                //为空的情况
+                return;
+            }else{
+                video_relative.removeAllViews();//清空布局
+                huoDongLayout = new HuoDongLayout(context);
+                video_relative.addView(huoDongLayout);
+//                huoDongLayout.setBean(list6.get(position).getActivityList().get(position));
+
+
+                huoDongLayout.setBean(dataBean.getActivityList().get(0));
+
+
+
+            }
+        }catch (Exception e){
+
+        }
+
+
+
+
+
+
     }
 
     public VideoListlayout(Context context) {
@@ -175,6 +214,7 @@ public class VideoListlayout extends LinearLayout {
         cll_position1= (ImageView) view.findViewById(R.id.cll_position1);
         vll_position= (TextView) view.findViewById(R.id.vll_position);
         vll_bujidashuju= (TextView) view.findViewById(R.id.vll_bujidashuju);
+        video_relative = (RelativeLayout) view.findViewById(R.id.video_relative);
     }
 
 }

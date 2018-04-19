@@ -34,6 +34,11 @@ public class HuoDongLayout extends LinearLayout {
         arrayList.add(dataBean);
         beiyongadapter1.notifyDataSetChanged();
 
+
+        /*    arrayList.clear();
+        arrayList.add(dataBean.getEvent().getAgainstListBean());
+        beiyongadapter.notifyDataSetChanged();*/
+
     }
 
     public HuoDongLayout(Context context) {

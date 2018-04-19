@@ -18,6 +18,7 @@ import com.hxwl.wulinfeng.R;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -34,7 +35,7 @@ public class DuiZhenLayout extends LinearLayout {
     private XRecyclerView duizhen_xrecycler;
     private TextView duizhen_xinxi;
     private TextView duizhen_shijian;
-    private ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.AgainstListBean> arrayList = new ArrayList();
+    private ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean> arrayList = new ArrayList();
 
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
         this.dataBean = bean;
@@ -49,7 +50,7 @@ public class DuiZhenLayout extends LinearLayout {
         }catch (Exception e){
         }
         arrayList.clear();
-        arrayList.addAll(dataBean.getEvent().getAgainstList());
+        arrayList.add(dataBean.getEvent().getAgainstListBean());
         beiyongadapter.notifyDataSetChanged();
 
     }

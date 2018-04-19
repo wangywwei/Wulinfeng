@@ -22,14 +22,16 @@ import java.util.ArrayList;
 /**
  * Created by Administrator on 2018/4/13.
  */
-
+/*
+* 赛程界面
+* */
 public class SaichengLayout extends LinearLayout {
 
     private Context context;
     private View view;
     private Home3Bean.DataBean.SchedulesBean dataBean;
 
-    ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.AgainstListBean> arrayList=new ArrayList();
+    ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean> arrayList=new ArrayList();
 
     private ImageView saicheng_bofang;
     private LinearLayout saicheng_ditu;
@@ -78,14 +80,12 @@ public class SaichengLayout extends LinearLayout {
                 saicheng_xrecycler.setLayoutManager(layoutManager);
                 saicheng_xrecycler.setNestedScrollingEnabled(false);
                 try {
-                    arrayList.addAll(dataBean.getEvent().getAgainstList());
+                    arrayList.add(dataBean.getEvent().getAgainstListBean());
                     beiyongadapter = new Home3SaiChengAdapter(context,arrayList);
                     saicheng_xrecycler.setAdapter(beiyongadapter);
                 }catch (Exception e){
                 }
             }
-
-
         }catch (Exception e){
         }
 

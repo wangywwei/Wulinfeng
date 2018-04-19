@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.hxwl.common.tencentplay.utils.TCUtils;
 import com.hxwl.newwlf.URLS;
 import com.hxwl.wlf3.bean.Home3Bean;
+import com.hxwl.wlf3.home.linearfenlei.HuoDongLayout;
 import com.hxwl.wlf3.home.linearfenlei.SaichengLayout;
 import com.hxwl.wlf3.home.linearfenlei.PureTextLayout;
 import com.hxwl.wlf3.home.linearfenlei.VideoListlayout;
@@ -22,6 +23,7 @@ import com.hxwl.wlf3.home.linearfenlei.DuiZhenLayout;
 import com.hxwl.wulinfeng.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> {
     private Context context;
@@ -30,6 +32,7 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
     private VideoListlayout videoListlayout;
     private PureTextLayout pureTextLayout;
     private SaichengLayout saicheng1Layout;
+
 
     public Home3Adapter(Context context, ArrayList<Home3Bean.DataBean.SchedulesBean> list) {
         this.context = context;
@@ -147,7 +150,8 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
                 }catch (Exception e){
                 }
             }else if (showType==6){
-                    try {holder.home_saishi_xrecycler.removeAllViews();//清空布局
+                    try {
+                        holder.home_saishi_xrecycler.removeAllViews();//清空布局
                     duiZhenLayout=new DuiZhenLayout(context);
                     holder.home_saishi_xrecycler.addView(duiZhenLayout);
                     duiZhenLayout.setBean(list6.get(position));
@@ -156,8 +160,6 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
             }
         }catch (Exception e){
         }
-
-
 
         try {
             holder.home_saishi_yuyue.setOnClickListener(new View.OnClickListener() {
