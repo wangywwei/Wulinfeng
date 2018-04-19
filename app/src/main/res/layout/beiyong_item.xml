@@ -1,112 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <LinearLayout
-
-        android:layout_marginLeft="@dimen/wlf_26dp"
-        android:layout_marginRight="@dimen/wlf_26dp"
+        android:id="@+id/duizhen_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/wlf_125dp">
+        android:layout_height="@dimen/wlf_125dp"
+        android:layout_marginLeft="@dimen/wlf_26dp"
+        android:layout_marginRight="@dimen/wlf_26dp">
 
         <LinearLayout
-            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
 
-
             <ImageView
                 android:id="@+id/duizhen_img1"
-                android:layout_marginTop="@dimen/wlf_16dp"
                 android:layout_width="@dimen/wlf_45dp"
                 android:layout_height="@dimen/wlf_45dp"
-                android:src="@drawable/xie_player"/>
+                android:layout_marginTop="@dimen/wlf_16dp"
+                android:src="@drawable/xie_player" />
 
             <TextView
                 android:id="@+id/duizhen_name1"
-                android:layout_marginTop="@dimen/wlf_11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/wlf_11dp"
                 android:text="一龙"
                 android:textColor="#444444"
-                android:textSize="@dimen/text_13sp"/>
+                android:textSize="@dimen/text_13sp" />
 
             <TextView
                 android:id="@+id/duizhen_address1"
-                android:layout_marginTop="@dimen/wlf_3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/wlf_3dp"
                 android:text="上海青浦拳击俱乐部"
                 android:textColor="#888888"
-                android:textSize="@dimen/text_11sp"/>
-
+                android:textSize="@dimen/text_11sp" />
 
 
         </LinearLayout>
 
 
         <LinearLayout
-            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="center">
 
             <ImageView
                 android:layout_width="@dimen/wlf_22dp"
                 android:layout_height="@dimen/wlf_10dp"
-                android:src="@drawable/vs_copy"/>
+                android:src="@drawable/vs_copy" />
 
 
         </LinearLayout>
 
 
         <LinearLayout
-            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/duizhen_img2"
-                android:layout_marginTop="@dimen/wlf_16dp"
                 android:layout_width="@dimen/wlf_45dp"
                 android:layout_height="@dimen/wlf_45dp"
-                android:src="@drawable/xie_player"/>
+                android:layout_marginTop="@dimen/wlf_16dp"
+                android:src="@drawable/xie_player" />
 
             <TextView
                 android:id="@+id/duizhen_name2"
-                android:layout_marginTop="@dimen/wlf_11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/wlf_11dp"
                 android:text="一龙"
                 android:textColor="#444444"
-                android:textSize="@dimen/text_13sp"/>
+                android:textSize="@dimen/text_13sp" />
 
             <TextView
                 android:id="@+id/duizhen_address2"
-                android:layout_marginTop="@dimen/wlf_3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/wlf_3dp"
                 android:text="上海青浦拳击俱乐部"
                 android:textColor="#888888"
-                android:textSize="@dimen/text_11sp"/>
+                android:textSize="@dimen/text_11sp" />
 
 
         </LinearLayout>
 
 
-
     </LinearLayout>
-
-
-
 
 
 </LinearLayout>

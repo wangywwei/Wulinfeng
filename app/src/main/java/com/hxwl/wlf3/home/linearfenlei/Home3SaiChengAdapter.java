@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.hxwl.newwlf.URLS;
@@ -72,10 +74,6 @@ public class Home3SaiChengAdapter extends RecyclerView.Adapter<Home3SaiChengAdap
         } catch (Exception e) {
         }
 
-/*
-
-*
-* */
         try {
             holder.home3saishi_name1.setText(list.get(position).getRedName());
             if (result == 1) {
@@ -91,10 +89,18 @@ public class Home3SaiChengAdapter extends RecyclerView.Adapter<Home3SaiChengAdap
 
         try {
             holder.home3saishi_content.setText(list.get(position).getRedClub());
-
-
         } catch (Exception e) {
+        }
 
+
+        try {
+            holder.home3saishi_layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "点击了这个条目" + position, Toast.LENGTH_SHORT).show();
+                }
+            });
+        } catch (Exception e) {
         }
 
 
@@ -109,6 +115,7 @@ public class Home3SaiChengAdapter extends RecyclerView.Adapter<Home3SaiChengAdap
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView home3saishi_img;
         public TextView home3saishi_name, home3saishi_name1, home3saishi_content;
+        private LinearLayout home3saishi_layout;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -117,8 +124,7 @@ public class Home3SaiChengAdapter extends RecyclerView.Adapter<Home3SaiChengAdap
             this.home3saishi_name = (TextView) itemView.findViewById(R.id.home3saishi_name);
             this.home3saishi_name1 = (TextView) itemView.findViewById(R.id.home3saishi_name1);
             this.home3saishi_content = (TextView) itemView.findViewById(R.id.home3saishi_content);
-
-
+            this.home3saishi_layout = (LinearLayout) itemView.findViewById(R.id.home3saishi_layout);
         }
     }
 }

@@ -6,7 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.hxwl.newwlf.URLS;
@@ -50,6 +52,16 @@ public class SYHuoDongAdapter extends RecyclerView.Adapter<SYHuoDongAdapter.View
             holder.huodong_content.setText(name);
         }catch (Exception e){
         }
+
+        try {
+        holder.huodong_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "点击了活动", Toast.LENGTH_SHORT).show();
+            }
+        });
+        }catch (Exception e){}
+
     }
 
     @Override
@@ -61,10 +73,11 @@ public class SYHuoDongAdapter extends RecyclerView.Adapter<SYHuoDongAdapter.View
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView huodong_content;
-
+        private LinearLayout huodong_layout;
         public ViewHolder(View itemView) {
             super(itemView);
             this.huodong_content = (TextView) itemView.findViewById(R.id.huodong_content);
+            this.huodong_layout = (LinearLayout) itemView.findViewById(R.id.huodong_layout);
         }
     }
 }

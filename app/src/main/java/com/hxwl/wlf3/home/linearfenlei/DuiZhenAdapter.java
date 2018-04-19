@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -76,6 +77,16 @@ public class DuiZhenAdapter extends RecyclerView.Adapter<DuiZhenAdapter.ViewHold
             holder.duizhen_address2.setText(list.get(position).getRedClub());
         }catch (Exception e){
         }
+
+        try {
+            holder.duizhen_layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "点击了第"+position+"个队列", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }catch (Exception e){}
+
     }
 
     @Override
@@ -88,7 +99,7 @@ public class DuiZhenAdapter extends RecyclerView.Adapter<DuiZhenAdapter.ViewHold
         public ImageView duizhen_img1,duizhen_img2;
         public TextView duizhen_address1,duizhen_address2,
                 duizhen_name1,duizhen_name2;
-
+       public LinearLayout duizhen_layout;
         public ViewHolder(View itemView) {
             super(itemView);
             this.duizhen_img1 = (ImageView) itemView.findViewById(R.id.duizhen_img1);
@@ -97,7 +108,7 @@ public class DuiZhenAdapter extends RecyclerView.Adapter<DuiZhenAdapter.ViewHold
             this.duizhen_name2 = (TextView) itemView.findViewById(R.id.duizhen_name2);
             this.duizhen_address1 = (TextView) itemView.findViewById(R.id.duizhen_address1);
             this.duizhen_address2 = (TextView) itemView.findViewById(R.id.duizhen_address2);
-
+            this.duizhen_layout = (LinearLayout) itemView.findViewById(R.id.duizhen_layout);
         }
     }
 }

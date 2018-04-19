@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.hxwl.newwlf.URLS;
@@ -35,6 +36,7 @@ public class PureTextLayout extends LinearLayout {
     private ImageView chun_position1;
     private RelativeLayout chun_relative;
     private HuoDongLayout huoDongLayout;
+    private LinearLayout chun_ditu;
 
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
         this.dataBean = bean;
@@ -60,11 +62,6 @@ public class PureTextLayout extends LinearLayout {
         }catch (Exception e){
         }
 
-
-
-
-
-
 /*
 * 活动
 * */
@@ -82,9 +79,6 @@ public class PureTextLayout extends LinearLayout {
                 huoDongLayout = new HuoDongLayout(context);
                 chun_relative.addView(huoDongLayout);
                 huoDongLayout.setBean(dataBean.getActivityList().get(0));
-
-
-
             }
         }catch (Exception e){
 
@@ -92,6 +86,36 @@ public class PureTextLayout extends LinearLayout {
 
 
 
+        try {
+            chun_ditu.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "点击了地图", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }catch (Exception e){}
+
+
+
+        try {
+            chun_name.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "点击了文字", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }catch (Exception e){}
+
+
+
+        try {
+            chun_content.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "点击了文字", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }catch (Exception e){}
     }
 
     public PureTextLayout(Context context) {
@@ -110,6 +134,6 @@ public class PureTextLayout extends LinearLayout {
 
         chun_relative = (RelativeLayout) view.findViewById(R.id.chun_relative);
 
-
+        chun_ditu = (LinearLayout) view.findViewById(R.id.chun_ditu);
     }
 }

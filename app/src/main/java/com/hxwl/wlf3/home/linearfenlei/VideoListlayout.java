@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.hxwl.newwlf.URLS;
@@ -44,6 +45,8 @@ public class VideoListlayout extends LinearLayout {
     private TextView vll_bujidashuju;
     private HuoDongLayout huoDongLayout;
     private RelativeLayout video_relative;
+    private RelativeLayout vll_img_layout;
+    private LinearLayout cll_ditu;
 
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
         this.dataBean = bean;
@@ -165,6 +168,49 @@ public class VideoListlayout extends LinearLayout {
         }catch (Exception e){
         }
 
+
+
+        try {
+            vll_img_layout.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "点击了播放图片", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }catch (Exception e){}
+
+
+
+        try {
+            vll_name.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context,"点击了："+ dataBean.getEvent().getTitle(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }catch (Exception e){}
+
+
+
+        try {
+            vll_content.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context,"点击了："+ dataBean.getEvent().getIntro(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }catch (Exception e){}
+
+
+        try {
+            cll_ditu.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "打开地图", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }catch (Exception e){}
+
     }
 
     public VideoListlayout(Context context) {
@@ -185,6 +231,12 @@ public class VideoListlayout extends LinearLayout {
         vll_position= (TextView) view.findViewById(R.id.vll_position);
         vll_bujidashuju= (TextView) view.findViewById(R.id.vll_bujidashuju);
         video_relative = (RelativeLayout) view.findViewById(R.id.video_relative);
+
+
+        vll_img_layout = (RelativeLayout) view.findViewById(R.id.vll_img_layout);
+
+        cll_ditu = (LinearLayout) view.findViewById(R.id.cll_ditu);
+
     }
 
 }

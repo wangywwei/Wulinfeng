@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hxwl.wulinfeng.adapter.SaiChengAdapter;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -33,7 +34,7 @@ public class SaichengLayout extends LinearLayout {
     private View view;
     private Home3Bean.DataBean.SchedulesBean dataBean;
 
-    ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean> arrayList=new ArrayList();
+    ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean> arrayList = new ArrayList();
 
     private ImageView saicheng_bofang;
     private LinearLayout saicheng_ditu;
@@ -45,32 +46,33 @@ public class SaichengLayout extends LinearLayout {
     private Home3SaiChengAdapter beiyongadapter;
     private RelativeLayout saicheng_relative;
     private HuoDongLayout huoDongLayout;
+    private RelativeLayout saicheng_img_layout;
 
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
         this.dataBean = bean;
 
         try {
-            Glide.with(context).load(URLS.IMG+dataBean.getEvent().getCoverImage() ).into(saicheng_img);
+            Glide.with(context).load(URLS.IMG + dataBean.getEvent().getCoverImage()).into(saicheng_img);
             saicheng_name.setText(dataBean.getEvent().getTitle());
             saicheng_position.setText(dataBean.getEvent().getEventAddress());
-        }catch (Exception e){
+        } catch (Exception e) {
         }
 
         try {
             int state = dataBean.getState();
-            if (state==1){
+            if (state == 1) {
                 int hasSubscribed = dataBean.getHasSubscribed();
-                if (hasSubscribed==0){
+                if (hasSubscribed == 0) {
                     saicheng_yuyuetupian.setImageResource(R.drawable.yuyue3);//预约
-                }else{
+                } else {
                     saicheng_yuyuetupian.setImageResource(R.drawable.yiyuyue3);//已预约
                 }
-            }else if (state==2){
+            } else if (state == 2) {
                 saicheng_yuyuetupian.setImageResource(R.drawable.zhibozhong3);//进行中--直播中
-            }else if (state==3){
+            } else if (state == 3) {
                 saicheng_yuyuetupian.setImageResource(R.drawable.quanchenghuigu1);//结束--全程回顾
             }
-        }catch (Exception e){
+        } catch (Exception e) {
         }
 
 
@@ -78,23 +80,20 @@ public class SaichengLayout extends LinearLayout {
 
             int state = dataBean.getState();
 
-            if (state==3){
+            if (state == 3) {
                 LinearLayoutManager layoutManager = new LinearLayoutManager(context);
                 layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
                 saicheng_xrecycler.setLayoutManager(layoutManager);
                 saicheng_xrecycler.setNestedScrollingEnabled(false);
                 try {
                     arrayList.add(dataBean.getEvent().getAgainstListBean());
-                    beiyongadapter = new Home3SaiChengAdapter(context,arrayList);
+                    beiyongadapter = new Home3SaiChengAdapter(context, arrayList);
                     saicheng_xrecycler.setAdapter(beiyongadapter);
-                }catch (Exception e){
+                } catch (Exception e) {
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
         }
-
-
-
 
 /*
 * 活动
@@ -105,29 +104,70 @@ public class SaichengLayout extends LinearLayout {
 //            private Home3Bean.DataBean.SchedulesBean dataBean;
 
             List<Home3Bean.DataBean.SchedulesBean.ActivityListBean> activityList = dataBean.getActivityList();
-            if(null == activityList || activityList.size() ==0 ){
+            if (null == activityList || activityList.size() == 0) {
                 //为空的情况
                 return;
-            }else{
+            } else {
                 saicheng_relative.removeAllViews();//清空布局
                 huoDongLayout = new HuoDongLayout(context);
                 saicheng_relative.addView(huoDongLayout);
                 huoDongLayout.setBean(dataBean.getActivityList().get(0));
             }
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
 
 
+        try {
+            saicheng_img_layout.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "播放图片", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } catch (Exception e) {
+        }
 
 
+        try {
+            saicheng_name.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "" + dataBean.getEvent().getTitle(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        } catch (Exception e) {
+        }
 
+
+        try {
+            saicheng_ditu.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "点击了地图", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } catch (Exception e) {
+        }
+
+
+        try {
+            saicheng_yuyuetupian.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "预约", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }catch (Exception e){}
+        
+        
     }
 
     public SaichengLayout(Context context) {
         super(context);
         initView(context);
     }
+
     private void initView(Context context) {
         this.context = context;
         view = LayoutInflater.from(context).inflate(R.layout.caicheng_item, this);
@@ -139,15 +179,7 @@ public class SaichengLayout extends LinearLayout {
         saicheng_yuyuetupian = (ImageView) view.findViewById(R.id.saicheng_yuyuetupian);
         saicheng_xrecycler = (XRecyclerView) view.findViewById(R.id.saicheng_xrecycler);
 
-        saicheng_relative = (RelativeLayout) view.findViewById(R.id.saicheng_relative);
-
-
-
-        /*
-        *  <RelativeLayout
-        android:id="@+id/saicheng_relative"
-        * */
-
+        saicheng_img_layout = (RelativeLayout) view.findViewById(R.id.saicheng_img_layout);
 
     }
 }
