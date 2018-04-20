@@ -1,4 +1,4 @@
-package com.hxwl.wlf3.home.home2;
+package com.hxwl.wlf3.home.home2.chongfu;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -12,8 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hxwl.wlf3.bean.DynamicBean;
-import com.hxwl.wlf3.bean.Home3Bean;
-import com.hxwl.wlf3.home.linearfenlei.Home3SaiChengAdapter;
 import com.hxwl.wulinfeng.R;
 
 import java.util.ArrayList;

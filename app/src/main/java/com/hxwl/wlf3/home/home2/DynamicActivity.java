@@ -9,18 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.hxwl.common.tencentplay.utils.TCUtils;
-import com.hxwl.newwlf.URLS;
 import com.hxwl.wlf3.bean.DynamicBean;
-import com.hxwl.wlf3.bean.Home3Bean;
-import com.hxwl.wlf3.home.home1.Home3Adapter;
-import com.hxwl.wlf3.home.linearfenlei.DuiZhenLayout;
+import com.hxwl.wlf3.home.home2.chongfu.DuiZhen1Layout;
+import com.hxwl.wlf3.home.home2.chongfu.Saicheng1Layout;
+import com.hxwl.wlf3.home.home2.chongfu.Video1Listlayout;
 import com.hxwl.wlf3.home.linearfenlei.PureTextLayout;
-import com.hxwl.wlf3.home.linearfenlei.SaichengLayout;
-import com.hxwl.wlf3.home.linearfenlei.VideoListlayout;
 import com.hxwl.wulinfeng.R;
 
 import java.util.ArrayList;
@@ -91,9 +85,6 @@ public class DynamicActivity extends RecyclerView.Adapter<DynamicActivity.ViewHo
 
 
    /*VIDEO(1,"视频"),RICH(2,"图文"),GATHER(3,"图集"),WORD(4,"纯文本"),SCHEDULE(5,"赛程"),AGAINST(6,"对阵"); */
-
-
-
         try {
             int showType = list6.get(position).getEvent().getShowType();
             if (showType==1){

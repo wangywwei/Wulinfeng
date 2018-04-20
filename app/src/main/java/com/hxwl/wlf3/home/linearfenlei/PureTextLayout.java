@@ -1,7 +1,6 @@
 package com.hxwl.wlf3.home.linearfenlei;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,15 +9,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.hxwl.newwlf.URLS;
 import com.hxwl.wlf3.bean.DynamicBean;
 import com.hxwl.wlf3.bean.Home3Bean;
-import com.hxwl.wlf3.home.home1.LiveAdapter;
-import com.hxwl.wlf3.home.home2.HuoDong1Layout;
+import com.hxwl.wlf3.home.home2.chongfu.HuoDong1Layout;
 import com.hxwl.wulinfeng.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

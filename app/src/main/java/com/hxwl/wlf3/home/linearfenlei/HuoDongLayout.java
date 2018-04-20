@@ -30,19 +30,6 @@ public class HuoDongLayout extends LinearLayout {
     private SYHuoDongAdapter beiyongadapter1;
 
 
-
-    private DynamicBean.DataBean.ActivityListBean datasqBean;
-
-
-    public void setxqBean(final DynamicBean.DataBean.ActivityListBean bean) {
-        this.datasqBean = bean;
-        arrayList.clear();
-        arrayList.add(dataBean);
-        beiyongadapter1.notifyDataSetChanged();
-    }
-
-
-
     public void setBean(final Home3Bean.DataBean.SchedulesBean.ActivityListBean bean) {
         this.dataBean = bean;
         arrayList.clear();

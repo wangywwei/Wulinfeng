@@ -1,4 +1,4 @@
-package com.hxwl.wlf3.home.home2;
+package com.hxwl.wlf3.home.home2.chongfu;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,9 +9,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.hxwl.wlf3.bean.DynamicBean;
-import com.hxwl.wlf3.bean.Home3Bean;
-import com.hxwl.wlf3.home.linearfenlei.DuiZhenAdapter;
-import com.hxwl.wlf3.home.linearfenlei.HuoDongLayout;
 import com.hxwl.wulinfeng.R;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 

@@ -1,4 +1,4 @@
-package com.hxwl.wlf3.home.home2;
+package com.hxwl.wlf3.home.home2.chongfu;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,8 +12,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.hxwl.newwlf.URLS;
 import com.hxwl.wlf3.bean.DynamicBean;
-import com.hxwl.wlf3.bean.Home3Bean;
-import com.hxwl.wlf3.home.linearfenlei.HuoDongLayout;
+import com.hxwl.wlf3.home.home2.chongfu.HuoDong1Layout;
 import com.hxwl.wulinfeng.R;
 
 import java.util.List;
@@ -223,10 +222,7 @@ public class Video1Listlayout extends LinearLayout {
         vll_position= (TextView) view.findViewById(R.id.vll_position);
         vll_bujidashuju= (TextView) view.findViewById(R.id.vll_bujidashuju);
         video_relative = (RelativeLayout) view.findViewById(R.id.video_relative);
-
-
         vll_img_layout = (RelativeLayout) view.findViewById(R.id.vll_img_layout);
-
         cll_ditu = (LinearLayout) view.findViewById(R.id.cll_ditu);
 
     }

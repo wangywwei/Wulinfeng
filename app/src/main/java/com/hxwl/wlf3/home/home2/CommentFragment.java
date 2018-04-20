@@ -17,7 +17,13 @@ import java.util.ArrayList;
 /**
  * Created by Administrator on 2018/4/19.
  */
-
+/*
+* 讨论区
+*
+* 不知道要不要写
+*
+*
+* */
 public class CommentFragment  extends BaseFragment {
     private View view;
     private XRecyclerView play_xrecycler;
