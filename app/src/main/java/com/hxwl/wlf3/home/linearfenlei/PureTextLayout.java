@@ -12,8 +12,10 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.hxwl.newwlf.URLS;
+import com.hxwl.wlf3.bean.DynamicBean;
 import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wlf3.home.home1.LiveAdapter;
+import com.hxwl.wlf3.home.home2.HuoDong1Layout;
 import com.hxwl.wulinfeng.R;
 
 import java.util.ArrayList;
@@ -38,13 +40,91 @@ public class PureTextLayout extends LinearLayout {
     private HuoDongLayout huoDongLayout;
     private LinearLayout chun_ditu;
 
-    public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
-        this.dataBean = bean;
+private HuoDong1Layout  huoDongLayout1;
+
+    private DynamicBean.DataBean dataxqBean;
+
+
+
+    public void setxqBean(final DynamicBean.DataBean bean) {
+        this.dataxqBean = bean;
 
         try {
-            dataBean.getEvent().getId();
+            chun_name.setText(dataxqBean.getEvent().getTitle());
         }catch (Exception e){
         }
+
+        try {
+            chun_content.setText(dataxqBean.getEvent().getIntro());
+
+        }catch (Exception e){
+        }
+
+        try {
+            chun_position.setText(dataxqBean.getEvent().getEventAddress());
+        }catch (Exception e){
+        }
+
+/*
+* 活动
+* */
+
+        try {
+
+//            private Home3Bean.DataBean.SchedulesBean dataBean;
+
+            List<DynamicBean.DataBean.ActivityListBean> activityList = dataxqBean.getActivityList();
+            if(null == activityList || activityList.size() ==0 ){
+                //为空的情况
+                return;
+            }else{
+                chun_relative.removeAllViews();//清空布局
+                huoDongLayout1 = new HuoDong1Layout(context);
+                chun_relative.addView(huoDongLayout);
+                huoDongLayout.setBean(dataBean.getActivityList().get(0));
+            }
+        }catch (Exception e){
+
+        }
+
+
+
+        try {
+            chun_ditu.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "点击了地图", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }catch (Exception e){}
+
+
+
+        try {
+            chun_name.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "点击了文字", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }catch (Exception e){}
+
+
+
+        try {
+            chun_content.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "点击了文字", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }catch (Exception e){}
+    }
+
+
+
+    public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
+        this.dataBean = bean;
 
         try {
             chun_name.setText(dataBean.getEvent().getTitle());

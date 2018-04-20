@@ -33,21 +33,16 @@ import java.util.ArrayList;
 import okhttp3.Call;
 
 /**
+ *
+ * 赛事指南
+ *
  * Created by Administrator on 2018/4/19.
  */
 //GuideActivity
 public class GuideFragment extends BaseFragment {
     private View view;
-    private XRecyclerView play_xrecycler;
-    private PlayAdapter adapter;
     private ArrayList<QuanshouduizhengBean.DataBean> list=new ArrayList<>();
-    private int pageNumber=1;
-    private String agentId;
-
-    private boolean isRefresh=true;
     private XRecyclerView guide_recycler;
-
-
     private ArrayList<GuideBean.DataBean> datalist=new ArrayList<>();
     private GuideActivity home3Adapter;
 
@@ -78,7 +73,6 @@ public class GuideFragment extends BaseFragment {
                     @Override
                     public void onError(Call call, Exception e, int id) {
                         UIUtils.showToast("服务器异常");
-                        Log.e("TTTTTT",call+"======="+"--------"+e+"__________"+id);
                     }
 
                     @Override
@@ -87,14 +81,10 @@ public class GuideFragment extends BaseFragment {
                         if (jsonValidator.validate(response)){
                             Gson gson = new Gson();
                             try {
-
                                 GuideBean bean = gson.fromJson(response, GuideBean.class);
-
                                 try {
                                     if (bean.getCode().equals("1000")){
-
                                         datalist.clear();
-
                                         datalist.addAll(bean.getData());
                                         home3Adapter.notifyDataSetChanged();
                                     }else if (bean.getCode().equals("2002")||bean.getCode().equals("2003")){
@@ -106,7 +96,6 @@ public class GuideFragment extends BaseFragment {
                             }catch (Exception e){
                                 e.printStackTrace();
                             }
-
                         }
 
                     }
@@ -119,12 +108,8 @@ public class GuideFragment extends BaseFragment {
     private void initView(View view) {
 
         guide_recycler = (XRecyclerView) view.findViewById(R.id.guide_recycler);
-
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-
         guide_recycler.setLayoutManager(linearLayoutManager);
-
                 try{
                     home3Adapter = new GuideActivity(getContext(),datalist);
                     LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -134,12 +119,10 @@ public class GuideFragment extends BaseFragment {
                     guide_recycler.setAdapter(home3Adapter);
 
                 }catch (Exception e){
-
                 }
 
 
                 try {
-
                     list.remove(0);
                     home3Adapter.notifyItemRemoved(0);
                     home3Adapter.notifyItemRangeChanged(0,list.size()-0);
@@ -147,12 +130,5 @@ public class GuideFragment extends BaseFragment {
                 }catch (Exception e){
 
                 }
-/*
-*
-* mList.remove(2);
-        mAdapter.notifyItemRemoved(2);
-        mAdapter.notifyItemRangeChanged(0,mList.size()-2);*/
-
-
     }
 }

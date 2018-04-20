@@ -26,6 +26,9 @@ import com.hxwl.wulinfeng.R;
 import java.util.ArrayList;
 
 /**
+ *
+ * 赛事指南---适配器
+ *
  * Created by Administrator on 2018/4/20.
  */
 

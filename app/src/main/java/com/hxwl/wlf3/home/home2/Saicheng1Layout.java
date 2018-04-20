@@ -1,9 +1,7 @@
-package com.hxwl.wlf3.home.linearfenlei;
+package com.hxwl.wlf3.home.home2;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,30 +10,29 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hxwl.wlf3.bean.DynamicBean;
-import com.hxwl.wulinfeng.adapter.SaiChengAdapter;
-import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.bumptech.glide.Glide;
 import com.hxwl.newwlf.URLS;
+import com.hxwl.wlf3.bean.DynamicBean;
 import com.hxwl.wlf3.bean.Home3Bean;
+import com.hxwl.wlf3.home.linearfenlei.Home3SaiChengAdapter;
+import com.hxwl.wlf3.home.linearfenlei.HuoDongLayout;
 import com.hxwl.wulinfeng.R;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Administrator on 2018/4/13.
+ * Created by Administrator on 2018/4/20.
  */
-/*
-* 赛程界面
-* */
-public class SaichengLayout extends LinearLayout {
+
+public class Saicheng1Layout extends LinearLayout {
 
     private Context context;
     private View view;
-    private Home3Bean.DataBean.SchedulesBean dataBean;
+    private DynamicBean.DataBean dataBean;
 
-    ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean> arrayList = new ArrayList();
+    ArrayList<DynamicBean.DataBean.EventBean> arrayList = new ArrayList();
 
     private ImageView saicheng_bofang;
     private LinearLayout saicheng_ditu;
@@ -44,12 +41,14 @@ public class SaichengLayout extends LinearLayout {
     private ImageView saicheng_yuyuetupian;
     private TextView saicheng_name;
     private XRecyclerView saicheng_xrecycler;
-    private Home3SaiChengAdapter beiyongadapter;
+    private Home3SaiCheng1Adapter beiyongadapter;
     private RelativeLayout saicheng_relative;
-    private HuoDongLayout huoDongLayout;
+    private HuoDong1Layout huoDongLayout;
     private RelativeLayout saicheng_img_layout;
-    public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
+    public void setBean(final DynamicBean.DataBean bean) {
         this.dataBean = bean;
+
+
 
         try {
             Glide.with(context).load(URLS.IMG + dataBean.getEvent().getCoverImage()).into(saicheng_img);
@@ -59,9 +58,9 @@ public class SaichengLayout extends LinearLayout {
         }
 
         try {
-            int state = dataBean.getState();
+            int state = dataBean.getEvent().getTimeState();
             if (state == 1) {
-                int hasSubscribed = dataBean.getHasSubscribed();
+                int hasSubscribed = dataBean.getEvent().getHasSubscribed();
                 if (hasSubscribed == 0) {
                     saicheng_yuyuetupian.setImageResource(R.drawable.yuyue3);//预约
                 } else {
@@ -78,7 +77,7 @@ public class SaichengLayout extends LinearLayout {
 
         try {
 
-            int state = dataBean.getState();
+            int state = dataBean.getEvent().getTimeState();
 
             if (state == 3) {
                 LinearLayoutManager layoutManager = new LinearLayoutManager(context);
@@ -86,8 +85,8 @@ public class SaichengLayout extends LinearLayout {
                 saicheng_xrecycler.setLayoutManager(layoutManager);
                 saicheng_xrecycler.setNestedScrollingEnabled(false);
                 try {
-                    arrayList.add(dataBean.getEvent().getAgainstListBean());
-                    beiyongadapter = new Home3SaiChengAdapter(context, arrayList);
+                    arrayList.add(dataBean.getEvent());
+                    beiyongadapter = new Home3SaiCheng1Adapter(context, arrayList);
                     saicheng_xrecycler.setAdapter(beiyongadapter);
                 } catch (Exception e) {
                 }
@@ -101,15 +100,13 @@ public class SaichengLayout extends LinearLayout {
 
         try {
 
-//            private Home3Bean.DataBean.SchedulesBean dataBean;
-
-            List<Home3Bean.DataBean.SchedulesBean.ActivityListBean> activityList = dataBean.getActivityList();
+            List<DynamicBean.DataBean.ActivityListBean> activityList = dataBean.getActivityList();
             if (null == activityList || activityList.size() == 0) {
                 //为空的情况
                 return;
             } else {
                 saicheng_relative.removeAllViews();//清空布局
-                huoDongLayout = new HuoDongLayout(context);
+                huoDongLayout = new HuoDong1Layout(context);
                 saicheng_relative.addView(huoDongLayout);
                 huoDongLayout.setBean(dataBean.getActivityList().get(0));
             }
@@ -119,7 +116,7 @@ public class SaichengLayout extends LinearLayout {
 
 
         try {
-            saicheng_img_layout.setOnClickListener(new OnClickListener() {
+            saicheng_img_layout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(context, "播放图片", Toast.LENGTH_SHORT).show();
@@ -130,7 +127,7 @@ public class SaichengLayout extends LinearLayout {
 
 
         try {
-            saicheng_name.setOnClickListener(new OnClickListener() {
+            saicheng_name.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(context, "" + dataBean.getEvent().getTitle(), Toast.LENGTH_SHORT).show();
@@ -141,7 +138,7 @@ public class SaichengLayout extends LinearLayout {
 
 
         try {
-            saicheng_ditu.setOnClickListener(new OnClickListener() {
+            saicheng_ditu.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(context, "点击了地图", Toast.LENGTH_SHORT).show();
@@ -152,18 +149,18 @@ public class SaichengLayout extends LinearLayout {
 
 
         try {
-            saicheng_yuyuetupian.setOnClickListener(new OnClickListener() {
+            saicheng_yuyuetupian.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(context, "预约", Toast.LENGTH_SHORT).show();
                 }
             });
         }catch (Exception e){}
-        
-        
+
+
     }
 
-    public SaichengLayout(Context context) {
+    public Saicheng1Layout(Context context) {
         super(context);
         initView(context);
     }
@@ -183,4 +180,3 @@ public class SaichengLayout extends LinearLayout {
 
     }
 }
-

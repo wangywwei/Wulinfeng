@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hxwl.common.customview.GridSpacingItemDecoration;
+import com.hxwl.wlf3.bean.DynamicBean;
 import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wlf3.home.home1.LiveAdapter;
 import com.hxwl.wulinfeng.R;
@@ -39,6 +40,55 @@ public class DuiZhenLayout extends LinearLayout {
     private ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean> arrayList = new ArrayList();
     private RelativeLayout duizhen_relative;
     private HuoDongLayout huoDongLayout;
+
+    private DynamicBean.DataBean datasqBean;
+    public void setxqBean(final DynamicBean.DataBean bean) {
+        this.datasqBean = bean;
+        try {
+            String eventTime = datasqBean.getEvent().getEventTime();
+            duizhen_shijian.setText(eventTime);
+        }catch (Exception e){
+        }
+        try {
+            String title = datasqBean.getEvent().getTitle();
+            duizhen_xinxi.setText(title);
+        }catch (Exception e){
+        }
+//        arrayList.clear();
+//        arrayList.add(datasqBean.getEvent().getAgainstListBean());
+//        beiyongadapter.notifyDataSetChanged();
+
+
+
+
+
+/*
+* 活动
+* */
+
+//        try {
+//            List<DynamicBean.DataBean.ActivityListBean> activityList = datasqBean;
+//            if(null == activityList || activityList.size() ==0 ){
+//                //为空的情况
+//                return;
+//            }else{
+//                duizhen_relative.removeAllViews();//清空布局
+//                huoDongLayout = new HuoDongLayout(context);
+//                duizhen_relative.addView(huoDongLayout);
+//                huoDongLayout.setBean(dataBean.getActivityList().get(0));
+//            }
+//        }catch (Exception e){
+
+//        }
+
+
+
+    }
+
+
+
+
+
 
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
         this.dataBean = bean;
@@ -82,6 +132,10 @@ public class DuiZhenLayout extends LinearLayout {
 
 
     }
+
+
+
+
 
     public DuiZhenLayout(Context context) {
         super(context);
