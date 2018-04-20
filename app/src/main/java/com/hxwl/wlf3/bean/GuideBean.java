@@ -51,7 +51,7 @@ public class GuideBean {
          */
 
         private String showType;
-        private int value;
+        private String value;
         private String key;
 
         public String getShowType() {
@@ -62,11 +62,11 @@ public class GuideBean {
             this.showType = showType;
         }
 
-        public int getValue() {
+        public String getValue() {
             return value;
         }
 
-        public void setValue(int value) {
+        public void setValue(String value) {
             this.value = value;
         }
 

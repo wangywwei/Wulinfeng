@@ -16,10 +16,13 @@ import com.hxwl.newwlf.home.home.follow.PlayAdapter;
 import com.hxwl.newwlf.login.LoginActivity;
 import com.hxwl.newwlf.modlebean.QuanshouduizhengBean;
 import com.hxwl.wlf3.bean.GuideBean;
+import com.hxwl.wlf3.bean.Home3Bean;
+import com.hxwl.wlf3.home.home1.Home3Adapter;
 import com.hxwl.wulinfeng.MakerApplication;
 import com.hxwl.wulinfeng.R;
 import com.hxwl.wulinfeng.base.BaseFragment;
 import com.hxwl.wulinfeng.util.JsonValidator;
+
 import com.hxwl.wulinfeng.util.UIUtils;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -32,7 +35,7 @@ import okhttp3.Call;
 /**
  * Created by Administrator on 2018/4/19.
  */
-
+//GuideActivity
 public class GuideFragment extends BaseFragment {
     private View view;
     private XRecyclerView play_xrecycler;
@@ -43,6 +46,11 @@ public class GuideFragment extends BaseFragment {
 
     private boolean isRefresh=true;
     private XRecyclerView guide_recycler;
+
+
+    private ArrayList<GuideBean.DataBean> datalist=new ArrayList<>();
+    private GuideActivity home3Adapter;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -76,32 +84,24 @@ public class GuideFragment extends BaseFragment {
                     @Override
                     public void onResponse(String response, int id) {
                         JsonValidator jsonValidator = new JsonValidator();
-
-
-
                         if (jsonValidator.validate(response)){
                             Gson gson = new Gson();
                             try {
+
                                 GuideBean bean = gson.fromJson(response, GuideBean.class);
-                                if (bean.getCode().equals("1000")){
 
+                                try {
+                                    if (bean.getCode().equals("1000")){
 
-                                    String key = bean.getData().get(0).getKey();
-                                    Toast.makeText(getActivity(), "=========="+key, Toast.LENGTH_SHORT).show();
-                                    Log.e("TTTTTTT","---------------"+key);
+                                        datalist.clear();
 
-//                                    if (isRefresh){
-//                                        list.clear();
-//                                        list.addAll(bean.getData());
-//                                    }else {
-//                                        list.addAll(bean.getData());
-//                                    }
-//                                    adapter.notifyDataSetChanged();
-
-                                }else if (bean.getCode().equals("2002")||bean.getCode().equals("2003")){
-                                    UIUtils.showToast(bean.getMessage());
-                                    startActivity(LoginActivity.getIntent(getActivity()));
-
+                                        datalist.addAll(bean.getData());
+                                        home3Adapter.notifyDataSetChanged();
+                                    }else if (bean.getCode().equals("2002")||bean.getCode().equals("2003")){
+                                        UIUtils.showToast(bean.getMessage());
+                                        startActivity(LoginActivity.getIntent(getActivity()));
+                                    }
+                                }catch (Exception e){
                                 }
                             }catch (Exception e){
                                 e.printStackTrace();
@@ -125,23 +125,33 @@ public class GuideFragment extends BaseFragment {
 
         guide_recycler.setLayoutManager(linearLayoutManager);
 
+                try{
+                    home3Adapter = new GuideActivity(getContext(),datalist);
+                    LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+                    layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+                    guide_recycler.setLayoutManager(layoutManager);
+                    guide_recycler.setNestedScrollingEnabled(false);
+                    guide_recycler.setAdapter(home3Adapter);
+
+                }catch (Exception e){
+
+                }
 
 
-//        PlayAdapter  adapter=new PlayAdapter(list,getActivity());
-//        guide_recycler.setAdapter(adapter);
+                try {
 
+                    list.remove(0);
+                    home3Adapter.notifyItemRemoved(0);
+                    home3Adapter.notifyItemRangeChanged(0,list.size()-0);
 
-//        guide_recycler.setLoadingListener(new XRecyclerView.LoadingListener() {
-//            @Override
-//            public void onRefresh() {
-//
-//            }
-//
-//            @Override
-//            public void onLoadMore() {
-//
-//            }
-//        });
+                }catch (Exception e){
+
+                }
+/*
+*
+* mList.remove(2);
+        mAdapter.notifyItemRemoved(2);
+        mAdapter.notifyItemRangeChanged(0,mList.size()-2);*/
 
 
     }

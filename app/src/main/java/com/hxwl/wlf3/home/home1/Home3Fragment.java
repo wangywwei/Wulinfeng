@@ -71,9 +71,6 @@ public class Home3Fragment extends BaseFragment {
                 .addParams("token", MakerApplication.instance.getToken())
                 .build()
                 .execute(new StringCallback() {
-
-
-
                     @Override
                     public void onError(Call call, Exception e, int id) {
                         UIUtils.showToast("服务器异常");
@@ -106,7 +103,7 @@ public class Home3Fragment extends BaseFragment {
                                         }
                                         datalist.clear();
                                         datalist.addAll(bean.getData().getSchedules());
-                                        List<Home3Bean.DataBean.SchedulesBean> schedules = bean.getData().getSchedules();
+//                                        List<Home3Bean.DataBean.SchedulesBean> schedules = bean.getData().getSchedules();
 
 
                                         home3Adapter.notifyDataSetChanged();
