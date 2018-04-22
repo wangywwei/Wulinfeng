@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,7 +14,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hxwl.wlf3.bean.DynamicBean;
+import com.hxwl.wlf3.home.home1.ShiPin1Adapter;
+import com.hxwl.wlf3.home.home1.ShiPin1Fragment;
 import com.hxwl.wulinfeng.adapter.SaiChengAdapter;
+import com.hxwl.wulinfeng.adapter.ShiPinAdapter;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.bumptech.glide.Glide;
 import com.hxwl.newwlf.URLS;
@@ -30,12 +34,9 @@ import java.util.List;
 * 赛程界面
 * */
 public class SaichengLayout extends LinearLayout {
-
     private Context context;
     private View view;
     private Home3Bean.DataBean.SchedulesBean dataBean;
-
-    ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean> arrayList = new ArrayList();
 
     private ImageView saicheng_bofang;
     private LinearLayout saicheng_ditu;
@@ -44,12 +45,21 @@ public class SaichengLayout extends LinearLayout {
     private ImageView saicheng_yuyuetupian;
     private TextView saicheng_name;
     private XRecyclerView saicheng_xrecycler;
-    private Home3SaiChengAdapter beiyongadapter;
     private RelativeLayout saicheng_relative;
     private HuoDongLayout huoDongLayout;
     private RelativeLayout saicheng_img_layout;
+    private ShiPin1Adapter beiyongadapter;
+    private ShiPin1Fragment shiPin1Fragment;
+
+
+   private ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean> arrayList = new ArrayList();
+    private ShiPin1Adapter shiPinAdapter;
+
+
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
         this.dataBean = bean;
+
+
 
         try {
             Glide.with(context).load(URLS.IMG + dataBean.getEvent().getCoverImage()).into(saicheng_img);
@@ -75,43 +85,27 @@ public class SaichengLayout extends LinearLayout {
         } catch (Exception e) {
         }
 
-
-        try {
-
-            int state = dataBean.getState();
-
-            if (state == 3) {
-                LinearLayoutManager layoutManager = new LinearLayoutManager(context);
-                layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-                saicheng_xrecycler.setLayoutManager(layoutManager);
-                saicheng_xrecycler.setNestedScrollingEnabled(false);
-                try {
-                    arrayList.add(dataBean.getEvent().getAgainstListBean());
-                    beiyongadapter = new Home3SaiChengAdapter(context, arrayList);
-                    saicheng_xrecycler.setAdapter(beiyongadapter);
-                } catch (Exception e) {
-                }
-            }
-        } catch (Exception e) {
-        }
+        arrayList.clear();
+        arrayList.add(dataBean.getEvent().getAgainstListBean());
+        beiyongadapter.notifyDataSetChanged();
 
 /*
 * 活动
 * */
 
         try {
-
-//            private Home3Bean.DataBean.SchedulesBean dataBean;
-
             List<Home3Bean.DataBean.SchedulesBean.ActivityListBean> activityList = dataBean.getActivityList();
             if (null == activityList || activityList.size() == 0) {
                 //为空的情况
                 return;
             } else {
-                saicheng_relative.removeAllViews();//清空布局
-                huoDongLayout = new HuoDongLayout(context);
-                saicheng_relative.addView(huoDongLayout);
-                huoDongLayout.setBean(dataBean.getActivityList().get(0));
+
+                for (int i = 0; i <activityList.size() ; i++) {
+                    saicheng_relative.removeAllViews();//清空布局
+                    huoDongLayout = new HuoDongLayout(context);
+                    saicheng_relative.addView(huoDongLayout);
+                    huoDongLayout.setBean(activityList.get(i));
+                }
             }
         } catch (Exception e) {
 
@@ -178,9 +172,22 @@ public class SaichengLayout extends LinearLayout {
         saicheng_position = (TextView) view.findViewById(R.id.saicheng_position);
         saicheng_yuyuetupian = (ImageView) view.findViewById(R.id.saicheng_yuyuetupian);
         saicheng_xrecycler = (XRecyclerView) view.findViewById(R.id.saicheng_xrecycler);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        saicheng_xrecycler.setLayoutManager(layoutManager);
+        saicheng_xrecycler.setNestedScrollingEnabled(false);
 
-        saicheng_img_layout = (RelativeLayout) view.findViewById(R.id.saicheng_img_layout);
+            try {
+                try {
 
+                    //对阵的适配器
+                    shiPinAdapter = new ShiPin1Adapter(context, arrayList);
+                    saicheng_xrecycler.setAdapter(shiPinAdapter);
+            }catch (Exception e){}
+
+
+        }catch (Exception e){
+        }
     }
 }
 

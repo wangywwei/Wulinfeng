@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.hxwl.newwlf.URLS;
 import com.hxwl.wlf3.bean.DynamicBean;
 import com.hxwl.wlf3.bean.Home3Bean;
+import com.hxwl.wlf3.home.home1.ShiPin1Fragment;
 import com.hxwl.wulinfeng.R;
 
 import java.util.ArrayList;
@@ -35,8 +36,6 @@ public class VideoListlayout extends LinearLayout {
     private Context context;
     private View view;
     private Home3Bean.DataBean.SchedulesBean dataBean;
-    private DynamicBean.DataBean dataxqBean;
-
     private ImageView vll_img;
     private ImageView vll_bofang;
     private TextView vll_text;
@@ -46,9 +45,10 @@ public class VideoListlayout extends LinearLayout {
     private TextView vll_position;
     private TextView vll_bujidashuju;
     private HuoDongLayout huoDongLayout;
-    private RelativeLayout video_relative;
+    private RelativeLayout video_relative,video_relative1;
     private RelativeLayout vll_img_layout;
     private LinearLayout cll_ditu;
+    private ShiPin1Fragment shiPin1Fragment;
 
 
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
@@ -157,36 +157,24 @@ public class VideoListlayout extends LinearLayout {
         }
 
 
-
-
-
-
         try {
 
             int showType = dataBean.getEvent().getShowType();
             int scheduleState = dataBean.getEvent().getScheduleState();
-
-
+            //showType=5并且scheduleState=3时显示
 
             if (showType==5||scheduleState==3){
 
-
-
-
-
-
+                video_relative1.setVisibility(View.VISIBLE);
+                video_relative1.removeAllViews();
+                shiPin1Fragment = new ShiPin1Fragment(context);
+                video_relative1.addView(shiPin1Fragment);
+                shiPin1Fragment.setBean(dataBean.getEvent().getAgainstListBean());
             }
-
-
-
 
 
         }catch (Exception e){
         }
-
-
-
-
 
 
         // 活动
@@ -196,10 +184,16 @@ public class VideoListlayout extends LinearLayout {
                 //为空的情况
                 return;
             }else{
-                video_relative.removeAllViews();//清空布局
-                huoDongLayout = new HuoDongLayout(context);
-                video_relative.addView(huoDongLayout);
-                huoDongLayout.setBean(dataBean.getActivityList().get(0));
+                activityList.clear();
+                activityList.addAll( dataBean.getActivityList());
+
+                for (int i = 0; i < activityList.size(); i++) {
+                    video_relative.removeAllViews();//清空布局
+                    huoDongLayout = new HuoDongLayout(context);
+                    video_relative.addView(huoDongLayout);
+                    huoDongLayout.setBean(activityList.get(i));
+
+                }
             }
         }catch (Exception e){
         }
@@ -267,11 +261,9 @@ public class VideoListlayout extends LinearLayout {
         vll_position= (TextView) view.findViewById(R.id.vll_position);
         vll_bujidashuju= (TextView) view.findViewById(R.id.vll_bujidashuju);
         video_relative = (RelativeLayout) view.findViewById(R.id.video_relative);
-
-
         vll_img_layout = (RelativeLayout) view.findViewById(R.id.vll_img_layout);
-
         cll_ditu = (LinearLayout) view.findViewById(R.id.cll_ditu);
+        video_relative1 = (RelativeLayout) view.findViewById(R.id.video_relative1);
 
     }
 

@@ -96,6 +96,8 @@
         android:background="#EFEFEF"/>
 
 
+
+
     <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/saicheng_xrecycler"
         android:layout_marginLeft="@dimen/wlf_16dp"
@@ -103,13 +105,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-
-
-
-    <RelativeLayout
-        android:id="@+id/saicheng_relative"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></RelativeLayout>
 
 
 

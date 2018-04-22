@@ -41,7 +41,7 @@ private HuoDong1Layout  huoDongLayout1;
 
 
 
-    public void setxqBean(final DynamicBean.DataBean bean) {
+/*    public void setxqBean(final DynamicBean.DataBean bean) {
         this.dataxqBean = bean;
 
         try {
@@ -60,9 +60,9 @@ private HuoDong1Layout  huoDongLayout1;
         }catch (Exception e){
         }
 
-/*
+*//*
 * 活动
-* */
+* *//*
 
         try {
 
@@ -76,7 +76,7 @@ private HuoDong1Layout  huoDongLayout1;
                 chun_relative.removeAllViews();//清空布局
                 huoDongLayout1 = new HuoDong1Layout(context);
                 chun_relative.addView(huoDongLayout);
-                huoDongLayout.setBean(dataBean.getActivityList().get(0));
+                huoDongLayout.setBean(dataBean);
             }
         }catch (Exception e){
 
@@ -114,7 +114,7 @@ private HuoDong1Layout  huoDongLayout1;
                 }
             });
         }catch (Exception e){}
-    }
+    }*/
 
 
 
@@ -140,23 +140,24 @@ private HuoDong1Layout  huoDongLayout1;
 /*
 * 活动
 * */
-
         try {
-
-//            private Home3Bean.DataBean.SchedulesBean dataBean;
-
             List<Home3Bean.DataBean.SchedulesBean.ActivityListBean> activityList = dataBean.getActivityList();
             if(null == activityList || activityList.size() ==0 ){
                 //为空的情况
                 return;
             }else{
-                chun_relative.removeAllViews();//清空布局
-                huoDongLayout = new HuoDongLayout(context);
-                chun_relative.addView(huoDongLayout);
-                huoDongLayout.setBean(dataBean.getActivityList().get(0));
+
+                for (int i = 0; i < activityList.size(); i++) {
+                    chun_relative.removeAllViews();//清空布局
+                    huoDongLayout = new HuoDongLayout(context);
+                    chun_relative.addView(huoDongLayout);
+                    huoDongLayout.setBean(activityList.get(i));
+                }
+
+
+
             }
         }catch (Exception e){
-
         }
 
 

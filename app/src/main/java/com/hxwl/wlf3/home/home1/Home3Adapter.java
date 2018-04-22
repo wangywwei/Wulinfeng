@@ -178,7 +178,7 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
                 @Override
                 public void onClick(View v) {
                     context.startActivity(EventActivity.getIntent(context));
-                    Toast.makeText(context, "点击图片，进入赛事", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(context, "点击图片，进入赛事", Toast.LENGTH_SHORT).show();
                 }
             });
 

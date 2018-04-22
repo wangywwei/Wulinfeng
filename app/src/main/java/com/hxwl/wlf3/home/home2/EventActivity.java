@@ -2,6 +2,7 @@ package com.hxwl.wlf3.home.home2;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.flyco.tablayout.SlidingTabLayout;
+import com.hxwl.newwlf.home.home.follow.LeavingMessageFragment;
 import com.hxwl.wlf3.home.remenhot.GenDuoActivity;
 import com.hxwl.wulinfeng.R;
 import com.hxwl.wulinfeng.base.BaseActivity;
@@ -31,7 +33,6 @@ public class EventActivity extends BaseActivity {
         Intent intent=new Intent(context,EventActivity.class);
         return intent;
     }
-
     private TabLayout tab;
     private ViewPager pager;
     List<Fragment> list = new ArrayList<>();
@@ -54,9 +55,9 @@ public class EventActivity extends BaseActivity {
 
     private void initView() {
 
-
         tab = (TabLayout) findViewById(R.id.event_tablayout);
         pager = (ViewPager) findViewById(R.id.event_viewpager);
+
         initlist();
         getlist();
         tab.addTab(tab.newTab().setText(lists.get(0)));
@@ -69,11 +70,14 @@ public class EventActivity extends BaseActivity {
         LinearLayout linearLayout = (LinearLayout) tab.getChildAt(0);
         linearLayout.setShowDividers(LinearLayout.SHOW_DIVIDER_MIDDLE);
 
+
+
     }
     public List<Fragment> getlist() {
         list.add(new GuideFragment());
         list.add(new DynamicFragment());
-        list.add(new CommentFragment());
+//        list.add(new CommentFragment());//LeavingMessageFragment
+        list.add(new LeavingMessageFragment());//LeavingMessageFragment
         return list;
     }
 
@@ -103,7 +107,5 @@ public class EventActivity extends BaseActivity {
             return lists.get(position);
         }
     }
-
-
 
 }

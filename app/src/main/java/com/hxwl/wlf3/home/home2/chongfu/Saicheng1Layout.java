@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.hxwl.newwlf.URLS;
 import com.hxwl.wlf3.bean.DynamicBean;
+import com.hxwl.wlf3.home.home1.ShiPin1Adapter;
 import com.hxwl.wulinfeng.R;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
@@ -29,7 +30,7 @@ public class Saicheng1Layout extends LinearLayout {
     private View view;
     private DynamicBean.DataBean dataBean;
 
-    ArrayList<DynamicBean.DataBean.EventBean> arrayList = new ArrayList();
+    ArrayList<DynamicBean.DataBean.EventBean.AgainstListBean> arrayList = new ArrayList();
 
     private ImageView saicheng_bofang;
     private LinearLayout saicheng_ditu;
@@ -38,10 +39,12 @@ public class Saicheng1Layout extends LinearLayout {
     private ImageView saicheng_yuyuetupian;
     private TextView saicheng_name;
     private XRecyclerView saicheng_xrecycler;
-    private Home3SaiCheng1Adapter beiyongadapter;
+//    private Home3SaiCheng1Adapter beiyongadapter;
     private RelativeLayout saicheng_relative;
     private HuoDong1Layout huoDongLayout;
     private RelativeLayout saicheng_img_layout;
+    private ShiPin2Adapter shiPin1Adapter;
+
     public void setBean(final DynamicBean.DataBean bean) {
         this.dataBean = bean;
 
@@ -82,9 +85,13 @@ public class Saicheng1Layout extends LinearLayout {
                 saicheng_xrecycler.setLayoutManager(layoutManager);
                 saicheng_xrecycler.setNestedScrollingEnabled(false);
                 try {
-                    arrayList.add(dataBean.getEvent());
-                    beiyongadapter = new Home3SaiCheng1Adapter(context, arrayList);
-                    saicheng_xrecycler.setAdapter(beiyongadapter);
+//                    arrayList.add(dataBean.getEvent().getAgainstList());
+
+
+                    shiPin1Adapter = new ShiPin2Adapter(context,arrayList);
+
+//                    beiyongadapter = new Home3SaiCheng1Adapter(context, arrayList);
+                    saicheng_xrecycler.setAdapter(shiPin1Adapter);
                 } catch (Exception e) {
                 }
             }

@@ -470,11 +470,6 @@ public class Home3Bean {
 
                 public static class againstListBean{
 
-
-
-
-
-
 /*
 *
 *                            "redClub":"",
@@ -488,6 +483,29 @@ public class Home3Bean {
 * */
 
 
+/*
+*  "result":1,
+                            "winner":"李帅虎",
+                            "againstId":7,
+                            "winWay":"ko",
+                            "againstName":"天使对阵_1"
+*
+* */
+/*   "result":2,
+                            "winner":"肖克新",
+                            "againstId":8,
+                            "winWay":"tko",
+                            "againstName":"天使对阵_2"*/
+
+
+                    private int result;
+                    private int againstId;
+                    private String winner;
+                    private String winWay;
+                    private String againstName;
+
+
+
                     private String blueClub;
                     private String redClub;
                     private String redName;
@@ -495,6 +513,46 @@ public class Home3Bean {
                     private int id;
                     private String  redHeadImg;
                     private String blueHeadImg;
+
+                    public void setResult(int result) {
+                        this.result = result;
+                    }
+
+                    public int getResult() {
+                        return result;
+                    }
+
+                    public void setAgainstId(int againstId) {
+                        this.againstId = againstId;
+                    }
+
+                    public void setWinner(String winner) {
+                        this.winner = winner;
+                    }
+
+                    public void setWinWay(String winWay) {
+                        this.winWay = winWay;
+                    }
+
+                    public void setAgainstName(String againstName) {
+                        this.againstName = againstName;
+                    }
+
+                    public int getAgainstId() {
+                        return againstId;
+                    }
+
+                    public String getWinner() {
+                        return winner;
+                    }
+
+                    public String getWinWay() {
+                        return winWay;
+                    }
+
+                    public String getAgainstName() {
+                        return againstName;
+                    }
 
                     public void setBlueClub(String blueClub) {
                         this.blueClub = blueClub;

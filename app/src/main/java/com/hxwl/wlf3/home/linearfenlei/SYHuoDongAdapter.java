@@ -45,9 +45,9 @@ public class SYHuoDongAdapter extends RecyclerView.Adapter<SYHuoDongAdapter.View
     public void onBindViewHolder(ViewHolder holder, final int position) {
 
         try {
-
             String name = list.get(position).getName();
             holder.huodong_content.setText(name);
+
         }catch (Exception e){
         }
 

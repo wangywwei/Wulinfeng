@@ -39,9 +39,14 @@
     <android.support.design.widget.TabLayout
         android:id="@+id/event_tablayout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/wlf_50dp" />
+        android:layout_height="@dimen/wlf_50dp"
+       android:background="#FFF"
+        app:tabSelectedTextColor="#C52720"
+        app:tabTextColor="#666666"
+        app:tabIndicatorColor="#FFF"  />
 
     <android.support.v4.view.ViewPager
+        android:background="#FFF"
         android:id="@+id/event_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

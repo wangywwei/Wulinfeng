@@ -19,7 +19,6 @@ import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wlf3.home.home1.Home3Adapter;
 import com.hxwl.wlf3.home.linearfenlei.DuiZhenLayout;
 import com.hxwl.wlf3.home.linearfenlei.PureTextLayout;
-import com.hxwl.wlf3.home.linearfenlei.SaichengLayout;
 import com.hxwl.wlf3.home.linearfenlei.VideoListlayout;
 import com.hxwl.wulinfeng.R;
 

@@ -115,10 +115,10 @@ public class DynamicActivity extends RecyclerView.Adapter<DynamicActivity.ViewHo
 
             }else if (showType==4){
                 try {
-                    holder.dongtai_relative.removeAllViews();//清空布局
-                    pureTextLayout = new PureTextLayout(context);
-                    holder.dongtai_relative.addView(pureTextLayout);
-                    pureTextLayout.setxqBean(list6.get(position));
+//                    holder.dongtai_relative.removeAllViews();//清空布局
+//                    pureTextLayout = new PureTextLayout(context);
+//                    holder.dongtai_relative.addView(pureTextLayout);
+//                    pureTextLayout.setxqBean(list6.get(position));
                 }catch (Exception e){
                 }
 

@@ -41,55 +41,6 @@ public class DuiZhenLayout extends LinearLayout {
     private RelativeLayout duizhen_relative;
     private HuoDongLayout huoDongLayout;
 
-    private DynamicBean.DataBean datasqBean;
-    public void setxqBean(final DynamicBean.DataBean bean) {
-        this.datasqBean = bean;
-        try {
-            String eventTime = datasqBean.getEvent().getEventTime();
-            duizhen_shijian.setText(eventTime);
-        }catch (Exception e){
-        }
-        try {
-            String title = datasqBean.getEvent().getTitle();
-            duizhen_xinxi.setText(title);
-        }catch (Exception e){
-        }
-//        arrayList.clear();
-//        arrayList.add(datasqBean.getEvent().getAgainstListBean());
-//        beiyongadapter.notifyDataSetChanged();
-
-
-
-
-
-/*
-* 活动
-* */
-
-//        try {
-//            List<DynamicBean.DataBean.ActivityListBean> activityList = datasqBean;
-//            if(null == activityList || activityList.size() ==0 ){
-//                //为空的情况
-//                return;
-//            }else{
-//                duizhen_relative.removeAllViews();//清空布局
-//                huoDongLayout = new HuoDongLayout(context);
-//                duizhen_relative.addView(huoDongLayout);
-//                huoDongLayout.setBean(dataBean.getActivityList().get(0));
-//            }
-//        }catch (Exception e){
-
-//        }
-
-
-
-    }
-
-
-
-
-
-
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
         this.dataBean = bean;
         try {
@@ -106,10 +57,6 @@ public class DuiZhenLayout extends LinearLayout {
         arrayList.add(dataBean.getEvent().getAgainstListBean());
         beiyongadapter.notifyDataSetChanged();
 
-
-
-
-
 /*
 * 活动
 * */
@@ -120,17 +67,18 @@ public class DuiZhenLayout extends LinearLayout {
                 //为空的情况
                 return;
             }else{
-                duizhen_relative.removeAllViews();//清空布局
-                huoDongLayout = new HuoDongLayout(context);
-                duizhen_relative.addView(huoDongLayout);
-                huoDongLayout.setBean(dataBean.getActivityList().get(0));
+
+                for (int i = 0; i < activityList.size(); i++) {
+                    duizhen_relative.removeAllViews();//清空布局
+                    huoDongLayout = new HuoDongLayout(context);
+                    duizhen_relative.addView(huoDongLayout);
+                    huoDongLayout.setBean(activityList.get(i));
+                }
+
             }
         }catch (Exception e){
 
         }
-
-
-
     }
 
 

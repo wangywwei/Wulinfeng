@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:gravity="center_vertical">
+
+<LinearLayout
+    android:id="@+id/shipin1_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/shipin1_img"
+        android:layout_width="@dimen/wlf_16dp"
+        android:layout_height="@dimen/wlf_16dp"
+        android:src="@drawable/bofangbiaoqian1"/>
+
+    <TextView
+        android:id="@+id/shipin1_name"
+        android:layout_marginLeft="@dimen/wlf_6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="ssasaas"
+        android:textSize="@dimen/text_10sp"
+        android:padding="@dimen/wlf_4dp"
+        android:background="@drawable/zixunbiaoqian1"/>
+
+
+    <TextView
+        android:id="@+id/shipin1_name1"
+        android:layout_marginLeft="@dimen/wlf_6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="ssasaas"
+        android:textSize="@dimen/text_10sp"
+        android:padding="@dimen/wlf_4dp"
+        android:background="@drawable/zixunbiaoqian1"/>
+
+
+    <TextView
+        android:id="@+id/shipin1_content"
+        android:layout_marginLeft="@dimen/wlf_6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="aaaaaaaaaaaaaaaa"
+        android:textSize="@dimen/text_14sp"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+
+
+
+</LinearLayout>
+
+
+</LinearLayout>

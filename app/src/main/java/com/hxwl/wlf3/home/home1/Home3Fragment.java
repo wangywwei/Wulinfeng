@@ -30,7 +30,7 @@ import java.util.List;
 
 import okhttp3.Call;
 
-//CommentFragment
+
 public class Home3Fragment extends BaseFragment {
     private View view;
     private XRecyclerView home3_xrecyclerview;
@@ -103,9 +103,6 @@ public class Home3Fragment extends BaseFragment {
                                         }
                                         datalist.clear();
                                         datalist.addAll(bean.getData().getSchedules());
-//                                        List<Home3Bean.DataBean.SchedulesBean> schedules = bean.getData().getSchedules();
-
-
                                         home3Adapter.notifyDataSetChanged();
                                     }else if (bean.getCode().equals("2002")||bean.getCode().equals("2003")){
                                         UIUtils.showToast(bean.getMessage());
@@ -118,14 +115,8 @@ public class Home3Fragment extends BaseFragment {
                                     e.printStackTrace();
                                 }
 
-
-
                             }catch (Exception e){
-                                Log.e("TTTAAADD","");
                             }
-
-
-
 
                         }
                     }
