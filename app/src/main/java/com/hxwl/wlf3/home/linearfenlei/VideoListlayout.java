@@ -156,6 +156,39 @@ public class VideoListlayout extends LinearLayout {
         }catch (Exception e){
         }
 
+
+
+
+
+
+        try {
+
+            int showType = dataBean.getEvent().getShowType();
+            int scheduleState = dataBean.getEvent().getScheduleState();
+
+
+
+            if (showType==5||scheduleState==3){
+
+
+
+
+
+
+            }
+
+
+
+
+
+        }catch (Exception e){
+        }
+
+
+
+
+
+
         // 活动
         try {
             List<Home3Bean.DataBean.SchedulesBean.ActivityListBean> activityList = dataBean.getActivityList();

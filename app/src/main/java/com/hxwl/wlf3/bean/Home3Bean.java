@@ -363,6 +363,8 @@ public class Home3Bean {
                  */
 
 
+                private int scheduleState;
+
                 private int imageNumber;
 
 
@@ -375,6 +377,14 @@ public class Home3Bean {
                 private int id;
                 private String title;
                 private againstListBean againstListBean;
+
+                public void setScheduleState(int scheduleState) {
+                    this.scheduleState = scheduleState;
+                }
+
+                public int getScheduleState() {
+                    return scheduleState;
+                }
 
                 public void setImageNumber(int imageNumber) {
                     this.imageNumber = imageNumber;
