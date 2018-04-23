@@ -6,8 +6,6 @@
     android:background="#FFF">
 
     <LinearLayout
-        android:layout_marginLeft="@dimen/wlf_16dp"
-        android:layout_marginRight="@dimen/wlf_16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

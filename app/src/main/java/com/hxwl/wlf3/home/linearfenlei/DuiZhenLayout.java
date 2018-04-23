@@ -54,7 +54,7 @@ public class DuiZhenLayout extends LinearLayout {
         }catch (Exception e){
         }
         arrayList.clear();
-        arrayList.addAll(dataBean.getEvent().getAgainstListBeans());
+        arrayList.add(dataBean.getEvent().getAgainstListBean());//这里如果是bean类的话会显示一条数据，如果是集合的话一条都不显示
         beiyongadapter.notifyDataSetChanged();
 
 /*
@@ -69,20 +69,15 @@ public class DuiZhenLayout extends LinearLayout {
             }else{
                 duizhen_relative.removeAllViews();//清空布局
                 for (int i = 0; i < activityList.size(); i++) {
-
                     huoDongLayout = new HuoDongLayout(context);
                     duizhen_relative.addView(huoDongLayout);
                     huoDongLayout.setBean(activityList.get(i));
                 }
-
             }
         }catch (Exception e){
 
         }
     }
-
-
-
 
 
     public DuiZhenLayout(Context context) {

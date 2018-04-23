@@ -124,19 +124,10 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support.test/exposed-instrumentation-api-publish/0.5/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support.test/rules/0.5/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.3.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/design/25.3.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/multidex-instrumentation/1.0.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.3.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-compat/25.3.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.3.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.3.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-fragment/25.3.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.3.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/25.3.1/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.3.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/transition/25.3.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.flyco.dialog/FlycoDialog_Lib/1.2.6/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.flyco.labelview/FlycoLabelView_Lib/1.0.2/jars" />
@@ -173,104 +164,104 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 24 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support.constraint:constraint-layout-solver:1.0.2@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-annotations:25.3.1@jar" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.android.support.test.espresso:espresso-idling-resource-2.2.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.github.1002326270xc:LayoutManager-FlowLayout-v1.6" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\imsdk_msg_ext.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.reactivex:rxjava:1.1.5@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-media-compat-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.squareup.leakcanary:leakcanary-watcher:1.5.1@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\nineoldandroids-2.4.0.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.jakewharton:butterknife:7.0.1@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\SaaS_AppAnalytics_Android_SDK_V4.0.3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.squareup.haha:haha:2.0.3@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\imsdk_group_ext.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\bugly_2.4.0_imsdk_release.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\liteavsdk.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\pinyin4j-2.5.0.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.android.support.test.espresso:espresso-core-2.2.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.github.ctiao:DanmakuFlameMaster-0.6.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.squareup.leakcanary:leakcanary-android-1.5.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:multidex-1.0.1" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.squareup:javawriter:2.1.1@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: commons-lang:commons-lang:2.6@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\ShareSDK-QZone-2.8.3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.android.support.test:rules-0.5" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.greenrobot:greendao-api:3.2.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\imsdk_sns_ext.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.zhy:okhttputils-2.6.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\ShareSDK-Core-2.8.3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: javax.inject:javax.inject:1@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\cos-sdk-android.1.4.3.11.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-v4-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-core-ui-25.3.1" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.android.support.test:runner-0.5" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.yanzhenjie:permission-1.0.1" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.android.support:multidex-instrumentation-1.0.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\ShareSDK-SinaWeibo-2.8.3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.tencent.mid:mid-4.0.6-release" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.tencent.xinge:xinge-3.2.2-release" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.android.support.test:exposed-instrumentation-api-publish-0.5" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.github.ctiao:ndkbitmap-x86-0.6.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\ShareSDK-Wechat-Moments-2.8.3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\wup-1.0.0-SNAPSHOT.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:recyclerview-v7-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:design-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\ShareSDK-QQ-2.8.3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\tls_sdk.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.squareup.okhttp3:okhttp:3.4.1@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.github.ctiao:ndkbitmap-armv7a-0.6.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.github.bumptech.glide:glide:3.7.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-vector-drawable-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\ShareSDK-Wechat-Favorite-2.8.3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.squareup.okio:okio:1.9.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-core-utils-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.greenrobot:greendao:3.2.0@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:appcompat-v7-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-fragment-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\ShareSDK-Wechat-Core-2.8.3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\gson-2.4.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\soload.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.jaeger.statusbarutil:library-1.4.0" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: javax.annotation:javax.annotation-api:1.2@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\imsdk.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\Baidu_Mtj_3.7.6.1.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\MobCommons-2017.0412.1554.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\qalsdk.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:animated-vector-drawable-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:support-compat-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.aliyun.dpa:oss-android-sdk-2.4.5" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.flyco.tablayout:FlycoTabLayout_Lib-2.1.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\fastjson-1.2.7.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.squareup.leakcanary:leakcanary-android-no-op-1.5.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support:transition-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.nostra13.universalimageloader:universal-image-loader:1.9.5@jar" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: com.google.code.findbugs:jsr305:2.0.1@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.flyco.dialog:FlycoDialog_Lib-1.2.6" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.tbruyelle.rxpermissions:rxpermissions-0.9.4" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.alibaba.android:vlayout-1.0.4" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.flyco.labelview:FlycoLabelView_Lib-1.0.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.android.support.constraint:constraint-layout-1.0.2" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: junit:junit:4.12@jar" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.3@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\ShareSDK-Wechat-2.8.3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.squareup.leakcanary:leakcanary-analyzer:1.5.1@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.jcodecraeer:xrecyclerview-1.3.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.1.4@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\sha1utils.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: org.hamcrest:hamcrest-library:1.3@jar" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="Gradle: org.hamcrest:hamcrest-integration:1.3@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: q.rorbin:badgeview-1.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.github.ctiao:ndkbitmap-armv5-0.6.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\MobTools-2017.0412.1554.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: __local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\mobilepb.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.github.dongjunkun:DropDownMenu-1.0.3" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:multidex-1.0.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="com.android.support.test:exposed-instrumentation-api-publish-0.5" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\ShareSDK-QQ-2.8.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\ShareSDK-Wechat-Favorite-2.8.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.alibaba.android:vlayout-1.0.4" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\MobCommons-2017.0412.1554.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\tls_sdk.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\ShareSDK-Wechat-Core-2.8.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.1.4@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-core-ui-25.3.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="com.squareup:javawriter:2.1.1@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-compat-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\cos-sdk-android.1.4.3.11.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\ShareSDK-Wechat-2.8.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\mobilepb.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.yanzhenjie:permission-1.0.1" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support.constraint:constraint-layout-solver:1.0.2@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-core-utils-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support.constraint:constraint-layout-1.0.2" level="project" />
+    <orderEntry type="library" exported="" name="com.github.ctiao:ndkbitmap-x86-0.6.2" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-v4-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="com.tbruyelle.rxpermissions:rxpermissions-0.9.4" level="project" />
+    <orderEntry type="library" exported="" name="com.nostra13.universalimageloader:universal-image-loader:1.9.5@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-media-compat-25.3.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="com.google.code.findbugs:jsr305:2.0.1@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.zhy:okhttputils-2.6.2" level="project" />
+    <orderEntry type="library" exported="" name="com.flyco.tablayout:FlycoTabLayout_Lib-2.1.0" level="project" />
+    <orderEntry type="library" exported="" name="com.jcodecraeer:xrecyclerview-1.3.2" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\sha1utils.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="org.hamcrest:hamcrest-core:1.3@jar" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="com.android.support.test.espresso:espresso-core-2.2.2" level="project" />
+    <orderEntry type="library" exported="" name="com.squareup.okhttp3:okhttp:3.4.1@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.github.ctiao:ndkbitmap-armv7a-0.6.2" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\qalsdk.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="com.android.support.test:rules-0.5" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="com.squareup.leakcanary:leakcanary-android-no-op-1.5.1" level="project" />
+    <orderEntry type="library" exported="" name="com.squareup.leakcanary:leakcanary-watcher:1.5.1@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:transition-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:design-25.3.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="org.hamcrest:hamcrest-integration:1.3@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.squareup.haha:haha:2.0.3@jar" level="project" />
+    <orderEntry type="library" exported="" name="io.reactivex:rxjava:1.1.5@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\pinyin4j-2.5.0.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.github.1002326270xc:LayoutManager-FlowLayout-v1.6" level="project" />
+    <orderEntry type="library" exported="" name="com.github.ctiao:ndkbitmap-armv5-0.6.2" level="project" />
+    <orderEntry type="library" exported="" name="com.aliyun.dpa:oss-android-sdk-2.4.5" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="com.android.support.test.espresso:espresso-idling-resource-2.2.2" level="project" />
+    <orderEntry type="library" exported="" name="com.tencent.mid:mid-4.0.6-release" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="javax.annotation:javax.annotation-api:1.2@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-vector-drawable-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\Baidu_Mtj_3.7.6.1.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\ShareSDK-Core-2.8.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:recyclerview-v7-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="com.tencent.xinge:xinge-3.2.2-release" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\imsdk_group_ext.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.flyco.labelview:FlycoLabelView_Lib-1.0.2" level="project" />
+    <orderEntry type="library" exported="" name="com.squareup.leakcanary:leakcanary-analyzer:1.5.1@jar" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="junit:junit:4.12@jar" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="com.android.support:multidex-instrumentation-1.0.1" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\ShareSDK-Wechat-Moments-2.8.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="q.rorbin:badgeview-1.0.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="javax.inject:javax.inject:1@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.flyco.dialog:FlycoDialog_Lib-1.2.6" level="project" />
+    <orderEntry type="library" exported="" name="commons-lang:commons-lang:2.6@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\MobTools-2017.0412.1554.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="org.greenrobot:greendao-api:3.2.0@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\fastjson-1.2.7.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\gson-2.4.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\imsdk_sns_ext.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\wup-1.0.0-SNAPSHOT.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.jakewharton:butterknife:7.0.1@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-fragment-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="com.github.ctiao:DanmakuFlameMaster-0.6.2" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\imsdk_msg_ext.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.github.dongjunkun:DropDownMenu-1.0.3" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:animated-vector-drawable-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\nineoldandroids-2.4.0.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\ShareSDK-QZone-2.8.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="org.hamcrest:hamcrest-library:1.3@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.jaeger.statusbarutil:library-1.4.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="com.android.support.test:runner-0.5" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:appcompat-v7-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\bugly_2.4.0_imsdk_release.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\imsdk.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\liteavsdk.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\soload.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="org.greenrobot:greendao:3.2.0@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\ShareSDK-SinaWeibo-2.8.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-annotations:25.3.1@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:E.\Android\AndroidStudioProjects\Wulinfeng\app\libs\SaaS_AppAnalytics_Android_SDK_V4.0.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.squareup.okio:okio:1.9.0@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.github.bumptech.glide:glide:3.7.0@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.squareup.leakcanary:leakcanary-android-1.5.1" level="project" />
+    <orderEntry type="module" module-name="rollbanner" exported="" />
     <orderEntry type="module" module-name="bubbleview" exported="" />
     <orderEntry type="module" module-name="banner" exported="" />
     <orderEntry type="module" module-name="PhotoPicker" exported="" />
     <orderEntry type="module" module-name="LePlayerSdk" exported="" />
-    <orderEntry type="library" exported="" name="Gradle: android-android-24" level="project" />
   </component>
 </module>

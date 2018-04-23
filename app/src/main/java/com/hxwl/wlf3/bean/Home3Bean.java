@@ -366,7 +366,7 @@ public class Home3Bean {
                 private int scheduleState;
 
                 private int imageNumber;
-
+                private  AgainstListBean againstListBean;
 
                 private String eventAddress;
                 private String author;
@@ -376,6 +376,14 @@ public class Home3Bean {
                 private int showType;
                 private int id;
                 private String title;
+
+                public AgainstListBean getAgainstListBean() {
+                    return againstListBean;
+                }
+
+                public void setAgainstListBean(AgainstListBean againstListBean) {
+                    this.againstListBean = againstListBean;
+                }
 
                 private List<AgainstListBean> againstListBeans;
 

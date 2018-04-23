@@ -156,15 +156,12 @@ public class VideoListlayout extends LinearLayout {
         }catch (Exception e){
         }
 
-
         try {
 
             int showType = dataBean.getEvent().getShowType();
             int scheduleState = dataBean.getEvent().getScheduleState();
             //showType=5并且scheduleState=3时显示
-
             if (showType==5||scheduleState==3){
-
                 video_relative1.setVisibility(View.VISIBLE);
                 video_relative1.removeAllViews();
                 shiPin1Fragment = new ShiPin1Fragment(context);
@@ -175,7 +172,6 @@ public class VideoListlayout extends LinearLayout {
 
         }catch (Exception e){
         }
-
 
         // 活动
         try {
@@ -188,7 +184,6 @@ public class VideoListlayout extends LinearLayout {
                 activityList.addAll( dataBean.getActivityList());
                 video_relative.removeAllViews();//清空布局
                 for (int i = 0; i < activityList.size(); i++) {
-
                     huoDongLayout = new HuoDongLayout(context);
                     video_relative.addView(huoDongLayout);
                     huoDongLayout.setBean(activityList.get(i));

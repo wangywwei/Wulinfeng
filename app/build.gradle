@@ -230,6 +230,9 @@ dependencies {
     compile project(':banner')
     compile project(':LePlayerSdk')
     compile project(':PhotoPicker')
+    compile project(':rollbanner')
+
+
 
     //弹出互动动画
     compile project(':bubbleview')

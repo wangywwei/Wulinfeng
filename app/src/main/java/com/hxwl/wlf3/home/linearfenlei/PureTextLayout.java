@@ -146,9 +146,8 @@ private HuoDong1Layout  huoDongLayout1;
                 //为空的情况
                 return;
             }else{
-
+                chun_relative.removeAllViews();//清空布局
                 for (int i = 0; i < activityList.size(); i++) {
-                    chun_relative.removeAllViews();//清空布局
                     huoDongLayout = new HuoDongLayout(context);
                     chun_relative.addView(huoDongLayout);
                     huoDongLayout.setBean(activityList.get(i));
