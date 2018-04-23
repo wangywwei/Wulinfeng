@@ -23,9 +23,9 @@ import java.util.ArrayList;
 
 public class ShiPin1Adapter extends RecyclerView.Adapter<ShiPin1Adapter.ViewHolder> {
     private Context context;
-    private ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean> list;
+    private ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.AgainstListBean> list;
 
-    public ShiPin1Adapter(Context context, ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean> list) {
+    public ShiPin1Adapter(Context context, ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.AgainstListBean> list) {
         this.context = context;
         this.list = list;
 

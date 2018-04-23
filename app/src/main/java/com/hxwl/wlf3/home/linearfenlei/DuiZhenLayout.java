@@ -37,7 +37,7 @@ public class DuiZhenLayout extends LinearLayout {
     private XRecyclerView duizhen_xrecycler;
     private TextView duizhen_xinxi;
     private TextView duizhen_shijian;
-    private ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean> arrayList = new ArrayList();
+    private ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.AgainstListBean> arrayList = new ArrayList();
     private RelativeLayout duizhen_relative;
     private HuoDongLayout huoDongLayout;
 
@@ -54,7 +54,7 @@ public class DuiZhenLayout extends LinearLayout {
         }catch (Exception e){
         }
         arrayList.clear();
-        arrayList.add(dataBean.getEvent().getAgainstListBean());
+        arrayList.addAll(dataBean.getEvent().getAgainstListBeans());
         beiyongadapter.notifyDataSetChanged();
 
 /*
@@ -67,9 +67,9 @@ public class DuiZhenLayout extends LinearLayout {
                 //为空的情况
                 return;
             }else{
-
+                duizhen_relative.removeAllViews();//清空布局
                 for (int i = 0; i < activityList.size(); i++) {
-                    duizhen_relative.removeAllViews();//清空布局
+
                     huoDongLayout = new HuoDongLayout(context);
                     duizhen_relative.addView(huoDongLayout);
                     huoDongLayout.setBean(activityList.get(i));

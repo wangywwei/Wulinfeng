@@ -21,17 +21,17 @@ import java.util.ArrayList;
 public class ShiPin1Fragment extends LinearLayout {
     private Context context;
     private View view;
-    private Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean dataBean;
+    private Home3Bean.DataBean.SchedulesBean.EventBean dataBean;
     private XRecyclerView syhuodong_xrecycler;
-    private ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean> arrayList = new ArrayList();
+    private ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.AgainstListBean> arrayList = new ArrayList();
     private SYHuoDongAdapter beiyongadapter1;
     private ShiPin1Adapter shiPin1Adapter;
 
 
-    public void setBean(final Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean bean) {
+    public void setBean(final Home3Bean.DataBean.SchedulesBean.EventBean bean) {
         this.dataBean = bean;
         arrayList.clear();
-        arrayList.add(dataBean);
+        arrayList.addAll(bean.getAgainstListBeans());
         shiPin1Adapter.notifyDataSetChanged();
 
         for (int i = 0; i < arrayList.size(); i++) {

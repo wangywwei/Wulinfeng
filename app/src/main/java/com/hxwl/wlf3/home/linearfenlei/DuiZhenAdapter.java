@@ -25,9 +25,9 @@ import java.util.ArrayList;
 * */
 public class DuiZhenAdapter extends RecyclerView.Adapter<DuiZhenAdapter.ViewHolder> {
     private Context context;
-    private ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean> list;
+    private ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.AgainstListBean> list;
 
-    public DuiZhenAdapter(Context context, ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean> list) {
+    public DuiZhenAdapter(Context context, ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.AgainstListBean> list) {
         this.context = context;
         this.list = list;
 

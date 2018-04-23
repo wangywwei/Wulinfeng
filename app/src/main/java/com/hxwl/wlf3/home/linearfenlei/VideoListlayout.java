@@ -169,7 +169,7 @@ public class VideoListlayout extends LinearLayout {
                 video_relative1.removeAllViews();
                 shiPin1Fragment = new ShiPin1Fragment(context);
                 video_relative1.addView(shiPin1Fragment);
-                shiPin1Fragment.setBean(dataBean.getEvent().getAgainstListBean());
+                shiPin1Fragment.setBean(dataBean.getEvent());
             }
 
 
@@ -186,9 +186,9 @@ public class VideoListlayout extends LinearLayout {
             }else{
                 activityList.clear();
                 activityList.addAll( dataBean.getActivityList());
-
+                video_relative.removeAllViews();//清空布局
                 for (int i = 0; i < activityList.size(); i++) {
-                    video_relative.removeAllViews();//清空布局
+
                     huoDongLayout = new HuoDongLayout(context);
                     video_relative.addView(huoDongLayout);
                     huoDongLayout.setBean(activityList.get(i));

@@ -52,7 +52,7 @@ public class SaichengLayout extends LinearLayout {
     private ShiPin1Fragment shiPin1Fragment;
 
 
-   private ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.againstListBean> arrayList = new ArrayList();
+   private ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.AgainstListBean> arrayList = new ArrayList();
     private ShiPin1Adapter shiPinAdapter;
 
 
@@ -86,7 +86,7 @@ public class SaichengLayout extends LinearLayout {
         }
 
         arrayList.clear();
-        arrayList.add(dataBean.getEvent().getAgainstListBean());
+        arrayList.addAll(dataBean.getEvent().getAgainstListBeans());
         beiyongadapter.notifyDataSetChanged();
 
 /*
@@ -99,9 +99,8 @@ public class SaichengLayout extends LinearLayout {
                 //为空的情况
                 return;
             } else {
-
+                saicheng_relative.removeAllViews();//清空布局
                 for (int i = 0; i <activityList.size() ; i++) {
-                    saicheng_relative.removeAllViews();//清空布局
                     huoDongLayout = new HuoDongLayout(context);
                     saicheng_relative.addView(huoDongLayout);
                     huoDongLayout.setBean(activityList.get(i));

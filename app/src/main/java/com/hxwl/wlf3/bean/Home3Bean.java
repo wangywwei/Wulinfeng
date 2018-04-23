@@ -376,7 +376,16 @@ public class Home3Bean {
                 private int showType;
                 private int id;
                 private String title;
-                private againstListBean againstListBean;
+
+                private List<AgainstListBean> againstListBeans;
+
+                public List<AgainstListBean> getAgainstListBeans() {
+                    return againstListBeans;
+                }
+
+                public void setAgainstListBeans(List<AgainstListBean> againstListBeans) {
+                    this.againstListBeans = againstListBeans;
+                }
 
                 public void setScheduleState(int scheduleState) {
                     this.scheduleState = scheduleState;
@@ -394,13 +403,7 @@ public class Home3Bean {
                     return imageNumber;
                 }
 
-                public void setAgainstListBean(EventBean.againstListBean againstListBean) {
-                    this.againstListBean = againstListBean;
-                }
 
-                public EventBean.againstListBean getAgainstListBean() {
-                    return againstListBean;
-                }
 
                 public String getEventAddress() {
                     return eventAddress;
@@ -468,7 +471,7 @@ public class Home3Bean {
 
 
 
-                public static class againstListBean{
+                public static class AgainstListBean{
 
 /*
 *
