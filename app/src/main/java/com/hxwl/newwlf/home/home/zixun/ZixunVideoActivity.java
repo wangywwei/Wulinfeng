@@ -216,12 +216,13 @@ public class ZixunVideoActivity extends BaseActivity {
 
     private void initListData(final int page) {
         OkHttpUtils.post()
-                .url(URLS.NEWS_NEWSCOMMENTLIST)
-                .addParams("token", MakerApplication.instance.getToken())
+                .url(URLS.COMMENTLIST)
                 .addParams("userId",MakerApplication.instance.getUid())
-                .addParams("newsId",newsId)
+                .addParams("targetId",newsId)
+                .addParams("token", MakerApplication.instance.getToken())
                 .addParams("pageNumber",page+"")
                 .addParams("pageSize","10")
+                .addParams("type","1")
                 .build()
                 .execute(new StringCallback() {
                     @Override
@@ -625,11 +626,12 @@ public class ZixunVideoActivity extends BaseActivity {
     private void sendCommentNoteZ(final String zhuId, String toUid, final String msg, final PLZixunListBean.DataBean info) {
         showDialog.showProgressDialog("正在评论", "请稍后。", true);
         OkHttpUtils.post()
-                .url(URLS.NEWS_NEWSCOMMENT)
-                .addParams("newsId",newsId)
+                .url(URLS.COMMENT)
+                .addParams("targetId",newsId)
                 .addParams("token", MakerApplication.instance.getToken())
                 .addParams("userId",MakerApplication.instance.getUid())
                 .addParams("content",msg)
+                .addParams("type","1")
                 .build()
                 .execute(new StringCallback() {
                     @Override
