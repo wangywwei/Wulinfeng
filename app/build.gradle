@@ -231,9 +231,6 @@ dependencies {
     compile project(':LePlayerSdk')
     compile project(':PhotoPicker')
 
-
-
-
     //弹出互动动画
     compile project(':bubbleview')
 

@@ -18,6 +18,7 @@ import com.hxwl.wlf3.bean.DynamicBean;
 import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wlf3.home.home2.chongfu.HuoDong1Layout;
 import com.hxwl.wulinfeng.R;
+import com.hxwl.wulinfeng.activity.ZiXunDetailsActivity;
 
 import java.util.List;
 
@@ -157,9 +158,6 @@ private HuoDong1Layout  huoDongLayout1;
                     chun_relative.addView(huoDongLayout);
                     huoDongLayout.setBean(activityList.get(i));
                 }
-
-
-
             }
         }catch (Exception e){
         }
@@ -182,7 +180,9 @@ private HuoDong1Layout  huoDongLayout1;
             chun_name.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "点击了文字", Toast.LENGTH_SHORT).show();
+                    context.startActivity(ZiXunDetailsActivity.getIntent(context,dataBean.getEvent().getId()+""));
+
+
                 }
             });
         }catch (Exception e){}
@@ -193,7 +193,8 @@ private HuoDong1Layout  huoDongLayout1;
             chun_content.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "点击了文字", Toast.LENGTH_SHORT).show();
+                    context.startActivity(ZiXunDetailsActivity.getIntent(context,dataBean.getEvent().getId()+""));
+
                 }
             });
         }catch (Exception e){}

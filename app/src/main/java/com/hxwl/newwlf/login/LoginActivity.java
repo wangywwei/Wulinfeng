@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.hxwl.common.utils.ShowDialog;
 import com.hxwl.common.utils.ShowDialog2;
+import com.hxwl.wlf3.home.home2.EventActivity;
 import com.hxwl.wulinfeng.MakerApplication;
 import com.hxwl.wulinfeng.R;
 import com.hxwl.wulinfeng.util.AppUtils;
@@ -29,6 +30,10 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private LinearLayout activity_img_layout1;
+    private LinearLayout activity_img_layout3;
+    private LinearLayout activity_img_layout2;
 
     public static Intent getIntent(Context context) {
         Intent intent = new Intent(context, LoginActivity.class);
@@ -105,6 +110,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         arts_yanzhengma.setOnClickListener(this);
         weixinglog = (LinearLayout) findViewById(R.id.weixinglog);
         weixinglog.setOnClickListener(this);
+
+
+        activity_img_layout1 = (LinearLayout) findViewById(R.id.activity_img_layout1);
+        activity_img_layout2 = (LinearLayout) findViewById(R.id.activity_img_layout2);
+        activity_img_layout3 = (LinearLayout) findViewById(R.id.activity_img_layout3);
+
+        activity_img_layout1.setOnClickListener(this);
+        activity_img_layout2.setOnClickListener(this);
+        activity_img_layout3.setOnClickListener(this);
+
+
+        /*        <LinearLayout
+                android:id="@+id/activity_img_layout3"*/
+
+
+
         mimaLoginFragment=new MimaLoginFragment();
         yanzhenmaLogianFragment=new YanzhenmaLogianFragment();
         fragmentManager = getSupportFragmentManager();
@@ -168,6 +189,38 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
 
                 break;
+
+
+            case R.id.activity_img_layout1://密码登录
+            Intent inten11t=new Intent(this,MimaLoginActivity.class);
+                startActivity(inten11t);
+                break;
+            case R.id.activity_img_layout2://验证码登录
+
+//                switchContent(currentFragment, mimaLoginFragment);
+
+                Intent inten1t=new Intent(this,MimaLoginActivity.class);
+                startActivity(inten1t);
+                break;
+            case R.id.activity_img_layout3://微信
+                if (!SystemHelper.isConnected(this)) {
+                    UIUtils.showToast("请检查网络");
+                    return;
+                }
+                ShowDialog2.showProgressDialog(this,"","",true);
+                if (!MakerApplication.api.isWXAppInstalled()) {
+                    UIUtils.showToast("您还未安装微信客户端");
+                    ShowDialog2.dismissProgressDialog();
+                }else {
+                    final SendAuth.Req req = new SendAuth.Req();
+                    req.scope = "snsapi_userinfo";
+                    req.state = "wechat_sdk_demo_test";
+                    MakerApplication.api.sendReq(req);
+                }
+
+                break;
+
+
         }
     }
 

@@ -21,10 +21,13 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.hxwl.newwlf.URLS;
+import com.hxwl.newwlf.home.home.zixun.ZixunVideoActivity;
 import com.hxwl.wlf3.bean.DynamicBean;
 import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wlf3.home.home1.ShiPin1Fragment;
 import com.hxwl.wulinfeng.R;
+import com.hxwl.wulinfeng.activity.TuJiDetailsActivity;
+import com.hxwl.wulinfeng.activity.ZiXunDetailsActivity;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -58,6 +61,7 @@ public class VideoListlayout extends LinearLayout {
     private RelativeLayout vll_img_layout;
     private LinearLayout cll_ditu;
     private ShiPin1Fragment shiPin1Fragment;
+    private int showType1;
 
 
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
@@ -67,8 +71,10 @@ public class VideoListlayout extends LinearLayout {
 
 /*VIDEO(1,"视频"),RICH(2,"图文"),GATHER(3,"图集"),WORD(4,"纯文本"),SCHEDULE(5,"赛程"),AGAINST(6,"对阵"); */
         try {
-            int showType1 = dataBean.getEvent().getShowType();
-            if (showType1==1){
+
+
+            showType1 = dataBean.getEvent().getShowType();
+            if (showType1 ==1){
                 try {//视频
                     vll_bofang.setVisibility(View.VISIBLE);
                     vll_position.setVisibility(View.VISIBLE);
@@ -103,7 +109,7 @@ public class VideoListlayout extends LinearLayout {
 
                 }catch (Exception e){
                 }
-            }else if (showType1==2){
+            }else if (showType1 ==2){
                 try {//图文
 
                     cll_position1.setVisibility(View.VISIBLE);
@@ -134,7 +140,7 @@ public class VideoListlayout extends LinearLayout {
                     }
                 }catch (Exception e){
                 }
-            }else if (showType1==3){
+            }else if (showType1 ==3){
                 try {//图文
                     vll_bujidashuju.setVisibility(View.VISIBLE);
                     try {
@@ -203,48 +209,147 @@ public class VideoListlayout extends LinearLayout {
         }
 
 
+/*
+*
+*               VIDEO(1,"视频"),RICH(2,"图文"),GATHER(3,"图集"),WORD(4,"纯文本"),SCHEDULE(5,"赛程"),AGAINST(6,"对阵");
+* 点击事件
+* */
+        if (showType1==1){
 
-        try {
-            vll_img_layout.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(context, "点击了播放图片", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }catch (Exception e){}
-
-
-
-        try {
-            vll_name.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(context,"点击了："+ dataBean.getEvent().getTitle(), Toast.LENGTH_SHORT).show();
-                }
-            });
-        }catch (Exception e){}
+            try {
+                vll_img_layout.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.startActivity(ZixunVideoActivity.getIntent(context,dataBean.getEvent().getId()+""));
+                    }
+                });
+            }catch (Exception e){}
 
 
 
-        try {
-            vll_content.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(context,"点击了："+ dataBean.getEvent().getIntro(), Toast.LENGTH_SHORT).show();
-                }
-            });
-        }catch (Exception e){}
+            try {
+                vll_name.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.startActivity(ZixunVideoActivity.getIntent(context,dataBean.getEvent().getId()+""));
+                    }
+                });
+            }catch (Exception e){}
 
 
-        try {
-            cll_ditu.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
+
+            try {
+                vll_content.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.startActivity(ZixunVideoActivity.getIntent(context,dataBean.getEvent().getId()+""));
+                    }
+                });
+            }catch (Exception e){}
+
+
+            try {
+                cll_ditu.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
 //                    Toast.makeText(context, "打开地图", Toast.LENGTH_SHORT).show();
-                    getPopupWindow();
-                }
-            });
-        }catch (Exception e){}
+                        getPopupWindow();
+                    }
+                });
+            }catch (Exception e){}
+
+
+        }else  if (showType1==2){
+
+            try {
+                vll_img_layout.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.startActivity(ZiXunDetailsActivity.getIntent(context,dataBean.getEvent().getId()+""));
+                    }
+                });
+            }catch (Exception e){}
+
+
+
+            try {
+                vll_name.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.startActivity(ZiXunDetailsActivity.getIntent(context,dataBean.getEvent().getId()+""));
+                    }
+                });
+            }catch (Exception e){}
+
+
+
+            try {
+                vll_content.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.startActivity(ZiXunDetailsActivity.getIntent(context,dataBean.getEvent().getId()+""));
+                    }
+                });
+            }catch (Exception e){}
+
+
+            try {
+                cll_ditu.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+//                    Toast.makeText(context, "打开地图", Toast.LENGTH_SHORT).show();
+                        getPopupWindow();
+                    }
+                });
+            }catch (Exception e){}
+
+        }else  if (showType1==3){
+
+
+
+
+            try {
+                vll_img_layout.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.startActivity(TuJiDetailsActivity.getIntent(context,dataBean.getEvent().getId()+""));
+                    }
+                });
+            }catch (Exception e){}
+
+
+
+            try {
+                vll_name.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.startActivity(TuJiDetailsActivity.getIntent(context,dataBean.getEvent().getId()+""));
+                    }
+                });
+            }catch (Exception e){}
+
+
+
+            try {
+                vll_content.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.startActivity(TuJiDetailsActivity.getIntent(context,dataBean.getEvent().getId()+""));
+                    }
+                });
+            }catch (Exception e){}
+
+
+            try {
+                cll_ditu.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+//                    Toast.makeText(context, "打开地图", Toast.LENGTH_SHORT).show();
+                        getPopupWindow();
+                    }
+                });
+            }catch (Exception e){}
+        }
 
     }
 

@@ -45,7 +45,9 @@ import okhttp3.Call;
 /**
  * Created by Administrator on 2018/2/7.
  */
-
+/*
+* 验证码登录
+* */
 public class YanzhenmaLogianFragment extends BaseFragment implements View.OnClickListener {
     protected MakerApplication appContext = null;
     private View view;

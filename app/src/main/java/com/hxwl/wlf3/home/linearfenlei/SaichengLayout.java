@@ -18,20 +18,35 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.hxwl.newwlf.home.home.zixun.ZixunVideoActivity;
+import com.hxwl.newwlf.login.LoginActivity;
+import com.hxwl.newwlf.modlebean.YueyueBean;
 import com.hxwl.wlf3.bean.DynamicBean;
+import com.hxwl.wlf3.home.home1.Home3Adapter;
 import com.hxwl.wlf3.home.home1.ShiPin1Adapter;
 import com.hxwl.wlf3.home.home1.ShiPin1Fragment;
 import com.hxwl.wulinfeng.MainActivity;
+import com.hxwl.wulinfeng.MakerApplication;
+import com.hxwl.wulinfeng.activity.HuiGuDetailActivity;
+import com.hxwl.wulinfeng.activity.ZiXunDetailsActivity;
 import com.hxwl.wulinfeng.adapter.SaiChengAdapter;
 import com.hxwl.wulinfeng.adapter.ShiPinAdapter;
+import com.hxwl.wulinfeng.util.JsonValidator;
+import com.hxwl.wulinfeng.util.ToastUtils;
+import com.hxwl.wulinfeng.util.UIUtils;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.bumptech.glide.Glide;
 import com.hxwl.newwlf.URLS;
 import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wulinfeng.R;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Call;
 
 /**
  * Created by Administrator on 2018/4/13.
@@ -60,12 +75,14 @@ public class SaichengLayout extends LinearLayout {
 
    private ArrayList<Home3Bean.DataBean.SchedulesBean.EventBean.AgainstListBean> arrayList = new ArrayList();
     private ShiPin1Adapter shiPinAdapter;
+    private int state;
+    private int hasSubscribed;
 
 
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
         this.dataBean = bean;
-
-
+        state = dataBean.getState();
+        hasSubscribed = dataBean.getHasSubscribed();
 
         try {
             Glide.with(context).load(URLS.IMG + dataBean.getEvent().getCoverImage()).into(saicheng_img);
@@ -75,9 +92,9 @@ public class SaichengLayout extends LinearLayout {
         }
 
         try {
-            int state = dataBean.getState();
+
             if (state == 1) {
-                int hasSubscribed = dataBean.getHasSubscribed();
+
                 if (hasSubscribed == 0) {
                     saicheng_yuyuetupian.setImageResource(R.drawable.yuyue3);//预约
                 } else {
@@ -113,30 +130,130 @@ public class SaichengLayout extends LinearLayout {
                 }
             }
         } catch (Exception e) {
-
         }
 
 
-        try {
-            saicheng_img_layout.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(context, "播放图片", Toast.LENGTH_SHORT).show();
+
+
+        if (state==3){
+            try {
+                saicheng_img_layout.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.startActivity(ZixunVideoActivity.getIntent(context,dataBean.getId()+""));
+                    }
+                });
+            } catch (Exception e) {
+            }
+
+
+            try {
+                saicheng_name.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.startActivity(ZixunVideoActivity.getIntent(context,dataBean.getId()+""));
+                    }
+                });
+            } catch (Exception e) {
+            }
+            try {
+                saicheng_yuyuetupian.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.startActivity(ZixunVideoActivity.getIntent(context,dataBean.getId()+""));
+                    }
+                });
+            }catch (Exception e){}
+
+        }else if (state==2){
+            try {
+                saicheng_img_layout.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.startActivity(HuiGuDetailActivity.getIntent(context,dataBean.getId()+"",0));
+                    }
+                });
+            } catch (Exception e) {
+            }
+
+
+            try {
+                saicheng_name.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.startActivity(HuiGuDetailActivity.getIntent(context,dataBean.getId()+"",0));
+                    }
+                });
+            } catch (Exception e) {
+            }
+            try {
+                saicheng_yuyuetupian.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.startActivity(HuiGuDetailActivity.getIntent(context,dataBean.getId()+"",0));
+                    }
+                });
+            }catch (Exception e){}
+
+        }else if (state==1){
+            if (hasSubscribed == 0) {
+
+
+
+
+                saicheng_yuyuetupian.setImageResource(R.drawable.yuyue3);//预约
+
+
+
+                try {
+                    saicheng_img_layout.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+//                            initGuanzhu(position,URLS.SCHEDULE_USERSUBSCRIBE);
+                        }
+                    });
+                } catch (Exception e) {
                 }
-            });
-        } catch (Exception e) {
-        }
 
 
-        try {
-            saicheng_name.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(context, "" + dataBean.getEvent().getTitle(), Toast.LENGTH_SHORT).show();
+                try {
+                    saicheng_name.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            context.startActivity(HuiGuDetailActivity.getIntent(context,dataBean.getId()+"",0));
+                        }
+                    });
+                } catch (Exception e) {
                 }
-            });
-        } catch (Exception e) {
+                try {
+                    saicheng_yuyuetupian.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            context.startActivity(HuiGuDetailActivity.getIntent(context,dataBean.getId()+"",0));
+                        }
+                    });
+                }catch (Exception e){}
+
+
+
+
+
+
+
+            } else {
+
+
+
+
+
+            }
+
+
+
+
         }
+
+
 
 
         try {
@@ -153,15 +270,7 @@ public class SaichengLayout extends LinearLayout {
         }
 
 
-        try {
-            saicheng_yuyuetupian.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(context, "预约", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }catch (Exception e){}
-        
+
         
     }
 
@@ -199,7 +308,70 @@ public class SaichengLayout extends LinearLayout {
     }
 
 
-
+//    private void initGuanzhu(final int position,String url) {
+//        OkHttpUtils.post()
+//                .url(url)
+//                .addParams("token", MakerApplication.instance.getToken())
+//                .addParams("userId", MakerApplication.instance.getUid())
+//                .addParams("scheduleId",list6.get(position).getEvent().getId()+"")
+//                .build()
+//                .execute(new StringCallback() {
+//                    @Override
+//                    public void onError(Call call, Exception e, int id) {
+//                        UIUtils.showToast("服务器异常");
+//                    }
+//
+//                    @Override
+//                    public void onResponse(String response, int id) {
+//                        JsonValidator jsonValidator = new JsonValidator();
+//                        if (jsonValidator.validate(response)){
+//                            Gson gson = new Gson();
+//                            try {
+//                                YueyueBean bean = gson.fromJson(response, YueyueBean.class);
+//                                if (bean.getCode().equals("1000")){
+//                                    switch (list6.get(position).getHasSubscribed()){
+//                                        case 0:
+//
+//                                            list6.get(position).setHasSubscribed(1);
+//                                            break;
+//
+//                                        case 1:
+//                                            list6.get(position).setHasSubscribed(0);
+//                                            break;
+//                                    }
+//
+//
+//                                    Home3Adapter.this.
+//                                            notifyDataSetChanged();
+//
+//
+//
+////                                    switch (list.get(position).getUserIsSubscribe()){
+////                                        case "0":
+////                                            list.get(position).setUserIsSubscribe("1");
+////                                            break;
+////                                        case "1":
+////                                            list.get(position).setUserIsSubscribe("0");
+////                                            break;
+////                                    }
+////
+////                                    RecentHeaderAdapter2.this.notifyDataSetChanged();
+//                                    ToastUtils.showToast(context,bean.getMessage()+"");
+//
+//                                }else if (bean.getCode().equals("2002")||bean.getCode().equals("2003")){
+//                                    UIUtils.showToast(bean.getMessage());
+//                                    context.startActivity(LoginActivity.getIntent(context));
+//                                }
+//                            }catch (Exception e){
+//                                e.printStackTrace();
+//                            }
+//
+//                        }
+//
+//                    }
+//                });
+//
+//    }
 
     public void getPopupWindow() {
 

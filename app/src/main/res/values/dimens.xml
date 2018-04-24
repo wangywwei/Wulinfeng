@@ -58,6 +58,7 @@
     <dimen name="wlf_16dp">16dp</dimen>
     <dimen name="wlf_17dp">17dp</dimen>
     <dimen name="wlf_18dp">18dp</dimen>
+    <dimen name="wlf_19dp">19dp</dimen>
     <dimen name="wlf_20dp">20dp</dimen>
     <dimen name="wlf_22dp">22dp</dimen>
     <dimen name="wlf_23dp">23dp</dimen>
@@ -67,6 +68,7 @@
     <dimen name="wlf_28dp">28dp</dimen>
     <dimen name="wlf_30dp">30dp</dimen>
     <dimen name="wlf_32dp">32dp</dimen>
+    <dimen name="wlf_35dp">35dp</dimen>
     <dimen name="wlf_36dp">36dp</dimen>
     <dimen name="wlf_38dp">38dp</dimen>
     <dimen name="wlf_40dp">40dp</dimen>
@@ -80,8 +82,10 @@
     <dimen name="wlf_59dp">59dp</dimen>
     <dimen name="wlf_60dp">60dp</dimen>
     <dimen name="wlf_62dp">62dp</dimen>
+    <dimen name="wlf_63dp">63dp</dimen>
     <dimen name="wlf_64dp">64dp</dimen>
     <dimen name="wlf_65dp">65dp</dimen>
+    <dimen name="wlf_66dp">66dp</dimen>
     <dimen name="wlf_70dp">70dp</dimen>
     <dimen name="wlf_74dp">74dp</dimen>
     <dimen name="wlf_75dp">75dp</dimen>
@@ -96,6 +100,8 @@
     <dimen name="wlf_107dp">107dp</dimen>
     <dimen name="wlf_109dp">109dp</dimen>
     <dimen name="wlf_101dp">101dp</dimen>
+    <dimen name="wlf_105dp">105dp</dimen>
+    <dimen name="wlf_106dp">106dp</dimen>
     <dimen name="wlf_113dp">113dp</dimen>
     <dimen name="wlf_115dp">115dp</dimen>
     <dimen name="wlf_125dp">125dp</dimen>
@@ -109,6 +115,7 @@
     <dimen name="wlf_227dp">227dp</dimen>
     <dimen name="wlf_238dp">238dp</dimen>
     <dimen name="wlf_300dp">300dp</dimen>
+    <dimen name="wlf_330dp">330dp</dimen>
     <dimen name="wlf_343dp">343dp</dimen>
 
 

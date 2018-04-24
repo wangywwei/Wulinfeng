@@ -12,8 +12,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
 import com.hxwl.common.tencentplay.utils.TCUtils;
 import com.hxwl.newwlf.URLS;
+import com.hxwl.newwlf.login.LoginActivity;
+import com.hxwl.newwlf.modlebean.YueyueBean;
+import com.hxwl.newwlf.schedule.recent.RecentHeaderAdapter2;
 import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wlf3.home.home2.EventActivity;
 import com.hxwl.wlf3.home.linearfenlei.HuoDongLayout;
@@ -22,10 +26,18 @@ import com.hxwl.wlf3.home.linearfenlei.PureTextLayout;
 import com.hxwl.wlf3.home.linearfenlei.VideoListlayout;
 import com.hxwl.wlf3.home.linearfenlei.DuiZhenLayout;
 import com.hxwl.wlf3.home.remenhot.GenDuoActivity;
+import com.hxwl.wulinfeng.MakerApplication;
 import com.hxwl.wulinfeng.R;
+import com.hxwl.wulinfeng.util.JsonValidator;
+import com.hxwl.wulinfeng.util.ToastUtils;
+import com.hxwl.wulinfeng.util.UIUtils;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Call;
 
 public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> {
     private Context context;
@@ -35,6 +47,10 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
     private PureTextLayout pureTextLayout;
     private SaichengLayout saicheng1Layout;
 
+
+    private boolean aBoolean=true;
+    private int hasSubscribed;
+    private int state;
 
     public Home3Adapter(Context context, ArrayList<Home3Bean.DataBean.SchedulesBean> list) {
         this.context = context;
@@ -52,7 +68,8 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-
+        hasSubscribed = list6.get(position).getHasSubscribed();
+        state = list6.get(position).getState();
         try {
             Glide.with(context).load(URLS.IMG+ list6.get(position).getPublicityImg()).into(holder.home_saishi_img);
         }catch (Exception e){
@@ -71,17 +88,17 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
         }
 
         try {
-            int state = list6.get(position).getState();
-            if (state==1){
-                int hasSubscribed = list6.get(position).getHasSubscribed();
-                if (hasSubscribed==0){
+
+            if (state ==1){
+
+                if (hasSubscribed ==0){
                     holder.home_saishi_yuyue.setImageResource(R.drawable.yuyue3);//预约
                 }else{
                     holder.home_saishi_yuyue.setImageResource(R.drawable.yiyuyue3);//已预约
                 }
-            }else if (state==2){
+            }else if (state ==2){
                 holder.home_saishi_yuyue.setImageResource(R.drawable.zhibozhong3);//进行中--直播中
-            }else if (state==3){
+            }else if (state ==3){
                 holder.home_saishi_yuyue.setImageResource(R.drawable.quanchenghuigu1);//结束--全程回顾
             }
         }catch (Exception e){
@@ -163,22 +180,35 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
         }catch (Exception e){
         }
 
-        try {
+
+
+
+        try {//          预约
             holder.home_saishi_yuyue.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "点击了预约", Toast.LENGTH_SHORT).show();
+
+
+                            if (hasSubscribed==0){
+                                initGuanzhu(position,URLS.SCHEDULE_USERSUBSCRIBE);
+
+
+                            }else if (hasSubscribed==1){
+//                                initGuanzhu(position,URLS.SCHEDULE_USERCANCELSUBSCRIBE);
+                            }
+
                 }
             });
         }catch (Exception e){}
 
 
-        try {
+        try {//     赛事
             holder.home_saishi_img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     context.startActivity(EventActivity.getIntent(context));
-//                    Toast.makeText(context, "点击图片，进入赛事", Toast.LENGTH_SHORT).show();
+
                 }
             });
 
@@ -213,4 +243,71 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
             home_saishi_xrecycler= (RelativeLayout) itemView.findViewById(R.id.home_saishi_xrecycler);
         }
     }
+
+
+    private void initGuanzhu(final int position,String url) {
+        OkHttpUtils.post()
+                .url(url)
+                .addParams("token", MakerApplication.instance.getToken())
+                .addParams("userId", MakerApplication.instance.getUid())
+                .addParams("scheduleId",list6.get(position).getEvent().getId()+"")
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Call call, Exception e, int id) {
+                        UIUtils.showToast("服务器异常");
+                    }
+
+                    @Override
+                    public void onResponse(String response, int id) {
+                        JsonValidator jsonValidator = new JsonValidator();
+                        if (jsonValidator.validate(response)){
+                            Gson gson = new Gson();
+                            try {
+                                YueyueBean bean = gson.fromJson(response, YueyueBean.class);
+                                if (bean.getCode().equals("1000")){
+                                    switch (list6.get(position).getHasSubscribed()){
+                                        case 0:
+
+                                            list6.get(position).setHasSubscribed(1);
+                                        break;
+
+                                        case 1:
+                                            list6.get(position).setHasSubscribed(0);
+                                            break;
+                                    }
+
+
+                                    Home3Adapter.this.notifyDataSetChanged();
+
+
+
+//                                    switch (list.get(position).getUserIsSubscribe()){
+//                                        case "0":
+//                                            list.get(position).setUserIsSubscribe("1");
+//                                            break;
+//                                        case "1":
+//                                            list.get(position).setUserIsSubscribe("0");
+//                                            break;
+//                                    }
+//
+//                                    RecentHeaderAdapter2.this.notifyDataSetChanged();
+                                    ToastUtils.showToast(context,bean.getMessage()+"");
+
+                                }else if (bean.getCode().equals("2002")||bean.getCode().equals("2003")){
+                                    UIUtils.showToast(bean.getMessage());
+                                    context.startActivity(LoginActivity.getIntent(context));
+                                }
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
+
+                        }
+
+                    }
+                });
+
+    }
+
+
 }
