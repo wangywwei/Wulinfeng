@@ -90,6 +90,7 @@ public class PersonalDataActivity extends BaseActivity implements View.OnClickLi
     private TextView tv_wx;
     private RelativeLayout rl_weixing;
     private RelativeLayout rl_changepwd;
+    private TextView data_logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,8 +148,19 @@ public class PersonalDataActivity extends BaseActivity implements View.OnClickLi
         rl_changepwd = (RelativeLayout) findViewById(R.id.rl_changepwd);
         rl_changepwd.setOnClickListener(this);
 
-
-
+        data_logout = (TextView) findViewById(R.id.data_logout);
+        data_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StatService.onEvent(PersonalDataActivity.this,"MyLogout","我的-退出登录",1);
+                TCAgent.onEvent(PersonalDataActivity.this,"MyLogout","我的-退出登录");
+//                showNormalDialog();
+                MakerApplication.instance().setLoginState(PersonalDataActivity.this ,MakerApplication.LOGOUT);
+                MakerApplication.instance().clearUserInfo();//清楚用户信息
+                startActivity(LoginActivity.getIntent(PersonalDataActivity.this));
+              finish();
+            }
+        });
         tv_setphone = (TextView) findViewById(R.id.tv_setphone);
         tv_setpwd = (TextView) findViewById(R.id.tv_setpwd);
 

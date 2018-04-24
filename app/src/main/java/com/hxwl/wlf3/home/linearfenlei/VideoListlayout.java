@@ -1,12 +1,20 @@
 package com.hxwl.wlf3.home.linearfenlei;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EdgeEffect;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +26,7 @@ import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wlf3.home.home1.ShiPin1Fragment;
 import com.hxwl.wulinfeng.R;
 
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -231,7 +240,8 @@ public class VideoListlayout extends LinearLayout {
             cll_ditu.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "打开地图", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(context, "打开地图", Toast.LENGTH_SHORT).show();
+                    getPopupWindow();
                 }
             });
         }catch (Exception e){}
@@ -262,4 +272,55 @@ public class VideoListlayout extends LinearLayout {
 
     }
 
+    public void getPopupWindow() {
+
+        View parent = ((ViewGroup) this.findViewById(android.R.id.content)).getChildAt(0);
+        View popView = View.inflate(getContext(), R.layout.camera_pop_menu, null);
+        Button btnCamera = (Button) popView.findViewById(R.id.btn_camera_pop_camera);
+        Button btnAlbum = (Button) popView.findViewById(R.id.btn_camera_pop_album);
+        Button btnCancel = (Button) popView.findViewById(R.id.btn_camera_pop_cancel);
+
+        int width = getResources().getDisplayMetrics().widthPixels;
+        int height = getResources().getDisplayMetrics().heightPixels/2;
+        final PopupWindow popWindow = new PopupWindow(popView,width,height, true);
+
+        popWindow.setFocusable(true);
+        popWindow.setOutsideTouchable(false);// 设置同意在外点击消失
+
+        View.OnClickListener listener = new View.OnClickListener() {
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.btn_camera_pop_camera:
+
+
+                        if (AMapUtil.isInstallByRead("com.autonavi.minimap")){//
+
+
+                            AMapUtil.goToNaviActivity(getContext(),"test",null,"34.264642646862","108.95108518068","1","2");
+                        }else {
+                            Toast.makeText(getContext(), "请先安装高德地图", Toast.LENGTH_SHORT).show();
+
+                        }
+
+                        break;
+                    case R.id.btn_camera_pop_album:
+//                        Toast.makeText(getContext(), "请先安装百度地图", Toast.LENGTH_SHORT).show();
+
+                        break;
+                    case R.id.btn_camera_pop_cancel:
+//                        Toast.makeText(getContext(), "点击了3", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                popWindow.dismiss();
+            }
+        };
+
+        btnCamera.setOnClickListener(listener);
+        btnAlbum.setOnClickListener(listener);
+        btnCancel.setOnClickListener(listener);
+
+        ColorDrawable dw = new ColorDrawable(0x30000000);
+        popWindow.setBackgroundDrawable(dw);
+        popWindow.showAtLocation(parent, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+    }
 }

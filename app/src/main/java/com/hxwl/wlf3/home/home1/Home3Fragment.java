@@ -37,8 +37,6 @@ public class Home3Fragment extends BaseFragment {
     private Home3Adapter home3Adapter;
     private ArrayList<Home3Bean.DataBean.SchedulesBean> datalist=new ArrayList<>();
 
-
-
     private RecommendBanner recommendBanner;
     private RemenHotLayout remenHotLayout;
     private LiveLayout liveLayout;
@@ -134,7 +132,6 @@ public class Home3Fragment extends BaseFragment {
         remenHotLayout = new RemenHotLayout(getActivity());
         home3_xrecyclerview.addHeaderView(remenHotLayout);
 
-
         liveLayout =new LiveLayout(getActivity());
         home3_xrecyclerview.addHeaderView(liveLayout);
 
@@ -154,9 +151,6 @@ public class Home3Fragment extends BaseFragment {
         }catch (Exception e){
 
         }
-
-
-
 
         home3_xrecyclerview.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override

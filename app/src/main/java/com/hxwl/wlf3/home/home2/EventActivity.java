@@ -11,15 +11,18 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.hxwl.newwlf.home.home.follow.LeavingMessageFragment;
 import com.hxwl.wlf3.home.remenhot.GenDuoActivity;
+import com.hxwl.wulinfeng.MainActivity;
 import com.hxwl.wulinfeng.R;
 import com.hxwl.wulinfeng.base.BaseActivity;
+import com.youth.banner.Banner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,9 +38,10 @@ public class EventActivity extends BaseActivity {
     }
     private TabLayout tab;
     private ViewPager pager;
-    List<Fragment> list = new ArrayList<>();
-    List<String> lists = new ArrayList<>();
+    List<Fragment> listFragment= new ArrayList<>();
+    List<String> listString = new ArrayList<>();
 
+    private List<Integer> list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,12 +49,15 @@ public class EventActivity extends BaseActivity {
 
         initView();
 
+
+
+
     }
 
     private void initlist() {
-        lists.add("赛事指南");
-        lists.add("赛事动态");
-        lists.add("讨论区");
+        listString.add("赛事指南");
+        listString.add("赛事动态");
+        listString.add("讨论区");
     }
 
     private void initView() {
@@ -60,9 +67,9 @@ public class EventActivity extends BaseActivity {
 
         initlist();
         getlist();
-        tab.addTab(tab.newTab().setText(lists.get(0)));
-        tab.addTab(tab.newTab().setText(lists.get(1)));
-        tab.addTab(tab.newTab().setText(lists.get(2)));
+        tab.addTab(tab.newTab().setText(listString.get(0)));
+        tab.addTab(tab.newTab().setText(listString.get(1)));
+        tab.addTab(tab.newTab().setText(listString.get(2)));
         tab.setupWithViewPager(pager);
 
         Pageradapters adapter=new Pageradapters(getSupportFragmentManager());
@@ -74,15 +81,12 @@ public class EventActivity extends BaseActivity {
 
     }
     public List<Fragment> getlist() {
-        list.add(new GuideFragment());
-        list.add(new DynamicFragment());
-//        list.add(new CommentFragment());//LeavingMessageFragment
-        list.add(new LeavingMessageFragment());//LeavingMessageFragment
-        return list;
+        listFragment.add(new GuideFragment());
+        listFragment.add(new DynamicFragment());
+//        listFragment.add(new CommentFragment());//LeavingMessageFragment
+        listFragment.add(new LeavingMessageFragment());//LeavingMessageFragment
+        return listFragment;
     }
-
-
-
 
 
 
@@ -94,17 +98,17 @@ public class EventActivity extends BaseActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return list.get(position);
+            return listFragment.get(position);
         }
 
         @Override
         public int getCount() {
-            return list.size();
+            return listFragment.size();
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return lists.get(position);
+            return listString.get(position);
         }
     }
 

@@ -230,7 +230,7 @@ dependencies {
     compile project(':banner')
     compile project(':LePlayerSdk')
     compile project(':PhotoPicker')
-    compile project(':rollbanner')
+
 
 
 
