@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/wlf_74dp">
+
+    <ImageView
+        android:id="@+id/player3_touxiang"
+        android:src="@drawable/touxiang1"
+        android:layout_margin="@dimen/man_16dp"
+        android:layout_width="@dimen/wlf_42dp"
+        android:layout_height="@dimen/wlf_42dp" />
+    <RelativeLayout
+        android:layout_marginTop="@dimen/wlf_16dp"
+        android:layout_marginLeft="@dimen/man_19dp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/wlf_42dp">
+        <TextView
+            android:id="@+id/player3_name"
+            android:textColor="@color/rgb_444444"
+            android:text="周志鹏"
+            android:textSize="@dimen/text_16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/player3_title"
+            android:textColor="@color/rgb_888888"
+            android:textSize="@dimen/text_10sp"
+            android:layout_alignParentBottom="true"
+            android:text="搏击俱乐部/80.0KG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/player3_guanzhu"
+            android:layout_marginRight="@dimen/wlf_52dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/guanzhu3"
+            android:layout_width="@dimen/wlf_60dp"
+            android:layout_height="@dimen/wlf_28dp" />
+        </RelativeLayout>
+</LinearLayout>

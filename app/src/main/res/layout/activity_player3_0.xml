@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hxwl.newwlf.home.home.follow.Player3_0Activity">
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/player3_0_xrecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.hxwl.newwlf.home.home.follow.QuickIndexBar
+        android:id="@+id/quickIndexBar"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="#B21421" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/center_view"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:text="A"
+        android:textSize="50sp"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:background="@drawable/center_view" />
+
+</RelativeLayout>

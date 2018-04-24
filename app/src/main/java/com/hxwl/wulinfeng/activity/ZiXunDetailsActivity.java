@@ -214,12 +214,13 @@ public class ZiXunDetailsActivity extends BaseActivity {
 
     private void initData(final int page) { //zixun_tiezidetail
         OkHttpUtils.post()
-                .url(URLS.NEWS_NEWSCOMMENTLIST)
+                .url(URLS.COMMENTLIST)
                 .addParams("userId",MakerApplication.instance.getUid())
-                .addParams("newsId",newsId)
+                .addParams("targetId",newsId)
                 .addParams("token", MakerApplication.instance.getToken())
                 .addParams("pageNumber",page+"")
                 .addParams("pageSize","10")
+                .addParams("type","2")
                 .build()
                 .execute(new StringCallback() {
                     @Override

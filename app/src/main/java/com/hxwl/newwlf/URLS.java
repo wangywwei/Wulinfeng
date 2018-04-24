@@ -1,6 +1,5 @@
 package com.hxwl.newwlf;
 
-import com.tencent.qalsdk.im_open.http;
 
 /**
  * Created by Administrator on 2018/1/22.
@@ -104,6 +103,20 @@ public class URLS {
     //对阵 / 评论回复
     public static final String AGAINST_AGAINSTCOMMENTREPLY=URL+"against/againstCommentReply";
 
+    //3.0 /评论列表
+    public static final String COMMENTLIST=URL+"comment_favour/commentList";
+    //3.0 /评论
+    public static final String COMMENT=URL+"comment_favour/comment";
+    //3.0 /回复评论
+    public static final String COMMENTREPLY=URL+"comment_favour/commentReply";
+    //3.0 /子评论列表
+    public static final String COMMENTREPLYLIST=URL+"comment_favour/commentReplyList";
+    //3.0 /赞
+    public static final String ADDFAVOUR=URL+"comment_favour/addFavour";
+    //3.0 /取消赞
+    public static final String CANCELFAVOUR=URL+"comment_favour/cancelFavour";
+    //3.0 /获取详情总赞数与总评论数
+    public static final String GETNUM=URL+"comment_favour/getNum";
 
     //资讯 / 资讯列表
     public static final String SCHEDULE_NEWSLIST=URL+"news/newsList";
@@ -178,6 +191,10 @@ public class URLS {
     public static final String USER_TIP=URL+"user/tip";
     //首页预约
     public static final String COMMON_USERSUBSCRIBESTATUS=URL+"common/userSubscribeStatus";
+
+
+
+
 
 
     //图片前缀
