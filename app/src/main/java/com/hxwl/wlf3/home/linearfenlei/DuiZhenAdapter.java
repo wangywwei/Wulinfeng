@@ -83,6 +83,13 @@ public class DuiZhenAdapter extends RecyclerView.Adapter<DuiZhenAdapter.ViewHold
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(context, "点击了第"+position+"个队列", Toast.LENGTH_SHORT).show();
+
+
+
+
+
+
+
                 }
             });
         }catch (Exception e){}

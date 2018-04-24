@@ -142,6 +142,7 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
                     videoListlayout.setBean(list6.get(position));
                 }catch (Exception e){
                 }
+
             }else if (showType==3){
                 try {
                     holder.home_saishi_xrecycler.removeAllViews();//清空布局
