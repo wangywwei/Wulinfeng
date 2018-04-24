@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hxwl.newwlf.home.home.follow.Player3_0Activity">
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="#33000000"
+        android:dividerHeight="0.1dp"
+        android:overScrollMode="never" />
+
+    <com.hxwl.newwlf.home.home.follow.QuickIndexBar
+        android:id="@+id/quickIndexBar"
+        android:layout_width="41dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="#f1f1f1" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/center_view"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:text="A"
+        android:textSize="50sp"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:background="@drawable/center_view" />
+
+</RelativeLayout>

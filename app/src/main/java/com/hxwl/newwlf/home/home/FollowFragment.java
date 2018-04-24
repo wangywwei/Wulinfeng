@@ -23,6 +23,7 @@ import com.hxwl.newwlf.home.home.follow.Follow_YesAdapter;
 import com.hxwl.newwlf.home.home.follow.InformationFragment;
 import com.hxwl.newwlf.home.home.follow.LeavingMessageFragment;
 import com.hxwl.newwlf.home.home.follow.PlayFragment;
+import com.hxwl.newwlf.home.home.follow.Player3_0Activity;
 import com.hxwl.newwlf.login.LoginActivity;
 import com.hxwl.newwlf.modlebean.GuanzhuQuanshouBean;
 import com.hxwl.wulinfeng.MakerApplication;
@@ -238,7 +239,7 @@ public class FollowFragment extends BaseFragment implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.follow_bianji:
-                getActivity().startActivity(FollowPlayerActivity.getIntent(getActivity()));
+                getActivity().startActivity(Player3_0Activity.getIntent(getActivity()));
 
                 break;
             case R.id.nofollow:
@@ -246,7 +247,7 @@ public class FollowFragment extends BaseFragment implements View.OnClickListener
                     UIUtils.showToast("请您点击我的头像去绑定手机号");
                     return;
                 }
-                getActivity().startActivity(FollowPlayerActivity.getIntent(getActivity()));
+                getActivity().startActivity(Player3_0Activity.getIntent(getActivity()));
                 break;
 
 

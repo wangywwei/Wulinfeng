@@ -1,5 +1,9 @@
 package com.hxwl.newwlf.modlebean;
 
+import android.support.annotation.NonNull;
+
+import com.hxwl.newwlf.home.home.follow.PinYinUtils;
+
 import java.util.List;
 
 /**
@@ -35,6 +39,8 @@ public class QuanshouBean {
     }
 
     public List<DataBean> getData() {
+
+
         return data;
     }
 
@@ -42,7 +48,7 @@ public class QuanshouBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Comparable<DataBean>{
         /**
          * playerId : 2
          * playerImage : 2018012917423296886415.jpg
@@ -63,6 +69,15 @@ public class QuanshouBean {
          * failPercent : null
          * koPercent : null
          */
+        private String mPinYin;
+
+        public String getmPinYin() {
+            return mPinYin;
+        }
+
+        public void setmPinYin(String mPinYin) {
+            this.mPinYin = mPinYin;
+        }
 
         private String playerId;
         private String playerImage;
@@ -106,6 +121,7 @@ public class QuanshouBean {
 
         public void setPlayerImage(String playerImage) {
             this.playerImage = playerImage;
+
         }
 
         public String getPlayerName() {
@@ -114,6 +130,7 @@ public class QuanshouBean {
 
         public void setPlayerName(String playerName) {
             this.playerName = playerName;
+            setmPinYin(PinYinUtils.getPinYin(playerName));
         }
 
         public String getPlayerClub() {
@@ -234,6 +251,11 @@ public class QuanshouBean {
 
         public void setKoPercent(Object koPercent) {
             this.koPercent = koPercent;
+        }
+
+        @Override
+        public int compareTo(@NonNull DataBean o) {
+            return getmPinYin().compareTo(o.getmPinYin());
         }
     }
 }

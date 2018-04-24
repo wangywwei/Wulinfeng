@@ -169,7 +169,7 @@ public class HuiGuDetailActivity extends BaseActivity implements View.OnClickLis
         //初始化数据源
 
         transaction = getSupportFragmentManager().beginTransaction();
-        if (reliao==1){
+//        if (reliao==1){
             tvChat.setTextColor(getResources().getColor(R.color.shouye_tab));
             chatLine.setVisibility(View.VISIBLE);
             tvGuess.setTextColor(getResources().getColor(R.color.editTextcolor));
@@ -181,19 +181,19 @@ public class HuiGuDetailActivity extends BaseActivity implements View.OnClickLis
             } else {
                 transaction.show(fragment1);
             }
-        }else {
-            tvChat.setTextColor(getResources().getColor(R.color.editTextcolor));
-            chatLine.setVisibility(View.GONE);
-            tvGuess.setTextColor(getResources().getColor(R.color.shouye_tab));
-            guessLine.setVisibility(View.VISIBLE);
-            if (fragment2 == null) {
-                fragment2 = new LiveDuizhenFragment();
-                fragment2.setCurrentSaichengId(scheduleId);
-                transaction.add(R.id.fl_content, fragment2);
-            } else {
-                transaction.show(fragment2);
-            }
-        }
+//        }else {
+//            tvChat.setTextColor(getResources().getColor(R.color.editTextcolor));
+//            chatLine.setVisibility(View.GONE);
+//            tvGuess.setTextColor(getResources().getColor(R.color.shouye_tab));
+//            guessLine.setVisibility(View.VISIBLE);
+//            if (fragment2 == null) {
+//                fragment2 = new LiveDuizhenFragment();
+//                fragment2.setCurrentSaichengId(scheduleId);
+//                transaction.add(R.id.fl_content, fragment2);
+//            } else {
+//                transaction.show(fragment2);
+//            }
+//        }
         transaction.commit();
         initView();
         initData();

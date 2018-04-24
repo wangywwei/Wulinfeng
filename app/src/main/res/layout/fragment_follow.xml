@@ -10,7 +10,7 @@
     <RelativeLayout
         android:background="@color/white"
         android:id="@+id/nofollow_no"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     <LinearLayout
@@ -45,12 +45,7 @@
         android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="@dimen/wlf_77dp">
-        <android.support.v7.widget.RecyclerView
-            android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/wlf_77dp"
-            android:id="@+id/follow_yes"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/wlf_45dp"/>
+
         <ImageView
             android:background="@color/white_tr"
             android:id="@+id/follow_bianji"
@@ -60,6 +55,16 @@
             android:src="@drawable/bianji"
             android:layout_width="@dimen/wlf_45dp"
             android:layout_height="@dimen/wlf_45dp" />
+        <ImageView
+            android:layout_toLeftOf="@id/follow_bianji"
+            android:layout_width="@dimen/man_16dp"
+            android:layout_height="match_parent" />
+        <android.support.v7.widget.RecyclerView
+            android:layout_toLeftOf="@id/follow_bianji"
+            android:layout_centerVertical="true"
+            android:id="@+id/follow_yes"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/wlf_45dp"/>
     </RelativeLayout>
     <View
         android:background="@color/rgb_EFEFEF"
