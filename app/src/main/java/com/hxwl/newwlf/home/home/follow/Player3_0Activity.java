@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.text.TextUtils;
+import android.view.View;
 import android.view.animation.OvershootInterpolator;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -15,23 +18,26 @@ import com.hxwl.newwlf.login.LoginActivity;
 import com.hxwl.newwlf.modlebean.QuanshouBean;
 import com.hxwl.wulinfeng.MakerApplication;
 import com.hxwl.wulinfeng.R;
+import com.hxwl.wulinfeng.activity.PlayDetailsActivity;
 import com.hxwl.wulinfeng.base.BaseActivity;
 import com.hxwl.wulinfeng.util.JsonValidator;
 import com.hxwl.wulinfeng.util.UIUtils;
 import com.jaeger.library.StatusBarUtil;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
+import com.nineoldandroids.view.ViewHelper;
 import com.nineoldandroids.view.ViewPropertyAnimator;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 import okhttp3.Call;
 
 public class Player3_0Activity extends BaseActivity {
 
-    private XRecyclerView player3_0_xrecyclerview;
+    private ListView mLv;
     private Player3Adapter adapter;
     private ArrayList<QuanshouBean.DataBean> list = new ArrayList<>();
     private QuickIndexBar quickIndexBar;
@@ -113,39 +119,43 @@ public class Player3_0Activity extends BaseActivity {
 
 
     private void initView() {
-        player3_0_xrecyclerview = (XRecyclerView) findViewById(R.id.player3_0_xrecyclerview);
+        mLv = (ListView) findViewById(R.id.lv);
         quickIndexBar = (QuickIndexBar) findViewById(R.id.quickIndexBar);
         center_view = (TextView) findViewById(R.id.center_view);
 
-
+        Collections.sort(list);
         adapter = new Player3Adapter(this, list);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        player3_0_xrecyclerview.setLayoutManager(layoutManager);
-        player3_0_xrecyclerview.setNestedScrollingEnabled(false);
-        player3_0_xrecyclerview.setAdapter(adapter);
+
+        mLv.setAdapter(adapter);
 
         quickIndexBar.setOnTouchLetterListenner(new QuickIndexBar.onTouchLetterListenner() {
 
             @Override
             public void onTouchLetter(String letter) {
-
+                for (int i = 0; i < list.size(); i++) {
+                    String itemLetter = list.get(i).getmPinYin().charAt(0)
+                            + "";
+                    if (itemLetter.equals(letter)) {
+                        // 将ListView里面一样的对应的字母设置到屏幕
+                        mLv.setSelection(i);
+                        // 因为ListView里面有两个或者多个相同的对应的字母
+                        break;
+                    }
+                }
                 // 屏幕中间显示带字母的View
                 showCenterAnimView(letter);
             }
 
         });
 
+        ViewHelper.setScaleX(center_view, 0);
+        ViewHelper.setScaleY(center_view, 0);
 
-        player3_0_xrecyclerview.setLoadingListener(new XRecyclerView.LoadingListener() {
+        mLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onRefresh() {
-                player3_0_xrecyclerview.refresh();
-            }
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                startActivity(PlayDetailsActivity.getIntent(Player3_0Activity.this,list.get(position).getPlayerId()+""));
 
-            @Override
-            public void onLoadMore() {
-                player3_0_xrecyclerview.refresh();
             }
         });
 

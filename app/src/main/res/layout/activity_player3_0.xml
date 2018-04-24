@@ -5,17 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.hxwl.newwlf.home.home.follow.Player3_0Activity">
-    <com.jcodecraeer.xrecyclerview.XRecyclerView
-        android:id="@+id/player3_0_xrecyclerview"
+    <ListView
+        android:id="@+id/lv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="#33000000"
+        android:dividerHeight="0.1dp"
+        android:overScrollMode="never" />
 
     <com.hxwl.newwlf.home.home.follow.QuickIndexBar
         android:id="@+id/quickIndexBar"
-        android:layout_width="30dp"
+        android:layout_width="41dp"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
-        android:background="#B21421" />
+        android:background="#f1f1f1" />
 
     <TextView
         android:visibility="gone"

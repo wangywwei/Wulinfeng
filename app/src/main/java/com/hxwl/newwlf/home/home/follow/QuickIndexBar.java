@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.hxwl.wulinfeng.R;
+
 public class QuickIndexBar extends View {
 	private Paint mPaint;
 	private int mWidth;
@@ -40,7 +42,7 @@ public class QuickIndexBar extends View {
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 		mWidth = getMeasuredWidth();
-		mCellHieght = getMeasuredHeight() * 1.0F / 26;
+		mCellHieght = getMeasuredHeight() * 1.0F / 28;
 		super.onSizeChanged(w, h, oldw, oldh);
 	}
 
@@ -49,9 +51,9 @@ public class QuickIndexBar extends View {
 		// 设置是否抗锯齿
 		mPaint.setAntiAlias(true);
 		// 设置画笔绘制的颜色
-		mPaint.setColor(Color.WHITE);
+		mPaint.setColor(getResources().getColor(R.color.rgb_000000));
 		// 设置绘制的文本的大小
-		mPaint.setTextSize(16);
+		mPaint.setTextSize(24);
 
 		// 设置绘制文本的起点坐标是当前文本的下边缘的正中心
 		mPaint.setTextAlign(Align.CENTER);
@@ -64,7 +66,7 @@ public class QuickIndexBar extends View {
 			float x = mWidth / 2;
 			float y = mCellHieght / 2 + getTextHeight(mIndexArr[i]) / 2 + i
 					* mCellHieght;
-			mPaint.setColor(i == mLastIndex ? Color.BLUE : Color.WHITE);
+			mPaint.setColor(i == mLastIndex ? getResources().getColor(R.color.rgb_BA2B2C) : getResources().getColor(R.color.rgb_000000));
 			canvas.drawText(mIndexArr[i], x, y, mPaint);
 		}
 		super.onDraw(canvas);
