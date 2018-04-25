@@ -26,6 +26,7 @@ import com.hxwl.wlf3.bean.DynamicBean;
 import com.hxwl.wlf3.home.home1.Home3Adapter;
 import com.hxwl.wlf3.home.home1.ShiPin1Adapter;
 import com.hxwl.wlf3.home.home1.ShiPin1Fragment;
+import com.hxwl.wlf3.home.xiangqing.ShijianActivity;
 import com.hxwl.wulinfeng.MainActivity;
 import com.hxwl.wulinfeng.MakerApplication;
 import com.hxwl.wulinfeng.activity.HuiGuDetailActivity;
@@ -77,12 +78,16 @@ public class SaichengLayout extends LinearLayout {
     private ShiPin1Adapter shiPinAdapter;
     private int state;
     private int hasSubscribed;
+    private int ii;
+    private LinearLayout saicheng_layou;
 
-
-    public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
+    public void setBean(final Home3Bean.DataBean.SchedulesBean bean,int i) {
         this.dataBean = bean;
+        this.ii=i;
         state = dataBean.getState();
         hasSubscribed = dataBean.getHasSubscribed();
+
+
 
         try {
             Glide.with(context).load(URLS.IMG + dataBean.getEvent().getCoverImage()).into(saicheng_img);
@@ -123,11 +128,11 @@ public class SaichengLayout extends LinearLayout {
                 return;
             } else {
                 saicheng_relative.removeAllViews();//清空布局
-                for (int i = 0; i <activityList.size() ; i++) {
+//                for (int i = 0; i <activityList.size() ; i++) {
                     huoDongLayout = new HuoDongLayout(context);
                     saicheng_relative.addView(huoDongLayout);
-                    huoDongLayout.setBean(activityList.get(i));
-                }
+                    huoDongLayout.setBean(dataBean,ii);
+//                }
             }
         } catch (Exception e) {
         }
@@ -136,34 +141,47 @@ public class SaichengLayout extends LinearLayout {
 
 
         if (state==3){
-            try {
-                saicheng_img_layout.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        context.startActivity(ZixunVideoActivity.getIntent(context,dataBean.getId()+""));
-                    }
-                });
-            } catch (Exception e) {
-            }
 
 
             try {
-                saicheng_name.setOnClickListener(new OnClickListener() {
+                saicheng_layou.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        context.startActivity(ZixunVideoActivity.getIntent(context,dataBean.getId()+""));
-                    }
-                });
-            } catch (Exception e) {
-            }
-            try {
-                saicheng_yuyuetupian.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        context.startActivity(ZixunVideoActivity.getIntent(context,dataBean.getId()+""));
+                        context.startActivity(ShijianActivity.getIntent(context,dataBean.getId()+""));
                     }
                 });
             }catch (Exception e){}
+
+
+//
+//            try {
+//                saicheng_img_layout.setOnClickListener(new OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        context.startActivity(ZixunVideoActivity.getIntent(context,dataBean.getId()+""));
+//                    }
+//                });
+//            } catch (Exception e) {
+//            }
+//
+//
+//            try {
+//                saicheng_name.setOnClickListener(new OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        context.startActivity(ZixunVideoActivity.getIntent(context,dataBean.getId()+""));
+//                    }
+//                });
+//            } catch (Exception e) {
+//            }
+//            try {
+//                saicheng_yuyuetupian.setOnClickListener(new OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        context.startActivity(ZixunVideoActivity.getIntent(context,dataBean.getId()+""));
+//                    }
+//                });
+//            }catch (Exception e){}
 
         }else if (state==2){
             try {
@@ -260,9 +278,9 @@ public class SaichengLayout extends LinearLayout {
             saicheng_ditu.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    Toast.makeText(context, "点击了地图", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "您暂时没有安装地图", Toast.LENGTH_SHORT).show();
 
-                    getPopupWindow();
+//                    getPopupWindow();
 
                 }
             });
@@ -289,6 +307,10 @@ public class SaichengLayout extends LinearLayout {
         saicheng_position = (TextView) view.findViewById(R.id.saicheng_position);
         saicheng_yuyuetupian = (ImageView) view.findViewById(R.id.saicheng_yuyuetupian);
         saicheng_xrecycler = (XRecyclerView) view.findViewById(R.id.saicheng_xrecycler);
+
+
+        saicheng_layou = (LinearLayout) view.findViewById(R.id.saicheng_layou);
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(context);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         saicheng_xrecycler.setLayoutManager(layoutManager);

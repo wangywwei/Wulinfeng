@@ -24,12 +24,13 @@ import java.util.ArrayList;
 * */
 public class SYHuoDongAdapter extends RecyclerView.Adapter<SYHuoDongAdapter.ViewHolder> {
     private Context context;
-    private ArrayList<Home3Bean.DataBean.SchedulesBean.ActivityListBean> list;
+    private ArrayList<Home3Bean.DataBean.SchedulesBean> list;
+private int ii;
 
-    public SYHuoDongAdapter(Context context, ArrayList<Home3Bean.DataBean.SchedulesBean.ActivityListBean> list) {
+    public SYHuoDongAdapter(Context context, ArrayList<Home3Bean.DataBean.SchedulesBean> list,int i) {
         this.context = context;
         this.list = list;
-
+        ii=i;
     }
 
     @Override
@@ -44,8 +45,12 @@ public class SYHuoDongAdapter extends RecyclerView.Adapter<SYHuoDongAdapter.View
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
 
+
+
+
         try {
-            String name = list.get(position).getName();
+            String name = list.get(ii).getActivityList().get(position).getName();
+//            String name = list.get(position).getName();
             holder.huodong_content.setText(name);
 
         }catch (Exception e){

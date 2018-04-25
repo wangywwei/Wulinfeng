@@ -24,16 +24,18 @@ import java.util.ArrayList;
 public class HuoDongLayout extends LinearLayout {
     private Context context;
     private View view;
-    private Home3Bean.DataBean.SchedulesBean.ActivityListBean dataBean;
+    private Home3Bean.DataBean.SchedulesBean dataBean;
     private XRecyclerView syhuodong_xrecycler;
-    private ArrayList<Home3Bean.DataBean.SchedulesBean.ActivityListBean> arrayList = new ArrayList();
+    private ArrayList<Home3Bean.DataBean.SchedulesBean> arrayList = new ArrayList();
     private SYHuoDongAdapter beiyongadapter1;
+    private int ii;
 
-
-    public void setBean(final Home3Bean.DataBean.SchedulesBean.ActivityListBean bean) {
+    public void setBean(final Home3Bean.DataBean.SchedulesBean bean,int i) {
         this.dataBean = bean;
         arrayList.clear();
         arrayList.add(dataBean);
+        this.ii=i;
+
         beiyongadapter1.notifyDataSetChanged();
     }
 
@@ -55,7 +57,7 @@ public class HuoDongLayout extends LinearLayout {
         syhuodong_xrecycler.setNestedScrollingEnabled(false);
         try {
             //对阵的适配器
-            beiyongadapter1 = new SYHuoDongAdapter(context, arrayList);
+            beiyongadapter1 = new SYHuoDongAdapter(context, arrayList,ii);
             syhuodong_xrecycler.setAdapter(beiyongadapter1);
         }catch (Exception e){
         }

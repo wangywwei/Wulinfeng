@@ -1,5 +1,4 @@
 package com.hxwl.wlf3.home.home1;
-
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -9,23 +8,18 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.hxwl.common.tencentplay.utils.TCUtils;
 import com.hxwl.newwlf.URLS;
 import com.hxwl.newwlf.login.LoginActivity;
 import com.hxwl.newwlf.modlebean.YueyueBean;
-import com.hxwl.newwlf.schedule.recent.RecentHeaderAdapter2;
 import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wlf3.home.home2.EventActivity;
-import com.hxwl.wlf3.home.linearfenlei.HuoDongLayout;
 import com.hxwl.wlf3.home.linearfenlei.SaichengLayout;
 import com.hxwl.wlf3.home.linearfenlei.PureTextLayout;
 import com.hxwl.wlf3.home.linearfenlei.VideoListlayout;
 import com.hxwl.wlf3.home.linearfenlei.DuiZhenLayout;
-import com.hxwl.wlf3.home.remenhot.GenDuoActivity;
 import com.hxwl.wulinfeng.MakerApplication;
 import com.hxwl.wulinfeng.R;
 import com.hxwl.wulinfeng.util.JsonValidator;
@@ -33,10 +27,7 @@ import com.hxwl.wulinfeng.util.ToastUtils;
 import com.hxwl.wulinfeng.util.UIUtils;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
-
 import java.util.ArrayList;
-import java.util.List;
-
 import okhttp3.Call;
 
 public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> {
@@ -87,22 +78,32 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
         }catch (Exception e){
         }
 
+
+
         try {
-
-            if (state ==1){
-
-                if (hasSubscribed ==0){
-                    holder.home_saishi_yuyue.setImageResource(R.drawable.yuyue3);//预约
-                }else{
-                    holder.home_saishi_yuyue.setImageResource(R.drawable.yiyuyue3);//已预约
-                }
-            }else if (state ==2){
-                holder.home_saishi_yuyue.setImageResource(R.drawable.zhibozhong3);//进行中--直播中
-            }else if (state ==3){
-                holder.home_saishi_yuyue.setImageResource(R.drawable.quanchenghuigu1);//结束--全程回顾
-            }
+            holder.home_saishi_yuyue.setVisibility(View.GONE);
         }catch (Exception e){
+
         }
+
+
+
+//        try {
+//
+//            if (state ==1){
+//
+//                if (hasSubscribed ==0){
+//                    holder.home_saishi_yuyue.setImageResource(R.drawable.yuyue3);//预约
+//                }else{
+//                    holder.home_saishi_yuyue.setImageResource(R.drawable.yiyuyue3);//已预约
+//                }
+//            }else if (state ==2){
+//                holder.home_saishi_yuyue.setImageResource(R.drawable.zhibozhong3);//进行中--直播中
+//            }else if (state ==3){
+//                holder.home_saishi_yuyue.setImageResource(R.drawable.quanchenghuigu1);//结束--全程回顾
+//            }
+//        }catch (Exception e){
+//        }
 
         try {
             int timelineState = list6.get(position).getTimelineState();
@@ -130,7 +131,7 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
                     holder.home_saishi_xrecycler.removeAllViews();//清空布局
                     videoListlayout = new VideoListlayout(context);
                     holder.home_saishi_xrecycler.addView(videoListlayout);
-                    videoListlayout.setBean(list6.get(position));
+                    videoListlayout.setBean(list6.get(position),position);
                 }catch (Exception e){
                 }
 
@@ -139,7 +140,7 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
                     holder.home_saishi_xrecycler.removeAllViews();//清空布局
                     videoListlayout = new VideoListlayout(context);
                     holder.home_saishi_xrecycler.addView(videoListlayout);
-                    videoListlayout.setBean(list6.get(position));
+                    videoListlayout.setBean(list6.get(position),position);
                 }catch (Exception e){
                 }
 
@@ -148,7 +149,7 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
                     holder.home_saishi_xrecycler.removeAllViews();//清空布局
                     videoListlayout = new VideoListlayout(context);
                     holder.home_saishi_xrecycler.addView(videoListlayout);
-                    videoListlayout.setBean(list6.get(position));
+                    videoListlayout.setBean(list6.get(position),position);
                 }catch (Exception e){
                 }
 
@@ -157,16 +158,17 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
                     holder.home_saishi_xrecycler.removeAllViews();//清空布局
                     pureTextLayout = new PureTextLayout(context);
                     holder.home_saishi_xrecycler.addView(pureTextLayout);
-                    pureTextLayout.setBean(list6.get(position));
+                    pureTextLayout.setBean(list6.get(position),position);
                 }catch (Exception e){
                 }
 
             }else if (showType==5){
                 try {
+                    holder.home_saishi_yuyue.setVisibility(View.GONE);
                     holder.home_saishi_xrecycler.removeAllViews();//清空布局
                     saicheng1Layout = new SaichengLayout(context);
                     holder.home_saishi_xrecycler.addView(saicheng1Layout);
-                    saicheng1Layout.setBean(list6.get(position));
+                    saicheng1Layout.setBean(list6.get(position),position);
                 }catch (Exception e){
                 }
             }else if (showType==6){
@@ -174,7 +176,7 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
                         holder.home_saishi_xrecycler.removeAllViews();//清空布局
                     duiZhenLayout=new DuiZhenLayout(context);
                     holder.home_saishi_xrecycler.addView(duiZhenLayout);
-                    duiZhenLayout.setBean(list6.get(position));
+                    duiZhenLayout.setBean(list6.get(position),position);
                 }catch (Exception e){
                 }
             }
@@ -184,23 +186,23 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
 
 
 
-        try {//          预约
-            holder.home_saishi_yuyue.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-
-                            if (hasSubscribed==0){
-                                initGuanzhu(position,URLS.SCHEDULE_USERSUBSCRIBE);
-
-
-                            }else if (hasSubscribed==1){
-//                                initGuanzhu(position,URLS.SCHEDULE_USERCANCELSUBSCRIBE);
-                            }
-
-                }
-            });
-        }catch (Exception e){}
+//        try {//          预约
+//            holder.home_saishi_yuyue.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+//
+//                            if (hasSubscribed==0){
+//                                initGuanzhu(position,URLS.SCHEDULE_USERSUBSCRIBE);
+//
+//
+//                            }else if (hasSubscribed==1){
+////                                initGuanzhu(position,URLS.SCHEDULE_USERCANCELSUBSCRIBE);
+//                            }
+//
+//                }
+//            });
+//        }catch (Exception e){}
 
 
         try {//     赛事
@@ -214,10 +216,6 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
             });
 
         }catch (Exception e){}
-
-
-
-
 
     }
 

@@ -6,6 +6,7 @@
     android:background="#FFF">
 
     <LinearLayout
+        android:id="@+id/cll_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -55,7 +56,7 @@
                 android:id="@+id/vll_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2018巴塞尔艺术展香港展会 2018.9.1"
+                android:text=" "
                 android:textSize="@dimen/text_13sp"
                 android:textColor="#000000"/>
 
@@ -65,20 +66,10 @@
                 android:layout_marginTop="@dimen/wlf_8dp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/wlf_28dp"
-                android:text="当金融广告撞上马卡龙色，，"
+                android:text=""
                 android:textSize="@dimen/text_10sp"
                 android:textColor="#666666"/>
 
-
-
-
-            <!--<RelativeLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent">-->
-
-              <!---->
-
-            <!--</RelativeLayout>-->
             <LinearLayout
                 android:layout_marginTop="@dimen/wlf_7dp"
                 android:layout_width="match_parent"

@@ -41,8 +41,10 @@ public class DuiZhenLayout extends LinearLayout {
     private RelativeLayout duizhen_relative;
     private HuoDongLayout huoDongLayout;
 
-    public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
+    private int ii;
+    public void setBean(final Home3Bean.DataBean.SchedulesBean bean,int z) {
         this.dataBean = bean;
+        this.ii=z;
         try {
             String eventTime = dataBean.getEvent().getEventTime();
             duizhen_shijian.setText(eventTime);
@@ -54,7 +56,24 @@ public class DuiZhenLayout extends LinearLayout {
         }catch (Exception e){
         }
         arrayList.clear();
-        arrayList.add(dataBean.getEvent().getAgainstListBean());//这里如果是bean类的话会显示一条数据，如果是集合的话一条都不显示
+//        arrayList.add(dataBean.getEvent().getAgainstListBean());//这里如果是bean类的话会显示一条数据，如果是集合的话一条都不显示
+
+            arrayList.addAll(dataBean.getEvent().getAgainstListBeans());
+        try {
+            int id = arrayList.get(0).getId();
+            Toast.makeText(context, "====="+id, Toast.LENGTH_SHORT).show();
+        }catch (Exception e){}
+
+
+        try {
+            String redName = arrayList.get(0).getRedName();
+            Toast.makeText(context, "===="+redName, Toast.LENGTH_SHORT).show();
+        }catch (Exception e){}
+
+
+
+
+
         beiyongadapter.notifyDataSetChanged();
 
 /*
@@ -71,7 +90,7 @@ public class DuiZhenLayout extends LinearLayout {
                 for (int i = 0; i < activityList.size(); i++) {
                     huoDongLayout = new HuoDongLayout(context);
                     duizhen_relative.addView(huoDongLayout);
-                    huoDongLayout.setBean(activityList.get(i));
+                    huoDongLayout.setBean(dataBean,z);
                 }
             }
         }catch (Exception e){

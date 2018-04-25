@@ -1,9 +1,12 @@
 package com.hxwl.wlf3.home.home2;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.hxwl.newwlf.URLS;
@@ -12,18 +15,17 @@ import com.hxwl.newwlf.modlebean.DuizhengXQBean;
 import com.hxwl.wlf3.bean.DuiZenXiangBean;
 import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wlf3.home.home1.Home3Adapter;
+import com.hxwl.wlf3.home.remenhot.GenDuoActivity;
 import com.hxwl.wulinfeng.MakerApplication;
 import com.hxwl.wulinfeng.util.JsonValidator;
 import com.hxwl.wulinfeng.util.UIUtils;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
-
-
-
 import com.hxwl.wulinfeng.R;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.Call;
 
@@ -35,24 +37,53 @@ public class DZDetailsActivity extends AppCompatActivity {
     private XiangQingAdapter xiangQingAdapter;
 
 
+//    private static String str1;
+
+//    public static Intent getIntent(Context context,String str){
+//        Intent intent=new Intent(context,DZDetailsActivity.class);
+//        str1 = str;
+//        return intent;
+//    }
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dzdetails);
-        initView();
 
+//        Toast.makeText(this, "-------"+str1, Toast.LENGTH_SHORT).show();
 
-        try {
-//            home3Adapter = new Home3Adapter(getActivity(),datalist);
+        Intent intent = getIntent();
+//        String num1 = intent.getStringExtra("one");
+        String num2 = intent.getStringExtra("two");
 
-            xiangQingAdapter = new XiangQingAdapter(this,clear);
+        Toast.makeText(this, "传值成功"+num2, Toast.LENGTH_SHORT).show();
 
-            LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-            layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-            dzd_xrecyclerview.setLayoutManager(layoutManager);
-            dzd_xrecyclerview.setNestedScrollingEnabled(false);
-            dzd_xrecyclerview.setAdapter(xiangQingAdapter);
-        }catch (Exception e){}
+//        initView();
+
+//
+//        try {
+//
+//            for (int i = 0; i < clear.size(); i++) {
+//                ArrayList<DuiZenXiangBean.DataBean.AgainstListBean> againstList = new ArrayList<>();
+//                againstList.addAll( clear.get(i).getAgainstList());
+//
+//
+//                xiangQingAdapter = new XiangQingAdapter(this,againstList  );
+//                LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+//                layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+//                dzd_xrecyclerview.setLayoutManager(layoutManager);
+//                dzd_xrecyclerview.setNestedScrollingEnabled(false);
+//                dzd_xrecyclerview.setAdapter(xiangQingAdapter);
+//            }
+//
+//
+//
+//        }catch (Exception e){
+//
+//        }
 
 
 
@@ -63,9 +94,9 @@ public class DZDetailsActivity extends AppCompatActivity {
     }
 
 
-    private void loding() {
+    /*private void loding() {
         OkHttpUtils.post()
-                .url(URLS.HOME_HOME)
+                .url(URLS.CONFRONTATIONDETAILS)
                 .addParams("userId", MakerApplication.instance.getUid())
                 .addParams("token", MakerApplication.instance.getToken())
                 .build()
@@ -108,6 +139,6 @@ public class DZDetailsActivity extends AppCompatActivity {
                     }
                 });
 
-    }
+    }*/
 
 }

@@ -27,6 +27,9 @@ public class URLS {
     public static final String SCHEDULE_DYNAMIC=URL+"schedule/events/2";
 
 
+
+    //首页详情页--对阵详情页
+    public static final String CONFRONTATIONDETAILS=URL+"event/8";
     //赛程 / 直播中,未开始,回放列表
     public static final String SCHEDULE_SCHEDULELIST=URL+"schedule/getLivePlaybackScheduleList";
     //赛程 /直播中与未开始的赛程

@@ -35,7 +35,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/wlf_24dp"
-            android:text="武林风之环球拳王争霸赛昆明赛"
+            android:text=""
             android:textColor="#FFFFFF"
             android:textSize="@dimen/text_20sp" />
 
@@ -55,6 +55,7 @@
             android:layout_marginTop="@dimen/wlf_24dp"
             android:layout_width="@dimen/wlf_94dp"
             android:layout_height="@dimen/wlf_42dp"
+            android:layout_centerHorizontal="true"
             android:layout_alignEnd="@+id/home_saishi_item"
             android:layout_alignRight="@+id/home_saishi_item"
             android:layout_below="@+id/home_saishi_item"
@@ -67,9 +68,9 @@
             android:layout_height="@dimen/wlf_87dp"
             android:layout_alignEnd="@+id/home_saishi_img"
             android:layout_alignRight="@+id/home_saishi_img"
-            android:layout_alignTop="@+id/home_saishi_yuyue"
-            android:layout_marginTop="@dimen/wlf_43dp"
-            android:src="@drawable/shijianzhou" />
+            android:layout_alignTop="@+id/home_saishi_item"
+            android:layout_marginTop="@dimen/wlf_77dp"
+            android:src="@drawable/shijianzhou4" />
 
     </RelativeLayout>
 

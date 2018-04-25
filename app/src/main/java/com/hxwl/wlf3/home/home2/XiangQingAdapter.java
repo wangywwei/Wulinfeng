@@ -40,15 +40,9 @@ import okhttp3.Call;
 
 public class XiangQingAdapter  extends RecyclerView.Adapter<XiangQingAdapter.ViewHolder> {
     private Context context;
-    private ArrayList<DuiZenXiangBean.DataBean> list6;
+    private ArrayList<DuiZenXiangBean.DataBean.AgainstListBean> list6;
 
-
-
-    private boolean aBoolean=true;
-    private int hasSubscribed;
-    private int state;
-
-    public XiangQingAdapter(Context context, ArrayList<DuiZenXiangBean.DataBean> list) {
+    public XiangQingAdapter(Context context, ArrayList<DuiZenXiangBean.DataBean.AgainstListBean> list) {
         this.context = context;
         this.list6 = list;
     }
@@ -65,14 +59,19 @@ public class XiangQingAdapter  extends RecyclerView.Adapter<XiangQingAdapter.Vie
     @Override
     public void onBindViewHolder(XiangQingAdapter.ViewHolder holder, final int position) {
 
+        String blueClub = list6.get(position).getBlueClub();//俱乐部1
+        String blueHeadImg = list6.get(position).getBlueHeadImg();//图片
+        String blueName = list6.get(position).getBlueName();//名字
+        Glide.with(context).load(URLS.IMG+blueHeadImg).into(holder.duizhen_img1);
+        holder.duizhen_address1.setText(blueClub);
+        holder.duizhen_name1.setText(blueName);
 
-
-
-
-
-
-
-
+        String redClub = list6.get(position).getRedClub();//俱乐部2
+        String redHeadImg = list6.get(position).getRedHeadImg();//图片
+        String redName = list6.get(position).getRedName();//名字
+        Glide.with(context).load(URLS.IMG+redHeadImg).into(holder.duizhen_img2);
+        holder.duizhen_address2.setText(redClub);
+        holder.duizhen_name2.setText(redName);
 
     }
 
@@ -82,21 +81,24 @@ public class XiangQingAdapter  extends RecyclerView.Adapter<XiangQingAdapter.Vie
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        private ImageView home_saishi_img;
-        private TextView home_saishi_name;
-        private TextView home_saishi_item;
-        private ImageView home_saishi_yuyue;
-        private ImageView home_saishi_shijianzhou;
-        private RelativeLayout home_saishi_xrecycler;
+        public ImageView duizhen_img1;
+        public TextView duizhen_name1;
+        public TextView duizhen_address1;
 
+        public ImageView duizhen_img2;
+        public TextView duizhen_name2;
+        public TextView duizhen_address2;
         public ViewHolder(View itemView) {
             super(itemView);
-            home_saishi_img= (ImageView) itemView.findViewById(R.id.home_saishi_img);
-            home_saishi_name= (TextView) itemView.findViewById(R.id.home_saishi_name);
-            home_saishi_item= (TextView) itemView.findViewById(R.id.home_saishi_item);
-            home_saishi_yuyue= (ImageView) itemView.findViewById(R.id.home_saishi_yuyue);
-            home_saishi_shijianzhou= (ImageView) itemView.findViewById(R.id.home_saishi_shijianzhou);
-            home_saishi_xrecycler= (RelativeLayout) itemView.findViewById(R.id.home_saishi_xrecycler);
+
+            duizhen_img1 = (ImageView) itemView.findViewById(R.id.duizhen_img1);
+            duizhen_name1= (TextView) itemView.findViewById(R.id.duizhen_name1);
+            duizhen_address1= (TextView) itemView.findViewById(R.id.duizhen_address1);
+
+            duizhen_img2 = (ImageView) itemView.findViewById(R.id.duizhen_img2);
+            duizhen_name2= (TextView) itemView.findViewById(R.id.duizhen_name2);
+            duizhen_address2= (TextView) itemView.findViewById(R.id.duizhen_address2);
+
         }
     }
 

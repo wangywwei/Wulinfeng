@@ -8,31 +8,37 @@
     android:layout_height="match_parent">
 
 
-<TextView
-    android:id="@+id/chun_name"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="当金融广告撞上马卡金融广告撞上马卡龙色，龙色，可视化这件事儿"
-    android:textColor="#000000"
-    android:textSize="@dimen/text_15sp"
- />
 
-
-
-    <!--   android:maxLines="1"
-    android:ellipsize="end"
-    只显示一行
-    -->
-
-
-
-    <TextView
-        android:id="@+id/chun_content"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/chun_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="当金融广告撞上马卡龙色，可视化这件事儿"
-        android:textSize="@dimen/text_12sp"
-        android:textColor="#666666"/>
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/chun_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当金融广告撞上马卡金融广告撞上马卡龙色，龙色，可视化这件事儿"
+            android:textColor="#000000"
+            android:textSize="@dimen/text_15sp"
+            />
+
+
+        <TextView
+            android:id="@+id/chun_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当金融广告撞上马卡龙色，可视化这件事儿"
+            android:textSize="@dimen/text_12sp"
+            android:textColor="#666666"/>
+
+
+
+
+    </LinearLayout>
+
 
 
 

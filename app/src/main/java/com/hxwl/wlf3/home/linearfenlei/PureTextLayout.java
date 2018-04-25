@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.hxwl.wlf3.bean.DynamicBean;
 import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wlf3.home.home2.chongfu.HuoDong1Layout;
+import com.hxwl.wlf3.home.xiangqing.ShijianActivity;
 import com.hxwl.wulinfeng.R;
 import com.hxwl.wulinfeng.activity.ZiXunDetailsActivity;
 
@@ -46,12 +47,13 @@ private HuoDong1Layout  huoDongLayout1;
     private DynamicBean.DataBean dataxqBean;
 
 
+private int ii;
+    private LinearLayout chun_layout;
 
 
-
-    public void setBean(final Home3Bean.DataBean.SchedulesBean bean) {
+    public void setBean(final Home3Bean.DataBean.SchedulesBean bean,int i) {
         this.dataBean = bean;
-
+ii=1;
         try {
             chun_name.setText(dataBean.getEvent().getTitle());
         }catch (Exception e){
@@ -78,14 +80,26 @@ private HuoDong1Layout  huoDongLayout1;
                 return;
             }else{
                 chun_relative.removeAllViews();//清空布局
-                for (int i = 0; i < activityList.size(); i++) {
+//                for (int i = 0; i < activityList.size(); i++) {
                     huoDongLayout = new HuoDongLayout(context);
                     chun_relative.addView(huoDongLayout);
-                    huoDongLayout.setBean(activityList.get(i));
-                }
+                    huoDongLayout.setBean(dataBean,ii);
+//                }
             }
         }catch (Exception e){
         }
+
+
+try {
+    chun_layout.setOnClickListener(new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            context.startActivity(ShijianActivity.getIntent(context,dataBean.getEvent().getId()+""));
+
+        }
+    });
+}catch (Exception e){}
+
 
 
 
@@ -93,36 +107,36 @@ private HuoDong1Layout  huoDongLayout1;
             chun_ditu.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    Toast.makeText(context, "点击了地图", Toast.LENGTH_SHORT).show();
-                    getPopupWindow();
+                    Toast.makeText(context, "您暂时没有安装地图", Toast.LENGTH_SHORT).show();
+//                    getPopupWindow();
                 }
             });
         }catch (Exception e){}
 
 
-
-        try {
-            chun_name.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    context.startActivity(ZiXunDetailsActivity.getIntent(context,dataBean.getEvent().getId()+""));
-
-
-                }
-            });
-        }catch (Exception e){}
-
-
-
-        try {
-            chun_content.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    context.startActivity(ZiXunDetailsActivity.getIntent(context,dataBean.getEvent().getId()+""));
-
-                }
-            });
-        }catch (Exception e){}
+//
+//        try {
+//            chun_name.setOnClickListener(new OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    context.startActivity(ZiXunDetailsActivity.getIntent(context,dataBean.getEvent().getId()+""));
+//
+//
+//                }
+//            });
+//        }catch (Exception e){}
+//
+//
+//
+//        try {
+//            chun_content.setOnClickListener(new OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    context.startActivity(ZiXunDetailsActivity.getIntent(context,dataBean.getEvent().getId()+""));
+//
+//                }
+//            });
+//        }catch (Exception e){}
     }
 
     public PureTextLayout(Context context) {
@@ -142,6 +156,13 @@ private HuoDong1Layout  huoDongLayout1;
         chun_relative = (RelativeLayout) view.findViewById(R.id.chun_relative);
 
         chun_ditu = (LinearLayout) view.findViewById(R.id.chun_ditu);
+        chun_layout = (LinearLayout) view.findViewById(R.id.chun_layout);
+
+        /*   <LinearLayout
+        android:id="@+id/chun_layout"
+
+        */
+
     }
 
     public void getPopupWindow() {

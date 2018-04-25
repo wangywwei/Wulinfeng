@@ -31,7 +31,7 @@
             android:id="@+id/duizhen_shijian"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="03.16/周五"
+            android:text=""
             android:textColor="#A4AAB3"
             android:textSize="@dimen/text_12sp"
             android:layout_marginRight="@dimen/wlf_16dp"/>

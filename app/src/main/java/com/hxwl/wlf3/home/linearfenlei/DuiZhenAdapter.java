@@ -13,8 +13,12 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.hxwl.newwlf.URLS;
+import com.hxwl.newwlf.login.LoginActivity;
 import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wlf3.home.home2.DZDetailsActivity;
+import com.hxwl.wlf3.home.remenhot.GenDuoActivity;
+import com.hxwl.wlf3.home.xiangqing.ShijianActivity;
+import com.hxwl.wulinfeng.MainActivity;
 import com.hxwl.wulinfeng.R;
 
 import java.util.ArrayList;
@@ -80,12 +84,22 @@ public class DuiZhenAdapter extends RecyclerView.Adapter<DuiZhenAdapter.ViewHold
         }catch (Exception e){
         }
 
+
+
+
+
         try {
             holder.duizhen_layout.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
-                    Intent mIntent=new Intent(context, DZDetailsActivity.class);
-                    context.startActivity(mIntent);
+                public void onClick(View v) {//对阵界面
+
+try {
+    context.startActivity(ShijianActivity.getIntent(context,list.get(position).getId()+""));
+}catch (Exception e){
+    context.startActivity(ShijianActivity.getIntent(context,1+""));
+
+}
+
                 }
             });
         }catch (Exception e){}
