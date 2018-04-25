@@ -595,7 +595,8 @@
         <activity android:name="com.hxwl.wlf3.home.saicheng.SCDetailsActivity" />
         <activity android:name="com.hxwl.wlf3.home.home2.EventActivity" />
         <activity android:name="com.hxwl.newwlf.login.MimaLoginActivity" />
-        <activity android:name="com.hxwl.newwlf.login.YanzhenmaLogianActivity"></activity>
+        <activity android:name="com.hxwl.newwlf.login.YanzhenmaLogianActivity" />
+        <activity android:name="com.hxwl.wlf3.home.home2.DZDetailsActivity"></activity>
     </application>
 
 </manifest>

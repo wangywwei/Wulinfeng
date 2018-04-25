@@ -8,6 +8,23 @@
     android:layout_height="match_parent"
     tools:context="com.hxwl.newwlf.login.MimaLoginActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_44dp"
+        android:background="@color/rgb_BA2B2C">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="密码登录"
+            android:textColor="@color/rgb_EFEFEF"
+            android:textSize="@dimen/text_16sp" />
+
+    </RelativeLayout>
+
+
+
 
     <LinearLayout
         android:layout_weight="1"
@@ -22,11 +39,6 @@
 
 
     </LinearLayout>
-
-
-
-
-
 
     <LinearLayout
         android:orientation="vertical"
@@ -115,30 +127,10 @@
         </RelativeLayout>
 
 
-
-
-        <!--<TextView-->
-            <!--android:id="@+id/tv_login"-->
-            <!--android:layout_marginTop="9dp"-->
-            <!--android:layout_alignParentRight="true"-->
-            <!--android:layout_marginLeft="@dimen/px_69"-->
-            <!--android:layout_marginRight="@dimen/px_69"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="@dimen/px_144"-->
-            <!--android:textSize="@dimen/px_45"-->
-            <!--android:gravity="center"-->
-            <!--android:textColor="@color/white"-->
-            <!--android:background="@drawable/dengl"-->
-            <!--android:text="登录"/>-->
-
-
-
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_weight="1"/>
-
-
 
         <TextView
             android:id="@+id/tv_login"
@@ -149,108 +141,6 @@
             android:textSize="@dimen/text_15sp"
             android:background="@drawable/dengl"
             android:gravity="center"/>
-
-
-
-        <!--
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_height="48dp">
-                    <EditText
-                        android:maxLength="11"
-                        android:id="@+id/phoneNum"
-                        android:inputType="number"
-                        android:layout_marginLeft="@dimen/px_69"
-                        android:layout_centerVertical="true"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="请输入手机号"
-                        android:textColor="#3c3c3c"
-                        android:textSize="@dimen/px_42"
-                        android:textColorHint="#9a9a9a"
-                        android:background="@null"/>
-
-                    <TextView
-                        android:id="@+id/tv_send"
-                        android:layout_marginTop="9dp"
-                        android:layout_marginRight="@dimen/px_90"
-                        android:layout_alignParentRight="true"
-                        android:layout_width="wrap_content"
-                        android:layout_height="@dimen/px_72"
-                        android:textSize="@dimen/px_36"
-                        android:gravity="center"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:textColor="#ffffff"
-                        android:background="@drawable/send_red"
-                        android:text="发送验证码"/>
-
-                </RelativeLayout>
-                <View
-                    android:layout_marginLeft="@dimen/px_69"
-                    android:layout_marginRight="@dimen/px_69"
-                    android:layout_width="fill_parent"
-                    android:layout_height="1dp"
-                    android:background="#cccccc" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp">
-
-                    <EditText
-                        android:maxLength="4"
-                        android:id="@+id/code_sms"
-                        android:layout_marginLeft="@dimen/px_69"
-                        android:layout_centerVertical="true"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="请输入验证码"
-                        android:textColor="#3c3c3c"
-                        android:textSize="@dimen/px_42"
-                        android:inputType="number"
-                        android:textColorHint="#9a9a9a"
-                        android:background="@null"/>
-                    <ImageView
-                        android:layout_centerVertical="true"
-                        android:visibility="gone"
-                        android:id="@+id/iv_clear"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/closename_icon"
-                        android:layout_marginRight="20dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true" />
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="@dimen/px_69"
-                    android:layout_marginRight="@dimen/px_69"
-                    android:background="#cccccc" />
-
-                &lt;!&ndash;<TextView&ndash;&gt;
-                    &lt;!&ndash;android:id="@+id/tv_login"&ndash;&gt;
-                    &lt;!&ndash;android:layout_marginTop="9dp"&ndash;&gt;
-                    &lt;!&ndash;android:layout_alignParentRight="true"&ndash;&gt;
-                    &lt;!&ndash;android:layout_marginLeft="@dimen/px_69"&ndash;&gt;
-                    &lt;!&ndash;android:layout_marginRight="@dimen/px_69"&ndash;&gt;
-                    &lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;
-                    &lt;!&ndash;android:layout_height="@dimen/px_144"&ndash;&gt;
-                    &lt;!&ndash;android:textSize="@dimen/px_45"&ndash;&gt;
-                    &lt;!&ndash;android:gravity="center"&ndash;&gt;
-                    &lt;!&ndash;android:textColor="@color/white"&ndash;&gt;
-                    &lt;!&ndash;android:background="@drawable/dengl"&ndash;&gt;
-                    &lt;!&ndash;android:text="登录"/>&ndash;&gt;
-
-
-
-
-
-        -->
-
 
 
     </LinearLayout>
@@ -285,23 +175,7 @@
         </LinearLayout>
 
 
-
-
-
-
-
-
-
     </LinearLayout>
-
-
-
-
-
-
-
-
-
 
 
 </LinearLayout>

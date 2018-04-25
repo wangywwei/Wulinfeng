@@ -197,9 +197,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.activity_img_layout2://验证码登录
 
-//                switchContent(currentFragment, mimaLoginFragment);
+//                switchContent(currentFragment, mimaLoginFragment);        YanzhenmaLogianFragment
 
-                Intent inten1t=new Intent(this,MimaLoginActivity.class);
+                Intent inten1t=new Intent(this,YanzhenmaLogianActivity.class);
                 startActivity(inten1t);
                 break;
             case R.id.activity_img_layout3://微信

@@ -1,6 +1,7 @@
 package com.hxwl.wlf3.home.linearfenlei;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.hxwl.newwlf.URLS;
 import com.hxwl.wlf3.bean.Home3Bean;
+import com.hxwl.wlf3.home.home2.DZDetailsActivity;
 import com.hxwl.wulinfeng.R;
 
 import java.util.ArrayList;
@@ -82,14 +84,8 @@ public class DuiZhenAdapter extends RecyclerView.Adapter<DuiZhenAdapter.ViewHold
             holder.duizhen_layout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "点击了第"+position+"个队列", Toast.LENGTH_SHORT).show();
-
-
-
-
-
-
-
+                    Intent mIntent=new Intent(context, DZDetailsActivity.class);
+                    context.startActivity(mIntent);
                 }
             });
         }catch (Exception e){}

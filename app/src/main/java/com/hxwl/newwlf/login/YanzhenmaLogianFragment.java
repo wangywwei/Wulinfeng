@@ -207,7 +207,7 @@ public class YanzhenmaLogianFragment extends BaseFragment implements View.OnClic
         }
     };
 
-    class Clickable extends ClickableSpan {
+    static class Clickable extends ClickableSpan {
         private final View.OnClickListener mListener;
         public Clickable(View.OnClickListener l) {
             mListener = l;
@@ -226,7 +226,7 @@ public class YanzhenmaLogianFragment extends BaseFragment implements View.OnClic
          */
         @Override
         public void updateDrawState(TextPaint ds) {
-            ds.setColor(getResources().getColor(R.color.black));
+//            ds.setColor(getResources().getColor(R.color.black));//如果使用当前界面这行需要解开
             ds.setUnderlineText(true);//是否有下划线
         }
     }
