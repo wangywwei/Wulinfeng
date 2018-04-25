@@ -22,7 +22,7 @@
         android:background="#f1f1f1" />
 
     <TextView
-        android:visibility="gone"
+        android:visibility="visible"
         android:id="@+id/center_view"
         android:layout_width="110dp"
         android:layout_height="110dp"

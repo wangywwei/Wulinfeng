@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.hxwl.newwlf.URLS;
 import com.hxwl.newwlf.login.LoginActivity;
+import com.hxwl.newwlf.modlebean.Quanshou3Bean;
 import com.hxwl.newwlf.modlebean.QuanshouBean;
 import com.hxwl.wulinfeng.MakerApplication;
 import com.hxwl.wulinfeng.R;
@@ -39,7 +40,7 @@ public class Player3_0Activity extends BaseActivity {
 
     private ListView mLv;
     private Player3Adapter adapter;
-    private ArrayList<QuanshouBean.DataBean> list = new ArrayList<>();
+    private ArrayList<Quanshou3Bean.DataBean> list = new ArrayList<>();
     private QuickIndexBar quickIndexBar;
     private TextView center_view;
 
@@ -60,8 +61,6 @@ public class Player3_0Activity extends BaseActivity {
 
     private void initData() {
         HashMap<String, String> map = new HashMap<String, String>();
-        map.put("pageNumber", "1");
-        map.put("pageSize", "50");
         map.put("userId", MakerApplication.instance.getUid());
         map.put("token", MakerApplication.instance.getToken());
         OkHttpUtils.post()
@@ -80,22 +79,11 @@ public class Player3_0Activity extends BaseActivity {
                         if (jsonValidator.validate(response)){
                             Gson gson = new Gson();
                             try {
-                                QuanshouBean bean = gson.fromJson(response, QuanshouBean.class);
+                                Quanshou3Bean bean = gson.fromJson(response, Quanshou3Bean.class);
                                 if (bean.getCode().equals("1000")){
                                     list.clear();
-//                                    for (int i = 0; i <bean.getData().size() ; i++) {
-//                                        Friend friend=new Friend(
-//                                                bean.getData().get(i).getPlayerId(),
-//                                                bean.getData().get(i).getPlayerImage(),
-//                                                bean.getData().get(i).getPlayerName(),
-//                                                bean.getData().get(i).getPlayerClub(),
-//                                                bean.getData().get(i).getWeight(),
-//                                                bean.getData().get(i).getUserIsFollow()
-//                                        );
-//
-//                                    }
                                     list.addAll(bean.getData());
-                                    adapter.notifyDataSetChanged();
+
                                 } else if (bean.getData() != null && bean.getData().size()>0) {
 
                                     UIUtils.showToast("没有更多了");
@@ -113,7 +101,7 @@ public class Player3_0Activity extends BaseActivity {
 
                     }
                 });
-
+        adapter.notifyDataSetChanged();
 
     }
 
@@ -133,7 +121,7 @@ public class Player3_0Activity extends BaseActivity {
             @Override
             public void onTouchLetter(String letter) {
                 for (int i = 0; i < list.size(); i++) {
-                    String itemLetter = list.get(i).getmPinYin().charAt(0)
+                    String itemLetter = list.get(i).getFirstLetter().charAt(0)
                             + "";
                     if (itemLetter.equals(letter)) {
                         // 将ListView里面一样的对应的字母设置到屏幕

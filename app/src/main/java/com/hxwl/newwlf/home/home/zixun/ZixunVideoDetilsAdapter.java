@@ -18,6 +18,7 @@ import com.hxwl.newwlf.login.LoginActivity;
 import com.hxwl.newwlf.modlebean.HomeOneBean;
 import com.hxwl.newwlf.modlebean.PLZixunListBean;
 import com.hxwl.utils.Photos;
+import com.hxwl.wlf3.bean3.Pinlin3Bean;
 import com.hxwl.wulinfeng.MakerApplication;
 import com.hxwl.wulinfeng.R;
 import com.hxwl.wulinfeng.activity.HuiFuDetailsActivity;
@@ -40,7 +41,7 @@ public class ZixunVideoDetilsAdapter extends BaseExpandableListAdapter {
     private Activity context;
     private String id;
     //数据
-    private List<PLZixunListBean.DataBean> listData;
+    private List<Pinlin3Bean.DataBean> listData;
     private View.OnClickListener replyToCommentListener;// 评论监听
     private final static String SECCLICK = "点赞成功";
     private final static String FAILCLICK = "取消点赞";
@@ -49,9 +50,8 @@ public class ZixunVideoDetilsAdapter extends BaseExpandableListAdapter {
 
     // 剪切板 控制器
     private ClipboardManager mClipboard = null;
-    private boolean zannnn;
 
-    public ZixunVideoDetilsAdapter(Activity activity, List<PLZixunListBean.DataBean> listData, View.OnClickListener replyToCommentListener, String id) {
+    public ZixunVideoDetilsAdapter(Activity activity, List<Pinlin3Bean.DataBean> listData, View.OnClickListener replyToCommentListener, String id) {
         this.context = activity;
         this.listData = listData;
         this.id = id;
@@ -106,7 +106,7 @@ public class ZixunVideoDetilsAdapter extends BaseExpandableListAdapter {
     public View getGroupView(final int groupPosition, boolean isExpanded,
                              View convertView, ViewGroup parent) {
         final ZixunVideoDetilsAdapter.ViewHolder holder;
-        final PLZixunListBean.DataBean itemNotes = listData.get(groupPosition);
+        final Pinlin3Bean.DataBean itemNotes = listData.get(groupPosition);
         if (convertView == null) {
             holder = new ZixunVideoDetilsAdapter.ViewHolder();
             convertView = View.inflate(context, R.layout.zixun_pinglun_item, null);
@@ -135,7 +135,7 @@ public class ZixunVideoDetilsAdapter extends BaseExpandableListAdapter {
         }else {
             holder.shenping.setVisibility(View.GONE);
         }
-        holder.nickName.setText(Photos.stringPhoto(itemNotes.getUserName()));
+        holder.nickName.setText(Photos.stringPhoto(itemNotes.getNickName()));
         holder.tv_zancount.setText(itemNotes.getFavourNum()+"");//点赞数量
         holder.tv_zancount2.setText(itemNotes.getReplyNum()+"");//点赞数量
         holder.time.setText(itemNotes.getCommentTime());
@@ -149,14 +149,14 @@ public class ZixunVideoDetilsAdapter extends BaseExpandableListAdapter {
         ImageUtils.getCirclePic(URLS.IMG+itemNotes.getHeadImg(), holder.imageView, context);
         holder.iv_zan.setTag(itemNotes);
 
-        if (itemNotes.getUserIsFavour()==1) {//点过赞
+        if (itemNotes.getIsFavour()==1) {//点过赞
             holder.tv_zancount.setTextColor(context.getResources().getColor(R.color.rgb_888888));
             holder.iv_zan.setImageResource(R.drawable.yizan_icon);
         } else {//没有点过
             holder.tv_zancount.setTextColor(context.getResources().getColor(R.color.rgb_888888));
             holder.iv_zan.setImageResource(R.drawable.zan_icon);
         }
-        final int dianzannum=itemNotes.getUserIsFavour();
+        final int dianzannum=itemNotes.getIsFavour();
         holder.iv_zan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -167,20 +167,20 @@ public class ZixunVideoDetilsAdapter extends BaseExpandableListAdapter {
                 if(OnClickEventUtils.isFastClick()){
                     return;
                 }
-                if (itemNotes.getUserIsFavour()==1) {//没有点过 holder.iv_zan.setImageResource(R.drawable.zanblue_icon);
+                if (itemNotes.getIsFavour()==1) {//没有点过 holder.iv_zan.setImageResource(R.drawable.zanblue_icon);
                     AppUtils.setEvent(context, "ImgLike", "图集-点赞");
                     dianZan2(holder.iv_zan, itemNotes);
                 } else {//点过赞
                     dianZan(holder.iv_zan, itemNotes);
                 }
             }
-            private void dianZan2(final ImageView view, final PLZixunListBean.DataBean itemNotes) {
+            private void dianZan2(final ImageView view, final Pinlin3Bean.DataBean itemNotes) {
                 OkHttpUtils.post()
-                        .url(URLS.SCHEDULE_CANCELDYNAMICMESSAGEFAVOUR)
-                        .addParams("targetId",itemNotes.getCommentId())
+                        .url(URLS.CANCELFAVOUR)
+                        .addParams("targetId",itemNotes.getId())
                         .addParams("token", MakerApplication.instance.getToken())
                         .addParams("userId",MakerApplication.instance().getUserid())
-                        .addParams("favourType","2")    //赞类型 1动态的赞 2资讯评论的赞 3选手留言的赞
+                        .addParams("type","5")
                         .build().execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
@@ -195,7 +195,7 @@ public class ZixunVideoDetilsAdapter extends BaseExpandableListAdapter {
                             try {
                                 HomeOneBean bean = gson.fromJson(response, HomeOneBean.class);
                                 if (bean.getCode().equals("1000")){
-                                    itemNotes.setUserIsFavour(2);
+                                    itemNotes.setIsFavour(2);
                                     view.setImageResource(R.drawable.zan_icon);
                                     if (dianzannum==1){
                                         holder.tv_zancount.setText(itemNotes.getFavourNum()-1+"");//点赞数量
@@ -221,13 +221,13 @@ public class ZixunVideoDetilsAdapter extends BaseExpandableListAdapter {
 
             }
             //点赞
-            public void dianZan(final ImageView view, final PLZixunListBean.DataBean itemNotes) {
+            public void dianZan(final ImageView view, final Pinlin3Bean.DataBean itemNotes) {
                 OkHttpUtils.post()
-                        .url(URLS.SCHEDULE_ADDDYNAMICMESSAGEFAVOUR)
-                        .addParams("targetId",itemNotes.getCommentId())
+                        .url(URLS.ADDFAVOUR)
+                        .addParams("targetId",itemNotes.getId())
                         .addParams("token", MakerApplication.instance.getToken())
                         .addParams("userId",MakerApplication.instance().getUserid())
-                        .addParams("favourType","2")    //赞类型 1动态的赞 2资讯评论的赞 3选手留言的赞
+                        .addParams("type","5")
                         .build().execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
@@ -242,7 +242,7 @@ public class ZixunVideoDetilsAdapter extends BaseExpandableListAdapter {
                             try {
                                 HomeOneBean bean = gson.fromJson(response, HomeOneBean.class);
                                 if (bean.getCode().equals("1000")){
-                                    itemNotes.setUserIsFavour(1);
+                                    itemNotes.setIsFavour(1);
                                     view.setImageResource(R.drawable.yizan_icon);
                                     if (dianzannum==1){
                                         holder.tv_zancount.setText(itemNotes.getFavourNum()+"");//点赞数量
@@ -282,7 +282,7 @@ public class ZixunVideoDetilsAdapter extends BaseExpandableListAdapter {
     @Override
     public View getChildView(final int groupPosition, final int childPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
-        final PLZixunListBean.DataBean.ReplyListBean noteComment = listData.get(groupPosition)
+        final Pinlin3Bean.DataBean.ReplyListBean noteComment = listData.get(groupPosition)
                 .getReplyList().get(childPosition);
         ZixunVideoDetilsAdapter.ViewHolder holder = new ZixunVideoDetilsAdapter.ViewHolder();
         convertView = View.inflate(context, R.layout.item_zixun_comment_reply,
@@ -318,22 +318,22 @@ public class ZixunVideoDetilsAdapter extends BaseExpandableListAdapter {
                 public void onClick(View view) {//查看更多
 
                     context.startActivity(HuiFuDetailsActivity.getIntent(context,
-                            listData.get(groupPosition).getCommentId(),
+                            listData.get(groupPosition).getId(),
                             listData.get(groupPosition),
-                     URLS.NEWS_COMMENTREPLYLIST,null,2));
+                     URLS.NEWS_COMMENTREPLYLIST,null,1));
                 }
             });
         }
-        if (StringUtils.isBlank(noteComment.getReferUserName())) {
-            holder.tv_comment_reply_writer.setText(noteComment.getUserName()+":");
+        if (StringUtils.isBlank(noteComment.getReferUserNickName())) {
+            holder.tv_comment_reply_writer.setText(noteComment.getNickName()+":");
             holder.tv_comment_reply_writer2.setVisibility(View.GONE);
             holder.tv_comment_reply_writer3.setVisibility(View.GONE);
             holder.tv_comment_reply_text.setText(noteComment.getContent());
         } else {
-            holder.tv_comment_reply_writer.setText(noteComment.getUserName());
+            holder.tv_comment_reply_writer.setText(noteComment.getNickName());
             holder.tv_comment_reply_writer2.setVisibility(View.VISIBLE);
             holder.tv_comment_reply_writer3.setVisibility(View.VISIBLE);
-            holder.tv_comment_reply_writer3.setText(noteComment.getReferUserName()+":");
+            holder.tv_comment_reply_writer3.setText(noteComment.getReferUserNickName()+":");
 
             holder.tv_comment_reply_text.setText(noteComment.getContent());
         }

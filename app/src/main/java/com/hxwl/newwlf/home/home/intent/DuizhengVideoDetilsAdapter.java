@@ -336,10 +336,10 @@ public class DuizhengVideoDetilsAdapter extends BaseExpandableListAdapter {
                         arrayList.add(replyListBean);
                     }
                     itemNotes.setReplyList(arrayList);
-                    context.startActivity(HuiFuDetailsActivity.getIntent(context,
-                            listData.get(groupPosition).getCommentId(),
-                            itemNotes,
-                            URLS.AGAINST_COMMENTREPLYLIST,id,3));
+//                    context.startActivity(HuiFuDetailsActivity.getIntent(context,
+//                            listData.get(groupPosition).getCommentId(),
+//                            itemNotes,
+//                            URLS.AGAINST_COMMENTREPLYLIST,id,3));
 
                 }
             });

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_marginRight="@dimen/man_16dp"
+        android:layout_marginLeft="@dimen/man_16dp"
+        android:layout_marginTop="@dimen/man_24dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_36dp">
+        <ImageView
+            android:id="@+id/pinlun_touxiang"
+            android:src="@drawable/touxiang1"
+            android:layout_width="@dimen/wlf_36dp"
+            android:layout_height="@dimen/wlf_36dp" />
+        <TextView
+            android:id="@+id/pinlun_name"
+            android:textSize="@dimen/text_12sp"
+            android:textColor="@color/rgb_666666"
+            android:text="炸药桶杨茁"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/pinlun_touxiang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/pinlun_time"
+            android:gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/pinlun_name"
+            android:textSize="@dimen/text_10sp"
+            android:textColor="@color/textColor_assist_999999"
+            android:text="10月24日"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/pinlun_touxiang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="@dimen/text_14sp"
+            android:textColor="@color/textColor_assist_999999"
+            android:id="@+id/pinlun_text"
+            android:text="评论"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginRight="@dimen/man_16dp"
+            android:layout_toLeftOf="@id/pinlun_text"
+            android:textSize="@dimen/text_14sp"
+            android:textColor="@color/textColor_assist_999999"
+            android:id="@+id/pinlun_zannum"
+            android:text="2668"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/zan"
+            android:layout_centerVertical="true"
+            android:src="@drawable/zan_icon"
+            android:layout_marginRight="8dp"
+            android:layout_toLeftOf="@id/pinlun_zannum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/pinlun_content"
+        android:textSize="@dimen/text_14sp"
+        android:textColor="@color/rgb_222222"
+        android:text="呜呜泱泱一大堆，但是怎么就是没有提到现如今中国国内格斗的发展趋势，MMA的主流趋势这么明显怎么不提散打早就没落了。"
+        android:layout_marginTop="@dimen/man_12dp"
+        android:layout_marginLeft="@dimen/man_16dp"
+        android:layout_marginRight="@dimen/man_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ListView
+        android:dividerHeight="0dp"
+        android:layout_marginRight="@dimen/man_16dp"
+        android:layout_marginLeft="@dimen/man_16dp"
+        android:layout_marginTop="4dp"
+        android:id="@+id/list_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/pinlun_quanbu"
+        android:text="查看全部回复"
+        android:textSize="@dimen/text_14sp"
+        android:textColor="@color/textColor_assist_999999"
+        android:layout_marginLeft="@dimen/man_16dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

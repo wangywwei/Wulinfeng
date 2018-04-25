@@ -25,6 +25,7 @@ import com.hxwl.newwlf.modlebean.GenduoHuifuBean;
 import com.hxwl.newwlf.modlebean.HomeOneBean;
 import com.hxwl.newwlf.modlebean.PLZixunListBean;
 import com.hxwl.utils.Photos;
+import com.hxwl.wlf3.bean3.Pinlin3Bean;
 import com.hxwl.wulinfeng.MakerApplication;
 import com.hxwl.wulinfeng.R;
 import com.hxwl.wulinfeng.adapter.HuiFuAdapter;
@@ -47,7 +48,7 @@ import okhttp3.Call;
  * 回复详情页
  */
 public class HuiFuDetailsActivity extends BaseActivity{
-    public static Intent getIntent(Context context,String commentId,PLZixunListBean.DataBean itemNotes,String url,String id,int usertype){
+    public static Intent getIntent(Context context, String commentId, Pinlin3Bean.DataBean itemNotes, String url, String id, int usertype){
         Intent intent=new Intent(context,HuiFuDetailsActivity.class);
         intent.putExtra("bean", itemNotes);
         intent.putExtra("commentId",commentId);
@@ -60,7 +61,7 @@ public class HuiFuDetailsActivity extends BaseActivity{
     private int usertype;
     private String url;
     private String commentId;
-    private PLZixunListBean.DataBean itemNotes = null ;
+    private Pinlin3Bean.DataBean itemNotes = null ;
     private ListView lv_listview;
     private List<GenduoHuifuBean.DataBean.ReplyListBean> listData = new ArrayList<>() ;
     private View headView;
@@ -93,7 +94,7 @@ public class HuiFuDetailsActivity extends BaseActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.huifudetails_activity);
         AppUtils.setTitle(HuiFuDetailsActivity.this);
-        itemNotes = (PLZixunListBean.DataBean) getIntent().getSerializableExtra("bean");
+        itemNotes = (Pinlin3Bean.DataBean) getIntent().getSerializableExtra("bean");
         commentId=getIntent().getStringExtra("commentId");
         url=getIntent().getStringExtra("url");
         id=getIntent().getStringExtra("id");
@@ -110,7 +111,7 @@ public class HuiFuDetailsActivity extends BaseActivity{
         if (itemNotes==null){
             return;
         }
-        nickName.setText(Photos.stringPhoto(itemNotes.getUserName()));
+        nickName.setText(Photos.stringPhoto(itemNotes.getNickName()));
 
 
         time.setText(itemNotes.getCommentTime());
@@ -123,8 +124,8 @@ public class HuiFuDetailsActivity extends BaseActivity{
         }
         ImageUtils.getCirclePic(URLS.IMG+itemNotes.getHeadImg(), imageView, HuiFuDetailsActivity.this);
         iv_zan.setTag(itemNotes);
-        final int dianzannum=itemNotes.getUserIsFavour();
-        if (itemNotes.getUserIsFavour()==1) {//点过赞
+        final int dianzannum=itemNotes.getIsFavour();
+        if (itemNotes.getIsFavour()==1) {//点过赞
             tv_zancount.setTextColor(this.getResources().getColor(R.color.rgb_888888));
             iv_zan.setImageResource(R.drawable.yizan_icon);
         } else {//没有点过
@@ -139,7 +140,7 @@ public class HuiFuDetailsActivity extends BaseActivity{
                     UIUtils.showToast("请您点击我的头像去绑定手机号");
                     return;
                 }
-                if (itemNotes.getUserIsFavour()==1) {//没有点过 holder.iv_zan.setImageResource(R.drawable.zanblue_icon);
+                if (itemNotes.getIsFavour()==1) {//没有点过 holder.iv_zan.setImageResource(R.drawable.zanblue_icon);
                     dianZan2(iv_zan, itemNotes);
                 } else {//没点过赞
                     dianZan(iv_zan, itemNotes);
@@ -147,13 +148,13 @@ public class HuiFuDetailsActivity extends BaseActivity{
             }
 
 
-            private void dianZan2(final ImageView view, final PLZixunListBean.DataBean itemNotes) {
+            private void dianZan2(final ImageView view, final Pinlin3Bean.DataBean itemNotes) {
                 OkHttpUtils.post()
-                        .url(URLS.SCHEDULE_CANCELDYNAMICMESSAGEFAVOUR)
-                        .addParams("targetId",itemNotes.getCommentId())
+                        .url(URLS.CANCELFAVOUR)
+                        .addParams("targetId",itemNotes.getTargetId())
                         .addParams("token", MakerApplication.instance.getToken())
                         .addParams("userId",MakerApplication.instance.getUid())
-                        .addParams("favourType",usertype+"")    //赞类型 1动态的赞 2资讯评论的赞 3选手留言的赞
+                        .addParams("type",usertype+"")    //赞类型 1动态的赞 2资讯评论的赞 3选手留言的赞
                         .build().execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
@@ -168,7 +169,7 @@ public class HuiFuDetailsActivity extends BaseActivity{
                             try {
                                 HomeOneBean bean = gson.fromJson(response, HomeOneBean.class);
                                 if (bean.getCode().equals("1000")){
-                                    itemNotes.setUserIsFavour(2);
+                                    itemNotes.setIsFavour(2);
                                     view.setImageResource(R.drawable.zan_icon);
                                     if (dianzannum==1){
                                         tv_zancount.setText(itemNotes.getFavourNum()-1+"");//点赞数量
@@ -193,13 +194,13 @@ public class HuiFuDetailsActivity extends BaseActivity{
             }
 
             //点赞
-            public void dianZan(final ImageView view, final PLZixunListBean.DataBean itemNotes) {
+            public void dianZan(final ImageView view, final Pinlin3Bean.DataBean itemNotes) {
                 OkHttpUtils.post()
-                        .url(URLS.SCHEDULE_ADDDYNAMICMESSAGEFAVOUR)
-                        .addParams("targetId",itemNotes.getCommentId())
+                        .url(URLS.ADDFAVOUR)
+                        .addParams("targetId",itemNotes.getTargetId())
                         .addParams("token", MakerApplication.instance.getToken())
                         .addParams("userId",MakerApplication.instance().getUserid())
-                        .addParams("favourType",usertype+"")    //赞类型 1动态的赞 2资讯评论的赞 3选手留言的赞
+                        .addParams("type",usertype+"")    //赞类型 1动态的赞 2资讯评论的赞 3选手留言的赞
                         .build().execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
@@ -214,7 +215,7 @@ public class HuiFuDetailsActivity extends BaseActivity{
                             try {
                                 HomeOneBean bean = gson.fromJson(response, HomeOneBean.class);
                                 if (bean.getCode().equals("1000")){
-                                    itemNotes.setUserIsFavour(1);
+                                    itemNotes.setIsFavour(1);
                                     view.setImageResource(R.drawable.yizan_icon);
                                     if (dianzannum==1){
                                         tv_zancount.setText(itemNotes.getFavourNum()+"");//点赞数量
@@ -252,9 +253,9 @@ public class HuiFuDetailsActivity extends BaseActivity{
                 bean.setReferUserName(MakerApplication.instance.getNickName());
                 bean.setReferUserId(MakerApplication.instance().getUserid());
 
-                bean.setId(itemNotes.getCommentId());
+                bean.setId(itemNotes.getId());
                 bean.setUserId(itemNotes.getUserId());
-                showKeyBoard(itemNotes.getCommentId() ,"" ,"1") ;
+                showKeyBoard(itemNotes.getId() ,"" ,"1") ;
             }
         });
     }
@@ -448,15 +449,15 @@ public class HuiFuDetailsActivity extends BaseActivity{
                     UIUtils.showToast("请您点击我的头像去绑定手机号");
                     return;
                 }
-                PLZixunListBean.DataBean.ReplyListBean info = itemNotes.getReplyList().get(groupPosition);
+                Pinlin3Bean.DataBean.ReplyListBean info = itemNotes.getReplyList().get(groupPosition);
                 bean = new PLZixunListBean.DataBean.ReplyListBean();
                 bean.setReferUserName(MakerApplication.instance.getNickName());
-                bean.setUserName(info.getReferUserName());
+                bean.setUserName(info.getReferUserNickName());
                 bean.setReferUserId(MakerApplication.instance.getUid());
-                bean.setId(itemNotes.getCommentId());
+                bean.setId(itemNotes.getId());
                 bean.setUserId(info.getReferUserId());
-                chat_et_create_context.setHint("回复"+info.getUserName()+":");
-                showKeyBoard(itemNotes.getCommentId() ,info.getUserId() ,"2");
+                chat_et_create_context.setHint("回复"+info.getNickName()+":");
+                showKeyBoard(itemNotes.getId() ,info.getUserId() ,"2");
 
             }
         });
@@ -468,15 +469,15 @@ public class HuiFuDetailsActivity extends BaseActivity{
                     UIUtils.showToast("请您点击我的头像去绑定手机号");
                     return;
                 }
-                PLZixunListBean.DataBean.ReplyListBean info = itemNotes.getReplyList().get(groupPosition);
+                Pinlin3Bean.DataBean.ReplyListBean info = itemNotes.getReplyList().get(groupPosition);
                 bean = new PLZixunListBean.DataBean.ReplyListBean();
                 bean.setReferUserName(MakerApplication.instance().getNickName());
-                bean.setUserName(info.getReferUserName());
+                bean.setUserName(info.getReferUserNickName());
                 bean.setReferUserId(MakerApplication.instance().getUserid());
-                bean.setId(itemNotes.getCommentId());
+                bean.setId(itemNotes.getId());
                 bean.setUserId(info.getReferUserId());
-                chat_et_create_context.setHint("回复"+info.getReferUserName()+":");
-                showKeyBoard(itemNotes.getCommentId() ,info.getReferUserId() ,"2");
+                chat_et_create_context.setHint("回复"+info.getReferUserNickName()+":");
+                showKeyBoard(itemNotes.getId() ,info.getReferUserId() ,"2");
 
             }
         });

@@ -402,10 +402,10 @@ public class LeavingAdapter extends BaseExpandableListAdapter { private Activity
                         arrayList.add(replyListBean);
                     }
                     itemNotes.setReplyList(arrayList);
-                    context.startActivity(HuiFuDetailsActivity.getIntent(context,
-                            listData.get(groupPosition).getCommentId(),
-                            itemNotes,
-                            URLS.PLAYER_COMMENTREPLYLIST,id,3));
+//                    context.startActivity(HuiFuDetailsActivity.getIntent(context,
+//                            listData.get(groupPosition).getCommentId(),
+//                            itemNotes,
+//                            URLS.PLAYER_COMMENTREPLYLIST,id,3));
                 }
             });
         }

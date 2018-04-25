@@ -329,10 +329,10 @@ public class ZiXunDetilsAdapter extends BaseExpandableListAdapter {
                 @Override
                 public void onClick(View view) {//查看详情
 
-                    context.startActivity(HuiFuDetailsActivity.getIntent(context,
-                            listData.get(groupPosition).getCommentId(),
-                            listData.get(groupPosition),
-                            URLS.NEWS_COMMENTREPLYLIST,null,2));
+//                    context.startActivity(HuiFuDetailsActivity.getIntent(context,
+//                            listData.get(groupPosition).getCommentId(),
+//                            listData.get(groupPosition),
+//                            URLS.NEWS_COMMENTREPLYLIST,null,2));
                 }
             });
         }

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hxwl.wlf3.home.xiangqing.ShijianActivity">
+
+    <RelativeLayout
+        android:id="@+id/frame_msg_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingBottom="5dp">
+        <ImageView
+            android:id="@+id/iv_line_view"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/list_line" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@+id/iv_line_view"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/chat_btn_create_card"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignBottom="@+id/chat_et_create_context"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/chat_et_create_context"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/send_red"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="发送"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/chat_et_create_context"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toLeftOf="@+id/chat_btn_create_card"
+                android:layout_toRightOf="@+id/ib_choiceimage"
+                android:background="#EFEFEF"
+                android:clickable="true"
+                android:focusableInTouchMode="false"
+                android:hint="我也说两句..."
+                android:maxLines="3"
+                android:paddingBottom="8dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="8dp"
+                android:textColor="@color/rgb_202020"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/shijian_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/frame_msg_ll" />
+</RelativeLayout>

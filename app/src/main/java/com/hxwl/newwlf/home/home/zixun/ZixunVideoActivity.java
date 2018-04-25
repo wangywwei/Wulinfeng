@@ -31,6 +31,7 @@ import com.hxwl.newwlf.modlebean.HomeOneBean;
 import com.hxwl.newwlf.modlebean.PLZixunListBean;
 import com.hxwl.newwlf.modlebean.ZixunXQBean;
 import com.hxwl.utils.Photos;
+import com.hxwl.wlf3.bean3.Pinlin3Bean;
 import com.hxwl.wulinfeng.MakerApplication;
 import com.hxwl.wulinfeng.R;
 import com.hxwl.wulinfeng.base.BaseActivity;
@@ -79,7 +80,7 @@ public class ZixunVideoActivity extends BaseActivity {
     private LinearLayout lv_picture;
     private ShowDialog showDialog;
 
-    private List<PLZixunListBean.DataBean> listData = new ArrayList<>();
+    private List<Pinlin3Bean.DataBean> listData = new ArrayList<>();
 
     int picHeight = 0;
     int picWidth = 0;
@@ -98,10 +99,10 @@ public class ZixunVideoActivity extends BaseActivity {
     private RelativeLayout frame_msg_ll;
     private TextView chat_btn_create_card;
     private EditText chat_et_create_context;
-    private PLZixunListBean.DataBean.ReplyListBean huiFuBean;
+    private Pinlin3Bean.DataBean.ReplyListBean huiFuBean;
     private ZixunXQBean.DataBean bean;
     private ZixunVideoDetilsAdapter adapter;
-    private PLZixunListBean.DataBean info;
+    private Pinlin3Bean.DataBean info;
 
     private RelativeLayout videoContainer;
     private IMediaDataVideoView videoView;
@@ -237,7 +238,7 @@ public class ZixunVideoActivity extends BaseActivity {
                         if (jsonValidator.validate(response)) {
                             Gson gson = new Gson();
                             try {
-                                PLZixunListBean plZixunListBean = gson.fromJson(response, PLZixunListBean.class);
+                                Pinlin3Bean plZixunListBean = gson.fromJson(response, Pinlin3Bean.class);
                                 if (plZixunListBean.getCode().equals("1000")) {
                                     if (isRefresh) {
                                         listData.clear();
@@ -245,9 +246,9 @@ public class ZixunVideoActivity extends BaseActivity {
                                     } else {
                                         listData.addAll(plZixunListBean.getData());
                                     }
-                                    for (PLZixunListBean.DataBean info : listData) {
-                                        String zhuID = info.getCommentId();
-                                        for (PLZixunListBean.DataBean.ReplyListBean huifu : info.getReplyList()) {
+                                    for (Pinlin3Bean.DataBean info : listData) {
+                                        String zhuID = info.getId();
+                                        for (Pinlin3Bean.DataBean.ReplyListBean huifu : info.getReplyList()) {
                                             if (TextUtils.isEmpty(huifu.getUserId())) {
                                                 huifu.setUserId(zhuID);
                                             }
@@ -328,18 +329,18 @@ public class ZixunVideoActivity extends BaseActivity {
                     UIUtils.showToast("请您点击我的头像去绑定手机号");
                     return;
                 }
-                final PLZixunListBean.DataBean.ReplyListBean itemNoteComment = listData.get(groupPosition).getReplyList().get(childPosition);
+                final Pinlin3Bean.DataBean.ReplyListBean itemNoteComment = listData.get(groupPosition).getReplyList().get(childPosition);
                 if (itemNoteComment == null) {
                 } else {
                     huifuState = 1;
-                    huiFuBean = new PLZixunListBean.DataBean.ReplyListBean();
-                    huiFuBean.setReferUserName(itemNoteComment.getUserName());
+                    huiFuBean = new Pinlin3Bean.DataBean.ReplyListBean();
+                    huiFuBean.setReferUserNickName(itemNoteComment.getNickName());
                     huiFuBean.setReferUserId(itemNoteComment.getUserId());
                     huiFuBean.setId(itemNoteComment.getId());
                     huiFuBean.setUserId(MakerApplication.instance.getUid());
-                    huiFuBean.setUserName(MakerApplication.instance.getNickName());
-                    showKeyBoard(itemNoteComment.getPid()+"", itemNoteComment.getUserId()+"", "2");
-                    chat_et_create_context.setHint("回复" + Photos.stringPhoto(itemNoteComment.getUserName()) + ":");
+                    huiFuBean.setNickName(MakerApplication.instance.getNickName());
+                    showKeyBoard(itemNoteComment.getPid()+"", itemNoteComment.getUserId()+"", "1");
+                    chat_et_create_context.setHint("回复" + Photos.stringPhoto(itemNoteComment.getNickName()) + ":");
                 }
             }
         });
@@ -351,18 +352,18 @@ public class ZixunVideoActivity extends BaseActivity {
                     UIUtils.showToast("请您点击我的头像去绑定手机号");
                     return;
                 }
-                final PLZixunListBean.DataBean.ReplyListBean itemNoteComment = listData.get(groupPosition).getReplyList().get(childPosition);
+                final Pinlin3Bean.DataBean.ReplyListBean itemNoteComment = listData.get(groupPosition).getReplyList().get(childPosition);
                 if (itemNoteComment == null) {
                 } else {
                     huifuState = 1;
-                    huiFuBean = new PLZixunListBean.DataBean.ReplyListBean();
-                    huiFuBean.setReferUserName(itemNoteComment.getReferUserName());
+                    huiFuBean = new Pinlin3Bean.DataBean.ReplyListBean();
+                    huiFuBean.setReferUserNickName(itemNoteComment.getReferUserNickName());
                     huiFuBean.setReferUserId(itemNoteComment.getReferUserId());
                     huiFuBean.setPid(itemNoteComment.getPid());
                     huiFuBean.setUserId(MakerApplication.instance.getUid());
-                    huiFuBean.setUserName(MakerApplication.instance.getNickName());
+                    huiFuBean.setNickName(MakerApplication.instance.getNickName());
                     showKeyBoard(itemNoteComment.getPid()+"", itemNoteComment.getReferUserId()+"", "2");
-                    chat_et_create_context.setHint("回复" + Photos.stringPhoto(itemNoteComment.getReferUserName()) + ":");
+                    chat_et_create_context.setHint("回复" + Photos.stringPhoto(itemNoteComment.getReferUserNickName()) + ":");
                 }
             }
         });
@@ -478,10 +479,10 @@ public class ZixunVideoActivity extends BaseActivity {
 
 
     private void initGaiLouData() {
-        info = new PLZixunListBean.DataBean();
+        info = new Pinlin3Bean.DataBean();
         info.setHeadImg(MakerApplication.instance.getHeadPic());
         info.setUserId(MakerApplication.instance.getUid());
-        info.setUserName(MakerApplication.instance.getNickName());
+        info.setNickName(MakerApplication.instance.getNickName());
     }
 
     /**
@@ -496,24 +497,23 @@ public class ZixunVideoActivity extends BaseActivity {
                 return;
             }
             chat_et_create_context.setHint("我也说两句...");
-            PLZixunListBean.DataBean itemNotes = null;
+            Pinlin3Bean.DataBean itemNotes = null;
             if (v instanceof ImageView) {
-                itemNotes = (PLZixunListBean.DataBean ) v.getTag();
+                itemNotes = (Pinlin3Bean.DataBean ) v.getTag();
             } else {
-                itemNotes = (PLZixunListBean.DataBean ) v.findViewById(R.id.btn_comment_reply).getTag();
+                itemNotes = (Pinlin3Bean.DataBean ) v.findViewById(R.id.btn_comment_reply).getTag();
             }
             if (itemNotes == null) {
                 return;
             }
             huifuState = 1;
-            huiFuBean = new PLZixunListBean.DataBean.ReplyListBean();
-            huiFuBean.setUserName(MakerApplication.instance.getNickName());
+            huiFuBean = new Pinlin3Bean.DataBean.ReplyListBean();
+            huiFuBean.setNickName(MakerApplication.instance.getNickName());
             huiFuBean.setUserId(MakerApplication.instance.getUid());
-            huiFuBean.setReferUserName("");
+            huiFuBean.setReferUserNickName("");
             huiFuBean.setReferUserId("");
-            huiFuBean.setPid(itemNotes.getCommentId());
-            huiFuBean.setReferUserName("");
-            showKeyBoard(itemNotes.getCommentId()+"", "", "1");
+            huiFuBean.setPid(itemNotes.getId());
+            showKeyBoard(itemNotes.getId()+"", "", "1");
         }
     };
 
@@ -556,17 +556,18 @@ public class ZixunVideoActivity extends BaseActivity {
      * @param toUid 给谁评论
      * @param msg   发送信息
      */
-    private void sendCommentNote(final String zhuId, String toUid, final String msg, final PLZixunListBean.DataBean.ReplyListBean huiFuBean) {
+    private void sendCommentNote(final String zhuId, String toUid, final String msg, final Pinlin3Bean.DataBean.ReplyListBean huiFuBean) {
         showDialog.showProgressDialog("正在评论", "请稍后。", true);
 
         HashMap<String,String> map=new HashMap<>();
-        map.put("newsId",newsId);
+        map.put("targetId",newsId);
         map.put("userId",MakerApplication.instance.getUid());
         if (!StringUtils.isBlank(toUid)){
             map.put("referUserId",toUid);
         }
-        map.put("commentId",zhuId);
+        map.put("pid",zhuId);
         map.put("content",msg);
+        map.put("type","1");
         map.put("token", MakerApplication.instance.getToken());
         OkHttpUtils.post()
                 .url(URLS.NEWS_NEWSCOMMENTREPLY)
@@ -594,7 +595,7 @@ public class ZixunVideoActivity extends BaseActivity {
                                     huiFuBean.setPid(zhuId);
                                     huiFuBean.setContent(msg);
                                     for (int i = 0; i <listData.size() ; i++) {
-                                        if (listData.get(i).getCommentId().equals(huiFuBean.getPid())) {
+                                        if (listData.get(i).getId().equals(huiFuBean.getPid())) {
                                             listData.get(i).getReplyList().add(0,huiFuBean);
                                             listData.get(i).setReplyNum(listData.get(i).getReplyNum()+1);
                                             break;
@@ -623,7 +624,7 @@ public class ZixunVideoActivity extends BaseActivity {
 
     }
 
-    private void sendCommentNoteZ(final String zhuId, String toUid, final String msg, final PLZixunListBean.DataBean info) {
+    private void sendCommentNoteZ(final String zhuId, String toUid, final String msg, final Pinlin3Bean.DataBean info) {
         showDialog.showProgressDialog("正在评论", "请稍后。", true);
         OkHttpUtils.post()
                 .url(URLS.COMMENT)
