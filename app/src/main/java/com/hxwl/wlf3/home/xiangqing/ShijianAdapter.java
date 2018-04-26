@@ -64,14 +64,13 @@ public class ShijianAdapter extends RecyclerView.Adapter<ShijianAdapter.ViewHold
         holder.pinlun_time.setText(list.get(position).getCommentTime());
         holder.pinlun_zannum.setText(list.get(position).getFavourNum() + "");
 
-
+        listBeans.clear();
         if (list.get(position).getCommentList() != null && list.get(position).getCommentList().size() > 0) {
             if (list.get(position).getCommentList().size() >= 3) {
                 holder.pinlun_quanbu.setVisibility(View.VISIBLE);
             } else {
                 holder.pinlun_quanbu.setVisibility(View.GONE);
             }
-            listBeans.clear();
             listBeans.addAll(list.get(position).getCommentList());
             adapter = new ShijianZIAdapter(context, listBeans, position);
             holder.list_item.setAdapter(adapter);

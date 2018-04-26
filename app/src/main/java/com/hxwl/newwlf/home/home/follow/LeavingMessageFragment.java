@@ -56,7 +56,10 @@ public class LeavingMessageFragment extends BaseFragment implements  KeyboardCha
         this.type = type;
         page=1;
         initData(page);
-//        adapter.setId(newsId);
+        if (!StringUtils.isBlank(newsId)){
+            adapter.setId(newsId);
+        }
+
     }
     private CusListView expandableList;
     public boolean isRefresh = true;
@@ -335,14 +338,19 @@ public class LeavingMessageFragment extends BaseFragment implements  KeyboardCha
             @Override
             public void onRefresh() {
                 // 刷新操作
+                expandableList.onRefreshComplete();
+                expandableList.onLoadMoreComplete();
                 page = 1;
                 isRefresh = true;
                 initData(page);
+
             }
         });
         expandableList.setonLoadMoreListener(new CusListView.OnLoadMoreListener() {
             @Override
             public void onLoadMore() {
+                expandableList.onRefreshComplete();
+                expandableList.onLoadMoreComplete();
                 page++;
                 isRefresh = false;
                 initData(page);
