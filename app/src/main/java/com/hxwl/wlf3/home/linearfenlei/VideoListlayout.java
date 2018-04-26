@@ -1,17 +1,13 @@
 package com.hxwl.wlf3.home.linearfenlei;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EdgeEffect;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -21,16 +17,11 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.hxwl.newwlf.URLS;
-import com.hxwl.newwlf.home.home.zixun.ZixunVideoActivity;
-import com.hxwl.wlf3.bean.DynamicBean;
 import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wlf3.home.home1.ShiPin1Fragment;
 import com.hxwl.wlf3.home.xiangqing.ShijianActivity;
 import com.hxwl.wulinfeng.R;
-import com.hxwl.wulinfeng.activity.TuJiDetailsActivity;
-import com.hxwl.wulinfeng.activity.ZiXunDetailsActivity;
 
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +36,9 @@ import java.util.List;
  */
 
 public class VideoListlayout extends LinearLayout {
+    //    private ShiPin1Fragment shiPin1Fragment;
+    //    private RelativeLayout vll_img_layout;
+    //    private RelativeLayout video_relative1;
 
     private Context context;
     private View view;
@@ -58,20 +52,19 @@ public class VideoListlayout extends LinearLayout {
     private TextView vll_position;
     private TextView vll_bujidashuju;
     private HuoDongLayout huoDongLayout;
-    private RelativeLayout video_relative,video_relative1;
-    private RelativeLayout vll_img_layout;
+    private RelativeLayout video_relative;
     private LinearLayout cll_ditu;
-    private ShiPin1Fragment shiPin1Fragment;
+
     private int showType1;
     private int inn;
     private LinearLayout cll_layout;
 
+
+    private   ArrayList<Home3Bean.DataBean.SchedulesBean.ActivityListBean> activityListBeans=new ArrayList<>();
+
     public void setBean(final Home3Bean.DataBean.SchedulesBean bean, int in) {
         this.dataBean = bean;
-
-
         this.inn=in;
-
 
 
 
@@ -177,40 +170,23 @@ public class VideoListlayout extends LinearLayout {
         }catch (Exception e){
         }
 
-//        try {
-//
-//            int showType = dataBean.getEvent().getShowType();
-//            int scheduleState = dataBean.getEvent().getScheduleState();
-//            //showType=5并且scheduleState=3时显示
-//            if (showType==5||scheduleState==3){
-//                video_relative1.setVisibility(View.VISIBLE);
-//                video_relative1.removeAllViews();
-//                shiPin1Fragment = new ShiPin1Fragment(context);
-//                video_relative1.addView(shiPin1Fragment);
-//                shiPin1Fragment.setBean(dataBean.getEvent());
-//            }
-//
-//
-//        }catch (Exception e){
-//        }
-
         // 活动
         try {
             List<Home3Bean.DataBean.SchedulesBean.ActivityListBean> activityList = dataBean.getActivityList();
             if(null == activityList || activityList.size() ==0 ){
                 //为空的情况
+                Log.e("TTA","==========");
                 return;
             }else{
-
                 activityList.clear();
-                activityList.addAll( dataBean.getActivityList());
-                video_relative.removeAllViews();//清空布局
-//                for (int i = 0; i < activityList.size(); i++) {
-                    huoDongLayout = new HuoDongLayout(context);
-                    video_relative.addView(huoDongLayout);
-                    huoDongLayout.setBean(dataBean,inn);
 
-//                }
+                this.activityListBeans.clear();
+                this.activityListBeans.add(dataBean.getActivityList().get(inn));
+
+                video_relative.removeAllViews();//清空布局
+                huoDongLayout = new HuoDongLayout(context);
+                video_relative.addView(huoDongLayout);
+                huoDongLayout.setBean(activityListBeans);
             }
         }catch (Exception e){
         }
@@ -391,9 +367,9 @@ try {
         vll_position= (TextView) view.findViewById(R.id.vll_position);
         vll_bujidashuju= (TextView) view.findViewById(R.id.vll_bujidashuju);
         video_relative = (RelativeLayout) view.findViewById(R.id.video_relative);
-        vll_img_layout = (RelativeLayout) view.findViewById(R.id.vll_img_layout);
+
         cll_ditu = (LinearLayout) view.findViewById(R.id.cll_ditu);
-        video_relative1 = (RelativeLayout) view.findViewById(R.id.video_relative1);
+//        video_relative1 = (RelativeLayout) view.findViewById(R.id.video_relative1);
 
         cll_layout = (LinearLayout) view.findViewById(R.id.cll_layout);  
         

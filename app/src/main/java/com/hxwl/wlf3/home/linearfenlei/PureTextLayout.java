@@ -21,6 +21,7 @@ import com.hxwl.wlf3.home.xiangqing.ShijianActivity;
 import com.hxwl.wulinfeng.R;
 import com.hxwl.wulinfeng.activity.ZiXunDetailsActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -76,10 +77,17 @@ ii=1;
                 return;
             }else{
                 chun_relative.removeAllViews();//清空布局
+
+                ArrayList<Home3Bean.DataBean.SchedulesBean.ActivityListBean> activityListBean = new ArrayList<>();
+
+
+                activityListBean.add(dataBean.getActivityList().get(i));
+
+
 //                for (int i = 0; i < activityList.size(); i++) {
                     huoDongLayout = new HuoDongLayout(context);
                     chun_relative.addView(huoDongLayout);
-                    huoDongLayout.setBean(dataBean,ii);
+                    huoDongLayout.setBean(activityListBean);
 //                }
             }
         }catch (Exception e){
@@ -153,11 +161,6 @@ try {
 
         chun_ditu = (LinearLayout) view.findViewById(R.id.chun_ditu);
         chun_layout = (LinearLayout) view.findViewById(R.id.chun_layout);
-
-        /*   <LinearLayout
-        android:id="@+id/chun_layout"
-
-        */
 
     }
 

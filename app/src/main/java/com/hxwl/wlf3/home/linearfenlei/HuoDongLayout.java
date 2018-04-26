@@ -9,7 +9,9 @@ import android.widget.TextView;
 
 import com.hxwl.wlf3.bean.DynamicBean;
 import com.hxwl.wlf3.bean.Home3Bean;
+import com.hxwl.wlf3.home.home2.ListViewAdapter;
 import com.hxwl.wulinfeng.R;
+import com.hxwl.wulinfeng.view.MyListView;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.util.ArrayList;
@@ -24,19 +26,18 @@ import java.util.ArrayList;
 public class HuoDongLayout extends LinearLayout {
     private Context context;
     private View view;
-    private Home3Bean.DataBean.SchedulesBean dataBean;
-    private XRecyclerView syhuodong_xrecycler;
-    private ArrayList<Home3Bean.DataBean.SchedulesBean> arrayList = new ArrayList();
-    private SYHuoDongAdapter beiyongadapter1;
-    private int ii;
+    private ArrayList<Home3Bean.DataBean.SchedulesBean.ActivityListBean> dataBean;
+    private ArrayList<Home3Bean.DataBean.SchedulesBean.ActivityListBean> arrayList = new ArrayList();
+    private MyListView syhuodong_mylistview;
+    private ListViewAdapter listViewAdapter;
 
-    public void setBean(final Home3Bean.DataBean.SchedulesBean bean,int i) {
+    public void setBean(final ArrayList<Home3Bean.DataBean.SchedulesBean.ActivityListBean> bean) {
         this.dataBean = bean;
         arrayList.clear();
-        arrayList.add(dataBean);
-        this.ii=i;
+        arrayList.add(dataBean.get(0));
 
-        beiyongadapter1.notifyDataSetChanged();
+        listViewAdapter.notifyDataSetChanged();
+
     }
 
     public HuoDongLayout(Context context) {
@@ -48,20 +49,10 @@ public class HuoDongLayout extends LinearLayout {
 
         this.context = context;
         view = LayoutInflater.from(context).inflate(R.layout.syhuodong_item, this);
-        syhuodong_xrecycler = (XRecyclerView) view.findViewById(R.id.syhuodong_xrecycler);
+        syhuodong_mylistview = (MyListView) view.findViewById(R.id.syhuodong_mylistview);
 
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        syhuodong_xrecycler.setLayoutManager(layoutManager);
-        syhuodong_xrecycler.setNestedScrollingEnabled(false);
-        try {
-            //对阵的适配器
-            beiyongadapter1 = new SYHuoDongAdapter(context, arrayList,ii);
-            syhuodong_xrecycler.setAdapter(beiyongadapter1);
-        }catch (Exception e){
-        }
-
+        listViewAdapter = new ListViewAdapter(context,arrayList);
+        syhuodong_mylistview.setAdapter(listViewAdapter);
     }
 
 }

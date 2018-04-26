@@ -87,11 +87,16 @@ public class DuiZhenLayout extends LinearLayout {
                 return;
             }else{
                 duizhen_relative.removeAllViews();//清空布局
-                for (int i = 0; i < activityList.size(); i++) {
-                    huoDongLayout = new HuoDongLayout(context);
+
+
+                ArrayList<Home3Bean.DataBean.SchedulesBean.ActivityListBean> activityListBeans=new ArrayList<>();
+
+                activityListBeans.add(dataBean.getActivityList().get(z));
+
+                huoDongLayout = new HuoDongLayout(context);
                     duizhen_relative.addView(huoDongLayout);
-                    huoDongLayout.setBean(dataBean,z);
-                }
+                    huoDongLayout.setBean(activityListBeans);
+
             }
         }catch (Exception e){
 

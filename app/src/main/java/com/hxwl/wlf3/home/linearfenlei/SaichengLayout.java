@@ -128,11 +128,17 @@ public class SaichengLayout extends LinearLayout {
                 return;
             } else {
                 saicheng_relative.removeAllViews();//清空布局
-//                for (int i = 0; i <activityList.size() ; i++) {
+
+               ArrayList< Home3Bean.DataBean.SchedulesBean.ActivityListBean> activityListBean = new ArrayList<>();
+
+
+               activityListBean.add(dataBean.getActivityList().get(i));
+
+
                     huoDongLayout = new HuoDongLayout(context);
                     saicheng_relative.addView(huoDongLayout);
-                    huoDongLayout.setBean(dataBean,ii);
-//                }
+                    huoDongLayout.setBean(activityListBean);
+
             }
         } catch (Exception e) {
         }

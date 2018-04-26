@@ -25,6 +25,10 @@ public class URLS {
     public static final String SCHEDULE_EVENTS=URL+"schedule/2";
     //首页详情页--赛事动态
     public static final String SCHEDULE_DYNAMIC=URL+"schedule/events/2";
+//    http://api.heixiongboji.top/activity/list
+
+    //首页-----更多
+    public static final String MORE=URL+"activity/list";
 
 
 
