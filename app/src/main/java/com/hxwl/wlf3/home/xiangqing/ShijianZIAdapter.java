@@ -15,10 +15,10 @@ import java.util.ArrayList;
 
 public class ShijianZIAdapter extends BaseAdapter {
     private Context context;
-    private ArrayList<Pinlin3Bean.DataBean.ReplyListBean> listBeans;
+    private ArrayList<Pinlin3Bean.DataBean.CommentListBean> listBeans;
     private int pos;
 
-    public ShijianZIAdapter(Context context, ArrayList<Pinlin3Bean.DataBean.ReplyListBean> listBeans,int pos) {
+    public ShijianZIAdapter(Context context, ArrayList<Pinlin3Bean.DataBean.CommentListBean> listBeans,int pos) {
         this.context = context;
         this.listBeans = listBeans;
         this.pos = pos;
@@ -116,4 +116,6 @@ public class ShijianZIAdapter extends BaseAdapter {
         void onPinlun2Clicklistener(int groupPosition, int childPosition);
 
     }
+
+
 }

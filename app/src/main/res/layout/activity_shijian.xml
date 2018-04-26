@@ -6,6 +6,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.hxwl.wlf3.home.xiangqing.ShijianActivity">
+    
+    <RelativeLayout
+        android:background="@color/rgb_BB2B2D"
+        android:id="@+id/tou"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wlf_44dp">
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:layout_centerVertical="true"
+            android:src="@drawable/backup_icon"
+            />
+        <ImageView
+            android:paddingRight="@dimen/man_16dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/share_icon"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:layout_centerVertical="true"
+            android:src="@drawable/share_icon"
+            />
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/frame_msg_ll"
@@ -54,7 +80,6 @@
                 android:layout_toRightOf="@+id/ib_choiceimage"
                 android:background="#EFEFEF"
                 android:clickable="true"
-                android:focusableInTouchMode="false"
                 android:hint="我也说两句..."
                 android:maxLines="3"
                 android:paddingBottom="8dp"
@@ -66,6 +91,7 @@
     </RelativeLayout>
 
     <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:layout_below="@id/tou"
         android:id="@+id/shijian_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

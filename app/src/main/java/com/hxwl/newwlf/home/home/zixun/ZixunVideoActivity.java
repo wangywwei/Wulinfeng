@@ -99,7 +99,7 @@ public class ZixunVideoActivity extends BaseActivity {
     private RelativeLayout frame_msg_ll;
     private TextView chat_btn_create_card;
     private EditText chat_et_create_context;
-    private Pinlin3Bean.DataBean.ReplyListBean huiFuBean;
+    private Pinlin3Bean.DataBean.CommentListBean huiFuBean;
     private ZixunXQBean.DataBean bean;
     private ZixunVideoDetilsAdapter adapter;
     private Pinlin3Bean.DataBean info;
@@ -248,7 +248,7 @@ public class ZixunVideoActivity extends BaseActivity {
                                     }
                                     for (Pinlin3Bean.DataBean info : listData) {
                                         String zhuID = info.getId();
-                                        for (Pinlin3Bean.DataBean.ReplyListBean huifu : info.getReplyList()) {
+                                        for (Pinlin3Bean.DataBean.CommentListBean huifu : info.getCommentList()) {
                                             if (TextUtils.isEmpty(huifu.getUserId())) {
                                                 huifu.setUserId(zhuID);
                                             }
@@ -329,11 +329,11 @@ public class ZixunVideoActivity extends BaseActivity {
                     UIUtils.showToast("请您点击我的头像去绑定手机号");
                     return;
                 }
-                final Pinlin3Bean.DataBean.ReplyListBean itemNoteComment = listData.get(groupPosition).getReplyList().get(childPosition);
+                final Pinlin3Bean.DataBean.CommentListBean itemNoteComment = listData.get(groupPosition).getCommentList().get(childPosition);
                 if (itemNoteComment == null) {
                 } else {
                     huifuState = 1;
-                    huiFuBean = new Pinlin3Bean.DataBean.ReplyListBean();
+                    huiFuBean = new Pinlin3Bean.DataBean.CommentListBean();
                     huiFuBean.setReferUserNickName(itemNoteComment.getNickName());
                     huiFuBean.setReferUserId(itemNoteComment.getUserId());
                     huiFuBean.setId(itemNoteComment.getId());
@@ -352,11 +352,11 @@ public class ZixunVideoActivity extends BaseActivity {
                     UIUtils.showToast("请您点击我的头像去绑定手机号");
                     return;
                 }
-                final Pinlin3Bean.DataBean.ReplyListBean itemNoteComment = listData.get(groupPosition).getReplyList().get(childPosition);
+                final Pinlin3Bean.DataBean.CommentListBean itemNoteComment = listData.get(groupPosition).getCommentList().get(childPosition);
                 if (itemNoteComment == null) {
                 } else {
                     huifuState = 1;
-                    huiFuBean = new Pinlin3Bean.DataBean.ReplyListBean();
+                    huiFuBean = new Pinlin3Bean.DataBean.CommentListBean();
                     huiFuBean.setReferUserNickName(itemNoteComment.getReferUserNickName());
                     huiFuBean.setReferUserId(itemNoteComment.getReferUserId());
                     huiFuBean.setPid(itemNoteComment.getPid());
@@ -507,7 +507,7 @@ public class ZixunVideoActivity extends BaseActivity {
                 return;
             }
             huifuState = 1;
-            huiFuBean = new Pinlin3Bean.DataBean.ReplyListBean();
+            huiFuBean = new Pinlin3Bean.DataBean.CommentListBean();
             huiFuBean.setNickName(MakerApplication.instance.getNickName());
             huiFuBean.setUserId(MakerApplication.instance.getUid());
             huiFuBean.setReferUserNickName("");
@@ -556,7 +556,7 @@ public class ZixunVideoActivity extends BaseActivity {
      * @param toUid 给谁评论
      * @param msg   发送信息
      */
-    private void sendCommentNote(final String zhuId, String toUid, final String msg, final Pinlin3Bean.DataBean.ReplyListBean huiFuBean) {
+    private void sendCommentNote(final String zhuId, String toUid, final String msg, final Pinlin3Bean.DataBean.CommentListBean huiFuBean) {
         showDialog.showProgressDialog("正在评论", "请稍后。", true);
 
         HashMap<String,String> map=new HashMap<>();
@@ -596,8 +596,8 @@ public class ZixunVideoActivity extends BaseActivity {
                                     huiFuBean.setContent(msg);
                                     for (int i = 0; i <listData.size() ; i++) {
                                         if (listData.get(i).getId().equals(huiFuBean.getPid())) {
-                                            listData.get(i).getReplyList().add(0,huiFuBean);
-                                            listData.get(i).setReplyNum(listData.get(i).getReplyNum()+1);
+                                            listData.get(i).getCommentList().add(0,huiFuBean);
+                                            listData.get(i).setFavourNum(listData.get(i).getFavourNum()+1);
                                             break;
                                         }
                                     }
@@ -619,8 +619,6 @@ public class ZixunVideoActivity extends BaseActivity {
                     }
 
                 });
-
-
 
     }
 

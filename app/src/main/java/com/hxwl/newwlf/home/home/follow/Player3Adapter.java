@@ -9,14 +9,25 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.hxwl.common.utils.GlidUtils;
 import com.hxwl.common.utils.StringUtils;
 import com.hxwl.newwlf.URLS;
+import com.hxwl.newwlf.login.LoginActivity;
 import com.hxwl.newwlf.modlebean.Quanshou3Bean;
 import com.hxwl.newwlf.modlebean.QuanshouBean;
+import com.hxwl.newwlf.modlebean.YueyueBean;
+import com.hxwl.wulinfeng.MakerApplication;
 import com.hxwl.wulinfeng.R;
+import com.hxwl.wulinfeng.util.JsonValidator;
+import com.hxwl.wulinfeng.util.ToastUtils;
+import com.hxwl.wulinfeng.util.UIUtils;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.ArrayList;
+
+import okhttp3.Call;
 
 public class Player3Adapter extends BaseAdapter {
     private Context context;
@@ -50,8 +61,8 @@ public class Player3Adapter extends BaseAdapter {
             convertView = View.inflate(context, R.layout.player3_item,
                     null);
         }
-        ViewHolder holder = new ViewHolder(convertView);
-        Quanshou3Bean.DataBean friend = mList.get(position);
+        final ViewHolder holder = new ViewHolder(convertView);
+        final Quanshou3Bean.DataBean friend = mList.get(position);
         if (position > 0) {
 
             String lastLetter = mList.get(position - 1).getFirstLetter().charAt(0)
@@ -96,14 +107,76 @@ public class Player3Adapter extends BaseAdapter {
 
         GlidUtils.setGrid2(context, URLS.IMG+friend.getHeadImg(),holder.player3_touxiang);
 
-        if (friend.getIsAttention()==0){
-            holder.player3_guanzhu.setImageResource(R.drawable.guanzhu3);
-        }else {
+        if (friend.getIsAttention()==1){
             holder.player3_guanzhu.setImageResource(R.drawable.yiguanzhu3);
+        }else {
+            holder.player3_guanzhu.setImageResource(R.drawable.guanzhu3);
         }
+
+        holder.player3_guanzhu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (friend.getIsAttention()==1){
+                    //取消关注
+                    gunazhu(URLS.SCHEDULE_USERCANCELPLAYERATTENTION,friend.getPlayerId());
+                }else {
+                    //关注
+                    gunazhu(URLS.SCHEDULE_USERPLAYERATTENTION,friend.getPlayerId());
+                }
+            }
+            private void gunazhu(String url,String playerId) {
+                OkHttpUtils.post()
+                        .url(url)
+                        .addParams("userId", MakerApplication.instance.getUid())
+                        .addParams("playerId",playerId)
+                        .addParams("token", MakerApplication.instance.getToken())
+                        .build()
+                        .execute(new StringCallback() {
+                            @Override
+                            public void onError(Call call, Exception e, int id) {
+                                UIUtils.showToast("服务器异常");
+                            }
+
+                            @Override
+                            public void onResponse(String response, int id) {
+                                JsonValidator jsonValidator = new JsonValidator();
+                                if (jsonValidator.validate(response)){
+                                    Gson gson = new Gson();
+                                    try {
+                                        YueyueBean bean = gson.fromJson(response, YueyueBean.class);
+                                        if (bean.getCode().equals("1000")){
+                                            ToastUtils.showToast(context,bean.getMessage());
+                                            if (friend.getIsAttention()==1){
+                                                friend.setIsAttention(0);
+                                                holder.player3_guanzhu.setImageResource(R.drawable.guanzhu3);
+                                            }else {
+                                                friend.setIsAttention(1);
+                                                holder.player3_guanzhu.setImageResource(R.drawable.yiguanzhu3);
+                                            }
+
+
+                                        }else if (bean.getCode().equals("2002")||bean.getCode().equals("2003")){
+                                            UIUtils.showToast(bean.getMessage());
+                                            context.startActivity(LoginActivity.getIntent(context));
+
+                                        }
+                                    }catch (Exception e){
+                                        e.printStackTrace();
+                                    }
+
+                                }
+
+                            }
+                        });
+            }
+        });
+
 
         return convertView;
     }
+
+
+
 
 
     static class ViewHolder {

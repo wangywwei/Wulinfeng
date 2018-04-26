@@ -19,6 +19,7 @@ import com.hxwl.newwlf.modlebean.HomeOneBean;
 import com.hxwl.newwlf.modlebean.LeavingBean;
 import com.hxwl.newwlf.modlebean.PLZixunListBean;
 import com.hxwl.utils.Photos;
+import com.hxwl.wlf3.bean3.Pinlin3Bean;
 import com.hxwl.wulinfeng.MakerApplication;
 import com.hxwl.wulinfeng.R;
 import com.hxwl.wulinfeng.activity.HuiFuDetailsActivity;
@@ -41,7 +42,7 @@ import okhttp3.Call;
 public class LeavingAdapter extends BaseExpandableListAdapter { private Activity context;
     private String id;
     //数据
-    private List<LeavingBean.DataBean> listData;
+    private List<Pinlin3Bean.DataBean> listData;
     private View.OnClickListener replyToCommentListener;// 评论监听
 
     private final static String SECCLICK = "点赞成功";
@@ -56,12 +57,13 @@ public class LeavingAdapter extends BaseExpandableListAdapter { private Activity
     public void setId(String id) {
         this.id = id;
     }
-
-    public LeavingAdapter(Activity context, List<LeavingBean.DataBean> listData, View.OnClickListener replyToCommentListener, String id) {
+    private String type;
+    public LeavingAdapter(Activity context, List<Pinlin3Bean.DataBean> listData, View.OnClickListener replyToCommentListener, String id,String type) {
         this.context = context;
         this.listData = listData;
         this.id = id;
         this.replyToCommentListener = replyToCommentListener;
+        this.type=type;
         mClipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
         inflater = LayoutInflater.from(context);
     }
@@ -73,8 +75,8 @@ public class LeavingAdapter extends BaseExpandableListAdapter { private Activity
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        if (listData.get(groupPosition).getReplyList() != null) {
-            return listData.get(groupPosition).getReplyList().size() > 3 ? 3 : listData.get(groupPosition).getReplyList().size();
+        if (listData.get(groupPosition).getCommentList() != null) {
+            return listData.get(groupPosition).getCommentList().size() > 3 ? 3 : listData.get(groupPosition).getCommentList().size();
         } else {
             return 0;
         }
@@ -87,8 +89,8 @@ public class LeavingAdapter extends BaseExpandableListAdapter { private Activity
 
     @Override
     public Object getChild(int groupPosition, int childPosition) {
-        if (listData.get(groupPosition).getReplyList() != null) {
-            return listData.get(groupPosition).getReplyList().get(childPosition);
+        if (listData.get(groupPosition).getCommentList() != null) {
+            return listData.get(groupPosition).getCommentList().get(childPosition);
         } else {
             return null;
         }
@@ -117,7 +119,7 @@ public class LeavingAdapter extends BaseExpandableListAdapter { private Activity
     public View getGroupView(final int groupPosition, boolean isExpanded,
                              View convertView, ViewGroup parent) {
         final ViewHolder holder;
-        final LeavingBean.DataBean itemNotes = listData.get(groupPosition);
+        final Pinlin3Bean.DataBean itemNotes = listData.get(groupPosition);
         if (convertView == null) {
             holder = new ViewHolder();
             convertView = View.inflate(context, R.layout.zixun_pinglun_item2, null);
@@ -136,10 +138,10 @@ public class LeavingAdapter extends BaseExpandableListAdapter { private Activity
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        holder.nickName.setText(Photos.stringPhoto(itemNotes.getUserName()));
+        holder.nickName.setText(Photos.stringPhoto(itemNotes.getNickName()));
 
         holder.tv_zancount.setText(itemNotes.getFavourNum()+"");//点赞数量
-        holder.tv_zancount2.setText(itemNotes.getReplyNum()+"");//点赞数量
+        holder.tv_zancount2.setText(itemNotes.getFavourNum()+"");//点赞数量
 
         holder.time.setText(itemNotes.getCommentTime());
 
@@ -151,7 +153,7 @@ public class LeavingAdapter extends BaseExpandableListAdapter { private Activity
         }
         ImageUtils.getCirclePic(URLS.IMG+itemNotes.getHeadImg(), holder.imageView, context);
         holder.iv_zan.setTag(itemNotes);
-        if (itemNotes.getUserIsFavour()==1) {//点过赞
+        if (itemNotes.getIsFavour()==1) {//点过赞
             holder.tv_zancount.setTextColor(context.getResources().getColor(R.color.rgb_888888));
             holder.iv_zan.setImageResource(R.drawable.yizan_icon);
         } else {//没有点过
@@ -159,31 +161,31 @@ public class LeavingAdapter extends BaseExpandableListAdapter { private Activity
             holder.iv_zan.setImageResource(R.drawable.zan_icon);
         }
 
-        try {
-            List<LeavingBean.DataBean.FavourListBean> listNotePraise = itemNotes
-                    .getFavourList();
-            if (listNotePraise != null && listNotePraise.size() > 0) {
-                holder.rl_relayout.setVisibility(View.VISIBLE);
-                holder.tv_zan.setVisibility(View.VISIBLE);
-                StringBuffer name = new StringBuffer();
-                for (int i = 0; i < listNotePraise.size(); i++) {
-                    if (i == listNotePraise.size() - 1) {
-                        name.append(Photos.stringPhoto(listNotePraise.get(i).getNickName()));
-                    } else {
-                        name.append(Photos.stringPhoto(listNotePraise.get(i).getNickName()) + "、");
-                    }
-                }
-                holder.tv_zan.setText(name.toString());
-            } else {
-                holder.rl_relayout.setVisibility(View.GONE);
-                holder.tv_zan.setVisibility(View.GONE);
+//        try {
+//            List<Pinlin3Bean.DataBean.FavourListBean> listNotePraise = itemNotes
+//                    .getFavourList();
+//            if (listNotePraise != null && listNotePraise.size() > 0) {
+//                holder.rl_relayout.setVisibility(View.VISIBLE);
+//                holder.tv_zan.setVisibility(View.VISIBLE);
+//                StringBuffer name = new StringBuffer();
+//                for (int i = 0; i < listNotePraise.size(); i++) {
+//                    if (i == listNotePraise.size() - 1) {
+//                        name.append(Photos.stringPhoto(listNotePraise.get(i).getNickName()));
+//                    } else {
+//                        name.append(Photos.stringPhoto(listNotePraise.get(i).getNickName()) + "、");
+//                    }
+//                }
+//                holder.tv_zan.setText(name.toString());
+//            } else {
+//                holder.rl_relayout.setVisibility(View.GONE);
+//                holder.tv_zan.setVisibility(View.GONE);
+//
+//            }
+//        }catch (Exception i){
+//
+//        }
 
-            }
-        }catch (Exception i){
-
-        }
-
-        final int dianzannum=itemNotes.getUserIsFavour();
+        final int dianzannum=itemNotes.getIsFavour();
         holder.iv_zan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -194,43 +196,43 @@ public class LeavingAdapter extends BaseExpandableListAdapter { private Activity
                 if(OnClickEventUtils.isFastClick()){
                     return;
                 }
-                if (itemNotes.getUserIsFavour()==1) {//没有点过 holder.iv_zan.setImageResource(R.drawable.zanblue_icon);
+                if (itemNotes.getIsFavour()==1) {//没有点过 holder.iv_zan.setImageResource(R.drawable.zanblue_icon);
                     dianZan2(holder.iv_zan, itemNotes);
                 } else {//没点过赞
                     dianZan(holder.iv_zan, itemNotes);
                 }
 
             }
-            private void setZanImg() {
-                List<LeavingBean.DataBean.FavourListBean> listNotePraise = itemNotes
-                        .getFavourList();
-                if (listNotePraise != null && listNotePraise.size() > 0) {
-                    holder.rl_relayout.setVisibility(View.VISIBLE);
-                    holder.tv_zan.setVisibility(View.VISIBLE);
+//            private void setZanImg() {
+//                List<Pinlin3Bean.DataBean.CommentListBean> listNotePraise = itemNotes
+//                        .getFavourList();
+//                if (listNotePraise != null && listNotePraise.size() > 0) {
+//                    holder.rl_relayout.setVisibility(View.VISIBLE);
+//                    holder.tv_zan.setVisibility(View.VISIBLE);
+//
+//                    StringBuffer name = new StringBuffer();
+//                    for (int i = 0; i < listNotePraise.size(); i++) {
+//                        if (i == listNotePraise.size() - 1) {
+//                            name.append(Photos.stringPhoto(listNotePraise.get(i).getNickName()));
+//                        } else {
+//                            name.append(Photos.stringPhoto(listNotePraise.get(i).getNickName()) + "、");
+//                        }
+//                    }
+//                    holder.tv_zan.setText(name.toString());
+////                    holder.tv_zan_text.setText(listNotePraise.size() + "人点过赞");
+//                } else {
+//                    holder.rl_relayout.setVisibility(View.GONE);
+//                    holder.tv_zan.setVisibility(View.GONE);
+//                }
+//            }
 
-                    StringBuffer name = new StringBuffer();
-                    for (int i = 0; i < listNotePraise.size(); i++) {
-                        if (i == listNotePraise.size() - 1) {
-                            name.append(Photos.stringPhoto(listNotePraise.get(i).getNickName()));
-                        } else {
-                            name.append(Photos.stringPhoto(listNotePraise.get(i).getNickName()) + "、");
-                        }
-                    }
-                    holder.tv_zan.setText(name.toString());
-//                    holder.tv_zan_text.setText(listNotePraise.size() + "人点过赞");
-                } else {
-                    holder.rl_relayout.setVisibility(View.GONE);
-                    holder.tv_zan.setVisibility(View.GONE);
-                }
-            }
-
-            private void dianZan2(final ImageView view, final LeavingBean.DataBean itemNotes) {
+            private void dianZan2(final ImageView view, final Pinlin3Bean.DataBean itemNotes) {
                 OkHttpUtils.post()
-                        .url(URLS.SCHEDULE_CANCELDYNAMICMESSAGEFAVOUR)
-                        .addParams("targetId",itemNotes.getCommentId())
+                        .url(URLS.CANCELFAVOUR)
+                        .addParams("targetId",itemNotes.getId())
                         .addParams("token", MakerApplication.instance.getToken())
                         .addParams("userId",MakerApplication.instance().getUserid())
-                        .addParams("favourType","3")    //赞类型 1动态的赞 2资讯评论的赞 3选手留言的赞
+                        .addParams("type",type)    //赞类型 1动态的赞 2资讯评论的赞 3选手留言的赞
                         .build().execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
@@ -245,20 +247,13 @@ public class LeavingAdapter extends BaseExpandableListAdapter { private Activity
                             try {
                                 HomeOneBean bean = gson.fromJson(response, HomeOneBean.class);
                                 if (bean.getCode().equals("1000")){
-                                    itemNotes.setUserIsFavour(2);
+                                    itemNotes.setIsFavour(2);
                                     view.setImageResource(R.drawable.zan_icon);
                                     if (dianzannum==1){
                                         holder.tv_zancount.setText(itemNotes.getFavourNum()-1+"");//点赞数量
                                     }else {
                                         holder.tv_zancount.setText(itemNotes.getFavourNum()+"");//点赞数量
                                     }
-                                    for (LeavingBean.DataBean.FavourListBean info : itemNotes.getFavourList()) {
-                                        if (MakerApplication.instance().getUserid().equals(info.getUserId())) {
-                                            itemNotes.getFavourList().remove(info);
-                                            break;
-                                        }
-                                    }
-                                    setZanImg();
 
                                 }else if (bean.getCode().equals("2002")||bean.getCode().equals("2003")){
                                     UIUtils.showToast(bean.getMessage());
@@ -278,13 +273,13 @@ public class LeavingAdapter extends BaseExpandableListAdapter { private Activity
 
             }
             //点赞
-            public void dianZan(final ImageView view, final LeavingBean.DataBean itemNotes) {
+            public void dianZan(final ImageView view, final Pinlin3Bean.DataBean itemNotes) {
                 OkHttpUtils.post()
-                        .url(URLS.SCHEDULE_ADDDYNAMICMESSAGEFAVOUR)
+                        .url(URLS.ADDFAVOUR)
                         .addParams("token", MakerApplication.instance.getToken())
-                        .addParams("targetId",itemNotes.getCommentId())
+                        .addParams("targetId",itemNotes.getId())
                         .addParams("userId", MakerApplication.instance().getUserid())
-                        .addParams("favourType","3")    //赞类型 1动态的赞 2资讯评论的赞 3选手留言的赞
+                        .addParams("type",type)    //赞类型 1动态的赞 2资讯评论的赞 3选手留言的赞
                         .build().execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
@@ -299,19 +294,13 @@ public class LeavingAdapter extends BaseExpandableListAdapter { private Activity
                             try {
                                 HomeOneBean bean = gson.fromJson(response, HomeOneBean.class);
                                 if (bean.getCode().equals("1000")){
-                                    itemNotes.setUserIsFavour(1);
+                                    itemNotes.setIsFavour(1);
                                     view.setImageResource(R.drawable.yizan_icon);
                                     if (dianzannum==1){
                                         holder.tv_zancount.setText(itemNotes.getFavourNum()+"");//点赞数量
                                     }else {
                                         holder.tv_zancount.setText(itemNotes.getFavourNum()+1+"");//点赞数量
                                     }
-                                    LeavingBean.DataBean.FavourListBean favourListBean = new LeavingBean.DataBean.FavourListBean();
-                                    favourListBean.setNickName(MakerApplication.instance().getNickName());
-                                    favourListBean.setHeadImg(MakerApplication.instance().getHeadImg());
-                                    favourListBean.setUserId(MakerApplication.instance().getUserid());
-                                    itemNotes.getFavourList().add(0, favourListBean);
-                                    setZanImg();
                                 }else if (bean.getCode().equals("2002")||bean.getCode().equals("2003")){
                                     UIUtils.showToast(bean.getMessage());
                                     context.startActivity(LoginActivity.getIntent(context));
@@ -344,8 +333,8 @@ public class LeavingAdapter extends BaseExpandableListAdapter { private Activity
     @Override
     public View getChildView(final int groupPosition, final int childPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
-        final LeavingBean.DataBean.ReplyListBean noteComment = listData.get(groupPosition)
-                .getReplyList().get(childPosition);
+        final Pinlin3Bean.DataBean.CommentListBean noteComment = listData.get(groupPosition)
+                .getCommentList().get(childPosition);
         ViewHolder holder = new ViewHolder();
         convertView = View.inflate(context, R.layout.item_zixun_comment_reply2,
                 null);
@@ -370,7 +359,7 @@ public class LeavingAdapter extends BaseExpandableListAdapter { private Activity
         } else {
             holder.tv_all.setVisibility(View.VISIBLE);
 
-            if (listData.get(groupPosition).getReplyList().size() > 3) {
+            if (listData.get(groupPosition).getCommentList().size() > 3) {
                 holder.tv_all.setVisibility(View.VISIBLE);
             } else {
                 holder.tv_all.setVisibility(View.GONE);
@@ -378,30 +367,6 @@ public class LeavingAdapter extends BaseExpandableListAdapter { private Activity
             holder.tv_all.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {//查看详情
-
-
-                    PLZixunListBean.DataBean itemNotes=new PLZixunListBean.DataBean();
-                    itemNotes.setCommentId(listData.get(groupPosition).getCommentId());
-                    itemNotes.setUserName(listData.get(groupPosition).getUserName());
-                    itemNotes.setFavourNum(listData.get(groupPosition).getFavourNum());
-                    itemNotes.setReplyNum(listData.get(groupPosition).getReplyNum());
-                    itemNotes.setCommentTime(listData.get(groupPosition).getCommentTime());
-                    itemNotes.setContent(listData.get(groupPosition).getContent());
-                    itemNotes.setHeadImg(listData.get(groupPosition).getHeadImg());
-                    itemNotes.setUserIsFavour(listData.get(groupPosition).getUserIsFavour());
-                    ArrayList<PLZixunListBean.DataBean.ReplyListBean> arrayList=new ArrayList<>();
-                    for (int i = 0; i <listData.get(groupPosition).getReplyList().size() ; i++) {
-                        PLZixunListBean.DataBean.ReplyListBean replyListBean=new PLZixunListBean.DataBean.ReplyListBean();
-                        replyListBean.setReferUserName(listData.get(groupPosition).getReplyList().get(i).getReferUserName());
-                        replyListBean.setReferUserId(listData.get(groupPosition).getReplyList().get(i).getReferUserId());
-                        replyListBean.setId(listData.get(groupPosition).getReplyList().get(i).getId());
-                        replyListBean.setUserId(listData.get(groupPosition).getReplyList().get(i).getUserId());
-                        replyListBean.setUserName(listData.get(groupPosition).getReplyList().get(i).getUserName());
-                        replyListBean.setContent(listData.get(groupPosition).getReplyList().get(i).getContent());
-                        replyListBean.setPid(listData.get(groupPosition).getReplyList().get(i).getId());
-                        arrayList.add(replyListBean);
-                    }
-                    itemNotes.setReplyList(arrayList);
 //                    context.startActivity(HuiFuDetailsActivity.getIntent(context,
 //                            listData.get(groupPosition).getCommentId(),
 //                            itemNotes,
@@ -410,17 +375,16 @@ public class LeavingAdapter extends BaseExpandableListAdapter { private Activity
             });
         }
 
-        if (StringUtils.isBlank(noteComment.getReferUserName())) {
-            holder.tv_comment_reply_writer.setText(noteComment.getUserName()+":");
+        if (StringUtils.isBlank(noteComment.getReferUserNickName())) {
+            holder.tv_comment_reply_writer.setText(noteComment.getNickName()+":");
             holder.tv_comment_reply_writer2.setVisibility(View.GONE);
             holder.tv_comment_reply_writer3.setVisibility(View.GONE);
             holder.tv_comment_reply_text.setText(noteComment.getContent());
         } else {
-            holder.tv_comment_reply_writer.setText(noteComment.getUserName());
+            holder.tv_comment_reply_writer.setText(noteComment.getNickName());
             holder.tv_comment_reply_writer2.setVisibility(View.VISIBLE);
             holder.tv_comment_reply_writer3.setVisibility(View.VISIBLE);
-            holder.tv_comment_reply_writer3.setText(noteComment.getReferUserName()+":");
-
+            holder.tv_comment_reply_writer3.setText(noteComment.getReferUserNickName()+":");
             holder.tv_comment_reply_text.setText(noteComment.getContent());
         }
         convertView.setTag(R.id.tag_first, groupPosition);

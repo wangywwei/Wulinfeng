@@ -31,9 +31,10 @@ import java.util.List;
 *  赛事赛程动态
 * */
 public class EventActivity extends BaseActivity {
-
-    public static Intent getIntent(Context context){
+    private String scheduleid;
+    public static Intent getIntent(Context context,String scheduleid){
         Intent intent=new Intent(context,EventActivity.class);
+        intent.putExtra("scheduleid",scheduleid);
         return intent;
     }
     private TabLayout tab;
@@ -46,7 +47,7 @@ public class EventActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
-
+        scheduleid=getIntent().getStringExtra("scheduleid");
         initView();
 
 
@@ -84,7 +85,10 @@ public class EventActivity extends BaseActivity {
         listFragment.add(new GuideFragment());
         listFragment.add(new DynamicFragment());
 //        listFragment.add(new CommentFragment());//LeavingMessageFragment
-        listFragment.add(new LeavingMessageFragment());//LeavingMessageFragment
+        LeavingMessageFragment leavingMessageFragment=  new LeavingMessageFragment();
+        listFragment.add(leavingMessageFragment);//LeavingMessageFragment
+
+        leavingMessageFragment.setNewsId(scheduleid,"4");
         return listFragment;
     }
 

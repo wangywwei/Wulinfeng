@@ -195,7 +195,8 @@ public class URLS {
     //首页预约
     public static final String COMMON_USERSUBSCRIBESTATUS=URL+"common/userSubscribeStatus";
 
-
+    //事件 / 事件详情
+    public static final String EVENT=URL+"event/";
 
 
 

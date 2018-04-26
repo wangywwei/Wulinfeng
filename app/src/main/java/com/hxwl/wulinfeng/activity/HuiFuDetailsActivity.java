@@ -449,7 +449,7 @@ public class HuiFuDetailsActivity extends BaseActivity{
                     UIUtils.showToast("请您点击我的头像去绑定手机号");
                     return;
                 }
-                Pinlin3Bean.DataBean.ReplyListBean info = itemNotes.getReplyList().get(groupPosition);
+                Pinlin3Bean.DataBean.CommentListBean info = itemNotes.getCommentList().get(groupPosition);
                 bean = new PLZixunListBean.DataBean.ReplyListBean();
                 bean.setReferUserName(MakerApplication.instance.getNickName());
                 bean.setUserName(info.getReferUserNickName());
@@ -469,7 +469,7 @@ public class HuiFuDetailsActivity extends BaseActivity{
                     UIUtils.showToast("请您点击我的头像去绑定手机号");
                     return;
                 }
-                Pinlin3Bean.DataBean.ReplyListBean info = itemNotes.getReplyList().get(groupPosition);
+                Pinlin3Bean.DataBean.CommentListBean info = itemNotes.getCommentList().get(groupPosition);
                 bean = new PLZixunListBean.DataBean.ReplyListBean();
                 bean.setReferUserName(MakerApplication.instance().getNickName());
                 bean.setUserName(info.getReferUserNickName());

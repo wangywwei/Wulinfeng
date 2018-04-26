@@ -32,6 +32,7 @@ import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 
 import okhttp3.Call;
@@ -76,24 +77,51 @@ public class Player3_0Activity extends BaseActivity {
                     @Override
                     public void onResponse(String response, int id) {
                         JsonValidator jsonValidator = new JsonValidator();
-                        if (jsonValidator.validate(response)){
+                        if (jsonValidator.validate(response)) {
                             Gson gson = new Gson();
                             try {
                                 Quanshou3Bean bean = gson.fromJson(response, Quanshou3Bean.class);
-                                if (bean.getCode().equals("1000")){
+                                if (bean.getCode().equals("1000")) {
                                     list.clear();
                                     list.addAll(bean.getData());
 
-                                } else if (bean.getData() != null && bean.getData().size()>0) {
+                                    // 排序
+                                    Collections.sort(list, new Comparator<Quanshou3Bean.DataBean>() {
+                                        @Override
+                                        public int compare(Quanshou3Bean.DataBean lhs, Quanshou3Bean.DataBean rhs) {
+
+                                            if (lhs.getFirstLetter().equals(rhs.getFirstLetter())) {
+                                                return lhs.getPlayerName().compareTo(rhs.getPlayerName());
+                                            } else if (lhs.getFirstLetter().equals("☆")){
+                                                return lhs.getPlayerName().compareTo(rhs.getPlayerName());
+                                            } else{
+                                                if ("#".equals(lhs.getFirstLetter())) {
+                                                    return 1;
+                                                } else if ("#".equals(rhs.getFirstLetter())) {
+                                                    return -1;
+                                                }
+                                                return lhs.getFirstLetter().compareTo(rhs.getFirstLetter());
+                                            }
+                                        }
+                                    });
+                                    for (int i = 0; i <list.size() ; i++) {
+                                        if ("☆".equals(list.get(i).getFirstLetter().charAt(0)+"")){
+                                            list.add(0,list.get(i));
+                                            list.remove(i+1);
+                                        }
+                                    }
+
+                                    adapter.notifyDataSetChanged();
+                                } else if (bean.getData() != null && bean.getData().size() > 0) {
 
                                     UIUtils.showToast("没有更多了");
 
-                                }else if (bean.getCode().equals("2002")||bean.getCode().equals("2003")){
+                                } else if (bean.getCode().equals("2002") || bean.getCode().equals("2003")) {
                                     UIUtils.showToast(bean.getMessage());
                                     startActivity(LoginActivity.getIntent(Player3_0Activity.this));
 
                                 }
-                            }catch (Exception e){
+                            } catch (Exception e) {
                                 e.printStackTrace();
                             }
 
@@ -101,7 +129,7 @@ public class Player3_0Activity extends BaseActivity {
 
                     }
                 });
-        adapter.notifyDataSetChanged();
+
 
     }
 
@@ -142,14 +170,16 @@ public class Player3_0Activity extends BaseActivity {
         mLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(PlayDetailsActivity.getIntent(Player3_0Activity.this,list.get(position).getPlayerId()+""));
+                startActivity(PlayDetailsActivity.getIntent(Player3_0Activity.this, list.get(position).getPlayerId() + ""));
 
             }
         });
 
     }
+
     private Handler mHandler = new Handler();
     private boolean mIsScale;
+
     protected void showCenterAnimView(String letter) {
         center_view.setText(letter);
         if (!mIsScale) {

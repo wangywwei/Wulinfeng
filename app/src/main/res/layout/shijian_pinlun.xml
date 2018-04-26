@@ -79,7 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <ListView
+    <com.hxwl.wulinfeng.view.MyListView
         android:dividerHeight="0dp"
         android:layout_marginRight="@dimen/man_16dp"
         android:layout_marginLeft="@dimen/man_16dp"
@@ -88,6 +88,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
+        android:visibility="gone"
         android:id="@+id/pinlun_quanbu"
         android:text="查看全部回复"
         android:textSize="@dimen/text_14sp"

@@ -210,7 +210,7 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
                 @Override
                 public void onClick(View v) {
 
-                    context.startActivity(EventActivity.getIntent(context));
+                    context.startActivity(EventActivity.getIntent(context,list6.get(position).getId()+""));
 
                 }
             });

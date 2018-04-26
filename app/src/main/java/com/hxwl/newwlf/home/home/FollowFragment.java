@@ -142,7 +142,7 @@ public class FollowFragment extends BaseFragment implements View.OnClickListener
                 dijige=position;
                 urls.get(position).setXuanzhong(true);
                 follow_yesAdapter.notifyDataSetChanged();
-                leavingMessageFragment.setNewsId(urls.get(position).getPlayerId()+"");
+                leavingMessageFragment.setNewsId(urls.get(position).getPlayerId()+"","2");
                 playFragment.setAgentId(urls.get(position).getPlayerId()+"");
                 dataFragment.setAgentId(urls.get(position).getPlayerId()+"");
                 informationFragment.setPlayerId(urls.get(position).getPlayerId()+"");
@@ -167,7 +167,7 @@ public class FollowFragment extends BaseFragment implements View.OnClickListener
                         }
                         urls.get(dijige).setXuanzhong(true);
                         follow_yesAdapter.notifyDataSetChanged();
-                        leavingMessageFragment.setNewsId(urls.get(dijige).getPlayerId()+"");
+                        leavingMessageFragment.setNewsId(urls.get(dijige).getPlayerId()+"","2");
                         playFragment.setAgentId(urls.get(dijige).getPlayerId()+"");
                         dataFragment.setAgentId(urls.get(dijige).getPlayerId()+"");
                         informationFragment.setPlayerId(urls.get(dijige).getPlayerId()+"");
@@ -210,7 +210,7 @@ public class FollowFragment extends BaseFragment implements View.OnClickListener
                                         urls.addAll(bean.getData());
                                         urls.get(0).setXuanzhong(true);
                                         follow_yesAdapter.notifyDataSetChanged();
-                                        leavingMessageFragment.setNewsId(urls.get(0).getPlayerId()+"");
+                                        leavingMessageFragment.setNewsId(urls.get(0).getPlayerId()+"","2");
                                         playFragment.setAgentId(urls.get(0).getPlayerId()+"");
                                         dataFragment.setAgentId(urls.get(0).getPlayerId()+"");
                                         informationFragment.setPlayerId(urls.get(0).getPlayerId()+"");

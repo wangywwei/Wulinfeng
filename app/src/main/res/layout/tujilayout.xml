@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/video_title"
+            android:textSize="@dimen/text_18sp"
+            android:textColor="@color/rgb_000000"
+            android:text="《武林风》王者一龙挑战赛"
+            android:layout_marginTop="@dimen/man_16dp"
+            android:layout_marginLeft="@dimen/man_16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginLeft="@dimen/man_16dp"
+            android:layout_marginTop="@dimen/wlf_8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/video_time"
+                android:textColor="@color/textColor_assist_999999"
+                android:textSize="@dimen/text_14sp"
+                android:text="2017-12-5 周一"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginLeft="@dimen/man_16dp"
+                android:id="@+id/video_action"
+                android:textColor="@color/textColor_assist_999999"
+                android:textSize="@dimen/text_14sp"
+                android:text="两杆大烟枪"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/video_content"
+            android:textSize="@dimen/text_14sp"
+            android:textColor="@color/rgb_444444"
+            android:text="呜呜泱泱一大堆，但是怎么就是没有提到现如今中国国内格斗的发展趋势，MMA的主流趋势这么明显怎么不提散打早就没落了。"
+            android:layout_margin="@dimen/man_16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:background="@color/rgb_EFEFEF"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/man_12dp"/>
+        <TextView
+            android:layout_margin="@dimen/man_16dp"
+            android:textColor="@color/rgb_222222"
+            android:textSize="@dimen/text_18sp"
+            android:text="全部评论"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</RelativeLayout>

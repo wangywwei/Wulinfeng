@@ -67,8 +67,8 @@ public class ZixunVideoDetilsAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        if (listData.get(groupPosition).getReplyList() != null) {
-            return listData.get(groupPosition).getReplyList().size() > 3 ? 3 : listData.get(groupPosition).getReplyList().size();
+        if (listData.get(groupPosition).getCommentList() != null) {
+            return listData.get(groupPosition).getCommentList().size() > 3 ? 3 : listData.get(groupPosition).getCommentList().size();
         } else {
             return 0;
         }
@@ -81,7 +81,7 @@ public class ZixunVideoDetilsAdapter extends BaseExpandableListAdapter {
 
     @Override
     public Object getChild(int groupPosition, int childPosition) {
-        return listData.get(groupPosition).getReplyList().get(childPosition);
+        return listData.get(groupPosition).getCommentList().get(childPosition);
     }
 
     @Override
@@ -137,7 +137,7 @@ public class ZixunVideoDetilsAdapter extends BaseExpandableListAdapter {
         }
         holder.nickName.setText(Photos.stringPhoto(itemNotes.getNickName()));
         holder.tv_zancount.setText(itemNotes.getFavourNum()+"");//点赞数量
-        holder.tv_zancount2.setText(itemNotes.getReplyNum()+"");//点赞数量
+        holder.tv_zancount2.setText(itemNotes.getFavourNum()+"");//点赞数量
         holder.time.setText(itemNotes.getCommentTime());
 
         if (itemNotes.getContent() != null && !StringUtils.isEmpty(itemNotes.getContent())) {
@@ -282,8 +282,8 @@ public class ZixunVideoDetilsAdapter extends BaseExpandableListAdapter {
     @Override
     public View getChildView(final int groupPosition, final int childPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
-        final Pinlin3Bean.DataBean.ReplyListBean noteComment = listData.get(groupPosition)
-                .getReplyList().get(childPosition);
+        final Pinlin3Bean.DataBean.CommentListBean noteComment = listData.get(groupPosition)
+                .getCommentList().get(childPosition);
         ZixunVideoDetilsAdapter.ViewHolder holder = new ZixunVideoDetilsAdapter.ViewHolder();
         convertView = View.inflate(context, R.layout.item_zixun_comment_reply,
                 null);
@@ -308,7 +308,7 @@ public class ZixunVideoDetilsAdapter extends BaseExpandableListAdapter {
             holder.tv_all.setVisibility(View.VISIBLE);
 
             //点击查看全部
-            if (listData.get(groupPosition).getReplyList().size() > 3) {
+            if (listData.get(groupPosition).getCommentList().size() > 3) {
                 holder.tv_all.setVisibility(View.VISIBLE);
             } else {
                 holder.tv_all.setVisibility(View.GONE);

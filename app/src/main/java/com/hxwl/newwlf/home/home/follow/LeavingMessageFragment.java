@@ -25,6 +25,7 @@ import com.hxwl.newwlf.login.LoginActivity;
 import com.hxwl.newwlf.modlebean.HomeOneBean;
 import com.hxwl.newwlf.modlebean.LeavingBean;
 import com.hxwl.utils.Photos;
+import com.hxwl.wlf3.bean3.Pinlin3Bean;
 import com.hxwl.wulinfeng.MakerApplication;
 import com.hxwl.wulinfeng.R;
 import com.hxwl.wulinfeng.base.BaseFragment;
@@ -49,12 +50,13 @@ import okhttp3.Call;
 public class LeavingMessageFragment extends BaseFragment implements  KeyboardChangeListener.KeyBoardListener{
     private View view;
     private String newsId;
-
-    public void setNewsId(String newsId) {
+    private String type;
+    public void setNewsId(String newsId,String type) {
         this.newsId = newsId;
+        this.type = type;
         page=1;
         initData(page);
-        adapter.setId(newsId);
+//        adapter.setId(newsId);
     }
     private CusListView expandableList;
     public boolean isRefresh = true;
@@ -70,13 +72,17 @@ public class LeavingMessageFragment extends BaseFragment implements  KeyboardCha
     //回复传递参数
     private String zhuId = "";//心得id
     private String toUid = "";//回复谁
-    private String type = "1";
-    private LeavingBean.DataBean.ReplyListBean bean = null; //回复
-    private LeavingBean.DataBean info = null;//盖楼
+
+    private Pinlin3Bean.DataBean.CommentListBean bean = null; //回复
+    private Pinlin3Bean.DataBean info = null;//盖楼
     private KeyboardChangeListener mKeyboardChangeListener;
     private int page = 1;
-    private List<LeavingBean.DataBean> zixunListBean = new ArrayList<>();
+    private List<Pinlin3Bean.DataBean> zixunListBean = new ArrayList<>();
     private LeavingAdapter adapter;
+
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (view == null) {
@@ -100,12 +106,13 @@ public class LeavingMessageFragment extends BaseFragment implements  KeyboardCha
             return;
         }
         OkHttpUtils.post()
-                .url(URLS.HOME_PLAYERCOMMENTLIST)
+                .url(URLS.COMMENTLIST)
                 .addParams("userId",MakerApplication.instance.getUid())
-                .addParams("playerId",newsId)
+                .addParams("targetId",newsId)
                 .addParams("token", MakerApplication.instance.getToken())
                 .addParams("pageNumber",page+"")
                 .addParams("pageSize","10")
+                .addParams("type",type)
                 .build()
                 .execute(new StringCallback() {
                     @Override
@@ -120,7 +127,7 @@ public class LeavingMessageFragment extends BaseFragment implements  KeyboardCha
                         if (jsonValidator.validate(response)) {
                             Gson gson = new Gson();
                             try {
-                                LeavingBean plZixunListBean = gson.fromJson(response, LeavingBean.class);
+                                Pinlin3Bean plZixunListBean = gson.fromJson(response, Pinlin3Bean.class);
                                 if (plZixunListBean.getCode().equals("1000")) {
                                     if (isRefresh) {
                                         zixunListBean.clear();
@@ -128,9 +135,9 @@ public class LeavingMessageFragment extends BaseFragment implements  KeyboardCha
                                     } else {
                                         zixunListBean.addAll(plZixunListBean.getData());
                                     }
-                                    for (LeavingBean.DataBean info : zixunListBean) {
-                                        String zhuID = info.getCommentId()+"";
-                                        for (LeavingBean.DataBean.ReplyListBean huifu : info.getReplyList()) {
+                                    for (Pinlin3Bean.DataBean info : zixunListBean) {
+                                        String zhuID = info.getId()+"";
+                                        for (Pinlin3Bean.DataBean.CommentListBean huifu : info.getCommentList()) {
                                             if (TextUtils.isEmpty(huifu.getUserId()+"")) {
                                                 huifu.setUserId(zhuID);
                                             }
@@ -180,7 +187,7 @@ public class LeavingMessageFragment extends BaseFragment implements  KeyboardCha
         mKeyboardChangeListener.setKeyBoardListener(this);
 
         expandableList = (CusListView) view.findViewById(R.id.cusListView1);
-        adapter = new LeavingAdapter(getActivity(), zixunListBean, replyToCommentListener, newsId);
+        adapter = new LeavingAdapter(getActivity(), zixunListBean, replyToCommentListener, newsId,type);
         expandableList.setDivider(null);
         expandableList.setGroupIndicator(null);
         expandableList.setAdapter(adapter);
@@ -192,18 +199,18 @@ public class LeavingMessageFragment extends BaseFragment implements  KeyboardCha
                     UIUtils.showToast("请您点击我的头像去绑定手机号");
                     return;
                 }
-                final LeavingBean.DataBean.ReplyListBean itemNoteComment = zixunListBean.get(groupPosition).getReplyList().get(childPosition);
+                final Pinlin3Bean.DataBean.CommentListBean itemNoteComment = zixunListBean.get(groupPosition).getCommentList().get(childPosition);
                 if (itemNoteComment == null) {
                 } else {
                     huifuState = 1;
-                    bean = new LeavingBean.DataBean.ReplyListBean();
-                    bean.setReferUserName(itemNoteComment.getUserName());
+                    bean = new Pinlin3Bean.DataBean.CommentListBean();
+                    bean.setReferUserNickName(itemNoteComment.getNickName());
                     bean.setReferUserId(itemNoteComment.getUserId());
                     bean.setId(itemNoteComment.getId());
                     bean.setUserId(MakerApplication.instance.getUid());
-                    bean.setUserName(MakerApplication.instance.getNickName());
-                    showKeyBoard(itemNoteComment.getCommentPid()+"", itemNoteComment.getUserId()+"", "2");
-                    chat_et_create_context.setHint("回复" + Photos.stringPhoto(itemNoteComment.getUserName()) + ":");
+                    bean.setNickName(MakerApplication.instance.getNickName());
+                    showKeyBoard(itemNoteComment.getPid()+"", itemNoteComment.getUserId()+"", "2");
+                    chat_et_create_context.setHint("回复" + Photos.stringPhoto(itemNoteComment.getNickName()) + ":");
 
                 }
             }
@@ -216,18 +223,18 @@ public class LeavingMessageFragment extends BaseFragment implements  KeyboardCha
                     UIUtils.showToast("请您点击我的头像去绑定手机号");
                     return;
                 }
-                final LeavingBean.DataBean.ReplyListBean itemNoteComment = zixunListBean.get(groupPosition).getReplyList().get(childPosition);
+                final Pinlin3Bean.DataBean.CommentListBean itemNoteComment = zixunListBean.get(groupPosition).getCommentList().get(childPosition);
                 if (itemNoteComment == null) {
                 } else {
                     huifuState = 1;
-                    bean = new LeavingBean.DataBean.ReplyListBean();
-                    bean.setReferUserName(itemNoteComment.getReferUserName());
+                    bean = new Pinlin3Bean.DataBean.CommentListBean();
+                    bean.setReferUserNickName(itemNoteComment.getReferUserNickName());
                     bean.setReferUserId(itemNoteComment.getReferUserId());
-                    bean.setCommentPid(itemNoteComment.getCommentPid());
+                    bean.setPid(itemNoteComment.getPid());
                     bean.setUserId(MakerApplication.instance.getUid());
-                    bean.setUserName(MakerApplication.instance.getNickName());
-                    showKeyBoard(itemNoteComment.getCommentPid()+"", itemNoteComment.getReferUserId()+"", "2");
-                    chat_et_create_context.setHint("回复" + Photos.stringPhoto(itemNoteComment.getReferUserName()) + ":");
+                    bean.setNickName(MakerApplication.instance.getNickName());
+                    showKeyBoard(itemNoteComment.getPid()+"", itemNoteComment.getReferUserId()+"", "2");
+                    chat_et_create_context.setHint("回复" + Photos.stringPhoto(itemNoteComment.getReferUserNickName()) + ":");
                 }
             }
         });
@@ -344,10 +351,10 @@ public class LeavingMessageFragment extends BaseFragment implements  KeyboardCha
     }
 
     private void initLouZhuInfo() {
-        info = new LeavingBean.DataBean();
+        info = new Pinlin3Bean.DataBean();
         info.setHeadImg(MakerApplication.instance().getHeadImg());
         info.setUserId(MakerApplication.instance().getUserid());
-        info.setUserName(MakerApplication.instance().getNickName());
+        info.setNickName(MakerApplication.instance().getNickName());
     }
 
     /**
@@ -362,23 +369,23 @@ public class LeavingMessageFragment extends BaseFragment implements  KeyboardCha
                 return;
             }
             chat_et_create_context.setHint("我也说两句...");
-            LeavingBean.DataBean itemNotes = null;
+            Pinlin3Bean.DataBean itemNotes = null;
             if (v instanceof ImageView) {
-                itemNotes = (LeavingBean.DataBean) v.getTag();
+                itemNotes = (Pinlin3Bean.DataBean) v.getTag();
             } else {
-                itemNotes = (LeavingBean.DataBean) v.findViewById(R.id.btn_comment_reply).getTag();
+                itemNotes = (Pinlin3Bean.DataBean) v.findViewById(R.id.btn_comment_reply).getTag();
             }
             if (itemNotes == null) {
                 return;
             }
             huifuState = 1;
-            bean = new LeavingBean.DataBean.ReplyListBean();
-            bean.setUserName(MakerApplication.instance().getNickName());
+            bean = new Pinlin3Bean.DataBean.CommentListBean();
+            bean.setNickName(MakerApplication.instance().getNickName());
             bean.setUserId(MakerApplication.instance().getUserid());
-            bean.setReferUserName("");
+            bean.setReferUserNickName("");
             bean.setReferUserId("");
-            bean.setCommentPid(itemNotes.getCommentId());
-            showKeyBoard(itemNotes.getCommentId()+"", "", "1");
+            bean.setPid(itemNotes.getId());
+            showKeyBoard(itemNotes.getId()+"", "", "1");
         }
     };
 
@@ -426,21 +433,22 @@ public class LeavingMessageFragment extends BaseFragment implements  KeyboardCha
      * @param to 给谁评论
      * @param msg   发送信息
      */
-    private void sendCommentNote(final String zhu, final String to, final String msg, final LeavingBean.DataBean.ReplyListBean bean) {
+    private void sendCommentNote(final String zhu, final String to, final String msg, final Pinlin3Bean.DataBean.CommentListBean bean) {
         showDialog.showProgressDialog("正在评论", "请稍后。", true);
         Log.e("TAG", "sendCommentNote: "+newsId+"sendCommentNote: "+zhu+"sendCommentNote: "+to+"sendCommentNote: "+msg+"sendCommentNote: "+MakerApplication.instance().getUserid());
 
         HashMap<String,String> map=new HashMap<>();
-        map.put("playerId",newsId);
+        map.put("targetId",newsId);
         map.put("userId",MakerApplication.instance().getUserid());
         if (!StringUtils.isBlank(to)){
             map.put("referUserId",to);
         }
-        map.put("commentId",zhu);
+        map.put("pid",zhu);
         map.put("content",msg);
+        map.put("type",type);
         map.put("token",MakerApplication.instance.getToken());
         OkHttpUtils.post()
-                .url(URLS.HOME_PLAYERCOMMENTREPLY)
+                .url(URLS.COMMENTREPLY)
                 .params(map)
                 .build()
                 .execute(new StringCallback() {
@@ -461,12 +469,12 @@ public class LeavingMessageFragment extends BaseFragment implements  KeyboardCha
                                 HomeOneBean homeOneBean = gson.fromJson(response, HomeOneBean.class);
                                 if (homeOneBean.getCode().equals("1000")) {
                                     huifuState=0;
-                                    bean.setCommentPid(zhuId);
+                                    bean.setPid(zhuId);
                                     bean.setContent(msg);
                                     for (int i = 0; i <zixunListBean.size() ; i++) {
-                                        if (zixunListBean.get(i).getCommentId().equals(bean.getCommentPid())) {
-                                            zixunListBean.get(i).getReplyList().add(0,bean);
-                                            zixunListBean.get(i).setReplyNum(zixunListBean.get(i).getReplyNum()+1);
+                                        if (zixunListBean.get(i).getId().equals(bean.getPid())) {
+                                            zixunListBean.get(i).getCommentList().add(0,bean);
+                                            zixunListBean.get(i).setFavourNum(zixunListBean.get(i).getFavourNum()+1);
                                             break;
                                         }
                                     }
@@ -493,14 +501,15 @@ public class LeavingMessageFragment extends BaseFragment implements  KeyboardCha
 
     }
 
-    private void sendCommentNoteZ(final String zhuId, String toUid, final String msg, final LeavingBean.DataBean replyListBean) {
+    private void sendCommentNoteZ(final String zhuId, String toUid, final String msg, final Pinlin3Bean.DataBean replyListBean) {
         showDialog.showProgressDialog("正在评论", "请稍后。", true);
         OkHttpUtils.post()
-                .url(URLS.HOME_PLAYERCOMMENT)
-                .addParams("playerId",newsId)
+                .url(URLS.COMMENT)
+                .addParams("targetId",newsId)
                 .addParams("token", MakerApplication.instance.getToken())
                 .addParams("userId",MakerApplication.instance.getUid())
                 .addParams("content",msg)
+                .addParams("type",type)
                 .build()
                 .execute(new StringCallback() {
                     @Override
