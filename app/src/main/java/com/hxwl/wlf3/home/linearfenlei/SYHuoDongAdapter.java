@@ -1,7 +1,9 @@
 package com.hxwl.wlf3.home.linearfenlei;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +16,10 @@ import com.bumptech.glide.Glide;
 import com.hxwl.newwlf.URLS;
 import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wulinfeng.R;
+import com.hxwl.wulinfeng.activity.NormalWebviewActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2018/4/18.
@@ -30,7 +34,7 @@ private int ii;
     public SYHuoDongAdapter(Context context, ArrayList<Home3Bean.DataBean.SchedulesBean> list,int i) {
         this.context = context;
         this.list = list;
-        ii=i;
+        this.ii=i;
     }
 
     @Override
@@ -44,13 +48,14 @@ private int ii;
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-
-
-
+        List<Home3Bean.DataBean.SchedulesBean.ActivityListBean> activityList = list.get(ii).getActivityList();
 
         try {
+
+            holder.huodong_layout.setVisibility(View.VISIBLE);
+
             String name = list.get(ii).getActivityList().get(position).getName();
-//            String name = list.get(position).getName();
+
             holder.huodong_content.setText(name);
 
         }catch (Exception e){
@@ -60,7 +65,14 @@ private int ii;
         holder.huodong_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "点击了活动", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(context, NormalWebviewActivity.class);
+                intent.putExtra("url",list.get(ii).getActivityList().get(position).getUrl());
+                intent.putExtra("title","活动");
+                context.startActivity(intent);
+
+
+
+
             }
         });
         }catch (Exception e){}

@@ -42,10 +42,6 @@ public class PureTextLayout extends LinearLayout {
     private HuoDongLayout huoDongLayout;
     private LinearLayout chun_ditu;
 
-private HuoDong1Layout  huoDongLayout1;
-
-    private DynamicBean.DataBean dataxqBean;
-
 
 private int ii;
     private LinearLayout chun_layout;

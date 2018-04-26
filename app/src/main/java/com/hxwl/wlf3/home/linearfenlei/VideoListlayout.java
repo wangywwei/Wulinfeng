@@ -70,7 +70,7 @@ public class VideoListlayout extends LinearLayout {
         this.dataBean = bean;
 
 
-        inn=in;
+        this.inn=in;
 
 
 
@@ -208,7 +208,7 @@ public class VideoListlayout extends LinearLayout {
 //                for (int i = 0; i < activityList.size(); i++) {
                     huoDongLayout = new HuoDongLayout(context);
                     video_relative.addView(huoDongLayout);
-                    huoDongLayout.setBean(dataBean,in);
+                    huoDongLayout.setBean(dataBean,inn);
 
 //                }
             }

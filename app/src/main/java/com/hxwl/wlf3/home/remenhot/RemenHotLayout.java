@@ -22,8 +22,6 @@ public class RemenHotLayout extends LinearLayout implements View.OnClickListener
     private TextView genduohuodong;
     private RecyclerView huodong_grid;
     private HuodongAdapter huodongAdapter;
-//    private ArrayList<Home3Bean.DataBean.ActivitiesBean> list=new ArrayList<>();
-
     private ArrayList<Home3Bean.DataBean.ActivitiesBean> list=new ArrayList<>();
 
 
@@ -66,7 +64,11 @@ public class RemenHotLayout extends LinearLayout implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.genduohuodong:
-                context.startActivity(GenDuoActivity.getIntent(context));
+                //   原本的
+//                context.startActivity(GenDuoActivity.getIntent(context));
+
+                context.startActivity(GenDuo1Activity.getIntent(context));
+
                 break;
         }
     }
