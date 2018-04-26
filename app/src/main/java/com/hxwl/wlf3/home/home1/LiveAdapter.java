@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wulinfeng.R;
+import com.hxwl.wulinfeng.activity.HuiGuDetailActivity;
 
 import java.util.ArrayList;
 
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 * */
 public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.ViewHolder> {
     private Context context;
-    private ArrayList<Home3Bean.DataBean.LiveListBean> list;//记得改一下
+    private ArrayList<Home3Bean.DataBean.LiveListBean> list;
 
     public LiveAdapter(Context context, ArrayList<Home3Bean.DataBean.LiveListBean> list) {
         this.context = context;
@@ -40,23 +41,20 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(LiveAdapter.ViewHolder holder, final int position) {
-        holder.zhibo_name.setText(list.get(position).getScheduleName());
-        holder.zhibo_linearlayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "我点击了"+position+"条数据", Toast.LENGTH_SHORT).show();
-            }
-        });
 
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent=new Intent(context, NormalWebviewActivity.class);
-//                intent.putExtra("url",list.get(position).getUrl());
-//                intent.putExtra("title","活动");
-//                context.startActivity(intent);
-//            }
-//        });
+        try {
+            holder.zhibo_name.setText(list.get(position).getScheduleName());
+        }catch (Exception e){}
+
+
+        try {
+            holder.zhibo_linearlayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    context.startActivity(HuiGuDetailActivity.getIntent(context,list.get(position).getId()+"",0));
+                }
+            });
+        }catch (Exception e){}
     }
 
     @Override

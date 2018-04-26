@@ -16,6 +16,8 @@ import com.hxwl.newwlf.login.LoginActivity;
 import com.hxwl.newwlf.modlebean.YueyueBean;
 import com.hxwl.wlf3.bean.Home3Bean;
 import com.hxwl.wlf3.home.home2.EventActivity;
+import com.hxwl.wlf3.home.home2.ListViewAdapter;
+import com.hxwl.wlf3.home.linearfenlei.HuoDongLayout;
 import com.hxwl.wlf3.home.linearfenlei.SaichengLayout;
 import com.hxwl.wlf3.home.linearfenlei.PureTextLayout;
 import com.hxwl.wlf3.home.linearfenlei.VideoListlayout;
@@ -25,9 +27,12 @@ import com.hxwl.wulinfeng.R;
 import com.hxwl.wulinfeng.util.JsonValidator;
 import com.hxwl.wulinfeng.util.ToastUtils;
 import com.hxwl.wulinfeng.util.UIUtils;
+import com.hxwl.wulinfeng.view.MyListView;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 import java.util.ArrayList;
+import java.util.List;
+
 import okhttp3.Call;
 
 public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> {
@@ -37,6 +42,8 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
     private VideoListlayout videoListlayout;
     private PureTextLayout pureTextLayout;
     private SaichengLayout saicheng1Layout;
+
+    private ArrayList<Home3Bean.DataBean.SchedulesBean.ActivityListBean> arrayList = new ArrayList();
 
 
     private boolean aBoolean=true;
@@ -186,6 +193,15 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
 
 
 
+
+
+
+
+
+
+
+
+
 //        try {//          预约
 //            holder.home_saishi_yuyue.setOnClickListener(new View.OnClickListener() {
 //                @Override
@@ -240,6 +256,11 @@ public class Home3Adapter extends RecyclerView.Adapter<Home3Adapter.ViewHolder> 
             home_saishi_yuyue= (ImageView) itemView.findViewById(R.id.home_saishi_yuyue);
             home_saishi_shijianzhou= (ImageView) itemView.findViewById(R.id.home_saishi_shijianzhou);
             home_saishi_xrecycler= (RelativeLayout) itemView.findViewById(R.id.home_saishi_xrecycler);
+
+
+
+
+
         }
     }
 

@@ -5,34 +5,25 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:visibility="gone"
         android:id="@+id/huodong_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/wlf_40dp"
         android:gravity="center_vertical">
-
 
         <ImageView
             android:layout_width="@dimen/wlf_28dp"
             android:layout_height="@dimen/wlf_16dp"
             android:src="@drawable/huodongbiao"/>
 
-
         <TextView
             android:layout_marginLeft="@dimen/wlf_6dp"
             android:id="@+id/huodong_content"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ssssssssssss"
             android:textSize="@dimen/text_14sp"
             android:textColor="#666666"/>
 
-
-
     </LinearLayout>
-
-
-
-
 
 </LinearLayout>

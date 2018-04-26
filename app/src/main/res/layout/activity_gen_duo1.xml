@@ -39,7 +39,8 @@
                 android:text="进行中"
                 android:gravity="center"
                 android:textSize="@dimen/text_14sp"
-                android:background="#FFF"/>
+                android:textColor="#C52720"
+               />
 
             <TextView
                 android:id="@+id/gengduo_end"
@@ -59,7 +60,6 @@
 
 
     <com.jcodecraeer.xrecyclerview.XRecyclerView
-        android:visibility="gone"
         android:id="@+id/gengduo_xrecycler1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
